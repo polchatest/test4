@@ -1,0 +1,426 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0413\u0440\u043e\u0448\u0435\u0432 \u0410.\u041d. (\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 793,
+    "iteration": 1643725905562,
+    "links": [
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "tags": [
+                "sbisdisk"
+            ],
+            "title": "\u0414\u0440\u0443\u0433\u043e\u0435 \u043f\u0440\u043e \u0421\u0411\u0418\u0421\u0414\u0438\u0441\u043a",
+            "type": "dashboards"
+        },
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "includeVars": false,
+            "keepTime": false,
+            "tags": [
+                "ceph"
+            ],
+            "targetBlank": false,
+            "title": "\u0414\u0440\u0443\u0433\u043e\u0435 \u043f\u0440\u043e ceph",
+            "tooltip": "",
+            "type": "dashboards",
+            "url": ""
+        },
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "includeVars": false,
+            "keepTime": false,
+            "tags": [
+                "swift"
+            ],
+            "targetBlank": false,
+            "title": "\u0414\u0440\u0443\u0433\u043e\u0435 \u043f\u0440\u043e swift",
+            "tooltip": "",
+            "type": "dashboards",
+            "url": ""
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "activePatternIndex": 0,
+            "cacheTimeout": null,
+            "datasource": "carbon-short",
+            "defaultPattern": {
+                "bgColors": "green|orange|red",
+                "bgColors_overrides": "0->green|2->red|1->yellow",
+                "clickable_cells_link": "",
+                "col_name": "Value",
+                "decimals": 2,
+                "defaultBGColor": "transparent",
+                "defaultTextColor": "",
+                "delimiter": ".",
+                "displayTemplate": "_value_",
+                "enable_bgColor": false,
+                "enable_bgColor_overrides": false,
+                "enable_clickable_cells": false,
+                "enable_textColor": false,
+                "enable_textColor_overrides": false,
+                "enable_time_based_thresholds": false,
+                "enable_transform": false,
+                "enable_transform_overrides": false,
+                "filter": {
+                    "value_above": "",
+                    "value_below": ""
+                },
+                "format": "none",
+                "name": "Default Pattern",
+                "null_color": "darkred",
+                "null_textcolor": "black",
+                "null_value": "No data",
+                "pattern": "*",
+                "row_col_wrapper": "_",
+                "row_name": "_series_",
+                "textColors": "red|orange|green",
+                "textColors_overrides": "0->red|2->green|1->yellow",
+                "thresholds": "70,90",
+                "time_based_thresholds": [],
+                "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                "transform_values": "_value_|_value_|_value_",
+                "transform_values_overrides": "0->down|1->up",
+                "valueName": "avg"
+            },
+            "default_title_for_rows": "Metric",
+            "description": "* temp - \u0442\u0435\u043c\u043f\u0435\u0440\u0430\u0442\u0443\u0440\u0430\n* smartctl exit - \u043a\u043e\u0434 \u0432\u043e\u0437\u043f\u0440\u0430\u0442\u0430 smartctl, \u0435\u0441\u043b\u0438 \u0432 \u043b\u043e\u0433\u0430\u0445 \u0435\u0441\u0442\u044c \u043e\u0448\u0438\u0431\u043a\u0438 \u0438\u043b\u0438 \u043f\u0440\u043e\u0447\u0438\u0435 \u0437\u0430\u043c\u0435\u0447\u0430\u043d\u0438\u044f \u043e\u043d \u041d\u0415 \u043d\u043e\u043b\u044c.\n* smart status - \u0440\u0430\u0437\u0440\u0435\u0448\u043e\u043d \u043b\u0438 SMART \u0432 \u043f\u0440\u0438\u043d\u0446\u0438\u043f\u0435 \u043d\u0430 \u0434\u0438\u0441\u043a\u0435.\n* realloc - \u043d\u0430\u043b\u0438\u0447\u0438\u0435 \u043f\u0435\u0440\u0435\u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u0445 \u0441\u0435\u043a\u0442\u043e\u0440\u043e\u0432",
+            "gridPos": {
+                "h": 25,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "hide_first_column": false,
+            "hide_headers": false,
+            "id": 2,
+            "links": [],
+            "non_matching_cells_color_bg": "",
+            "patterns": [
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "_3_",
+                    "decimals": "0",
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "_value_",
+                    "enable_bgColor": true,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "celsius",
+                    "name": "temp",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "No data",
+                    "pattern": "temp",
+                    "row_col_wrapper": "_",
+                    "row_name": "/dev/_0_, s/n:_1_, (_2_)",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "50,60",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "current"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "_3_",
+                    "decimals": "0",
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "_value_",
+                    "enable_bgColor": true,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "realloc",
+                    "null_color": "green",
+                    "null_textcolor": "black",
+                    "null_value": "0",
+                    "pattern": ".*realloc",
+                    "row_col_wrapper": "_",
+                    "row_name": "/dev/_0_, s/n:_1_, (_2_)",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "1,10",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "current"
+                },
+                {
+                    "bgColors": "green|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "_3_",
+                    "decimals": "0",
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "_value_",
+                    "enable_bgColor": true,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "smartctl exit",
+                    "null_color": "green",
+                    "null_textcolor": "black",
+                    "null_value": "0",
+                    "pattern": ".*smartctl_exit",
+                    "row_col_wrapper": "_",
+                    "row_name": "/dev/_0_, s/n:_1_, (_2_)",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "1",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "min"
+                },
+                {
+                    "bgColors": "red|green",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "_3_",
+                    "decimals": "0",
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "_value_",
+                    "enable_bgColor": true,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": true,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "smart status",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "0",
+                    "pattern": "smart_status",
+                    "row_col_wrapper": "_",
+                    "row_name": "/dev/_0_, s/n:_1_, (_2_)",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "1",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->disabled|1->enabled",
+                    "valueName": "current"
+                }
+            ],
+            "pluginVersion": "7.0.3",
+            "row_col_wrapper": "_",
+            "sorting_props": {
+                "col_index": -1,
+                "direction": "desc"
+            },
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasSub(sortByName(aliasByTags(seriesByTag('name=hdd_smart_smart_status', 'cluster=$cluster', 'interval=600s', 'host=$host'), '_name', 'sn', 'type'), true, false), '$', '.smart_status')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasSub(sortByName(aliasByTags(seriesByTag('name=hdd_smart_smartctl_exit', 'cluster=$cluster', 'interval=600s', 'host=$host'), '_name', 'sn', 'type'), true, false), '$', '.smartctl_exit')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasSub(sortByName(aliasByTags(seriesByTag('name=hdd_smart_temp', 'cluster=$cluster', 'interval=600s', 'host=$host'), '_name', 'sn', 'type'), true, false), '$', '.temp')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "aliasSub(sortByName(aliasByTags(seriesByTag('name=hdd_smart_realloc', 'cluster=$cluster', 'interval=600s', 'host=$host'), '_name', 'sn', 'type'), true, false), '$', '.realloc')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0432\u0430\u0436\u043d\u044b\u0435 \u043c\u0435\u0442\u0440\u0438\u043a\u0438 \u043f\u0440\u043e SMART HDD/SSD",
+            "transformations": [],
+            "type": "yesoreyeram-boomtable-panel"
+        }
+    ],
+    "refresh": "1m",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "sbisdisk",
+        "telegraf",
+        "service",
+        "swift",
+        "ceph"
+    ],
+    "templating": {
+        "list": [
+            {
+                "current": {
+                    "selected": false,
+                    "text": "prod",
+                    "value": "prod"
+                },
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "label": null,
+                "name": "contur",
+                "query": "prod",
+                "skipUrlSync": false,
+                "type": "constant"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "ceph-1",
+                    "value": "ceph-1"
+                },
+                "datasource": "Tagged",
+                "definition": "tag_values(cluster,contur=$contur,servertype=~(swift|ceph))",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "cluster",
+                "options": [],
+                "query": "tag_values(cluster,contur=$contur,servertype=~(swift|ceph))",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "ceph1-data1.unix.tensor.ru",
+                    "value": "ceph1-data1.unix.tensor.ru"
+                },
+                "datasource": "Tagged",
+                "definition": "tag_values(host,cluster=$cluster,servertype=~(swift|ceph))",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "host",
+                "options": [],
+                "query": "tag_values(host,cluster=$cluster,servertype=~(swift|ceph))",
+                "refresh": 1,
+                "regex": "/.*data.*|swift\\d\\.|swift\\d-meta/",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-6h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u0421\u0411\u0418\u0421 \u0414\u0438\u0441\u043a - Swift/ceph S.M.A.R.T. hdd/ssd",
+    "uid": "YMGSEkiGz",
+    "version": 72
+}

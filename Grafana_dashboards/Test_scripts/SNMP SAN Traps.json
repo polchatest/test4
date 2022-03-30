@@ -1,0 +1,395 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041b\u043e\u0448\u043a\u0430\u0440\u0435\u0432 \u0414.\u0413. (\u0410\u0426\u041e\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1811,
+    "iteration": 1647248900979,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": "SNMP Trap ",
+            "description": "\u0417\u0430\u043f\u0438\u0441\u0438, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0431\u044b\u043b\u0438 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u044b \u043f\u0430\u0440\u0441\u0435\u0440\u043e\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "left",
+                        "displayMode": "auto"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "@timestamp"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 200
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Source"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 100
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u0421\u0442\u0430\u0442\u0443\u0441"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 100
+                            },
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "transparent",
+                                            "value": null
+                                        },
+                                        {
+                                            "color": "semi-dark-red",
+                                            "value": 1
+                                        },
+                                        {
+                                            "color": "semi-dark-orange",
+                                            "value": 2
+                                        },
+                                        {
+                                            "color": "semi-dark-yellow",
+                                            "value": 3
+                                        },
+                                        {
+                                            "color": "semi-dark-green",
+                                            "value": 4
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background-solid"
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "center"
+                            },
+                            {
+                                "id": "mappings",
+                                "value": [
+                                    {
+                                        "options": {
+                                            "1": {
+                                                "index": 2,
+                                                "text": "Critical"
+                                            },
+                                            "2": {
+                                                "index": 3,
+                                                "text": "Error"
+                                            },
+                                            "3": {
+                                                "index": 0,
+                                                "text": "Warning"
+                                            },
+                                            "4": {
+                                                "index": 1,
+                                                "text": "Info"
+                                            }
+                                        },
+                                        "type": "value"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 121
+                            },
+                            {
+                                "id": "mappings",
+                                "value": [
+                                    {
+                                        "options": {
+                                            "10.76.30.88": {
+                                                "index": 1,
+                                                "text": "dcx-fc1"
+                                            },
+                                            "10.76.30.91": {
+                                                "index": 0,
+                                                "text": "dcx-fc2"
+                                            }
+                                        },
+                                        "type": "value"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 11,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 10,
+            "options": {
+                "showHeader": true,
+                "sortBy": []
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "alias": "",
+                    "bucketAggs": [
+                        {
+                            "id": "2",
+                            "settings": {
+                                "interval": "auto"
+                            },
+                            "type": "date_histogram"
+                        }
+                    ],
+                    "metrics": [
+                        {
+                            "id": "1",
+                            "type": "logs"
+                        }
+                    ],
+                    "query": "source=$SAN",
+                    "refId": "A",
+                    "timeField": "@timestamp"
+                }
+            ],
+            "title": "\u041e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043d\u044b\u0435 \u0437\u0430\u043f\u0438\u0441\u0438 SAN",
+            "transformations": [
+                {
+                    "id": "calculateField",
+                    "options": {
+                        "alias": "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a",
+                        "mode": "reduceRow",
+                        "reduce": {
+                            "include": [
+                                "source"
+                            ],
+                            "reducer": "lastNotNull"
+                        }
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {
+                            "_id": true,
+                            "_index": true,
+                            "_source": true,
+                            "_type": true,
+                            "agent_address": true,
+                            "brocade_action": true,
+                            "brocade_condition": true,
+                            "brocade_db_category": true,
+                            "brocade_mslist": true,
+                            "brocade_rule_name": true,
+                            "community": true,
+                            "contur": true,
+                            "hash": true,
+                            "highlight": true,
+                            "host": true,
+                            "level": true,
+                            "lstraps_event_id": true,
+                            "mib": true,
+                            "name": true,
+                            "oid": true,
+                            "ovirt_error_name": true,
+                            "ovirt_instance_id": true,
+                            "servertype": true,
+                            "severity": false,
+                            "sort": true,
+                            "sw_index": true,
+                            "time": true,
+                            "version": true
+                        },
+                        "indexByName": {
+                            "@timestamp": 0,
+                            "_id": 6,
+                            "_index": 7,
+                            "_source": 4,
+                            "_type": 8,
+                            "agent_address": 9,
+                            "brocade_action": 10,
+                            "brocade_condition": 11,
+                            "brocade_db_category": 12,
+                            "brocade_mslist": 13,
+                            "brocade_rule_name": 14,
+                            "community": 15,
+                            "contur": 16,
+                            "hash": 17,
+                            "highlight": 18,
+                            "host": 19,
+                            "level": 5,
+                            "message": 20,
+                            "mib": 21,
+                            "name": 22,
+                            "oid": 23,
+                            "servertype": 24,
+                            "severity": 3,
+                            "sort": 25,
+                            "source": 1,
+                            "sw_index": 26,
+                            "time": 27,
+                            "version": 28,
+                            "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a": 2
+                        },
+                        "renameByName": {
+                            "@timestamp": "Time",
+                            "_source": "Message",
+                            "severity": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                            "source": "Source"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "test_scripts",
+        "telegraf",
+        "system"
+    ],
+    "templating": {
+        "list": [
+            {
+                "datasource": "SNMP_Traps_New",
+                "description": null,
+                "error": null,
+                "filters": [],
+                "hide": 0,
+                "label": null,
+                "name": "Filter",
+                "skipUrlSync": false,
+                "type": "adhoc"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "SNMP Trap ",
+                "definition": "{\"find\": \"terms\", \"field\": \"source.keyword\", \"type\": \"keyword\"} ",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "source",
+                "options": [],
+                "query": "{\"find\": \"terms\", \"field\": \"source.keyword\", \"type\": \"keyword\"} ",
+                "refresh": 1,
+                "regex": "/.*(10.76.31.113|10.76.30.88|10.76.30.91|10.190.36.20|10.190.36.28|10.190.36.36|10.190.36.16|10.190.36.24|10.190.36.40|10.190.36.12|10.190.36.32|10.76.30.250|10.76.30.70|10.76.30.249|10.76.30.71|10.190.36.37|10.190.36.17|10.190.36.29|10.190.36.21|10.190.36.41|10.190.36.25|10.190.36.13|10.190.36.33|10.76.33.46|10.76.33.48|10.76.18.31|10.76.30.85|10.190.6.22|10.190.6.30|10.190.6.14|10.190.6.34|10.190.6.18|10.76.32.94|10.76.32.87|10.76.32.97|10.76.32.89|10.76.32.91|10.76.17.25|10.76.16.31|10.76.17.15|10.190.6.38|10.190.6.42|10.190.6.50|10.190.6.46|10.76.33.45|10.76.33.47|10.76.18.30|10.76.30.84|10.190.6.21|10.190.6.29|10.190.6.17|10.190.6.33|10.190.6.13|10.190.6.25|10.76.32.88|10.76.32.96|10.76.32.86|10.76.32.93|10.76.32.90|10.76.17.20|10.76.16.29|10.76.16.27|10.190.6.37|10.190.6.41|10.190.6.49|10.190.6.45|10.76.33.108|10.76.33.109|10.76.33.153|10.76.33.154|10.76.30.109|10.76.33.110|10.76.33.120| 10.76.30.109|10.76.33.181|10.76.33.184|10.76.33.86|10.76.33.86|10.76.33.92|10.76.33.95|10.76.33.98|10.76.33.101|10.76.33.104|10.76.33.107|10.76.33.140|10.76.33.146|10.76.33.149|10.76.33.152|10.76.103.117|10.76.32.251|10.76.32.252|10.76.32.253|10.76.33.164|10.76.33.165|10.76.33.166|10.76.32.254|10.76.32.255|10.76.32.241|10.76.32.242|10.195.6.27|10.76.32.230|10.76.31.149|10.76.31.148|10.76.32.60|10.76.38.83|10.190.64.3|10.190.64.2).*/",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": [
+                        "All"
+                    ],
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "SNMP Trap ",
+                "definition": "{\"find\": \"terms\", \"field\": \"source.keyword\", \"type\": \"keyword\"} ",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "SAN",
+                "options": [],
+                "query": "{\"find\": \"terms\", \"field\": \"source.keyword\", \"type\": \"keyword\"} ",
+                "refresh": 1,
+                "regex": "/.*(10.76.30.88|10.76.32.94|10.76.32.87|10.76.32.97|10.76.32.89|10.76.32.91|10.76.17.25|10.76.16.31|10.76.17.15|10.190.6.38|10.190.6.42|10.190.6.50|10.190.6.46|10.76.33.45|10.76.33.47|10.76.18.30|10.76.30.84|10.190.6.21|10.190.6.29|10.190.6.17|10.190.6.33|10.190.6.13|10.190.6.25|10.76.32.88|10.76.32.96|10.76.32.86|10.76.32.93|10.76.32.90|10.76.17.20|10.76.16.29|10.76.16.27|10.190.6.37|10.190.6.41|10.190.6.49|10.190.6.45|10.76.33.108|10.76.33.109|10.76.33.153|10.76.33.154|10.76.30.91|10.190.36.20|10.190.36.28|10.190.36.36|10.190.36.16|10.190.36.24|10.190.36.40|10.190.36.12|10.190.36.32|10.76.30.250|10.76.30.70|10.76.30.249|10.76.30.71|10.190.36.37|10.190.36.17|10.190.36.29|10.190.36.21|10.190.36.41|10.190.36.25|10.190.36.13|10.190.36.33|10.76.33.46|10.76.33.48|10.76.18.31|10.76.30.85|10.190.6.22|10.190.6.30|10.190.6.14|10.190.6.34|10.190.6.18)/",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-24h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "SNMP SAN Traps",
+    "uid": "PaJE1D17k",
+    "version": 7
+}

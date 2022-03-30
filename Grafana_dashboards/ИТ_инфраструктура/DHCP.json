@@ -1,0 +1,1479 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0410\u043b\u044c\u0431\u0435\u0449\u0435\u043d\u043a\u043e \u041c.\u041d. (\u0410\u0426\u041e\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1808,
+    "iteration": 1643610353748,
+    "links": [
+        {
+            "asDropdown": false,
+            "icon": "external link",
+            "includeVars": false,
+            "keepTime": false,
+            "tags": [],
+            "targetBlank": true,
+            "title": "Gitlab CI/CD",
+            "tooltip": "",
+            "type": "link",
+            "url": "https://csr-auto-gitlab.tensor.ru/soft/dhcp-mgmt"
+        },
+        {
+            "asDropdown": false,
+            "icon": "doc",
+            "includeVars": false,
+            "keepTime": false,
+            "tags": [],
+            "targetBlank": true,
+            "title": "Docs",
+            "tooltip": "",
+            "type": "link",
+            "url": "https://dpc-docs.tensor.ru/x/oTUZAw"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 34,
+            "panels": [],
+            "title": "\u0421\u0442\u0430\u0442\u0443\u0441",
+            "type": "row"
+        },
+        {
+            "datasource": null,
+            "description": "\u0415\u0441\u043b\u0438 \u0441\u0442\u0430\u0442\u0443\u0441 \u041e\u041a - \u0432\u0441\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u044b \u0437\u0430\u043f\u0443\u0449\u0435\u043d\u044b",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "color": "green",
+                                    "index": 0,
+                                    "text": "OK"
+                                }
+                            },
+                            "type": "value"
+                        },
+                        {
+                            "options": {
+                                "from": 0,
+                                "result": {
+                                    "color": "red",
+                                    "index": 1,
+                                    "text": "Warn"
+                                },
+                                "to": 10000000
+                            },
+                            "type": "range"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 0,
+                "y": 1
+            },
+            "id": 26,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "maxSeries(keepLastValue(seriesByTag('name=systemd_units.active_code', 'contur=${contur:regex}', 'dhcp_cluster=$dhcp_cluster')))",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u0421\u0442\u0430\u0442\u0443\u0441 \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "\u0415\u0441\u043b\u0438 \u0441\u0442\u0430\u0442\u0443\u0441 \u041e\u041a - \u0432\u043e \u0432\u0441\u0435\u0445 \u043f\u0443\u043b\u0430\u0445 \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u043e \u0431\u043e\u043b\u044c\u0448\u0435 10 \u0430\u0434\u0440\u0435\u0441\u043e\u0432.",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "from": 10,
+                                "result": {
+                                    "color": "green",
+                                    "index": 0,
+                                    "text": "OK"
+                                },
+                                "to": 10000000
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 0,
+                                "result": {
+                                    "color": "red",
+                                    "index": 1,
+                                    "text": "Warn"
+                                },
+                                "to": 10
+                            },
+                            "type": "range"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 10
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 2,
+                "y": 1
+            },
+            "id": 25,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "minSeries(seriesByTag('name=dhcp_subnet.free', 'dhcp_cluster=$dhcp_cluster', 'location=~${pool:regex}'))",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u0421\u0442\u0430\u0442\u0443\u0441 \u043f\u0443\u043b\u043e\u0432",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043f\u043e \u043b\u043e\u0433\u0430\u043c.\n0 - normal\n1 - communications-interrupted",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "color": "green",
+                                    "index": 0,
+                                    "text": "OK"
+                                }
+                            },
+                            "type": "value"
+                        },
+                        {
+                            "options": {
+                                "from": 0,
+                                "result": {
+                                    "color": "red",
+                                    "index": 1,
+                                    "text": "Warn"
+                                },
+                                "to": 10000000
+                            },
+                            "type": "range"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 4,
+                "y": 1
+            },
+            "id": 35,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "maxSeries(keepLastValue(seriesByTag('name=dhcp_cluster_status', 'dhcp_cluster=$dhcp_cluster')))",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u0421\u0442\u0430\u0442\u0443\u0441 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u0430",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "\u0412\u0441\u0435\u0433\u043e \u043f\u0443\u043b\u043e\u0432 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043e \u0432 \u043a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 6,
+                "y": 1
+            },
+            "id": 27,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "groupByTags(groupByTags(seriesByTag('name=dhcp_subnet.free', 'dhcp_cluster=$dhcp_cluster'), 'last', 'location', 'dhcp_cluster'), 'count', 'dhcp_cluster')",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u0412\u0441\u0435\u0433\u043e \u043f\u0443\u043b\u043e\u0432",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "\u0412\u0441\u0435\u0433\u043e \u0430\u0434\u0440\u0435\u0441\u043e\u0432 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043e \u0432 \u043a\u043e\u043d\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 5,
+                "x": 8,
+                "y": 1
+            },
+            "id": 28,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('name=dhcp_summary.defined', 'dhcp_cluster=$dhcp_cluster')",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u0412\u0441\u0435\u0433\u043e \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043e \u0430\u0434\u0440\u0435\u0441\u043e\u0432",
+            "transformations": [
+                {
+                    "id": "merge",
+                    "options": {}
+                }
+            ],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "\u0412\u0441\u0435\u0433\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043e \u0430\u0434\u0440\u0435\u0441\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 5,
+                "x": 13,
+                "y": 1
+            },
+            "id": 29,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('name=dhcp_summary.used', 'dhcp_cluster=$dhcp_cluster')",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u0412\u0441\u0435\u0433\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043e \u0430\u0434\u0440\u0435\u0441\u043e\u0432",
+            "transformations": [
+                {
+                    "id": "merge",
+                    "options": {}
+                }
+            ],
+            "type": "stat"
+        },
+        {
+            "datasource": null,
+            "description": "\u0412\u0441\u0435\u0433\u043e \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u043e \u0430\u0434\u0440\u0435\u0441\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 6,
+                "x": 18,
+                "y": 1
+            },
+            "id": 30,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('name=dhcp_summary.free', 'dhcp_cluster=$dhcp_cluster')",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u0412\u0441\u0435\u0433\u043e \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u043e \u0430\u0434\u0440\u0435\u0441\u043e\u0432",
+            "transformations": [
+                {
+                    "id": "merge",
+                    "options": {}
+                }
+            ],
+            "type": "stat"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 5
+            },
+            "id": 32,
+            "panels": [
+                {
+                    "datasource": null,
+                    "description": "\u0417\u0430\u043d\u044f\u0442\u043e\u0441\u0442\u044c \u043f\u0443\u043b\u0430 \u0432 \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0430\u0445.",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "decimals": 0,
+                            "mappings": [],
+                            "max": 1,
+                            "min": 0,
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "#EAB839",
+                                        "value": 80
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 90
+                                    }
+                                ]
+                            },
+                            "unit": "percentunit"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 11,
+                        "w": 24,
+                        "x": 0,
+                        "y": 6
+                    },
+                    "id": 47,
+                    "maxDataPoints": 700,
+                    "options": {
+                        "colorMode": "value",
+                        "graphMode": "area",
+                        "justifyMode": "center",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "text": {
+                            "titleSize": 12,
+                            "valueSize": 16
+                        },
+                        "textMode": "value_and_name"
+                    },
+                    "pluginVersion": "8.2.3",
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "aliasSub(aliasByTags(groupByTags(divideSeriesLists(seriesByTag('name=dhcp_subnet.used', 'contur=${contur:regex}', 'dhcp_cluster=${dhcp_cluster:regex}', 'location=~${pool:regex}'), seriesByTag('name=dhcp_subnet.defined', 'contur=${contur:regex}', 'dhcp_cluster=${dhcp_cluster:regex}', 'location=~${pool:regex}')), 'last', 'location'), 'location'), '(.*)-(.*)', '\\1/\\2')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Pools Stats",
+                    "transformations": [],
+                    "transparent": true,
+                    "type": "stat"
+                },
+                {
+                    "datasource": null,
+                    "description": "",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "auto",
+                                "displayMode": "auto"
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "10.190.6.0-23"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "color",
+                                        "value": {
+                                            "fixedColor": "yellow",
+                                            "mode": "fixed"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 24,
+                        "x": 0,
+                        "y": 17
+                    },
+                    "id": 22,
+                    "options": {
+                        "showHeader": true,
+                        "sortBy": [
+                            {
+                                "desc": false,
+                                "displayName": "free"
+                            }
+                        ]
+                    },
+                    "pluginVersion": "8.2.3",
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "C",
+                            "target": "groupByTags(seriesByTag('name=dhcp_subnet.free', 'dhcp_cluster=$dhcp_cluster', 'location=~${pool:regex}'), 'last', 'location')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0421\u0432\u043e\u0431\u043e\u0434\u043d\u043e \u0430\u0434\u0440\u0435\u0441\u043e\u0432 \u043f\u043e \u043f\u0443\u043b\u0430\u043c",
+                    "transformations": [
+                        {
+                            "id": "reduce",
+                            "options": {
+                                "labelsToFields": true,
+                                "reducers": [
+                                    "lastNotNull"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "sortBy",
+                            "options": {
+                                "fields": {},
+                                "sort": [
+                                    {
+                                        "field": "Last *"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Field": true,
+                                    "contur": true,
+                                    "host": true,
+                                    "interval": true,
+                                    "servertype": true,
+                                    "url": true
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Last *": "free",
+                                    "interval": "",
+                                    "location": "pool",
+                                    "url": ""
+                                }
+                            }
+                        }
+                    ],
+                    "type": "table"
+                },
+                {
+                    "datasource": null,
+                    "description": "",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "10.190.6.0-23"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "color",
+                                        "value": {
+                                            "fixedColor": "yellow",
+                                            "mode": "fixed"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 24,
+                        "x": 0,
+                        "y": 26
+                    },
+                    "id": 36,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasSub(aliasByTags(groupByTags(seriesByTag('name=dhcp_subnet.defined', 'dhcp_cluster=$dhcp_cluster', 'location=~${pool:regex}'), 'last', 'location'), 'location'), '(.*)-(.*)', '\\1/\\2')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u041e\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043e \u0430\u0434\u0440\u0435\u0441\u043e\u0432 \u043f\u043e \u043f\u0443\u043b\u0430\u043c",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": null,
+                    "description": "",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 10,
+                        "w": 24,
+                        "x": 0,
+                        "y": 35
+                    },
+                    "id": 23,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasSub(aliasByTags(groupByTags(seriesByTag('name=dhcp_subnet.used', 'dhcp_cluster=$dhcp_cluster', 'location=~${pool:regex}'), 'last', 'location'), 'location'), '(.*)-(.*)', '\\1/\\2')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043e \u0430\u0434\u0440\u0435\u0441\u043e\u0432 \u043f\u043e \u043f\u0443\u043b\u0430\u043c",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": null,
+                    "description": "",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 11,
+                        "w": 24,
+                        "x": 0,
+                        "y": 45
+                    },
+                    "id": 24,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasSub(aliasByTags(groupByTags(seriesByTag('name=dhcp_subnet.free', 'dhcp_cluster=$dhcp_cluster', 'location=~${pool:regex}'), 'last', 'location'), 'location'), '(.*)-(.*)', '\\1/\\2')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0421\u0432\u043e\u0431\u043e\u0434\u043d\u043e \u0430\u0434\u0440\u0435\u0441\u043e\u0432 \u043f\u043e \u043f\u0443\u043b\u0430\u043c",
+                    "transformations": [],
+                    "type": "timeseries"
+                }
+            ],
+            "title": "\u041f\u0443\u043b\u044b \u043f\u043e\u0434\u0440\u043e\u0431\u043d\u043e",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 6
+            },
+            "id": 38,
+            "panels": [
+                {
+                    "datasource": null,
+                    "description": "",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "smooth",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "percent"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 7
+                    },
+                    "id": 40,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByTags(seriesByTag('cpu=cpu-total', 'name=~system.cpu.usage_(user|softirq|nice|iowait|system|steal|irq)', 'host=~${host:regex}'), 'host', 'name')",
+                            "textEditor": true
+                        }
+                    ],
+                    "title": "CPU Time",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": null,
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 7
+                    },
+                    "id": 42,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "aliasByTags(seriesByTag('name=~system.system.load', 'host=~${host:regex}'), 'host', 'name')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "LA ",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": null,
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "percent"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 15
+                    },
+                    "id": 44,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByTags(seriesByTag('name=~system.mem.(used|available)_percent', 'host=~${host:regex}'), 'host', 'name')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Memory",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": null,
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "none"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 15
+                    },
+                    "id": 45,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasByTags(seriesByTag('name=~system.net.(drop|err)_(in|out)', 'host=~${host:regex}'), 'host', 'name')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Net Drops/Errors",
+                    "type": "timeseries"
+                }
+            ],
+            "title": "\u0421\u0438\u0441\u0442\u0435\u043c\u043d\u044b\u0435 \u043c\u0435\u0442\u0440\u0438\u043a\u0438",
+            "type": "row"
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "prod",
+                    "value": "prod"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(contur)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "contur",
+                "options": [],
+                "query": "tag_values(contur)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "isNone": true,
+                    "selected": false,
+                    "text": "None",
+                    "value": ""
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(dhcp_cluster, contur=$contur)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "dhcp_cluster",
+                "options": [],
+                "query": "tag_values(dhcp_cluster, contur=$contur)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": [
+                        "All"
+                    ],
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(host, dhcp_cluster=$dhcp_cluster)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "host",
+                "options": [],
+                "query": "tag_values(host, dhcp_cluster=$dhcp_cluster)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": [
+                        "All"
+                    ],
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(location, dhcp_cluster=$dhcp_cluster)",
+                "description": "TODO",
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": "pool(\u043f\u043e\u0441\u043b\u0435 - \u043c\u0430\u0441\u043a\u0430)",
+                "multi": true,
+                "name": "pool",
+                "options": [],
+                "query": "tag_values(location, dhcp_cluster=$dhcp_cluster)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-30m",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "5s",
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m"
+        ]
+    },
+    "timezone": "",
+    "title": "DHCP",
+    "uid": "wrMovg2nz",
+    "version": 15
+}

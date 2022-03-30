@@ -1,0 +1,1671 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0421\u043c\u0438\u0440\u043d\u043e\u0432\u0430 \u0421.\u0421. (\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1727,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c \u0437\u0430 \u0441\u0443\u0442\u043a\u0438. \u0412\u0441\u0435 \u0433\u0440\u0443\u043f\u043f\u044b",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 2,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": "current",
+                "sortDesc": true,
+                "total": true,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_group",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "group",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            department: \"HelpDesk\",\n            person: \"\u0412\u0441\u0435\u0433\u043e\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            group\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "HelpDesk. \u041a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u0435 \u0447\u0430\u0442\u044b",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "none",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c \u0437\u0430 \u0441\u0443\u0442\u043a\u0438. \u0413\u0440\u0443\u043f\u043f\u0430 \u041e\u0441\u043d\u043e\u0432\u043d\u043e\u0439",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 12,
+                "x": 0,
+                "y": 7
+            },
+            "hiddenSeries": false,
+            "id": 3,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u041e\u0441\u043d\u043e\u0432\u043d\u043e\u0439\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041e\u0441\u043d\u043e\u0432\u043d\u043e\u0439",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c \u0437\u0430 \u0441\u0443\u0442\u043a\u0438. \u0413\u0440\u0443\u043f\u043f\u0430 \u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u042d\u0414\u041e HelpDesk",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 12,
+                "x": 12,
+                "y": 7
+            },
+            "hiddenSeries": false,
+            "id": 4,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u042d\u0414\u041e HelpDesk\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u042d\u0414\u041e HelpDesk",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c \u0437\u0430 \u0441\u0443\u0442\u043a\u0438.\n\u0413\u0440\u0443\u043f\u043f\u0430  \u041f\u0440\u0435\u043c\u0438\u0443\u043c \u042d\u041e HelpDesk",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 12,
+                "x": 0,
+                "y": 13
+            },
+            "hiddenSeries": false,
+            "id": 5,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u041f\u0440\u0435\u043c\u0438\u0443\u043c \u042d\u041e HelpDesk\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041f\u0440\u0435\u043c\u0438\u0443\u043c \u042d\u041e HelpDesk",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 12,
+                "x": 12,
+                "y": 13
+            },
+            "hiddenSeries": false,
+            "id": 8,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u0413\u043e\u0441. \u0441\u0438\u0441\u0442\u0435\u043c\u044b HelpDesk\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0413\u043e\u0441. \u0441\u0438\u0441\u0442\u0435\u043c\u044b HelpDesk",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 12,
+                "x": 0,
+                "y": 19
+            },
+            "hiddenSeries": false,
+            "id": 7,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": "current",
+                "sortDesc": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u0420\u043e\u0437\u043d\u0438\u0446\u044b HelpDesk\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u0420\u043e\u0437\u043d\u0438\u0446\u044b HelpDesk",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 12,
+                "x": 12,
+                "y": 19
+            },
+            "hiddenSeries": false,
+            "id": 11,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u0417\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u043e\u0442\u0447\u0435\u0442\u043d\u043e\u0441\u0442\u0438 HelpDesk\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0417\u0430\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u043e\u0442\u0447\u0435\u0442\u043d\u043e\u0441\u0442\u0438 HelpDesk",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 12,
+                "x": 0,
+                "y": 24
+            },
+            "hiddenSeries": false,
+            "id": 12,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u041f\u0440\u043e\u0447\u0438\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b HelpDesk\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041f\u0440\u043e\u0447\u0438\u0435 \u043f\u0440\u043e\u0434\u0443\u043a\u0442\u044b HelpDesk",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 12,
+                "x": 12,
+                "y": 24
+            },
+            "hiddenSeries": false,
+            "id": 13,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u0411\u0443\u0445\u0433\u0430\u043b\u0442\u0435\u0440\u0438\u0438 HelpDesk\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u0411\u0443\u0445\u0433\u0430\u043b\u0442\u0435\u0440\u0438\u0438 HelpDesk",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 12,
+                "x": 0,
+                "y": 29
+            },
+            "hiddenSeries": false,
+            "id": 14,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u044b\u0435 \u043f\u043e\u0434\u043f\u0438\u0441\u0438, \u0442\u043e\u0440\u0433\u043e\u0432\u044b\u0435 \u043f\u043b\u043e\u0449\u0430\u0434\u043a\u0438 \u0438 \u0433\u043e\u0441. \u043f\u043e\u0440\u0442\u0430\u043b\u044b HelpDesk\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u042d\u043b\u0435\u043a\u0442\u0440\u043e\u043d\u043d\u044b\u0435 \u043f\u043e\u0434\u043f\u0438\u0441\u0438, \u0442\u043e\u0440\u0433\u043e\u0432\u044b\u0435 \u043f\u043b\u043e\u0449\u0430\u0434\u043a\u0438 \u0438 \u0433\u043e\u0441. \u043f\u043e\u0440\u0442\u0430\u043b\u044b HelpDesk",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 12,
+                "x": 12,
+                "y": 29
+            },
+            "hiddenSeries": false,
+            "id": 6,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u041f\u0440\u0435\u043c\u0438\u0443\u043c \u0413\u043e\u0441\u0441\u0438\u0441\u0442\u0435\u043c\u044b HelpDesk\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041f\u0440\u0435\u043c\u0438\u0443\u043c \u0413\u043e\u0441\u0441\u0438\u0441\u0442\u0435\u043c\u044b HelpDesk",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 12,
+                "x": 0,
+                "y": 34
+            },
+            "hiddenSeries": false,
+            "id": 9,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 SabyGet HelpDesk\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 SabyGet HelpDesk",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u043a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u043c \u0447\u0430\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "sumSeries(aliasByTags(seriesByTag('script=53076084_done.py', 'name=tasks_done', 'department=\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f'), 'person'), person)"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0412\u0441\u0435\u0433\u043e"
+                            },
+                            {
+                                "id": "links",
+                                "value": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 12,
+                "x": 12,
+                "y": 34
+            },
+            "hiddenSeries": false,
+            "id": 10,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_person",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "person",
+                    "queryText": "query{\n            records(\n            script: \"helpdesk_chats.py\",\n            group: \"\u041f\u0440\u0435\u043c\u0438\u0443\u043c RPS\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            person\n            done\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041f\u0440\u0435\u043c\u0438\u0443\u043c RPS",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:66",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:67",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "scripts",
+        "staff"
+    ],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-30d",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "HelpDesk. \u041a\u043b\u0438\u0435\u043d\u0442\u0441\u043a\u0438\u0435 \u0447\u0430\u0442\u044b",
+    "uid": "6S-Dewcnz",
+    "version": 36
+}

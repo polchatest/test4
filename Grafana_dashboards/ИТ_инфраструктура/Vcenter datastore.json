@@ -1,0 +1,529 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041b\u044b\u043a\u043e\u0432 \u041d.\u041c. (\u0410\u0426\u041e\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 1318,
+    "iteration": 1647533944361,
+    "links": [
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "keepTime": true,
+            "tags": [
+                "vmware"
+            ],
+            "type": "dashboards"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 10 ESXi \u0445\u043e\u0441\u0442\u043e\u0432 \u043f\u043e \u0441\u0440\u0435\u0434\u043d\u0435\u0439 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u043f\u0440\u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u044f\u0445 \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u0430 \u0434\u0438\u0441\u043a\u043e\u0432\u0443\u044e \u043f\u043e\u0434\u0441\u0438\u0441\u0442\u0435\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 31,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "highestCurrent(aliasByTags(groupByTags(seriesByTag('dsname=~${dsname:regex}', 'name=service.vcenter.totalWriteLatency_average', 'vcenter=$vcenter'), 'max', 'dsname'), 'dsname'), 10)",
+                    "textEditor": true
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Datastore Write Latency (Top 10)",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:45972",
+                    "format": "ms",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:45973",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 10 ESXi \u0445\u043e\u0441\u0442\u043e\u0432 \u043f\u043e \u0441\u0440\u0435\u0434\u043d\u0435\u0439 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u043f\u0440\u0438 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u044f\u0445 \u0447\u0442\u0435\u043d\u0438\u044f \u043d\u0430 \u0434\u0438\u0441\u043a\u043e\u0432\u0443\u044e \u043f\u043e\u0434\u0441\u0438\u0441\u0442\u0435\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 29,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "highestCurrent(aliasByTags(groupByTags(seriesByTag('dsname=~${dsname:regex}', 'name=service.vcenter.totalReadLatency_average', 'vcenter=$vcenter'), 'max', 'dsname'), 'dsname'), 10)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Datastore Read Latency (Top 10)",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:46116",
+                    "format": "ms",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:46117",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 10 ESXi \u0445\u043e\u0441\u0442\u043e\u0432 \u043f\u043e \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0443 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 \u0437\u0430\u043f\u0438\u0441\u0438 \u043d\u0430 \u0434\u0438\u0441\u043a\u043e\u0432\u0443\u044e \u043f\u043e\u0434\u0441\u0438\u0441\u0442\u0435\u043c\u0443",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 41,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "highestCurrent(aliasByTags(groupByTags(seriesByTag('dsname=~${dsname:regex}', 'name=service.vcenter.numberWriteAveraged_average', 'vcenter=$vcenter'), 'max', 'dsname'), 'dsname'), 10)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Datastore Write IOPS (Top 10)",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:46260",
+                    "format": "iops",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:46261",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 10 ESXi \u0445\u043e\u0441\u0442\u043e\u0432 \u043f\u043e \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0443 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 \u0447\u0442\u0435\u043d\u0438\u044f \u0441 \u0434\u0438\u0441\u043a\u043e\u0432\u043e\u0439 \u043f\u043e\u0434\u0441\u0438\u0441\u0442\u0435\u043c\u044b",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 42,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "highestCurrent(aliasByTags(groupByTags(seriesByTag('dsname=~${dsname:regex}', 'name=service.vcenter.numberReadAveraged_average', 'vcenter=$vcenter'), 'max', 'dsname'), 'dsname'), 10)",
+                    "textEditor": true
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Datastore Read IOPS (Top 10)",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:46404",
+                    "format": "iops",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:46405",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "telegraf",
+        "vmware",
+        "Virtualization",
+        "system"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "s076vc50.corp.tensor.ru",
+                    "value": "s076vc50.corp.tensor.ru"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(vcenter)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "vcenter",
+                "options": [],
+                "query": "tag_values(vcenter)",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(dsname, vcenter=~$vcenter)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": false,
+                "name": "dsname",
+                "options": [],
+                "query": "tag_values(dsname, vcenter=~$vcenter)",
+                "refresh": 1,
+                "regex": "/(.*vstor.*|.*vmfs.*)/i",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "20s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "Vcenter datastore",
+    "uid": "KI1LdsbGz",
+    "version": 20
+}

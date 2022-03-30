@@ -1,0 +1,322 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041a\u0440\u0430\u043b\u0438\u043d \u0410.\u0415. (\u0421\u041f\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1314,
+    "iteration": 1637329073186,
+    "links": [
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "tags": [
+                "dts",
+                "network"
+            ],
+            "type": "dashboards"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 11,
+            "panels": [],
+            "repeat": "device",
+            "title": "$device",
+            "type": "row"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0420\u043e\u043b\u044c \u0432 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u0435 VPC",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "text": "unknown"
+                                },
+                                "1": {
+                                    "text": "primary, operational secondary"
+                                },
+                                "2": {
+                                    "text": "primary"
+                                },
+                                "3": {
+                                    "text": "secondary, operational primary"
+                                },
+                                "4": {
+                                    "text": "secondary"
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "noValue": "no data",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 2
+                            },
+                            {
+                                "color": "red",
+                                "value": 3
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 4
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 4,
+                "x": 0,
+                "y": 1
+            },
+            "id": 23,
+            "maxDataPoints": 1,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 1,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('device=$device', 'name=system.vpc.role'), 'name')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Last State",
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0413\u0440\u0430\u0444\u0438\u043a \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u0438\u044f \u0440\u043e\u043b\u0438 \u0432 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u0435 VPC",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 0,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 20,
+                "x": 4,
+                "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 24,
+            "interval": "1m",
+            "legend": {
+                "avg": false,
+                "current": false,
+                "hideEmpty": false,
+                "hideZero": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 2,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 1,
+                    "refId": "A",
+                    "target": "alias(seriesByTag('device=$device', 'name=system.vpc.role'), 'VPC role:    1 - primary, 2 - secondary, 3 - primary, operational secondary, 4 - secondary, operational primary')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": " ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:469",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "5",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:470",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "dts",
+        "network",
+        "system",
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": [
+                        "dts-sw1-core-ea1",
+                        "dts-sw2-core-ea1"
+                    ],
+                    "value": [
+                        "dts-sw1-core-ea1",
+                        "dts-sw2-core-ea1"
+                    ]
+                },
+                "datasource": "Tagged",
+                "definition": "tag_values(device, model=nexus)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "device",
+                "options": [],
+                "query": "tag_values(device, model=nexus)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u0421\u0435\u0442\u0435\u0432\u043e\u0435 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435: Nexus VPC",
+    "uid": "ncGxAN1Gk",
+    "version": 10
+}

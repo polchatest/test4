@@ -1,0 +1,1000 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041a\u0440\u0430\u043b\u0438\u043d \u0410.\u0415. (\u0421\u041f\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1573,
+    "iteration": 1637325748168,
+    "links": [
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "includeVars": true,
+            "keepTime": true,
+            "tags": [
+                "dts",
+                "aci"
+            ],
+            "title": "ACI Dashboards",
+            "type": "dashboards"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u044c \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u044f \u0444\u0430\u0431\u0440\u0438\u043a\u0438 \u0432 \u0446\u0435\u043b\u043e\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 15,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 34,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "alias(seriesByTag('name=aci_fabric_health', 'aci=$fabric'), 'Fabric')"
+                }
+            ],
+            "thresholds": [
+                {
+                    "$$hashKey": "object:1384",
+                    "colorMode": "warning",
+                    "fill": false,
+                    "line": true,
+                    "op": "lt",
+                    "value": 90,
+                    "yaxis": "left"
+                },
+                {
+                    "$$hashKey": "object:1470",
+                    "colorMode": "critical",
+                    "fill": false,
+                    "line": true,
+                    "op": "lt",
+                    "value": 80,
+                    "yaxis": "left"
+                }
+            ],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Health",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1281",
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "100",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1282",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0422\u0435\u043a\u0443\u0449\u0435\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043f\u043e\u043a\u0430\u0437\u0430\u0442\u0435\u043b\u044f \u0437\u0434\u043e\u0440\u043e\u0432\u044c\u044f \u0444\u0430\u0431\u0440\u0438\u043a\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "noValue": "N/A",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "grey",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 0
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 80
+                            },
+                            {
+                                "color": "green",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 3,
+                "x": 15,
+                "y": 0
+            },
+            "id": 2,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "alias(seriesByTag('name=aci_fabric_health', 'aci=$fabric'), 'Fabric')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Health",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0432\u0441\u0435\u0445 \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u0439 \u043d\u0430 \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0439 \u0444\u0430\u0431\u0440\u0438\u043a\u0435",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": null,
+                        "displayMode": "auto",
+                        "filterable": false
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "text": "evaluation"
+                                },
+                                "1": {
+                                    "text": "evaluation-expired"
+                                },
+                                "2": {
+                                    "text": "auth-expired"
+                                },
+                                "3": {
+                                    "text": "in-compliance"
+                                },
+                                "4": {
+                                    "text": "out-of-compliance"
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "noValue": "N/A",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-red",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 3
+                            },
+                            {
+                                "color": "semi-dark-red",
+                                "value": 4
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Max"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 6,
+                "x": 18,
+                "y": 0
+            },
+            "id": 33,
+            "options": {
+                "showHeader": false
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('name=aci_license_item.authStatus', 'aci=$fabric'), '_name')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0421\u0442\u0430\u0442\u0443\u0441\u044b \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u0439",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {}
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u0442\u0430\u0442\u0443\u0441 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0430 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u0439, \u0440\u0435\u0433\u0438\u0441\u0442\u0440\u0430\u0446\u0438\u0438 \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u0439",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "text": "evaluation"
+                                },
+                                "1": {
+                                    "text": "evaluation-expired"
+                                },
+                                "2": {
+                                    "text": "auth-expired"
+                                },
+                                "3": {
+                                    "text": "in-compliance"
+                                },
+                                "4": {
+                                    "text": "out-of-compliance"
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "noValue": "N/A",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            },
+                            {
+                                "color": "green",
+                                "value": 3
+                            },
+                            {
+                                "color": "red",
+                                "value": 4
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "operState"
+                        },
+                        "properties": [
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "red",
+                                            "value": null
+                                        },
+                                        {
+                                            "color": "green",
+                                            "value": 1
+                                        },
+                                        {
+                                            "color": "red",
+                                            "value": 2
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "mappings",
+                                "value": [
+                                    {
+                                        "options": {
+                                            "0": {
+                                                "text": "down"
+                                            },
+                                            "1": {
+                                                "text": "up"
+                                            },
+                                            "2": {
+                                                "text": "auth-expired"
+                                            },
+                                            "3": {
+                                                "text": "id-cert-expired"
+                                            },
+                                            "4": {
+                                                "text": "id-cert-expired-warning"
+                                            }
+                                        },
+                                        "type": "value"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "registerState"
+                        },
+                        "properties": [
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "red",
+                                            "value": null
+                                        },
+                                        {
+                                            "color": "green",
+                                            "value": 1
+                                        },
+                                        {
+                                            "color": "red",
+                                            "value": 2
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "mappings",
+                                "value": [
+                                    {
+                                        "options": {
+                                            "0": {
+                                                "text": "unregistered"
+                                            },
+                                            "1": {
+                                                "text": "registered"
+                                            },
+                                            "2": {
+                                                "text": "registering"
+                                            },
+                                            "3": {
+                                                "text": "register-failure"
+                                            },
+                                            "4": {
+                                                "text": "unregister-failure"
+                                            }
+                                        },
+                                        "type": "value"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 9,
+                "x": 15,
+                "y": 4
+            },
+            "id": 17,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('name=~aci_license_fabric.*', 'aci=$fabric'), 1)"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u041e\u0431\u0449\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441 \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0444\u0430\u0431\u0440\u0438\u043a\u0438",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0424\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432 \u0444\u0430\u0431\u0440\u0438\u043a\u0438 \u0432 % \u043e\u0442 \u043b\u0438\u043c\u0438\u0442\u0430.",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": null,
+                        "displayMode": "auto",
+                        "filterable": false
+                    },
+                    "mappings": [],
+                    "noValue": "N/A",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "grey",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 0
+                            },
+                            {
+                                "color": "semi-dark-yellow",
+                                "value": 75
+                            },
+                            {
+                                "color": "semi-dark-red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043e %"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "percentunit"
+                            },
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 13,
+                "w": 12,
+                "x": 0,
+                "y": 8
+            },
+            "id": 37,
+            "options": {
+                "frameIndex": 10,
+                "showHeader": true
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('aci=$fabric', 'name=~aci_resource_.*')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432 \u0444\u0430\u0431\u0440\u0438\u043a\u0438",
+            "transformations": [
+                {
+                    "id": "labelsToFields",
+                    "options": {
+                        "valueLabel": "name"
+                    }
+                },
+                {
+                    "id": "merge",
+                    "options": {}
+                },
+                {
+                    "id": "groupBy",
+                    "options": {
+                        "fields": {
+                            "aci_resource_cap": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            },
+                            "aci_resource_used": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            },
+                            "type": {
+                                "aggregations": [],
+                                "operation": "groupby"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "calculateField",
+                    "options": {
+                        "alias": "",
+                        "binary": {
+                            "left": "aci_resource_used (lastNotNull)",
+                            "operator": "/",
+                            "reducer": "sum",
+                            "right": "aci_resource_cap (lastNotNull)"
+                        },
+                        "mode": "binary",
+                        "reduce": {
+                            "reducer": "sum"
+                        },
+                        "replaceFields": false
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {},
+                        "renameByName": {
+                            "aci_resource_cap (lastNotNull)": "\u041b\u0438\u043c\u0438\u0442",
+                            "aci_resource_used (lastNotNull)": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043e",
+                            "aci_resource_used (lastNotNull) / aci_resource_cap (lastNotNull)": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043e %",
+                            "type": "\u0420\u0435\u0441\u0443\u0440\u0441"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u043b\u0435\u0440\u043e\u0432 \u0444\u0430\u0431\u0440\u0438\u043a\u0438 \u0441 \u0442\u043e\u0447\u043a\u0438 \u0437\u0440\u0435\u043d\u0438\u044f \u043e\u0441\u0442\u0430\u043b\u044c\u043d\u044b\u0445 \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u043b\u0435\u0440\u043e\u0432 \u044d\u0442\u043e\u0439 \u0436\u0435 \u0444\u0430\u0431\u0440\u0438\u043a\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": null,
+                        "displayMode": "auto",
+                        "filterable": false
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "red",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "adminSt"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background"
+                            },
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "semi-dark-red",
+                                            "value": null
+                                        },
+                                        {
+                                            "color": "semi-dark-green",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "mappings",
+                                "value": [
+                                    {
+                                        "options": {
+                                            "1": {
+                                                "text": "out-of-service"
+                                            },
+                                            "2": {
+                                                "text": "in-service"
+                                            }
+                                        },
+                                        "type": "value"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "health"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background"
+                            },
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "semi-dark-red",
+                                            "value": null
+                                        },
+                                        {
+                                            "color": "semi-dark-green",
+                                            "value": 255
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "mappings",
+                                "value": [
+                                    {
+                                        "options": {
+                                            "0": {
+                                                "text": "not-created"
+                                            },
+                                            "1": {
+                                                "text": "never-known"
+                                            },
+                                            "111": {
+                                                "text": "data-layer-entirely-diverged"
+                                            },
+                                            "112": {
+                                                "text": "data-layer-partially-diverged"
+                                            },
+                                            "121": {
+                                                "text": "data-layer-entirely-degraded-leadership"
+                                            },
+                                            "122": {
+                                                "text": "data-layer-partially-degraded-leadership"
+                                            },
+                                            "2": {
+                                                "text": "unknown-now"
+                                            },
+                                            "254": {
+                                                "text": "data-layer-synchronization-in-progress"
+                                            },
+                                            "255": {
+                                                "text": "fully-fit"
+                                            }
+                                        },
+                                        "type": "value"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "operSt"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background"
+                            },
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "semi-dark-red",
+                                            "value": null
+                                        },
+                                        {
+                                            "color": "semi-dark-green",
+                                            "value": 3
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "mappings",
+                                "value": [
+                                    {
+                                        "options": {
+                                            "1": {
+                                                "text": "unregistered"
+                                            },
+                                            "2": {
+                                                "text": "unavailable"
+                                            },
+                                            "3": {
+                                                "text": "available"
+                                            }
+                                        },
+                                        "type": "value"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 13,
+                "w": 12,
+                "x": 12,
+                "y": 8
+            },
+            "id": 41,
+            "options": {
+                "showHeader": true
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('aci=$fabric', 'name=~aci_controller_health.*', 'observer!=')",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u0421\u0442\u0430\u0442\u0443\u0441 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u0430",
+            "transformations": [
+                {
+                    "id": "labelsToFields",
+                    "options": {
+                        "valueLabel": "name"
+                    }
+                },
+                {
+                    "id": "merge",
+                    "options": {}
+                },
+                {
+                    "id": "groupBy",
+                    "options": {
+                        "fields": {
+                            "aci_controller_health.adminSt": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            },
+                            "aci_controller_health.health": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            },
+                            "aci_controller_health.operSt": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            },
+                            "apic": {
+                                "aggregations": [],
+                                "operation": "groupby"
+                            },
+                            "observer": {
+                                "aggregations": [],
+                                "operation": "groupby"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "renameByRegex",
+                    "options": {
+                        "regex": ".*\\.(.*)\\s.*",
+                        "renamePattern": "$1"
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {
+                            "adminSt": 2,
+                            "apic": 1,
+                            "health": 3,
+                            "observer": 0,
+                            "operSt": 4
+                        },
+                        "renameByName": {}
+                    }
+                },
+                {
+                    "id": "sortBy",
+                    "options": {
+                        "fields": {},
+                        "sort": [
+                            {
+                                "field": "observer"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "type": "table"
+        }
+    ],
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "dts",
+        "aci",
+        "system",
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(aci)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "fabric",
+                "options": [],
+                "query": "tag_values(aci)",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "\u0421\u0435\u0442\u0435\u0432\u043e\u0435 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435: ACI Fabric",
+    "uid": "DYRDLim7z",
+    "version": 12
+}

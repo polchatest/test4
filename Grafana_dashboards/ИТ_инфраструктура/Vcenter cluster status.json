@@ -1,0 +1,1375 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041b\u044b\u043a\u043e\u0432 \u041d.\u041c. (\u0410\u0426\u041e\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 675,
+    "iteration": 1648031871036,
+    "links": [
+        {
+            "icon": "external link",
+            "keepTime": true,
+            "tags": [
+                "telegraf",
+                "virtualization"
+            ],
+            "type": "dashboards"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 18,
+            "panels": [],
+            "title": "Cluster Status - $cluster_tag",
+            "type": "row"
+        },
+        {
+            "cacheTimeout": null,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0434\u043b\u044f \u0432c\u0435\u0445 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u043e\u0432 vcenter \u043f\u0440\u043e\u0446\u0435\u043d\u0442 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0440\u0430, \u0437\u0430\u043d\u044f\u0442\u043e\u0433\u043e \u00ab\u043f\u043e\u043b\u0435\u0437\u043d\u043e\u0439 \u0440\u0430\u0431\u043e\u0442\u043e\u0439\u00bb (\u0441\u0440\u0435\u0434\u043d\u0438\u0439 \u0437\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 \u00a020 \u0441\u0435\u043a)",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 2,
+                    "mappings": [
+                        {
+                            "options": {
+                                "match": "null",
+                                "result": {
+                                    "text": "N/A"
+                                }
+                            },
+                            "type": "special"
+                        }
+                    ],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "#299c46",
+                                "value": null
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "value": 80
+                            },
+                            {
+                                "color": "#d44a3a",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 0,
+                "y": 1
+            },
+            "hideTimeOverride": true,
+            "id": 24,
+            "links": [],
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "mean"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "repeatDirection": "h",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aggregate(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'cpu=instance-total', 'name=service.vcenter.usage_average', 'interval=20s'), 'average')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "CPU Usage",
+            "type": "stat"
+        },
+        {
+            "cacheTimeout": null,
+            "datasource": null,
+            "description": "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u0438\u0440\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0445 \u0441\u0435\u0440\u0432\u0435\u0440\u043e\u0432 vcenter \u0432\u0441\u0435\u0445 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "match": "null",
+                                "result": {
+                                    "text": "N/A"
+                                }
+                            },
+                            "type": "special"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 3,
+                "y": 1
+            },
+            "hideTimeOverride": true,
+            "id": 23,
+            "interval": null,
+            "links": [],
+            "maxDataPoints": "",
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "first"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aggregate($source.$cluster.*.*.*.*.*.*.$vcenter.*.interval-60s.usage_5Faverage, 'count')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "timeShift": null,
+            "title": "VM summary",
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "cacheTimeout": null,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0413\u0440\u0430\u0444\u0438\u043a \u0434\u0438\u043d\u0430\u043c\u0438\u043a\u0438 \u0441\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0433\u043e \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0440\u043e\u0432, \u0437\u0430\u043d\u044f\u0442\u043e\u0433\u043e \u00ab\u043f\u043e\u043b\u0435\u0437\u043d\u043e\u0439 \u0440\u0430\u0431\u043e\u0442\u043e\u0439\u00bb, \u0432\u0441\u0435\u0445 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u043e\u0432 vcenter",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 2,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 6,
+                "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 5,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "show": false,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 3,
+            "links": [],
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeat": null,
+            "repeatDirection": "h",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(aggregate(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'cpu=instance-total', 'name=service.vcenter.usage_average', 'interval=20s'), 'average'), '$cluster_tag')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Cluster CPU usage %",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1151",
+                    "decimals": 2,
+                    "format": "percent",
+                    "label": "Usage Average %",
+                    "logBase": 1,
+                    "max": "100",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1152",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "cacheTimeout": null,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u043f\u0440\u043e\u0446\u0435\u043d\u0442 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043e\u043f\u0435\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0439 \u043f\u0430\u043c\u044f\u0442\u0438 \u0432\u0441\u0435\u0445 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u043e\u0432 vcenter (\u0441\u0440\u0435\u0434\u043d\u0438\u0439 \u0437\u0430 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 \u00a020 \u0441\u0435\u043a)",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 2,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 15,
+                "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 19,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 3,
+            "links": [],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatDirection": "h",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(aggregate(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'cpu!=~${cpu_tag:regex}', 'interface!=~*', 'name=service.vcenter.usage_average', 'interval=20s'), 'average'), '$cluster_tag')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Cluster MEM Usage %",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1491",
+                    "decimals": 0,
+                    "format": "percent",
+                    "label": "Usage Average %",
+                    "logBase": 1,
+                    "max": "100",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1492",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "cacheTimeout": null,
+            "datasource": "carbon-short",
+            "description": "\u0413\u0440\u0430\u0444\u0438\u043a \u0434\u0438\u043d\u0430\u043c\u0438\u043a\u0438 \u0441\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0433\u043e \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043e\u043f\u0435\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0439 \u043f\u0430\u043c\u044f\u0442\u0438 \u0432\u0441\u0435\u0445 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u043e\u0432 vcenter",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 2,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 80
+                            },
+                            {
+                                "color": "red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 0,
+                "y": 6
+            },
+            "hideTimeOverride": true,
+            "id": 25,
+            "links": [],
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "mean"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "repeatDirection": "h",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aggregate(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'name=service.vcenter.usage_average', 'interval=20s', 'cpu!=~${cpu_tag:regex}', 'interface!=~*'), 'average')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "MEM Usage",
+            "type": "stat"
+        },
+        {
+            "cacheTimeout": null,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e ESXi \u0445\u043e\u0441\u0442\u043e\u0432 vcenter \u0432\u0441\u0435\u0445 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "match": "null",
+                                "result": {
+                                    "text": "N/A"
+                                }
+                            },
+                            "type": "special"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 3,
+                "x": 3,
+                "y": 6
+            },
+            "hideTimeOverride": true,
+            "id": 41,
+            "interval": null,
+            "links": [],
+            "maxDataPoints": "",
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "first"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aggregate(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'cpu=instance-total', 'name=service.vcenter.usage_average', 'interval=20s'), 'count')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "1h",
+            "timeShift": null,
+            "title": "ESXi Summary",
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "cacheTimeout": null,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0413\u0440\u0430\u0444\u0438\u043a \u0434\u0438\u043d\u0430\u043c\u0438\u043a\u0438 \u0441\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0433\u043e \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0441\u0435\u0442\u0438 \u0432\u0441\u0435\u0445 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u043e\u0432 vcenter",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 2,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 6,
+                "y": 6
+            },
+            "hiddenSeries": false,
+            "id": 26,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": false,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 3,
+            "links": [],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatDirection": "h",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:526",
+                    "alias": "/.*errors/",
+                    "transform": "negative-Y",
+                    "yaxis": 2
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(aggregate(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'interface=~instance-total', 'name=service.vcenter.usage_average', 'interval=20s'), 'sum'), '$cluster_tag')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasSub(aliasSub(sortByMaxima(aliasByTags(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'interface=~instance-total', 'name=~service.vcenter.errors.*_summation', 'interval=20s'), 'esxhostname', 'name')), 'corp.tensor.ru.service.vcenter.', ''), '_summation', '')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Cluster Network Usage / Errors",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1318",
+                    "format": "KBs",
+                    "label": "Usage Network MBps",
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1319",
+                    "format": "pps",
+                    "label": "Network Erros PPS",
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": true,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "cacheTimeout": null,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0413\u0440\u0430\u0444\u0438\u043a \u0434\u0438\u043d\u0430\u043c\u0438\u043a\u0438 \u0441\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0433\u043e \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 \u0432\u0432\u043e\u0434\u0430/\u0432\u044b\u0432\u043e\u0434\u0430 \u0434\u0438\u0441\u043a\u043e\u0432\u043e\u0439 \u043f\u043e\u0434\u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0432\u0441\u0435\u0445 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u043e\u0432 vcenter",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 2,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 15,
+                "y": 6
+            },
+            "hiddenSeries": false,
+            "id": 27,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": false,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 3,
+            "links": [],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatDirection": "h",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(aggregate(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'name=service.vcenter.commandsAveraged_average'), 'sum'), '$cluster_tag')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Cluster Storage IOPS",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1652",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1653",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 11
+            },
+            "id": 31,
+            "panels": [],
+            "title": "Datastore status",
+            "type": "row"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 2,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "orange",
+                                "value": 80
+                            },
+                            {
+                                "color": "red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 4,
+                "x": 0,
+                "y": 12
+            },
+            "hideTimeOverride": true,
+            "id": 33,
+            "maxPerRow": 6,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "repeat": "datastore_tag",
+            "repeatDirection": "h",
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "A",
+                    "target": "seriesByTag('vcenter=$vcenter_tag', 'dsname=~${datastore_tag:regex}', 'name=service.vcenter.capacity_latest', 'disk=instance-total')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "asPercent(seriesByTag('vcenter=$vcenter_tag', 'dsname=~${datastore_tag:regex}', 'name=service.vcenter.used_latest', 'disk=instance-total'), #A)",
+                    "targetFull": "asPercent(seriesByTag('vcenter=$vcenter_tag', 'dsname=~${datastore_tag:regex}', 'name=service.vcenter.used_latest', 'disk=instance-total'), seriesByTag('vcenter=$vcenter_tag', 'dsname=~${datastore_tag:regex}', 'name=service.vcenter.capacity_latest', 'disk=instance-total'))",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "3h",
+            "timeShift": null,
+            "title": "$datastore_tag",
+            "type": "gauge"
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 22
+            },
+            "id": 35,
+            "panels": [],
+            "title": "Hypervisor Status",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 10 ESXi \u0445\u043e\u0441\u0442\u043e\u0432 \u043f\u043e \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0443 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 0,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 8,
+                "x": 0,
+                "y": 23
+            },
+            "hiddenSeries": false,
+            "id": 37,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "highestCurrent(aliasByTags(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'cpu=instance-total', 'name=service.vcenter.usage_average', 'interval=20s'), 'esxhostname'), 10)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Hypervisor CPU (Top 10)",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:460",
+                    "format": "percent",
+                    "label": "CPU Usage Avg. %",
+                    "logBase": 1,
+                    "max": "100",
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:461",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 10 ESXi \u0445\u043e\u0441\u0442\u043e\u0432 \u043f\u043e \u0434\u0438\u043d\u0430\u043c\u0438\u043a\u0435 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0441\u0435\u0442\u0438 (\u041c\u0411/\u0441)",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 0,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 8,
+                "x": 8,
+                "y": 23
+            },
+            "hiddenSeries": false,
+            "id": 39,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": "max",
+                "sortDesc": false,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(highestCurrent(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'interface=~instance-total', 'name=service.vcenter.usage_average', 'interval=20s'), 10), 'esxhostname')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Hypervisor Net Usage",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:637",
+                    "format": "KBs",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:638",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 10 ESXi \u0445\u043e\u0441\u0442\u043e\u0432 \u043f\u043e \u043f\u0440\u043e\u0446\u0435\u043d\u0442\u0443 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043e\u043f\u0435\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0439 \u043f\u0430\u043c\u044f\u0442\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 0,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 8,
+                "x": 16,
+                "y": 23
+            },
+            "hiddenSeries": false,
+            "id": 38,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": false,
+                "max": false,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(highestCurrent(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'name=service.vcenter.usage_average', 'interval=20s', 'cpu!=~${cpu_tag:regex}', 'interface!=~*'), 10), 'esxhostname')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Hypervisor Memory",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:860",
+                    "format": "percent",
+                    "label": "Memory Usage Avg. %",
+                    "logBase": 1,
+                    "max": "100",
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:861",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "1m",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "telegraf",
+        "vmware",
+        "Virtualization",
+        "system"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "s076vc50.corp.tensor.ru",
+                    "value": "s076vc50.corp.tensor.ru"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(vcenter)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "vcenter",
+                "multi": false,
+                "name": "vcenter_tag",
+                "options": [],
+                "query": "tag_values(vcenter)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "U36CL01",
+                    "value": "U36CL01"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(clustername,vcenter=~${vcenter_tag})",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Cluster",
+                "multi": false,
+                "name": "cluster_tag",
+                "options": [],
+                "query": "tag_values(clustername,vcenter=~${vcenter_tag})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "s076vmk101.corp.tensor.ru",
+                    "value": "s076vmk101.corp.tensor.ru"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(esxhostname,clustername=~${cluster_tag})",
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": false,
+                "label": "esxi",
+                "multi": false,
+                "name": "esxi_tag",
+                "options": [],
+                "query": "tag_values(esxhostname,clustername=~${cluster_tag})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(dsname,clustername=~${cluster_tag})",
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": true,
+                "label": "datastore",
+                "multi": true,
+                "name": "datastore_tag",
+                "options": [],
+                "query": "tag_values(dsname,clustername=~${cluster_tag})",
+                "refresh": 1,
+                "regex": "/VSTOR|vstor/",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": [
+                        "All"
+                    ],
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(cpu,esxhostname=~${esxi_tag})",
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": true,
+                "label": "cpu",
+                "multi": true,
+                "name": "cpu_tag",
+                "options": [],
+                "query": "tag_values(cpu,esxhostname=~${esxi_tag})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-15m",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "Vcenter cluster status",
+    "uid": "rk6VrafZz",
+    "version": 211
+}

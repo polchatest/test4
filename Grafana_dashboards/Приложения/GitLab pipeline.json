@@ -1,0 +1,1459 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041e\u043a\u0443\u043d\u0435\u0432 \u0410.\u0421. (\u0410\u0426\u041e\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 1409,
+    "iteration": 1648203282531,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u043f\u0430\u0439\u043f\u043b\u0430\u0439\u043d\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-blue",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 0,
+                "y": 0
+            },
+            "id": 6,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "countSeries(seriesByTag('name=gitlab.pipeline_status', 'host=~${host:regex}', 'project=~${project:regex}'))"
+                }
+            ],
+            "title": "Pipelines",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "Success Pipelines",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 2,
+                "y": 0
+            },
+            "id": 28,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "countSeries(seriesByTag('name=gitlab.pipeline_status', 'status=success', 'host=~${host:regex}', 'project=~${project:regex}'))"
+                }
+            ],
+            "title": "Success",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "Filed Pipelines",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-red",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 4,
+                "y": 0
+            },
+            "id": 8,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "countSeries(seriesByTag('name=gitlab.pipeline_status', 'status=failed', 'host=~${host:regex}', 'project=~${project:regex}'))"
+                }
+            ],
+            "title": "Filed",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "Runs Pipelines",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-blue",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 6,
+                "y": 0
+            },
+            "id": 9,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "countSeries(seriesByTag('name=gitlab.pipeline_status', 'status=running', 'host=~${host:regex}', 'project=~${project:regex}'))"
+                }
+            ],
+            "title": "Runs",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "Skipped Pipelines",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-blue",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 8,
+                "y": 0
+            },
+            "id": 23,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "countSeries(seriesByTag('name=gitlab.pipeline_status', 'status=skipped', 'host=~${host:regex}', 'project=~${project:regex}'))"
+                }
+            ],
+            "title": "Skipped",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "Pending Pipelines",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-blue",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 10,
+                "y": 0
+            },
+            "id": 27,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "countSeries(seriesByTag('name=gitlab.pipeline_status', 'status=pending', 'host=~${host:regex}', 'project=~${project:regex}'))"
+                }
+            ],
+            "title": "Pending",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "Canceled Pipelines",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-blue",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 12,
+                "y": 0
+            },
+            "id": 24,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "countSeries(seriesByTag('name=gitlab.pipeline_status', 'status=canceled', 'host=~${host:regex}', 'project=~${project:regex}'))"
+                }
+            ],
+            "title": "Canceled",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u043c\u0435\u0442\u0440\u0438\u043a",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "center",
+                        "displayMode": "auto",
+                        "filterable": false
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": " Pipeline ID count "
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 124
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "URL"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 384
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 10,
+                "x": 14,
+                "y": 0
+            },
+            "id": 26,
+            "options": {
+                "showHeader": false,
+                "sortBy": []
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasSub(aliasSub(aliasByTags(groupByTags(seriesByTag('name=gitlab.pipeline_status', 'host=~${host:regex}', 'project=~${project:regex}'), 'count', 'url'), 'url'), '--', '//'), '-metrics', '/metrics')"
+                }
+            ],
+            "title": "URL",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "mode": "seriesToRows",
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {},
+                        "renameByName": {
+                            "Field": "URL",
+                            "Last (not null)": " Pipeline ID count "
+                        }
+                    }
+                }
+            ],
+            "transparent": true,
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "ID \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0433\u043e \u0437\u0430\u043f\u0443\u0449\u0435\u043d\u043d\u043e\u0433\u043e \u043f\u0430\u0439\u043f\u043b\u0430\u0439\u043d\u0430 \u043f\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u0443",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "center",
+                        "displayMode": "auto",
+                        "filterable": false
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "ID"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 135
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Project"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 293
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 6,
+                "x": 0,
+                "y": 4
+            },
+            "id": 17,
+            "options": {
+                "frameIndex": 1,
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": false,
+                        "displayName": "Project"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "sortByMinima(aliasByTags(seriesByTag('name=gitlab.pipeline_id', 'host=~${host:regex}', 'project=~${project:regex}'), 'project'))",
+                    "textEditor": false
+                }
+            ],
+            "title": "Pipeline ID",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "mode": "seriesToRows",
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {
+                            "Field": 0,
+                            "Last (not null)": 1
+                        },
+                        "renameByName": {
+                            "Field": "Project",
+                            "Last (not null)": "ID"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b-\u0432\u043e \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043d\u044b\u0445 \u043f\u0430\u0439\u043f\u043b\u0430\u0439\u043d\u043e\u0432 \u043f\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u0443",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "center",
+                        "displayMode": "auto",
+                        "filterable": false
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Project"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 282
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Pipeline  run count"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 142
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 6,
+                "x": 6,
+                "y": 4
+            },
+            "id": 11,
+            "options": {
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Pipeline  run count"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": false,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('name=gitlab.pipeline_run_count', 'host=~${host:regex}', 'project=~${project:regex}'), 'project')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Pipeline run count",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "mode": "seriesToRows",
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "sortBy",
+                    "options": {
+                        "fields": {},
+                        "sort": [
+                            {
+                                "desc": true,
+                                "field": "Last (not null)"
+                            }
+                        ]
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {},
+                        "renameByName": {
+                            "Field": "Project",
+                            "Last (not null)": "Pipeline  run count"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "Duration in seconds of the most recent pipeline",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "center",
+                        "displayMode": "auto",
+                        "filterable": false
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "s"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Duration"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 528
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Project"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 334
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Duration"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.displayMode",
+                                "value": "basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 4
+            },
+            "id": 13,
+            "options": {
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Duration"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "sortByMaxima(aliasByTags(seriesByTag('name=gitlab.pipeline_duration', 'host=~${host:regex}', 'project=~${project:regex}'), 'project'))",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Pipeline duration",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {},
+                        "renameByName": {
+                            "Field": "Project",
+                            "Last (not null)": "Duration"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432 \u0441 \u043d\u0435\u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u0441\u0442\u0430\u0442\u0443\u0441\u043e\u043c \u043f\u0430\u0439\u043f\u043b\u0430\u0439\u043d\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "center",
+                        "displayMode": "auto",
+                        "filterable": false
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-red",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "Misc"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Status"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background"
+                            },
+                            {
+                                "id": "color",
+                                "value": {
+                                    "mode": "thresholds"
+                                }
+                            },
+                            {
+                                "id": "custom.width",
+                                "value": 138
+                            },
+                            {
+                                "id": "custom.filterable",
+                                "value": true
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Project"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 295
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Ref"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 70
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Kind"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 70
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 11
+            },
+            "id": 18,
+            "options": {
+                "frameIndex": 1,
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": false,
+                        "displayName": "Project"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('name=gitlab.pipeline_status', 'status=~(canceled|failed|skipped|pending)', 'host=~${host:regex}', 'project=~${project:regex}'), 'project')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Skipped, failed, pending, canceled",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "mode": "reduceFields",
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "labelsToFields",
+                    "options": {}
+                },
+                {
+                    "id": "merge",
+                    "options": {}
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {
+                            "Value": true,
+                            "contur": true,
+                            "host": true,
+                            "interval": true,
+                            "name": true,
+                            "servertype": true,
+                            "url": true
+                        },
+                        "indexByName": {
+                            "Value": 4,
+                            "contur": 5,
+                            "host": 6,
+                            "interval": 7,
+                            "kind": 2,
+                            "name": 8,
+                            "project": 0,
+                            "ref": 1,
+                            "servertype": 9,
+                            "status": 3,
+                            "url": 10
+                        },
+                        "renameByName": {
+                            "kind": "Kind",
+                            "project": "Project",
+                            "ref": "Ref",
+                            "status": "Status"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432 \u0441 \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u043c \u0441\u0442\u0430\u0442\u0443\u0441\u043e\u043c \u043f\u0430\u0439\u043f\u043b\u0430\u0439\u043d\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "center",
+                        "displayMode": "auto",
+                        "filterable": false
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "Misc"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Status"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background"
+                            },
+                            {
+                                "id": "color",
+                                "value": {
+                                    "mode": "thresholds"
+                                }
+                            },
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "semi-dark-green",
+                                            "value": null
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "custom.width",
+                                "value": 138
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Ref"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 70
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Project"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 295
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Kind"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 70
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 8,
+                "y": 11
+            },
+            "id": 20,
+            "options": {
+                "frameIndex": 1,
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": false,
+                        "displayName": "Project"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('name=gitlab.pipeline_status', 'status=success', 'host=~${host:regex}', 'project=~${project:regex}'), 'project')"
+                }
+            ],
+            "title": "Successfully complited",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "mode": "reduceFields",
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "labelsToFields",
+                    "options": {}
+                },
+                {
+                    "id": "merge",
+                    "options": {}
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {
+                            "Value": true,
+                            "contur": true,
+                            "host": true,
+                            "interval": true,
+                            "name": true,
+                            "servertype": true,
+                            "url": true
+                        },
+                        "indexByName": {
+                            "Value": 4,
+                            "contur": 5,
+                            "host": 6,
+                            "interval": 7,
+                            "kind": 2,
+                            "name": 8,
+                            "project": 0,
+                            "ref": 1,
+                            "servertype": 9,
+                            "status": 3,
+                            "url": 10
+                        },
+                        "renameByName": {
+                            "kind": "Kind",
+                            "project": "Project",
+                            "ref": "Ref",
+                            "status": "Status"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432 \u0441 \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u044e\u0449\u0438\u043c\u0441\u044f \u043f\u0430\u0439\u043f\u043b\u0430\u0439\u043d\u043e\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "center",
+                        "displayMode": "auto",
+                        "filterable": false
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "blue",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "Misc"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Status"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background"
+                            },
+                            {
+                                "id": "color",
+                                "value": {
+                                    "mode": "thresholds"
+                                }
+                            },
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "semi-dark-blue",
+                                            "value": null
+                                        }
+                                    ]
+                                }
+                            },
+                            {
+                                "id": "custom.width",
+                                "value": 138
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Ref"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 70
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Project"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 295
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Kind"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 70
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 16,
+                "y": 11
+            },
+            "id": 29,
+            "options": {
+                "frameIndex": 1,
+                "showHeader": true,
+                "sortBy": []
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('name=gitlab.pipeline_status', 'status=running', 'host=~${host:regex}', 'project=~${project:regex}'), 'project')"
+                }
+            ],
+            "title": "Running",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "mode": "reduceFields",
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "labelsToFields",
+                    "options": {}
+                },
+                {
+                    "id": "merge",
+                    "options": {}
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {
+                            "Value": true,
+                            "contur": true,
+                            "host": true,
+                            "interval": true,
+                            "name": true,
+                            "servertype": true,
+                            "url": true
+                        },
+                        "indexByName": {
+                            "Value": 4,
+                            "contur": 5,
+                            "host": 6,
+                            "interval": 7,
+                            "kind": 2,
+                            "name": 8,
+                            "project": 0,
+                            "ref": 1,
+                            "servertype": 9,
+                            "status": 3,
+                            "url": 10
+                        },
+                        "renameByName": {
+                            "kind": "Kind",
+                            "project": "Project",
+                            "ref": "Ref",
+                            "status": "Status"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "GitLab",
+        "service",
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": "",
+                "current": {
+                    "selected": true,
+                    "tags": [],
+                    "text": [
+                        "All"
+                    ],
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(host, servertype = gitlab)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "host",
+                "options": [],
+                "query": "tag_values(host, servertype = gitlab)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "tags": [],
+                    "text": [
+                        "All"
+                    ],
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(project, host=$host)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "project",
+                "options": [],
+                "query": "tag_values(project, host=$host)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-5m",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "GitLab pipeline",
+    "uid": "V9BxqNXGk",
+    "version": 26
+}

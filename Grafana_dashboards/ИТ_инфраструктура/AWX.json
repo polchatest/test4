@@ -1,0 +1,1560 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0417\u0430\u0431\u0440\u043e\u0434\u0438\u043d \u0410.\u041d. (\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 827,
+    "iteration": 1636984974868,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": "carbon-short",
+            "description": "\u0422\u0435\u043a\u0443\u0449\u0430\u044f \u0432\u0435\u0440\u0441\u0438\u044f AWX",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "light-blue",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 4,
+                "x": 0,
+                "y": 0
+            },
+            "id": 2,
+            "links": [],
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "/^Field$/",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('job=awx', 'instance=$awx_address', 'name=prometheus_remote_write.awx_instance_info'), 'version')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "AWX version",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                }
+            ],
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b-\u0432\u043e \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u044e\u0449\u0438\u0445 POD'\u043e\u0432 AWX",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 1
+                            },
+                            {
+                                "color": "green",
+                                "value": 2
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 3,
+                "x": 4,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "id": 6,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "consolidateBy(aggregate(seriesByTag('name=prometheus_remote_write.awx_instance_info', 'instance=$awx_address'), 'sum'), 'max')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "timeShift": null,
+            "title": "Backends",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 7,
+                "y": 0
+            },
+            "id": 13,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_projects_total', 'instance=$awx_address')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Projects",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0448\u0430\u0431\u043b\u043e\u043d\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 9,
+                "y": 0
+            },
+            "id": 22,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_job_templates_total', 'instance=$awx_address')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Templates",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u043a\u043e\u043c\u0430\u043d\u0434 (\u043f\u043e\u0434\u0440\u0430\u0437\u0434\u0435\u043b\u0435\u043d\u0438\u0439) \u0441\u043e \u0441\u0432\u044f\u0437\u0430\u043d\u043d\u044b\u043c\u0438 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f\u043c\u0438, \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c\u0438 \u0438 \u0443\u0447\u0435\u0442\u043d\u044b\u043c\u0438 \u0434\u0430\u043d\u043d\u044b\u043c\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 11,
+                "y": 0
+            },
+            "id": 12,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_teams_total', 'instance=$awx_address')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Teams",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e workflow \u0448\u0430\u0431\u043b\u043e\u043d\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 13,
+                "y": 0
+            },
+            "id": 17,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_workflow_job_templates_total', 'instance=$awx_address')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Workflow",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e\u00a0\u0433\u0440\u0443\u043f\u043f \u0441 \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u043c\u044b\u043c\u0438 \u0445\u043e\u0441\u0442\u0430\u043c\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 15,
+                "y": 0
+            },
+            "id": 29,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_inventories_total', 'instance=$awx_address')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Inventories",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u043e\u0440\u0433\u0430\u043d\u0438\u0437\u0430\u0446\u0438\u0439, \u0432\u043a\u043b\u044e\u0447\u0430\u044e\u0449\u0438\u0445 \u0432 \u0441\u0435\u0431\u044f \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439, \u043a\u043e\u043c\u0430\u043d\u0434, \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432 \u0438 \u0433\u0440\u0443\u043f\u043f \u0443\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u043c\u044b\u0445 \u0445\u043e\u0441\u0442\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 17,
+                "y": 0
+            },
+            "id": 10,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_organizations_total', 'instance=$awx_address')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Organizations",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0437\u0430\u043f\u0443\u0449\u0435\u043d\u043d\u044b\u0445 \u0437\u0430\u0434\u0430\u0447",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 60,
+                    "min": 0,
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 50
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 0,
+                "y": 4
+            },
+            "id": 23,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "consolidateBy(transformNull(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_running_jobs_total', 'instance=$awx_address'), 0), 'last')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Total jobs running",
+            "type": "gauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "Current number of events in redis queue",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 12,
+                "x": 3,
+                "y": 4
+            },
+            "id": 31,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(consolidateBy(seriesByTag('job=awx', 'name=prometheus_remote_write.callback_receiver_events_queue_size_redis', 'instance=$awx_address'), 'last'), 'node')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Current redis queue",
+            "type": "gauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439 \u0441\u0438\u0441\u0442\u0435\u043c\u044b",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 15,
+                "y": 4
+            },
+            "id": 28,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_users_total', 'instance=$awx_address')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Users",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0437\u0430\u0434\u0430\u0447, \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0435\u043c\u044b\u0445 \u043f\u043e \u0440\u0430\u0441\u043f\u0438\u0441\u0430\u043d\u0438\u044e",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 17,
+                "y": 4
+            },
+            "id": 30,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_schedules_total', 'instance=$awx_address')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Schedules",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043d\u044b\u0445 \u0437\u0430\u0434\u0430\u0447",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 8,
+                "x": 3,
+                "y": 8
+            },
+            "id": 21,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_status_total', 'instance=$awx_address', 'status=successful')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Total jobs successful",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0431\u0435\u0437\u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043d\u044b\u0445 \u0437\u0430\u0434\u0430\u0447",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 0
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 8,
+                "x": 11,
+                "y": 8
+            },
+            "id": 20,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_status_total', 'instance=$awx_address', 'status=failed')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Total jobs failed",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u043d\u0435\u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043d\u044b\u0445 \u0437\u0430\u0434\u0430\u0447",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 60,
+                    "min": 0,
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 50
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 0,
+                "y": 10
+            },
+            "id": 24,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "transformNull(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_pending_jobs_total', 'instance=$awx_address'), 0)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Total jobs pending",
+            "type": "gauge"
+        },
+        {
+            "activePatternIndex": 6,
+            "datasource": "carbon-short",
+            "defaultPattern": {
+                "bgColors": "green|orange|red",
+                "bgColors_overrides": "0->green|2->red|1->yellow",
+                "clickable_cells_link": "",
+                "col_name": "",
+                "decimals": 2,
+                "defaultBGColor": "transparent",
+                "defaultTextColor": "",
+                "delimiter": ".",
+                "displayTemplate": "",
+                "enable_bgColor": false,
+                "enable_bgColor_overrides": false,
+                "enable_clickable_cells": false,
+                "enable_textColor": false,
+                "enable_textColor_overrides": false,
+                "enable_time_based_thresholds": false,
+                "enable_transform": false,
+                "enable_transform_overrides": false,
+                "filter": {
+                    "value_above": "",
+                    "value_below": ""
+                },
+                "format": "none",
+                "name": "Default Pattern",
+                "null_color": "darkred",
+                "null_textcolor": "black",
+                "null_value": "No data",
+                "pattern": "*",
+                "row_col_wrapper": "_",
+                "row_name": "",
+                "textColors": "red|orange|green",
+                "textColors_overrides": "0->red|2->green|1->yellow",
+                "thresholds": "70,90",
+                "time_based_thresholds": [],
+                "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                "transform_values": "_value_|_value_|_value_",
+                "transform_values_overrides": "0->down|1->up",
+                "valueName": "avg"
+            },
+            "default_title_for_rows": "Backend node",
+            "description": "Stats for failed and successful jobs per node",
+            "gridPos": {
+                "h": 5,
+                "w": 16,
+                "x": 3,
+                "y": 13
+            },
+            "hideTimeOverride": true,
+            "hide_first_column": false,
+            "hide_headers": false,
+            "id": 27,
+            "maxDataPoints": "5",
+            "patterns": [
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "Jobs success",
+                    "decimals": "0",
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "_value_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Jobs success",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "No data",
+                    "pattern": ".*success.*",
+                    "row_col_wrapper": "_",
+                    "row_name": "_1_",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "current"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "Jobs fail",
+                    "decimals": "0",
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "_value_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Jobs fail",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "No data",
+                    "pattern": ".*failed.*",
+                    "row_col_wrapper": "_",
+                    "row_name": "_1_",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "current"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "Jobs waiting",
+                    "decimals": "0",
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "_value_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Jobs waiting",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "0",
+                    "pattern": ".*waiting.*",
+                    "row_col_wrapper": "_",
+                    "row_name": "_1_",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "current"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "Jobs running",
+                    "decimals": "0",
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "_value_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Jobs running",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "0",
+                    "pattern": ".*running.*",
+                    "row_col_wrapper": "_",
+                    "row_name": "_1_",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "current"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "Capacity remaining",
+                    "decimals": "0",
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Ramaining capacity",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "No data",
+                    "pattern": ".*remain.*",
+                    "row_col_wrapper": "_",
+                    "row_name": "_1_",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "current"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0.00->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "Capacity consumed",
+                    "decimals": "0",
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "_value_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": true,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Consumed capacity",
+                    "null_color": "",
+                    "null_textcolor": "green",
+                    "null_value": "0",
+                    "pattern": ".*consum.*",
+                    "row_col_wrapper": "_",
+                    "row_name": "_1_",
+                    "textColors": "green|orange|red",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "20,40",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "current"
+                }
+            ],
+            "pluginVersion": "7.0.3",
+            "row_col_wrapper": "_",
+            "sorting_props": {
+                "col_index": 1,
+                "direction": "asc"
+            },
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "consolidateBy(aliasByTags(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_instance_remaining_capacity', 'instance=$awx_address'), 0, 'hostname'), 'last')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "consolidateBy(aliasByTags(transformNull(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_instance_consumed_capacity', 'instance=$awx_address'), 0), 0, 'hostname'), 'last')"
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "consolidateBy(aliasByTags(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_instance_status_total', 'status=successful', 'instance=$awx_address'), 'status', 'node'), 'last')"
+                },
+                {
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "consolidateBy(aliasByTags(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_instance_status_total', 'status=failed', 'instance=$awx_address'), 'status', 'node'), 'last')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "G",
+                    "target": "consolidateBy(aliasByTags(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_instance_status_total', 'status=running', 'instance=$awx_address'), 'status', 'node'), 'last')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "consolidateBy(aliasByTags(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_instance_status_total', 'status=canceled', 'instance=$awx_address'), 'status', 'node'), 'last')"
+                }
+            ],
+            "text_alignment_firstcolumn": "center",
+            "text_alignment_header": "center",
+            "text_alignment_values": "center",
+            "timeFrom": "5m",
+            "timeShift": "1m",
+            "title": "Backend stats",
+            "transformations": [],
+            "type": "yesoreyeram-boomtable-panel"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "NO INFO IN NEW AWX",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 60,
+                    "min": 0,
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 50
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 0,
+                "y": 16
+            },
+            "id": 25,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "last"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('job=awx', 'name=prometheus_remote_write.awx_status_total', 'instance=$awx_address', 'status=waiting')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Total jobs waiting",
+            "type": "gauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b-\u0432\u043e \u043e\u0442\u043a\u0440\u044b\u0442\u044b\u0445 \u0441\u0435\u0430\u043d\u0441\u043e\u0432 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439 (\u0412\u0441\u0435/\u0410\u043d\u043e\u043d\u0438\u043c\u043d\u044b\u0435/\u0410\u0432\u0442\u043e\u0440\u0438\u0437\u043e\u0432\u0430\u043d\u043d\u044b\u0435)",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 8,
+                "x": 3,
+                "y": 18
+            },
+            "id": 8,
+            "options": {
+                "displayMode": "gradient",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "expr": "awx_users_total",
+                    "format": "time_series",
+                    "hide": false,
+                    "instant": true,
+                    "interval": "",
+                    "intervalFactor": 1,
+                    "legendFormat": "Total",
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_users_total', 'instance=$awx_address'), 'total')",
+                    "textEditor": false
+                },
+                {
+                    "expr": "count(awx_sessions_total{type=\"user\"})",
+                    "format": "time_series",
+                    "hide": false,
+                    "instant": true,
+                    "interval": "",
+                    "legendFormat": "Users",
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_sessions_total', 'instance=$awx_address'), 'type')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Total users / Online users",
+            "type": "bargauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b-\u0432\u043e\u00a0\u0443\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u043c\u044b\u0445 \u0445\u043e\u0441\u0442\u043e\u0432 (\u0412\u0441\u0435\u0433\u043e/\u0410\u043a\u0442\u0438\u0432\u043d\u044b\u0445)",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 8,
+                "x": 11,
+                "y": 18
+            },
+            "id": 16,
+            "options": {
+                "displayMode": "gradient",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "expr": "awx_users_total",
+                    "format": "time_series",
+                    "hide": false,
+                    "instant": true,
+                    "interval": "",
+                    "intervalFactor": 1,
+                    "legendFormat": "Total",
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('job=awx', 'name=prometheus_remote_write.awx_hosts_total', 'instance=$awx_address'), 'type')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Inventory hosts",
+            "type": "bargauge"
+        }
+    ],
+    "refresh": "10s",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "telegraf",
+        "service"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "csr-awx.sbis.ru",
+                    "value": "csr-awx.sbis.ru"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(instance, job=awx)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "awx_address",
+                "options": [],
+                "query": "tag_values(instance, job=awx)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-6h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "AWX",
+    "uid": "xtAJ1WHGz",
+    "version": 46
+}

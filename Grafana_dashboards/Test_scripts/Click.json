@@ -1,0 +1,150 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: -",
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1594,
+    "iteration": 1628511507836,
+    "links": [],
+    "panels": [
+        {
+            "datasource": "carbon-short",
+            "description": "Total amount of memory (bytes) allocated by the server.",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 10,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "graph": false,
+                            "legend": false,
+                            "tooltip": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": true
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 0,
+                "y": 0
+            },
+            "id": 2,
+            "options": {
+                "graph": {},
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom"
+                },
+                "tooltipOptions": {
+                    "mode": "multi"
+                }
+            },
+            "pluginVersion": "7.4.0",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('host=$instance', 'name=clickhouse_metrics.memory_tracking'), 'host')",
+                    "textEditor": true
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Memory",
+            "type": "timeseries"
+        }
+    ],
+    "schemaVersion": 27,
+    "style": "dark",
+    "tags": [
+        "test_scripts",
+        "telegraf",
+        "system"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "css-operator-ch1.unix.tensor.ru",
+                    "value": "css-operator-ch1.unix.tensor.ru"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(host,name=clickhouse_asynchronous_metrics.number_of_databases)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Node",
+                "multi": false,
+                "name": "instance",
+                "options": [],
+                "query": "tag_values(host,name=clickhouse_asynchronous_metrics.number_of_databases)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Click",
+    "uid": "EkKpfPZnz",
+    "version": 6
+}

@@ -1,0 +1,1120 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041a\u0440\u0430\u043b\u0438\u043d \u0410.\u0415. (\u0421\u041f\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1470,
+    "iteration": 1645795327177,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "LA \u0437\u0430 1, 5 \u0438 15 \u043c\u0438\u043d\u0443\u0442",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 10,
+                "w": 9,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 21,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:4258",
+                    "alias": "CPUs",
+                    "dashes": true,
+                    "fill": 0,
+                    "legend": false
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "queryType": "randomWalk",
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "sortByName(aliasByTags(seriesByTag('host=$server', 'name=~system\\.system\\.load\\d+'), 2), true)"
+                },
+                {
+                    "hide": false,
+                    "queryType": "randomWalk",
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(seriesByTag('host=$server', 'name=system.system.n_cpus'), 'CPUs')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Load average",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:400",
+                    "decimals": 2,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:401",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0423\u0441\u043f\u0435\u0448\u043d\u043e\u0441\u0442\u044c \u043f\u0438\u043d\u0433\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "text": "No data"
+                                },
+                                "1": {
+                                    "text": "OK"
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-red",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 9,
+                "y": 0
+            },
+            "id": 24,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "max"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "alias(seriesByTag('host=$server', 'name=system.ping'), 'ping')"
+                }
+            ],
+            "title": "Agent",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u043e\u0441\u043d\u043e\u0432\u043d\u044b\u0445 systemd-\u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432 \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": null,
+                        "displayMode": "color-background",
+                        "filterable": false
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "text": "down"
+                                },
+                                "1": {
+                                    "text": "up"
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-red",
+                                "value": 0
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 5,
+                "x": 11,
+                "y": 0
+            },
+            "id": 16,
+            "options": {
+                "showHeader": true
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('host=$server', 'name=systemd.service.state'), '_name')"
+                },
+                {
+                    "hide": false,
+                    "queryType": "randomWalk",
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('host=$server', 'name=~procstat\\..*\\.running'), 1)"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "seriesToRows",
+                    "options": {}
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0423\u0442\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u043c\u0435\u0441\u0442\u0430 \u043d\u0430 \u0434\u0438\u0441\u043a\u043e\u0432\u044b\u0445 \u0440\u0430\u0437\u0434\u0435\u043b\u0430\u0445",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 80
+                            },
+                            {
+                                "color": "red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 8,
+                "x": 16,
+                "y": 0
+            },
+            "id": 18,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom"
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "aliasSub(sortByName(aliasByTags(seriesByTag('host=$server', 'name=system.disk.used_percent'), 'path'), false), '-', '/')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Disk capacity used",
+            "transformations": [],
+            "type": "timeseries"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0410\u043f\u0442\u0430\u0439\u043c \u0441\u0435\u0440\u0432\u0435\u0440\u0430 \u0432 \u0446\u0435\u043b\u043e\u043c (\u041e\u0421)",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-red",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-yellow",
+                                "value": 1
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 86400
+                            }
+                        ]
+                    },
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 2,
+                "x": 9,
+                "y": 4
+            },
+            "id": 25,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "alias(seriesByTag('host=$server', 'name=system.system.uptime'), 'uptime')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Uptime",
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0423\u0442\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u0434\u0438\u0441\u043a\u043e\u0432 (\u043f\u043e \u0432\u0440\u0435\u043c\u0435\u043d\u0438)",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 8,
+                "x": 16,
+                "y": 7
+            },
+            "hiddenSeries": false,
+            "id": 26,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": false,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "sortByMaxima(aliasByTags(scale(perSecond(seriesByTag('host=$server', 'name=system.diskio.io_time')), 0.1), '_name'))"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Disk I/O time utilization",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:81",
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:82",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0423\u0442\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u0441\u0435\u0442\u0435\u0432\u043e\u0433\u043e \u043f\u043e\u0440\u0442\u0430 (\u0432 \u0431\u0438\u0442\u0430\u0445/\u0441\u0435\u043a)",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "bps"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 7,
+                "x": 9,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 17,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "aliasSub(scale(perSecond(seriesByTag('host=$server', 'name=~system\\.net\\.bytes_.*', 'interface=$interface')), 8), '.*(sent|recv).*', '\\1')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Network traffic rate",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:587",
+                    "format": "bps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:588",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0423\u0442\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u044f CPU \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0433\u043e \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 9,
+                "x": 0,
+                "y": 10
+            },
+            "hiddenSeries": false,
+            "id": 14,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "alias(seriesByTag('host=$server', 'name=system.cpu.usage_active', 'cpu=cpu-total'), 'CPU')"
+                }
+            ],
+            "thresholds": [
+                {
+                    "$$hashKey": "object:4501",
+                    "colorMode": "critical",
+                    "fill": false,
+                    "line": true,
+                    "op": "gt",
+                    "value": 90,
+                    "yaxis": "left"
+                },
+                {
+                    "$$hashKey": "object:4507",
+                    "colorMode": "warning",
+                    "fill": false,
+                    "line": true,
+                    "op": "gt",
+                    "value": 60,
+                    "yaxis": "left"
+                }
+            ],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "CPU",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:400",
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "100",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:401",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "bosun-grafana7-datasource",
+            "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u0438\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u043e\u0432 \u043f\u043e \u0441\u0435\u0440\u0432\u0435\u0440\u0443",
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 16,
+                "y": 14
+            },
+            "id": 11,
+            "options": {
+                "actionsPanel": {
+                    "counters": true,
+                    "downloadDoc": true,
+                    "enabled": true,
+                    "filters": true,
+                    "multiAction": true,
+                    "pagination": {
+                        "enabled": false,
+                        "rowsPerPage": 50
+                    },
+                    "silence": true,
+                    "userSettings": true
+                },
+                "groupByTag": {
+                    "enabled": false,
+                    "tag": "vision"
+                },
+                "incidentsTable": {
+                    "actualActionsPopup": true,
+                    "enabled": true,
+                    "pagination": {
+                        "enabled": true,
+                        "rowsPerPage": 50
+                    }
+                },
+                "modal": {
+                    "defaultMessages": {
+                        "enabled": false
+                    },
+                    "previousIncidentsLimit": {
+                        "enabled": true,
+                        "limit": 10
+                    },
+                    "quickMessages": {
+                        "enabled": true,
+                        "messages": []
+                    }
+                }
+            },
+            "pluginVersion": "7.4.0",
+            "targets": [
+                {
+                    "refId": "A",
+                    "requestFilter": "filter=hasTag:tag1=$server"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0418\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b",
+            "type": "bosun-grafana7-panel"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0423\u0442\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u0441\u0435\u0442\u0435\u0432\u043e\u0433\u043e \u043f\u043e\u0440\u0442\u0430 (\u0432 \u043f\u0430\u043a\u0435\u0442\u0430\u0445/\u0441\u0435\u043a)",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "pps"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 7,
+                "x": 9,
+                "y": 15
+            },
+            "hiddenSeries": false,
+            "id": 19,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "aliasSub(perSecond(seriesByTag('host=$server', 'name=~system\\.net\\.packets_.*', 'interface=$interface')), '.*(sent|recv).*', '\\1')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Network packet rate",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:587",
+                    "format": "pps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:588",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0423\u0442\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u044f RAM",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 10,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 1,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 60
+                            },
+                            {
+                                "color": "semi-dark-red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 9,
+                "x": 0,
+                "y": 17
+            },
+            "id": 15,
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "lastNotNull",
+                        "min",
+                        "mean",
+                        "max"
+                    ],
+                    "displayMode": "table",
+                    "placement": "bottom"
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(seriesByTag('host=$server', 'name=system.mem.used_percent'), 'RAM ')"
+                },
+                {
+                    "hide": false,
+                    "queryType": "randomWalk",
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(seriesByTag('host=$server', 'name=system.swap.used_percent'), 'swap')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Memory",
+            "type": "timeseries"
+        }
+    ],
+    "refresh": "5m",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "dts",
+        "system",
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "dts-mon-col1-tensor.mgmt.tensor.ru",
+                    "value": "dts-mon-col1-tensor.mgmt.tensor.ru"
+                },
+                "datasource": "short-tagged",
+                "definition": "tag_values(host, host=~.*(dts|pcidss).*)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "server",
+                "options": [],
+                "query": "tag_values(host, host=~.*(dts|pcidss).*)",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "eth0",
+                    "value": "eth0"
+                },
+                "datasource": "short-tagged",
+                "definition": "tag_values(interface, host=$server, interface=~(eth|bond|en|tun))",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "interface",
+                "options": [],
+                "query": "tag_values(interface, host=$server, interface=~(eth|bond|en|tun))",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "\u0421\u0435\u0442\u0435\u0432\u043e\u0435 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435: \u0421\u043b\u0443\u0436\u0435\u0431\u043d\u044b\u0435 \u0441\u0435\u0440\u0432\u0435\u0440\u044b Linux",
+    "uid": "tBcinbqGz",
+    "version": 23
+}

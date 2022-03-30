@@ -1,0 +1,937 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": false,
+                "hide": false,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "limit": 100,
+                "name": "Annotations & Alerts",
+                "showIn": 0,
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: -",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 23,
+    "iteration": 1643691473119,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 20 \u043f\u043e \u043d\u0430\u0433\u0440\u0443\u0437\u043a\u0435 \u0426\u041f\u0423 \u043d\u0430 \u0433\u0438\u043f\u0435\u0440\u0432\u0438\u0437\u043e\u0440\u0430\u0445 vcenter",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "axisSoftMax": 100,
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "links": [],
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 13,
+                "w": 11,
+                "x": 0,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "id": 1,
+            "links": [],
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "mean",
+                        "lastNotNull",
+                        "max"
+                    ],
+                    "displayMode": "hidden",
+                    "placement": "right"
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByNode(aliasByTags(highestMax(seriesByTag('cpu=instance-total', 'contur=prod', 'name=service.vcenter.usage_average', 'esxhostname=~(ea1|s076vmk|prod-bc|prod-esxi).*', 'interval=20s'), 20), 'esxhostname'), 0)",
+                    "textEditor": true
+                }
+            ],
+            "timeFrom": "30m",
+            "timeShift": null,
+            "title": "cpu usage (top 20)",
+            "type": "timeseries"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "auto",
+                        "displayMode": "auto"
+                    },
+                    "mappings": [],
+                    "noValue": "\u041f\u0440\u0435\u0432\u044b\u0448\u0435\u043d\u0438\u044f \u043d\u0435\u0442",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Metric"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0421\u0435\u0440\u0432\u0435\u0440"
+                            },
+                            {
+                                "id": "unit",
+                                "value": "short"
+                            },
+                            {
+                                "id": "decimals",
+                                "value": 2
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": null
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Last *"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "percent"
+                            },
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background-solid"
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": null
+                            },
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "rgba(50, 172, 45, 0.97)",
+                                            "value": null
+                                        },
+                                        {
+                                            "color": "rgba(237, 129, 40, 0.89)",
+                                            "value": 80
+                                        },
+                                        {
+                                            "color": "rgba(245, 54, 54, 0.9)",
+                                            "value": 90
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 13,
+                "w": 4,
+                "x": 11,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "id": 6,
+            "links": [],
+            "options": {
+                "showHeader": false,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Last *"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByNode(currentAbove(aliasByTags(highestMax(seriesByTag('cpu=instance-total', 'contur=prod', 'name=service.vcenter.usage_average', 'esxhostname=~(ea1|s076vmk|prod-bc|prod-esxi).*', 'interval=20s'), 20), 'esxhostname'), 70), 0)",
+                    "textEditor": true
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "cpu usage ( > 70% )",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 20 \u043f\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044e \u043f\u0430\u043c\u044f\u0442\u0438 \u043d\u0430 \u0433\u0438\u043f\u0435\u0440\u0432\u0438\u0437\u043e\u0440\u0430\u0445 vcenter",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "links": [],
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 13,
+                "w": 5,
+                "x": 15,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "id": 5,
+            "links": [],
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "lastNotNull",
+                        "min"
+                    ],
+                    "displayMode": "hidden",
+                    "placement": "right"
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByNode(highestMax(aliasByTags(seriesByTag('esxhostname=~(ea1|s076vmk|prod-bc|prod-esxi).*', 'name=service.vcenter.usage_average', 'cpu!=~*', 'interface!=~*', 'vmname!=~*'), 'esxhostname'), 20), 0)",
+                    "textEditor": true
+                }
+            ],
+            "timeFrom": "30m",
+            "timeShift": null,
+            "title": "mem usage (top 20)",
+            "type": "timeseries"
+        },
+        {
+            "columns": [
+                {
+                    "$$hashKey": "object:6333",
+                    "text": "Current",
+                    "value": "current"
+                }
+            ],
+            "datasource": "carbon-short",
+            "fontSize": "130%",
+            "gridPos": {
+                "h": 13,
+                "w": 4,
+                "x": 20,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "id": 7,
+            "links": [],
+            "pageSize": null,
+            "scroll": true,
+            "showHeader": true,
+            "sort": {
+                "col": 1,
+                "desc": true
+            },
+            "styles": [
+                {
+                    "$$hashKey": "object:1033",
+                    "alias": "\u0421\u0435\u0440\u0432\u0435\u0440",
+                    "align": "auto",
+                    "colorMode": null,
+                    "colors": [
+                        "rgba(245, 54, 54, 0.9)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(50, 172, 45, 0.97)"
+                    ],
+                    "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                    "decimals": 2,
+                    "pattern": "Metric",
+                    "thresholds": [],
+                    "type": "number",
+                    "unit": "short"
+                },
+                {
+                    "$$hashKey": "object:1034",
+                    "alias": "",
+                    "align": "auto",
+                    "colorMode": "row",
+                    "colors": [
+                        "rgba(50, 172, 45, 0.97)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(245, 54, 54, 0.9)"
+                    ],
+                    "decimals": null,
+                    "pattern": "Current",
+                    "thresholds": [
+                        "90",
+                        " 95"
+                    ],
+                    "type": "number",
+                    "unit": "percent"
+                }
+            ],
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByNode(currentAbove(highestMax(sbis3mon.prod.vcenter.common.*.vcenter.*.mem.{ea1,s076vmk,prod-bc,prod-esxi}*.$domain.usage, 20), 85), -5)",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByNode(currentAbove(highestMax(aliasByTags(seriesByTag('esxhostname=~(ea1|s076vmk|prod-bc).*', 'name=service.vcenter.usage_average', 'cpu!=~*', 'interface!=~*', 'vmname!=~*'), 'esxhostname'), 20), 85), 0)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "mem usage ( >85% )",
+            "transform": "timeseries_aggregations",
+            "type": "table-old"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0417\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u0447\u0442\u0435\u043d\u0438\u044f \u0432 \u0445\u0440\u0430\u043d\u0438\u043b\u0438\u0449\u0435 \u0434\u0430\u043d\u043d\u044b\u0445 vcenter",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": true,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "links": [],
+                    "mappings": [],
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "ms"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 13,
+                "w": 8,
+                "x": 0,
+                "y": 13
+            },
+            "hideTimeOverride": true,
+            "id": 8,
+            "links": [],
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "lastNotNull",
+                        "min"
+                    ],
+                    "displayMode": "hidden",
+                    "placement": "right"
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(highestMax(groupByTags(seriesByTag('vcenter=s076vc50.corp.tensor.ru', 'dsname=~.*', 'name=service.vcenter.totalReadLatency_average'), 'max', 'dsname'), 20), 'dsname')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "30m",
+            "timeShift": null,
+            "title": "\u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u043d\u0430 \u0421\u0425\u0414 (\u0447\u0442\u0435\u043d\u0438\u0435)",
+            "type": "timeseries"
+        },
+        {
+            "cacheTimeout": "",
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "auto",
+                        "displayMode": "auto"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Metric"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0425\u0440\u0430\u043d\u0438\u043b\u0438\u0449\u0435"
+                            },
+                            {
+                                "id": "unit",
+                                "value": "short"
+                            },
+                            {
+                                "id": "decimals",
+                                "value": 2
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": null
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Current"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "ms"
+                            },
+                            {
+                                "id": "decimals",
+                                "value": 2
+                            },
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background"
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": null
+                            },
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "rgba(50, 172, 45, 0.97)",
+                                            "value": null
+                                        },
+                                        {
+                                            "color": "rgba(237, 129, 40, 0.89)",
+                                            "value": 300
+                                        },
+                                        {
+                                            "color": "rgba(245, 54, 54, 0.9)",
+                                            "value": 500
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 13,
+                "w": 4,
+                "x": 8,
+                "y": 13
+            },
+            "hideTimeOverride": true,
+            "id": 9,
+            "links": [],
+            "options": {
+                "showHeader": true
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(highestMax(currentAbove(groupByTags(seriesByTag('vcenter=s076vc50.corp.tensor.ru', 'dsname=~.*', 'name=service.vcenter.totalReadLatency_average'), 'max', 'dsname'), 100), 20), 'dsname')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "30m",
+            "title": "\u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u0421\u0425\u0414 ( \u0447\u0442\u0435\u043d\u0438\u0435>100ms )",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0417\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u0437\u0430\u043f\u0438\u0441\u0438 \u0432 \u0445\u0440\u0430\u043d\u0438\u043b\u0438\u0449\u0435 \u0434\u0430\u043d\u043d\u044b\u0445 vcenter",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "links": [],
+                    "mappings": [],
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "ms"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 13,
+                "w": 8,
+                "x": 12,
+                "y": 13
+            },
+            "hideTimeOverride": true,
+            "id": 10,
+            "links": [],
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "lastNotNull",
+                        "min"
+                    ],
+                    "displayMode": "hidden",
+                    "placement": "right"
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(highestMax(groupByTags(seriesByTag('vcenter=s076vc50.corp.tensor.ru', 'dsname=~.*', 'name=service.vcenter.totalWriteLatency_average'), 'max', 'dsname'), 20), 'dsname')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "30m",
+            "timeShift": null,
+            "title": "\u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u0421\u0425\u0414 (\u0437\u0430\u043f\u0438\u0441\u044c)",
+            "type": "timeseries"
+        },
+        {
+            "cacheTimeout": "",
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "auto",
+                        "displayMode": "auto"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Metric"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0425\u0440\u0430\u043d\u0438\u043b\u0438\u0449\u0435"
+                            },
+                            {
+                                "id": "unit",
+                                "value": "short"
+                            },
+                            {
+                                "id": "decimals",
+                                "value": 2
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": null
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Current"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "ms"
+                            },
+                            {
+                                "id": "decimals",
+                                "value": 2
+                            },
+                            {
+                                "id": "custom.displayMode",
+                                "value": "color-background"
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": null
+                            },
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "rgba(50, 172, 45, 0.97)",
+                                            "value": null
+                                        },
+                                        {
+                                            "color": "rgba(237, 129, 40, 0.89)",
+                                            "value": 300
+                                        },
+                                        {
+                                            "color": "rgba(245, 54, 54, 0.9)",
+                                            "value": 500
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 13,
+                "w": 4,
+                "x": 20,
+                "y": 13
+            },
+            "hideTimeOverride": true,
+            "id": 11,
+            "links": [],
+            "options": {
+                "showHeader": true
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(highestMax(currentAbove(groupByTags(seriesByTag('vcenter=s076vc50.corp.tensor.ru', 'dsname=~.*', 'name=service.vcenter.totalWriteLatency_average'), 'max', 'dsname'), 100), 20), 'dsname')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "30m",
+            "title": "\u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u0421\u0425\u0414 ( \u0437\u0430\u043f\u0438\u0441\u044c>100ms )",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "reducers": [
+                            "last"
+                        ]
+                    }
+                }
+            ],
+            "type": "table"
+        }
+    ],
+    "refresh": "30s",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "esxi",
+        "TV",
+        "telegraf",
+        "tv3",
+        "Virtualization",
+        "service"
+    ],
+    "templating": {
+        "list": [
+            {
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "label": null,
+                "name": "domain",
+                "query": "*.tensor.ru",
+                "skipUrlSync": false,
+                "type": "constant"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-30m",
+        "to": "now"
+    },
+    "timepicker": {
+        "hidden": false,
+        "refresh_intervals": [
+            "30s",
+            "1m",
+            "5m"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u041f\u0427 \u0426\u041e\u0414: \u041a\u043e\u043d\u0442\u0440\u043e\u043b\u044c \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u044f \u0432\u0438\u0440\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0445 \u043f\u043b\u0430\u0442\u0444\u043e\u0440\u043c",
+    "uid": "OiJFwUkik",
+    "version": 67
+}

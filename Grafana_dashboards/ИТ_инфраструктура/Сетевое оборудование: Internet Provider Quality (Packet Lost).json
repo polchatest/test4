@@ -1,0 +1,227 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041a\u0440\u0430\u043b\u0438\u043d \u0410.\u0415. (\u0421\u041f\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 1305,
+    "iteration": 1637327362394,
+    "links": [
+        {
+            "$$hashKey": "object:353",
+            "icon": "external link",
+            "tags": [
+                "internet",
+                "dts"
+            ],
+            "type": "dashboards"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0413\u0440\u0430\u0444\u0438\u043a \u043f\u043e\u0442\u0435\u0440\u044c \u043f\u0430\u043a\u0435\u0442\u043e\u0432 (\u0432 %) \u0434\u043e \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0445 \u0446\u0435\u043b\u0435\u0439 \u0447\u0435\u0440\u0435\u0437 \u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440\u0430 $Provider.\n\n\u0412 \u043b\u0435\u0433\u0435\u043d\u0434\u0435 \u043e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442\u0441\u044f \u0443\u0441\u0440\u0435\u0434\u043d\u0435\u043d\u043d\u043e\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043f\u043e\u0442\u0435\u0440\u044c. \u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0435\u0442, \u0435\u0441\u0442\u044c \u043b\u0438 \u043f\u0440\u043e\u0431\u043b\u0435\u043c\u044b \u0441 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u043e\u043c \u043a\u0430\u043d\u0430\u043b\u0430 \u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440\u0430 \u0432 \u0446\u0435\u043b\u043e\u043c.",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 0,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 12,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 2,
+            "interval": "1m",
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": false,
+                "max": true,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "sideWidth": null,
+                "sort": null,
+                "sortDesc": null,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "maxPerRow": 2,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeat": "Provider",
+            "repeatDirection": "h",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:283",
+                    "alias": "/^(?!Average).*/",
+                    "legend": false
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(averageSeries(seriesByTag('provider=$Provider ', 'name=ping.p_lost')), 'Average packet loss')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('provider=$Provider ', 'name=ping.p_lost'), 'url')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$Provider",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:3191",
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "100",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:3192",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "dts",
+        "internet",
+        "network",
+        "system",
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "All",
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(provider, host=dts-gnom1-isp.unix.tensor.ru)",
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "Provider",
+                "options": [],
+                "query": "tag_values(provider, host=dts-gnom1-isp.unix.tensor.ru)",
+                "refresh": 1,
+                "regex": "^(Beeline|ER-Telecom|TransTelecom|RosTelecom)$",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u0421\u0435\u0442\u0435\u0432\u043e\u0435 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435: Internet Provider Quality (Packet Lost)",
+    "uid": "UADBaQAMz",
+    "version": 10
+}

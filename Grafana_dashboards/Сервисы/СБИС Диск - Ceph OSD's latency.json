@@ -1,0 +1,758 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0431\u0437\u043e\u0440 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u0430 Ceph. \u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0413\u0440\u043e\u0448\u0435\u0432 \u0410.\u041d. (\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": 7056,
+    "graphTooltip": 2,
+    "id": 791,
+    "iteration": 1643793368849,
+    "links": [
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "tags": [
+                "ceph"
+            ],
+            "title": "\u0414\u0440\u0443\u0433\u043e\u0435 \u043f\u0440\u043e ceph",
+            "type": "dashboards"
+        },
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "includeVars": false,
+            "keepTime": false,
+            "tags": [
+                "sbisdisk"
+            ],
+            "targetBlank": false,
+            "title": "\u0414\u0440\u0443\u0433\u043e\u0435 \u043f\u0440\u043e \u0421\u0411\u0418\u0421\u0414\u0438\u0441\u043a",
+            "tooltip": "",
+            "type": "dashboards",
+            "url": ""
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 40,
+            "panels": [],
+            "repeat": null,
+            "title": "LATENCY",
+            "type": "row"
+        },
+        {
+            "cards": {
+                "cardPadding": null,
+                "cardRound": null
+            },
+            "color": {
+                "cardColor": "#b4ff00",
+                "colorScale": "sqrt",
+                "colorScheme": "interpolateOranges",
+                "exponent": 0.5,
+                "mode": "opacity"
+            },
+            "dataFormat": "timeseries",
+            "datasource": "carbon-short",
+            "description": "\u0420\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u043f\u043e \u0434\u0438\u0441\u043a\u0430\u043c (\u0441 \u0443\u0447\u0435\u0442\u043e\u043c \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439)",
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 1
+            },
+            "heatmap": {},
+            "hideZeroBuckets": false,
+            "highlightCards": true,
+            "id": 83,
+            "legend": {
+                "show": true
+            },
+            "links": [],
+            "reverseYBuckets": false,
+            "targets": [
+                {
+                    "expr": "ceph_osd_apply_latency_ms{cluster='$cluster'}",
+                    "format": "time_series",
+                    "hide": true,
+                    "instant": false,
+                    "interval": "$interval",
+                    "intervalFactor": 1,
+                    "refCount": -1,
+                    "refId": "A",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "B",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "divideSeriesLists(#A,#B)",
+                    "targetFull": "divideSeriesLists(sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false),sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false))",
+                    "textEditor": false
+                }
+            ],
+            "title": "OSD Apply Latency Distribution",
+            "tooltip": {
+                "show": true,
+                "showHistogram": false
+            },
+            "type": "heatmap",
+            "xAxis": {
+                "show": true
+            },
+            "xBucketNumber": null,
+            "xBucketSize": "60s",
+            "yAxis": {
+                "decimals": null,
+                "format": "ns",
+                "logBase": 2,
+                "max": null,
+                "min": "0",
+                "show": true,
+                "splitFactor": 1
+            },
+            "yBucketBound": "auto",
+            "yBucketNumber": null,
+            "yBucketSize": 10
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0417\u0430\u0434\u0435\u0440\u0436\u043a\u0430 \u0434\u0438\u0441\u043a\u043e\u0432 \u0441 \u0443\u0447\u0435\u0442\u043e\u043c \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 117,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": "max",
+                "sortDesc": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null as zero",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": 1,
+                    "refId": "E",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 1,
+                    "refId": "A",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasSub(aliasByTags(divideSeriesLists(#E, #A), 'host', 'ceph_daemon'), '.unix.tensor.ru.', '/')",
+                    "targetFull": "aliasSub(aliasByTags(divideSeriesLists(sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false), sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)), 'host', 'ceph_daemon'), '.unix.tensor.ru.', '/')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "OSD apply latency (including queue time)",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:307",
+                    "format": "ns",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:308",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "cards": {
+                "cardPadding": null,
+                "cardRound": null
+            },
+            "color": {
+                "cardColor": "#65c5db",
+                "colorScale": "sqrt",
+                "colorScheme": "interpolateOranges",
+                "exponent": 0.5,
+                "mode": "opacity"
+            },
+            "dataFormat": "timeseries",
+            "datasource": "carbon-short",
+            "description": "\u0420\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u0434\u0438\u0441\u043a\u043e\u0432 (\u0431\u0435\u0437 \u0443\u0447\u0435\u0442\u0430 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439)",
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 9
+            },
+            "heatmap": {},
+            "hideZeroBuckets": false,
+            "highlightCards": true,
+            "id": 84,
+            "legend": {
+                "show": true
+            },
+            "links": [],
+            "reverseYBuckets": false,
+            "targets": [
+                {
+                    "expr": "ceph_osd_commit_latency_ms{cluster='$cluster'}",
+                    "format": "time_series",
+                    "hide": true,
+                    "instant": false,
+                    "interval": "$interval",
+                    "intervalFactor": 1,
+                    "refCount": -1,
+                    "refId": "A",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_process_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "B",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "divideSeriesLists(#A,#B)",
+                    "targetFull": "divideSeriesLists(sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_process_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false),sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false))"
+                }
+            ],
+            "title": "OSD Commit Latency Distribution",
+            "tooltip": {
+                "show": true,
+                "showHistogram": false
+            },
+            "type": "heatmap",
+            "xAxis": {
+                "show": true
+            },
+            "xBucketNumber": null,
+            "xBucketSize": "60s",
+            "yAxis": {
+                "decimals": null,
+                "format": "ns",
+                "logBase": 2,
+                "max": null,
+                "min": "0",
+                "show": true,
+                "splitFactor": null
+            },
+            "yBucketBound": "auto",
+            "yBucketNumber": null,
+            "yBucketSize": null
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0417\u0430\u0434\u0435\u0440\u0436\u043a\u0430 \u043f\u043e \u0434\u0438\u0441\u043a\u0430\u043c (\u0431\u0435\u0437 \u0443\u0447\u0435\u0442\u0430 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439)",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 9
+            },
+            "hiddenSeries": false,
+            "id": 118,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": "avg",
+                "sortDesc": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null as zero",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": 1,
+                    "refId": "E",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_process_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 1,
+                    "refId": "A",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasSub(aliasByTags(divideSeriesLists(#E, #A), 'host', 'ceph_daemon'), '.unix.tensor.ru.', '/')",
+                    "targetFull": "aliasSub(aliasByTags(divideSeriesLists(sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_process_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false), sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)), 'host', 'ceph_daemon'), '.unix.tensor.ru.', '/')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "OSD commit latency (excluding queue time)",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:307",
+                    "format": "ns",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:308",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "cards": {
+                "cardPadding": null,
+                "cardRound": null
+            },
+            "color": {
+                "cardColor": "#f9934e",
+                "colorScale": "sqrt",
+                "colorScheme": "interpolateOranges",
+                "exponent": 0.5,
+                "mode": "opacity"
+            },
+            "dataFormat": "timeseries",
+            "datasource": "carbon-short",
+            "description": "\u0420\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u043f\u043e \u0434\u0438\u0441\u043a\u0430\u043c \u043f\u0440\u0438 \u0437\u0430\u043f\u0438\u0441\u0438",
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 17
+            },
+            "heatmap": {},
+            "hideZeroBuckets": false,
+            "highlightCards": true,
+            "id": 86,
+            "legend": {
+                "show": true
+            },
+            "links": [],
+            "reverseYBuckets": false,
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "A",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_w_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "B",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_w', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "divideSeriesLists(#A, #B)",
+                    "targetFull": "divideSeriesLists(sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_w_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false), sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_w', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false))"
+                }
+            ],
+            "title": "OSD Write Op Latency Distribution",
+            "tooltip": {
+                "show": true,
+                "showHistogram": false
+            },
+            "type": "heatmap",
+            "xAxis": {
+                "show": true
+            },
+            "xBucketNumber": null,
+            "xBucketSize": "60s",
+            "yAxis": {
+                "decimals": 2,
+                "format": "ns",
+                "logBase": 2,
+                "max": null,
+                "min": "0",
+                "show": true,
+                "splitFactor": null
+            },
+            "yBucketBound": "auto",
+            "yBucketNumber": null,
+            "yBucketSize": null
+        },
+        {
+            "cards": {
+                "cardPadding": null,
+                "cardRound": null
+            },
+            "color": {
+                "cardColor": "#806eb7",
+                "colorScale": "sqrt",
+                "colorScheme": "interpolateOranges",
+                "exponent": 0.5,
+                "mode": "opacity"
+            },
+            "dataFormat": "timeseries",
+            "datasource": "carbon-short",
+            "description": "\u0420\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u043f\u043e \u0434\u0438\u0441\u043a\u0430\u043c \u043f\u0440\u0438 \u0447\u0442\u0435\u043d\u0438\u0438",
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 17
+            },
+            "heatmap": {},
+            "hideZeroBuckets": false,
+            "highlightCards": true,
+            "id": 85,
+            "legend": {
+                "show": true
+            },
+            "links": [],
+            "reverseYBuckets": false,
+            "targets": [
+                {
+                    "expr": "rate(ceph_osd_op_r_latency_sum{cluster=\"$cluster\"}[5m]) / rate(ceph_osd_op_r_latency_count{cluster=\"$cluster\"}[5m]) >= 0",
+                    "format": "time_series",
+                    "hide": true,
+                    "instant": false,
+                    "interval": "$interval",
+                    "intervalFactor": 1,
+                    "refCount": -1,
+                    "refId": "A",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_r_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "B",
+                    "target": "sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_r', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "sortByName(divideSeriesLists(#A, #B), true, false)",
+                    "targetFull": "sortByName(divideSeriesLists(sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_r_latency', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false), sortByName(derivative(seriesByTag('servertype=ceph', 'name=ceph_daemon_stats', 'cluster=$cluster', 'type_instance=osd.op_r', 'device_class=~${device_class:regex}', 'host=~${host:regex}')), true, false)), true, false)"
+                }
+            ],
+            "title": "OSD Read Op Latency Distribution",
+            "tooltip": {
+                "show": true,
+                "showHistogram": false
+            },
+            "type": "heatmap",
+            "xAxis": {
+                "show": true
+            },
+            "xBucketNumber": null,
+            "xBucketSize": "60s",
+            "yAxis": {
+                "decimals": 2,
+                "format": "ns",
+                "logBase": 2,
+                "max": null,
+                "min": "0",
+                "show": true,
+                "splitFactor": null
+            },
+            "yBucketBound": "auto",
+            "yBucketNumber": null,
+            "yBucketSize": null
+        }
+    ],
+    "refresh": "",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "ceph",
+        "telegraf",
+        "service",
+        "sbisdisk"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": "cephpolbo|cepherin|cephkelly",
+                "current": {
+                    "selected": false,
+                    "text": "ceph-1",
+                    "value": "ceph-1"
+                },
+                "datasource": "Tagged",
+                "definition": "tag_values(cluster,servertype=ceph)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "cluster",
+                "multi": false,
+                "name": "cluster",
+                "options": [],
+                "query": "tag_values(cluster,servertype=ceph)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "tags": [],
+                    "text": [
+                        "ssd"
+                    ],
+                    "value": [
+                        "ssd"
+                    ]
+                },
+                "datasource": "Tagged",
+                "definition": "tag_values(device_class,cluster=$cluster)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "device_class",
+                "options": [],
+                "query": "tag_values(device_class,cluster=$cluster)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "Tagged",
+                "definition": "tag_values(host,cluster=$cluster)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "host",
+                "options": [],
+                "query": "tag_values(host,cluster=$cluster)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-5m",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "browser",
+    "title": "\u0421\u0411\u0418\u0421 \u0414\u0438\u0441\u043a - Ceph OSD's latency",
+    "uid": "FozNqxkGz",
+    "version": 60
+}

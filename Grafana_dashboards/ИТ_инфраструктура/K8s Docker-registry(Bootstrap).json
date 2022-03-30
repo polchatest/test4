@@ -1,0 +1,3377 @@
+{
+    "__requires": [
+        {
+            "id": "bargauge",
+            "name": "Bar gauge",
+            "type": "panel",
+            "version": ""
+        },
+        {
+            "id": "grafana",
+            "name": "Grafana",
+            "type": "grafana",
+            "version": "8.1.2"
+        },
+        {
+            "id": "graph",
+            "name": "Graph (old)",
+            "type": "panel",
+            "version": ""
+        },
+        {
+            "id": "graphite",
+            "name": "Graphite",
+            "type": "datasource",
+            "version": "1.0.0"
+        },
+        {
+            "id": "stat",
+            "name": "Stat",
+            "type": "panel",
+            "version": ""
+        },
+        {
+            "id": "table",
+            "name": "Table",
+            "type": "panel",
+            "version": ""
+        },
+        {
+            "id": "timeseries",
+            "name": "Time series",
+            "type": "panel",
+            "version": ""
+        }
+    ],
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439:  \u0416\u0443\u043a\u043e\u0432 \u0414.\u0410. (\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u044b\u0439 \u043e\u0442\u0434\u0435\u043b)",
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 1982,
+    "iteration": 1648116053485,
+    "links": [],
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": "carbon-short",
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 20,
+            "panels": [],
+            "title": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+            "type": "row"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0438\u0439 \u0441\u0442\u0430\u0442\u0443\u0441 \u0445\u0430\u0440\u0431\u043e\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "text": "Down"
+                                },
+                                "1": {
+                                    "text": "UP"
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-red",
+                                "value": 0
+                            },
+                            {
+                                "color": "green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 0,
+                "y": 1
+            },
+            "hideTimeOverride": true,
+            "id": 27,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('name=prometheus.harbor_health', 'servertype=k8s', 'host=$store')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "timeShift": null,
+            "title": "\u0421\u0442\u0430\u0442\u0443\u0441 Harbor",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u0442\u0430\u0442\u0443\u0441 \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u044b\u0445 \u0441\u0438\u0441\u0442\u0435\u043c\n0 = Down, 1 = Up",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "text": ""
+                                },
+                                "1": {
+                                    "text": ""
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 0
+                            },
+                            {
+                                "color": "green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 21,
+                "x": 3,
+                "y": 1
+            },
+            "hideTimeOverride": true,
+            "id": 36,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {
+                    "titleSize": 40,
+                    "valueSize": 40
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "sortByName(aliasByTags(seriesByTag('servertype=k8s', 'name=prometheus.harbor_up', 'host=$store'), 'component'), true, false)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "timeShift": null,
+            "title": "\u0421\u0442\u0430\u0442\u0443\u0441 \u043a\u043e\u043c\u043f\u043e\u043d\u0435\u043d\u0442\u043e\u0432 Harbor",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u044a\u0435\u043c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u043e\u0433\u043e \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 2,
+                "x": 0,
+                "y": 4
+            },
+            "hideTimeOverride": true,
+            "id": 46,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "groupByTags(seriesByTag('servertype=k8s', 'name=prometheus.harbor_project_quota_usage_byte', 'host=$store'), 'sum', 'contur')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "Total disk usage",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432 ",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 2,
+                "x": 2,
+                "y": 4
+            },
+            "hideTimeOverride": true,
+            "id": 44,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {
+                    "titleSize": 30,
+                    "valueSize": 30
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(aggregate(seriesByTag('name=prometheus.harbor_project_total', 'servertype=k8s', 'host=$store', 'contur=prod'), 'sum'), 'Public - ')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "timeShift": null,
+            "title": "Projects total",
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "decimals": 0,
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 Pull \u0438 Push \u043d\u0430 \u0432\u0435\u0441\u044c \u0440\u0435\u0435\u0441\u0442\u0440",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "fill": 10,
+            "fillGradient": 10,
+            "gridPos": {
+                "h": 6,
+                "w": 4,
+                "x": 4,
+                "y": 4
+            },
+            "hiddenSeries": false,
+            "id": 140,
+            "interval": null,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "maxDataPoints": null,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": true,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(diffSeries(groupByTags(seriesByTag('name=prometheus.harbor_artifact_pulled', 'servertype=k8s', 'host=$store'), 'sum', ''), #B), 'Pulled Image')",
+                    "targetFull": "alias(diffSeries(groupByTags(seriesByTag('name=prometheus.harbor_artifact_pulled', 'servertype=k8s', 'host=$store'), 'sum', ''), timeShift(groupByTags(seriesByTag('name=prometheus.harbor_artifact_pulled', 'servertype=k8s', 'host=$store'), 'sum', ''), '1m', false)), 'Pulled Image')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 1,
+                    "refId": "B",
+                    "target": "timeShift(groupByTags(seriesByTag('name=prometheus.harbor_artifact_pulled', 'servertype=k8s', 'host=$store'), 'sum', ''), '1m', false)"
+                },
+                {
+                    "hide": false,
+                    "refCount": 1,
+                    "refId": "D",
+                    "target": "alias(diffSeries(groupByTags(seriesByTag('name=prometheus.harbor_project_artifact_total', 'servertype=k8s', 'host=$store'), 'sum', ''), #E), 'Pushed Image')",
+                    "targetFull": "alias(diffSeries(groupByTags(seriesByTag('name=prometheus.harbor_project_artifact_total', 'servertype=k8s', 'host=$store'), 'sum', ''), timeShift(groupByTags(seriesByTag('name=prometheus.harbor_project_artifact_total', 'servertype=k8s', 'host=$store'), 'sum', ''), '1m', false)), 'Pushed Image')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "timeShift(groupByTags(seriesByTag('name=prometheus.harbor_project_artifact_total', 'servertype=k8s', 'host=$store'), 'sum', ''), '1m', false)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Image Pull\\Push Rate",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:202",
+                    "decimals": null,
+                    "format": "none",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:203",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043f\u0440\u043e\u0435\u043a\u0442\u043e\u0432 \u0441 \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430\u043c\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": null,
+                        "displayMode": "auto",
+                        "filterable": true
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    },
+                    "unit": "bytes"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Repo Total"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Artifact Total"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "short"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 9,
+                "x": 8,
+                "y": 4
+            },
+            "hideTimeOverride": true,
+            "id": 100,
+            "interval": null,
+            "options": {
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Quota Usage"
+                    }
+                ]
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('name=prometheus.harbor_project_quota_usage_byte', 'servertype=k8s', 'host=$store')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "seriesByTag('name=prometheus.harbor_project_quota_byte', 'servertype=k8s', 'host=$store')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "seriesByTag('name=prometheus.harbor_project_repo_total', 'servertype=k8s', 'host=$store')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "seriesByTag('name=prometheus.harbor_project_artifact_total', 'servertype=k8s', 'host=$store')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "timeShift": null,
+            "title": "\u041f\u0440\u043e\u0435\u043a\u0442\u044b",
+            "transformations": [
+                {
+                    "id": "labelsToFields",
+                    "options": {
+                        "valueLabel": "name"
+                    }
+                },
+                {
+                    "id": "groupBy",
+                    "options": {
+                        "fields": {
+                            "Time": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": null
+                            },
+                            "Value": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            },
+                            "name": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            },
+                            "project_name": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "groupby"
+                            },
+                            "prometheus.harbor_project_artifact_total": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            },
+                            "prometheus.harbor_project_quota_byte": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            },
+                            "prometheus.harbor_project_quota_usage_byte": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            },
+                            "prometheus.harbor_project_repo_total": {
+                                "aggregations": [
+                                    "lastNotNull"
+                                ],
+                                "operation": "aggregate"
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {
+                            "Time": false,
+                            "contur": true,
+                            "host": true,
+                            "interval": true,
+                            "project_name": false,
+                            "servertype": true,
+                            "service": true,
+                            "service_name": true,
+                            "url": true
+                        },
+                        "indexByName": {
+                            "project_name": 0,
+                            "prometheus.harbor_project_artifact_total (lastNotNull)": 2,
+                            "prometheus.harbor_project_quota_byte (lastNotNull)": 4,
+                            "prometheus.harbor_project_quota_usage_byte (lastNotNull)": 3,
+                            "prometheus.harbor_project_repo_total (lastNotNull)": 1
+                        },
+                        "renameByName": {
+                            "name (lastNotNull)": "usage",
+                            "project_name": "Project Name",
+                            "prometheus.harbor_project_artifact_total": "Artifact Total",
+                            "prometheus.harbor_project_artifact_total (lastNotNull)": "Artifact Total",
+                            "prometheus.harbor_project_quota_byte (lastNotNull)": "Quota",
+                            "prometheus.harbor_project_quota_usage_byte (lastNotNull)": "Quota Usage",
+                            "prometheus.harbor_project_repo_total": "Repo Total",
+                            "prometheus.harbor_project_repo_total (lastNotNull)": "Repo Total"
+                        }
+                    }
+                },
+                {
+                    "id": "sortBy",
+                    "options": {
+                        "fields": {},
+                        "sort": [
+                            {
+                                "desc": true,
+                                "field": "Quota Usage"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0412\u0440\u0435\u043c\u044f \u043e\u0442\u0432\u0435\u0442\u0430 \u0440\u0435\u0435\u0441\u0442\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "prometheus.promhttp_metric_handler_requests_total;code=200;contur=pre-dev;host=test-oas-r2.unix.tensor.ru;interval=10s;servertype=harbor;url=http:--10.76.156.2:9090-metrics"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "HTTP: 200"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "prometheus.promhttp_metric_handler_requests_total;code=500;contur=pre-dev;host=test-oas-r2.unix.tensor.ru;interval=10s;servertype=harbor;url=http:--10.76.156.2:9090-metrics"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "HTTP: 500"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "prometheus.promhttp_metric_handler_requests_total;code=503;contur=pre-dev;host=test-oas-r2.unix.tensor.ru;interval=10s;servertype=harbor;url=http:--10.76.156.2:9090-metrics"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "HTTP: 503"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 17,
+                "y": 4
+            },
+            "hiddenSeries": false,
+            "id": 134,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": false,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "alias(seriesByTag('name=http_response.response_time', 'servertype=k8s', 'host=$store', 'contur=prod'), 'Response')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "HTTP Response Time",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:526",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:527",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e HTTP \u043e\u0448\u0438\u0431\u043e\u043a",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "prometheus.promhttp_metric_handler_requests_total;code=200;contur=pre-dev;host=test-oas-r2.unix.tensor.ru;interval=10s;servertype=harbor;url=http:--10.76.156.2:9090-metrics"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "HTTP: 200"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "prometheus.promhttp_metric_handler_requests_total;code=500;contur=pre-dev;host=test-oas-r2.unix.tensor.ru;interval=10s;servertype=harbor;url=http:--10.76.156.2:9090-metrics"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "HTTP: 500"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "prometheus.promhttp_metric_handler_requests_total;code=503;contur=pre-dev;host=test-oas-r2.unix.tensor.ru;interval=10s;servertype=harbor;url=http:--10.76.156.2:9090-metrics"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "HTTP: 503"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 2,
+                "x": 20,
+                "y": 4
+            },
+            "hideTimeOverride": true,
+            "id": 40,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {
+                    "valueSize": 70
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aggregate(aliasByTags(exclude(seriesByTag('name=prometheus.promhttp_metric_handler_requests_total', 'servertype=k8s', 'host=$store', 'contur=prod'), '200'), 'code'), 'sum')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "timeShift": null,
+            "title": "Count HTTP code(>200)",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0412\u0440\u0435\u043c\u044f \u0437\u0430\u043f\u0443\u0441\u043a\u0430 \u0440\u0435\u0435\u0441\u0442\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "dateTimeFromNow"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 2,
+                "x": 22,
+                "y": 4
+            },
+            "hideTimeOverride": true,
+            "id": 38,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "scale(seriesByTag('name=prometheus.process_start_time_seconds', 'servertype=k8s', 'host=$store', 'contur=prod'), 1000)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "timeShift": null,
+            "title": "Uptime",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0430\u0440\u0442\u0438\u0444\u0430\u043a\u0442\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 2,
+                "x": 2,
+                "y": 7
+            },
+            "hideTimeOverride": true,
+            "id": 42,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "hide": false,
+                    "refId": "A",
+                    "target": "groupByTags(seriesByTag('servertype=k8s', 'name=prometheus.harbor_project_artifact_total', 'host=$store', 'contur=prod'), 'sum', 'contur')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "timeShift": null,
+            "title": "Artifact total",
+            "transformations": [],
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "decimals": 0,
+            "description": "\u0421\u0442\u0430\u0442\u0443\u0441\u044b \u043a\u043e\u043c\u043f\u043e\u043d\u0435\u043d\u0442\u043e\u0432 \u0432 \u0440\u0430\u0437\u0440\u0435\u0437\u0435 \u0432\u0440\u0435\u043c\u0435\u043d\u0438. \u0418 \u0441\u0430\u043c \u0441\u0442\u0430\u0442\u0443\u0441 harbor\n> 1 - UP, 0 - DOWN",
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "prometheus.promhttp_metric_handler_requests_total;code=200;contur=pre-dev;host=test-oas-r2.unix.tensor.ru;interval=10s;servertype=harbor;url=http:--10.76.156.2:9090-metrics"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "HTTP: 200"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "prometheus.promhttp_metric_handler_requests_total;code=500;contur=pre-dev;host=test-oas-r2.unix.tensor.ru;interval=10s;servertype=harbor;url=http:--10.76.156.2:9090-metrics"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "HTTP: 500"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "prometheus.promhttp_metric_handler_requests_total;code=503;contur=pre-dev;host=test-oas-r2.unix.tensor.ru;interval=10s;servertype=harbor;url=http:--10.76.156.2:9090-metrics"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "HTTP: 503"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 10
+            },
+            "hiddenSeries": false,
+            "id": 142,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": false,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "sortByName(aliasByTags(seriesByTag('name=prometheus.harbor_up', 'servertype=k8s', 'host=$store'), 'component'), true, false)",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(seriesByTag('name=prometheus.harbor_health', 'servertype=k8s', 'host=$store'), 'harbor')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Harbor components status",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:526",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:527",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0412\u044b\u0434\u0435\u043b\u0435\u043d\u043d\u043e\u0435 \u043a\u043e\u043b-\u0432\u043e \u0434\u0438\u0441\u043a\u043e\u0432\u043e\u0433\u043e \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430 \u043f\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 10
+            },
+            "hiddenSeries": false,
+            "id": 144,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": false,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "sort": "max",
+                "sortDesc": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('name=prometheus.harbor_project_quota_usage_byte', 'servertype=k8s', 'host=$store', 'contur=prod'), 'project_name')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "S3 storage by projects",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:6580",
+                    "decimals": null,
+                    "format": "bytes",
+                    "label": "",
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:6581",
+                    "format": "bytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 18
+            },
+            "id": 106,
+            "panels": [],
+            "title": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+            "type": "row"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0412\u0440\u0435\u043c\u044f \u0440\u0430\u0431\u043e\u0442\u044b \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 3,
+                "x": 0,
+                "y": 19
+            },
+            "id": 108,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('servertype=k8s', 'name=system.system.uptime', 'host=$store', 'contur=prod')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "System Uptime",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u044f\u0434\u0435\u0440 \u0432 \u0441\u0438\u0441\u0442\u0435\u043c\u0435",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 3,
+                "x": 3,
+                "y": 19
+            },
+            "id": 114,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "countSeries(seriesByTag('servertype=k8s', 'name=system.cpu.usage_system', 'cpu!=cpu-total', 'host=$store'))"
+                }
+            ],
+            "title": "CPU Cores",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0414\u043e\u043b\u044f \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0440\u043d\u043e\u0433\u043e \u0432\u0440\u0435\u043c\u0435\u043d\u0438 \u0432 \u043e\u0436\u0438\u0434\u0430\u043d\u0438\u0438 \u0432\u0432\u043e\u0434\u0430-\u0432\u044b\u0432\u043e\u0434\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 1,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 3,
+                "x": 6,
+                "y": 19
+            },
+            "id": 116,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('servertype=k8s', 'cpu=cpu-total', 'name=system.cpu.usage_iowait', 'host=$store', 'contur=prod')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "CPU IOwait",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u043e\u0439 \u043e\u043f\u0435\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0439 \u043f\u0430\u043c\u044f\u0442\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 3,
+                "x": 9,
+                "y": 19
+            },
+            "id": 110,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('servertype=k8s', 'name=system.mem.total', 'host=$store', 'contur=prod')"
+                }
+            ],
+            "title": "Total RAM",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0438\u0439 \u043e\u0431\u044a\u0435\u043c \u0434\u0438\u0441\u043a\u043e\u0433\u043e \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 3,
+                "x": 12,
+                "y": 19
+            },
+            "id": 112,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "groupByTags(seriesByTag('servertype=k8s', 'name=system.disk.total', 'host=$store'), 'sum', '')"
+                }
+            ],
+            "title": "Total Disk Space",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0441\u0432\u043e\u0431\u043e\u0434\u043d\u043e\u0433\u043e \u0434\u0438\u0441\u043a\u043e\u0432\u043e\u0433\u043e \u043f\u0440\u043e\u0441\u0442\u0440\u0430\u043d\u0441\u0442\u0432\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 3,
+                "x": 15,
+                "y": 19
+            },
+            "id": 118,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(groupByTags(seriesByTag('servertype=k8s', 'name=system.disk.free', 'host=$store'), 'sum', ''), 'FREE')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Free Disk Space",
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0421\u043a\u043e\u0440\u043e\u0441\u0442\u044c \u0447\u0442\u0435\u043d\u0438\u044f/\u0437\u0430\u043f\u0438\u0441\u0438 \u0434\u0438\u0441\u043a\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "binBps"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 6,
+                "x": 18,
+                "y": 19
+            },
+            "hiddenSeries": false,
+            "id": 128,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:1658",
+                    "alias": "Read",
+                    "transform": "negative-Y"
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(perSecond(seriesByTag('servertype=k8s', 'name=system.diskio.write_bytes', '_name=sda2', 'host=$store', 'contur=prod')), 'Writes')"
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(perSecond(seriesByTag('servertype=k8s', 'name=system.diskio.read_bytes', '_name=sda2', 'host=$store', 'contur=prod')), 'Read')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Disk R\\W",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1571",
+                    "format": "binBps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1572",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041f\u0440\u043e\u0446\u0435\u043d\u0442 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0441\u0438\u0441\u0442\u0435\u043c\u043d\u044b\u0445 \u043a\u043e\u043c\u043f\u043e\u043d\u0435\u043d\u0442\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 4,
+                "x": 0,
+                "y": 23
+            },
+            "id": 120,
+            "options": {
+                "displayMode": "lcd",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true,
+                "text": {}
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(seriesByTag('servertype=k8s', 'cpu=cpu-total', 'name=system.cpu.usage_active', 'host=$store', 'contur=prod'), 'CPU active')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(seriesByTag('servertype=k8s', 'name=system.mem.used_percent', 'host=$store', 'contur=prod'), 'Memory used')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(seriesByTag('servertype=k8s', 'name=system.swap.used_percent', 'host=$store', 'contur=prod'), 'Swap used')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "type": "bargauge"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "LA \u0437\u0430 1, 5, 15 \u043c\u0438\u043d\u0443\u0442",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 5,
+                "x": 4,
+                "y": 23
+            },
+            "hiddenSeries": false,
+            "id": 122,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(seriesByTag('servertype=k8s', 'name=system.system.load1', 'host=$store', 'contur=prod'), 'LA1')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(seriesByTag('servertype=k8s', 'name=system.system.load5', 'host=$store', 'contur=prod'), 'LA5')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(seriesByTag('servertype=k8s', 'name=system.system.load15', 'host=$store', 'contur=prod'), 'LA15')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "System Load",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1615",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1616",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "decimals": 2,
+            "description": "\u041f\u0440\u043e\u0446\u0435\u043d\u0442 \u0432\u0440\u0435\u043c\u0435\u043d\u0438 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f CPU \u043f\u043e \u0441\u0438\u0441\u0442\u0435\u043c\u043d\u044b\u043c \u043a\u043e\u043c\u043f\u043e\u043d\u0435\u043d\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 5,
+                "x": 9,
+                "y": 23
+            },
+            "hiddenSeries": false,
+            "id": 124,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": true,
+                "hideEmpty": true,
+                "hideZero": true,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:475",
+                    "alias": "/.*_Total/",
+                    "color": "#F2495C",
+                    "fill": 0
+                }
+            ],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "exclude(exclude(exclude(aliasByTags(seriesByTag('servertype=k8s', 'name=~system.cpu.*', 'cpu=cpu-total', 'host=$store', 'contur=prod'), 'name'), 'idle'), 'active'), 'time')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "CPU usage",
+            "tooltip": {
+                "shared": true,
+                "sort": 1,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:351",
+                    "decimals": 2,
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:352",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "decimals": 2,
+            "description": "\u041e\u0431\u044a\u0435\u043c \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u043c\u043e\u0439 \u043e\u043f\u0435\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0439 \u043f\u0430\u043c\u044f\u0442\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 4,
+                "x": 14,
+                "y": 23
+            },
+            "hiddenSeries": false,
+            "id": 126,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "hideEmpty": false,
+                "hideZero": false,
+                "max": true,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:475",
+                    "alias": "/.*_Total/",
+                    "color": "#F2495C",
+                    "fill": 0
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('servertype=k8s', 'name=system.mem.used', 'host=$store', 'contur=prod'), 'name')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Memory Basic",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:351",
+                    "decimals": null,
+                    "format": "bytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:352",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u044a\u0435\u043c \u0441\u0435\u0442\u0435\u0432\u043e\u0433\u043e \u0442\u0440\u0430\u0444\u0438\u043a\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "binbps"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 6,
+                "x": 18,
+                "y": 25
+            },
+            "hiddenSeries": false,
+            "id": 130,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:1465",
+                    "alias": "Recv",
+                    "transform": "negative-Y"
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(perSecond(seriesByTag('servertype=k8s', 'name=system.net.bytes_sent', 'interface=~ens*', 'host=$store', 'contur=prod')), 'Sent')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(perSecond(seriesByTag('servertype=k8s', 'name=system.net.bytes_recv', 'interface=~ens*', 'host=$store', 'contur=prod')), 'Recv')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Network",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1431",
+                    "format": "binbps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1432",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": "carbon-short",
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 31
+            },
+            "id": 18,
+            "panels": [],
+            "title": "\u0418\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u043f\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u0443 ${project:regex}",
+            "type": "row"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0440\u0435\u043f\u043e\u0437\u0438\u0442\u043e\u0440\u0438\u0435\u0432 \u0432 \u043f\u0440\u043e\u0435\u043a\u0442\u0435, \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0430\u0440\u0442\u0438\u0444\u0430\u043a\u0442\u043e\u0432 \u0432 \u043f\u0440\u043e\u0435\u043a\u0442\u0435, \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0443\u043b\u043b\u043e\u0432 \u0430\u0440\u0442\u0438\u0444\u0430\u043a\u0442\u043e\u0432",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "noValue": "No data",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 12,
+                "x": 0,
+                "y": 32
+            },
+            "hideTimeOverride": true,
+            "id": 54,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(seriesByTag('project_name=~${project:regex}', 'name=prometheus.harbor_project_repo_total', 'servertype=k8s', 'contur=prod', 'host=~${store:regex}'), 'Repo Total')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(groupByTags(seriesByTag('project_name=~${project:regex}', 'name=prometheus.harbor_project_artifact_total', 'servertype=k8s', 'contur=prod', 'host=~${store:regex}'), 'sum', ''), 'Artifact total')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(seriesByTag('project_name=~${project:regex}', 'name=prometheus.harbor_artifact_pulled', 'servertype=k8s', 'contur=prod', 'host=~${store:regex}'), 'Artifact Pulled')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "timeShift": null,
+            "title": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u0443 ",
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "decimals": 0,
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 Pull \u0438 Push \u043d\u0430 \u043f\u0440\u043e\u0435\u043a\u0442",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "fill": 10,
+            "fillGradient": 10,
+            "gridPos": {
+                "h": 11,
+                "w": 12,
+                "x": 12,
+                "y": 32
+            },
+            "hiddenSeries": false,
+            "id": 146,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": true,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(diffSeries(groupByTags(seriesByTag('name=prometheus.harbor_artifact_pulled', 'servertype=k8s', 'project_name=${project:regex}', 'host=$store', 'contur=prod'), 'sum', ''), #B), 'Pulled Image')",
+                    "targetFull": "alias(diffSeries(groupByTags(seriesByTag('name=prometheus.harbor_artifact_pulled', 'servertype=k8s', 'project_name=${project:regex}', 'host=$store', 'contur=prod'), 'sum', ''), timeShift(groupByTags(seriesByTag('name=prometheus.harbor_artifact_pulled', 'servertype=k8s', 'project_name=${project:regex}', 'host=$store', 'contur=prod'), 'sum', ''), '1m', false)), 'Pulled Image')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 1,
+                    "refId": "B",
+                    "target": "timeShift(groupByTags(seriesByTag('name=prometheus.harbor_artifact_pulled', 'servertype=k8s', 'project_name=${project:regex}', 'host=$store', 'contur=prod'), 'sum', ''), '1m', false)"
+                },
+                {
+                    "hide": false,
+                    "refCount": 1,
+                    "refId": "D",
+                    "target": "alias(diffSeries(groupByTags(seriesByTag('name=prometheus.harbor_project_artifact_total', 'servertype=k8s', 'project_name=${project:regex}', 'host=$store', 'contur=prod'), 'sum', ''), #E), 'Pushed Image')",
+                    "targetFull": "alias(diffSeries(groupByTags(seriesByTag('name=prometheus.harbor_project_artifact_total', 'servertype=k8s', 'project_name=${project:regex}', 'host=$store', 'contur=prod'), 'sum', ''), timeShift(groupByTags(seriesByTag('name=prometheus.harbor_project_artifact_total', 'servertype=k8s', 'project_name=${project:regex}', 'host=$store', 'contur=prod'), 'sum', ''), '1m', false)), 'Pushed Image')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "timeShift(groupByTags(seriesByTag('name=prometheus.harbor_project_artifact_total', 'servertype=k8s', 'project_name=${project:regex}', 'host=$store', 'contur=prod'), 'sum', ''), '1m', false)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Image Pull\\Push Rate",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:202",
+                    "decimals": null,
+                    "format": "none",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:203",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u044a\u0435\u043c, \u0437\u0430\u043d\u044f\u0442\u044b\u0439 \u0444\u0430\u0439\u043b\u0430\u043c\u0438 \u043f\u0440\u043e\u0435\u043a\u0442\u0430 \u0438 \u043a\u0432\u043e\u0442\u0430. -1 \u2014 \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0438\u0435 \u043a\u0432\u043e\u0442\u044b",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "bytes"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "corp-infra.prometheus.harbor_project_quota_byte"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0420\u0430\u0437\u043c\u0435\u0440 \u043a\u0432\u043e\u0442\u044b"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "corp-infra.prometheus.harbor_project_quota_usage_byte"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043e"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 12,
+                "x": 0,
+                "y": 37
+            },
+            "hiddenSeries": false,
+            "id": 148,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('name=~prometheus.harbor_project_(quota_byte|quota_usage_byte)', 'project_name=~${project:regex}', 'servertype=k8s', 'host=$store', 'contur=prod'), 'project_name', 'name')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041a\u0432\u043e\u0442\u044b \u043f\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u0443",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:4588",
+                    "format": "bytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:4589",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": "carbon-short",
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 43
+            },
+            "id": 6,
+            "panels": [],
+            "title": "Garbage Collector info",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u043a\u0440\u044b\u0442\u044b\u0445 \u0444\u0430\u0439\u043b\u043e\u0432\u044b\u0445 \u0434\u0435\u0441\u043a\u0440\u0438\u043f\u0442\u043e\u0440\u043e\u0432. \n\u0412\u0435\u0440\u0445\u043d\u0438\u0439 \u043f\u0440\u0435\u0434\u0435\u043b \u2014 1048576.",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 44
+            },
+            "hiddenSeries": false,
+            "id": 58,
+            "legend": {
+                "avg": true,
+                "current": false,
+                "max": true,
+                "min": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "alias(seriesByTag('name=prometheus.process_open_fds', 'servertype=k8s', 'host=$store', 'contur=prod'), 'Open File Descriptors')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Open file descriptors",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1968",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1969",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u043f\u0430\u0440\u0430\u043b\u043b\u0435\u043b\u044c\u043d\u044b\u0445 \u043f\u043e\u0442\u043e\u043a\u043e\u0432 \u044f\u0437\u044b\u043a\u0430 GO. \n",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 44
+            },
+            "hiddenSeries": false,
+            "id": 64,
+            "legend": {
+                "avg": true,
+                "current": false,
+                "max": true,
+                "min": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "alias(seriesByTag('name=prometheus.go_goroutines', 'servertype=k8s', 'host=$store', 'contur=prod'), 'Goroutines')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Goroutines",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:2058",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:2059",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u043d\u043e\u0439 \u043f\u0430\u043c\u044f\u0442\u0438. ",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 52
+            },
+            "hiddenSeries": false,
+            "id": 60,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(seriesByTag('name=prometheus.go_memstats_alloc_bytes', 'servertype=k8s', 'host=$store', 'contur=prod'), 'Go allocated bytes')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(seriesByTag('name=prometheus.go_memstats_buck_hash_sys_bytes', 'servertype=k8s', 'host=$store', 'contur=prod'), 'Profiling bucket hash table')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(seriesByTag('name=prometheus.go_memstats_gc_sys_bytes', 'servertype=k8s', 'host=$store', 'contur=prod'), 'GC metadata')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(seriesByTag('name=prometheus.go_memstats_heap_alloc_bytes', 'servertype=k8s', 'host=$store', 'contur=prod'), 'Heap allocated bytes')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "alias(seriesByTag('name=prometheus.go_memstats_mcache_inuse_bytes', 'servertype=k8s', 'host=$store', 'contur=prod'), 'mcache in use bytes')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "alias(seriesByTag('name=prometheus.go_memstats_mspan_inuse_bytes', 'servertype=k8s', 'host=$store', 'contur=prod'), 'mspan in use bytes')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "G",
+                    "target": "alias(seriesByTag('name=prometheus.go_memstats_stack_inuse_bytes', 'servertype=k8s', 'host=$store', 'contur=prod'), 'stack in use')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "H",
+                    "target": "alias(seriesByTag('name=prometheus.go_memstats_sys_bytes', 'servertype=k8s', 'host=$store', 'contur=prod'), 'obtained from system')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Memstats",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:2211",
+                    "format": "bytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:2212",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0431\u0430\u0439\u0442 \u0432 \u043a\u0443\u0447\u0435 \u0434\u043e \u0431\u043b\u0438\u0436\u0430\u0439\u0448\u0435\u0433\u043e \u043f\u0440\u043e\u0445\u043e\u0434\u0430 \u0441\u0431\u043e\u0440\u0449\u0438\u043a\u0430 \u043c\u0443\u0441\u043e\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 52
+            },
+            "hiddenSeries": false,
+            "id": 66,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(seriesByTag('name=prometheus.go_memstats_next_gc_bytes', 'servertype=k8s', 'host=$store', 'contur=prod'), 'Heap bytes before next GC')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Heap bytes before GC",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:2441",
+                    "format": "bytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:2442",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u043f\u0440\u043e\u0445\u043e\u0434\u0430 \u0441\u0431\u043e\u0440\u0449\u0438\u043a\u0430 \u043c\u0443\u0441\u043e\u0440\u0430 ",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 0,
+                "y": 60
+            },
+            "hiddenSeries": false,
+            "id": 62,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "alias(perSecond(seriesByTag('name=prometheus.go_gc_duration_seconds_sum', 'servertype=k8s', 'host=$store', 'contur=prod')), 'GC duration')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "GC duration",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:2719",
+                    "format": "s",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:2720",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0412\u0440\u0435\u043c\u044f \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0433\u043e \u043f\u0440\u043e\u0445\u043e\u0434\u0430 \u0441\u0431\u043e\u0440\u0449\u0438\u043a\u0430 \u043c\u0443\u0441\u043e\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "hidden",
+                        "barAlignment": 0,
+                        "drawStyle": "bars",
+                        "fillOpacity": 100,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "graph": false,
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": true,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "dateTimeFromNow"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 12,
+                "y": 60
+            },
+            "id": 68,
+            "options": {
+                "graph": {},
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "bottom"
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "pluginVersion": "7.4.0",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "alias(perSecond(seriesByTag('name=prometheus.go_memstats_last_gc_time_seconds', 'servertype=k8s', 'contur=prod', 'host=$store')), 'last GC')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Last GC",
+            "type": "timeseries"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u043f\u0440\u043e\u0445\u043e\u0434\u0430 \u0441\u0431\u043e\u0440\u0449\u0438\u043a\u0430 \u043c\u0443\u0441\u043e\u0440\u0430 \u043f\u043e \u043a\u0432\u0430\u043d\u0442\u0438\u043b\u044f\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 10,
+                "w": 24,
+                "x": 0,
+                "y": 69
+            },
+            "hiddenSeries": false,
+            "id": 56,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.1.2",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "sortByName(aliasByTags(seriesByTag('name=prometheus.go_gc_duration_seconds', 'servertype=k8s', 'contur=prod', 'host=$store'), 'quantile'), false)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "GC duration quantiles",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:2860",
+                    "format": "s",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:2861",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 30,
+    "style": "dark",
+    "tags": [
+        "k8s",
+        "docker-registry"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(project_name,servertype=k8s)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "project",
+                "options": [],
+                "query": "tag_values(project_name,servertype=k8s)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(host, servertype=k8s)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "store",
+                "options": [],
+                "query": "tag_values(host, servertype=k8s)",
+                "refresh": 1,
+                "regex": "/image-store/",
+                "skipUrlSync": false,
+                "sort": 1,
+                "type": "query"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "K8s Docker-registry(Bootstrap)",
+    "uid": "B_AgcQ6Mk1233",
+    "version": 1
+}

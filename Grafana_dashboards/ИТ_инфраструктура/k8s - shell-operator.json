@@ -1,0 +1,1542 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0417\u0443\u0431\u043a\u043e\u0432 \u0410.\u0421. (\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u044b\u0439 \u043e\u0442\u0434\u0435\u043b)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 2,
+    "id": 1991,
+    "iteration": 1648530629072,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 16,
+            "panels": [],
+            "title": "\u0425\u0443\u043a\u0438",
+            "type": "row"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442 \u0432\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0445\u0443\u043a\u0430 \u0432 \u043c\u043e\u043c\u0435\u043d\u0442 \u0435\u0433\u043e \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u044f\n\n\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435: \u0445\u0443\u043a.\u043e\u0447\u0435\u0440\u0435\u0434\u044c.\u043f\u0440\u0438\u0432\u044f\u0437\u043a\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "bars",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "stepBefore",
+                        "lineStyle": {
+                            "fill": "solid"
+                        },
+                        "lineWidth": 2,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 0,
+                "y": 1
+            },
+            "id": 8,
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "min",
+                        "max"
+                    ],
+                    "displayMode": "table",
+                    "placement": "bottom"
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "sortByName(aliasByTags(consolidateBy(nonNegativeDerivative(groupByTags(seriesByTag('name=prometheus_remote_write.shell_operator_hook_run_seconds_sum', 'cluster=$cluster', 'app_kubernetes_io_instance=$operator'), 'sum', 'app_kubernetes_io_instance', 'hook', 'queue', 'binding')), 'max'), 'hook', 'queue', 'binding'), true, false)",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u0445\u0443\u043a\u043e\u0432 \u043f\u043e \u043e\u0447\u0435\u0440\u0435\u0434\u044f\u043c",
+            "type": "timeseries"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0437\u0430\u0434\u0430\u0447 \u0432 \u043e\u0447\u0435\u0440\u0435\u0434\u0438, \u0432 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b \u0432\u0440\u0435\u043c\u0435\u043d\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "stepAfter",
+                        "lineWidth": 2,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 12,
+                "y": 1
+            },
+            "id": 6,
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "max",
+                        "min"
+                    ],
+                    "displayMode": "table",
+                    "placement": "bottom"
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "sortByName(aliasByTags(consolidateBy(groupByTags(seriesByTag('name=prometheus_remote_write.shell_operator_tasks_queue_length', 'cluster=~${cluster:regex}', 'app_kubernetes_io_instance=~${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'queue'), 'sum'), 'queue'), true, false)",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0437\u0430\u0434\u0430\u0447 \u0432 \u043e\u0447\u0435\u0440\u0435\u0434\u0438",
+            "type": "timeseries"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442 \u0441\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0445\u0443\u043a\u043e\u0432, \u0432 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b \u0432\u0440\u0435\u043c\u0435\u043d\u0438, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0438\u0441\u044c \u0441 \u043d\u0435\u043d\u0443\u043b\u0435\u0432\u044b\u043c \u043a\u043e\u0434\u043e\u043c \u0432\u044b\u0445\u043e\u0434\u0430\n\n\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435: \u0445\u0443\u043a.\u043f\u0440\u0438\u0432\u044f\u0437\u043a\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "bars",
+                        "fillOpacity": 0,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "stepBefore",
+                        "lineWidth": 2,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "normal"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 0,
+                "y": 10
+            },
+            "id": 2,
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "min",
+                        "max"
+                    ],
+                    "displayMode": "table",
+                    "placement": "bottom"
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "sortByName(aliasByTags(consolidateBy(nonNegativeDerivative(groupByTags(seriesByTag('name=~prometheus_remote_write.shell_operator_hook_run(_allowed)?_errors_total', 'cluster=${cluster:regex}', 'app_kubernetes_io_instance=${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'hook', 'binding')), 'sum'), 'hook', 'binding'), true, false)",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0445\u0443\u043a\u043e\u0432 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u0432\u0448\u0438\u0445\u0441\u044f \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439",
+            "type": "timeseries"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442 \u0441\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0445\u0443\u043a\u043e\u0432, \u0432 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b \u0432\u0440\u0435\u043c\u0435\u043d\u0438, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0438\u0441\u044c \u0441 \u043d\u0443\u043b\u0435\u0432\u044b\u043c \u043a\u043e\u0434\u043e\u043c \u0432\u044b\u0445\u043e\u0434\u0430\n\n\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435: \u0445\u0443\u043a.\u043f\u0440\u0438\u0432\u044f\u0437\u043a\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "bars",
+                        "fillOpacity": 100,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "stepAfter",
+                        "lineWidth": 2,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "normal"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 12,
+                "y": 10
+            },
+            "id": 4,
+            "interval": null,
+            "maxDataPoints": null,
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "max",
+                        "min"
+                    ],
+                    "displayMode": "table",
+                    "placement": "bottom"
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "sortByName(aliasByTags(consolidateBy(nonNegativeDerivative(groupByTags(seriesByTag('name=prometheus_remote_write.shell_operator_hook_run_success_total', 'cluster=${cluster:regex}', 'app_kubernetes_io_instance=${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'hook', 'binding')), 'sum'), 'hook', 'binding'), true)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043d\u044b\u0445 \u0445\u0443\u043a\u043e\u0432",
+            "type": "timeseries"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442 \u0441\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0448\u0438\u0431\u043e\u043a, \u0432 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b \u0432\u0440\u0435\u043c\u0435\u043d\u0438, \u0434\u043b\u044f \u0445\u0443\u043a\u0430 helm_hook",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "bars",
+                        "fillOpacity": 100,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 2,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "normal"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 12,
+                "x": 0,
+                "y": 19
+            },
+            "id": 30,
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "min",
+                        "max"
+                    ],
+                    "displayMode": "table",
+                    "placement": "bottom"
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(consolidateBy(nonNegativeDerivative(groupByTags(seriesByTag('name=~prometheus_remote_write.shell_operator_helm_hook_errors_total', 'cluster=${cluster:regex}', 'app_kubernetes_io_instance=${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'hook')), 'sum'), 'hook')",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0448\u0438\u0431\u043e\u043a \u0434\u043b\u044f \u0445\u0443\u043a\u0430 helm_hook",
+            "type": "timeseries"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 28
+            },
+            "id": 32,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0426\u041f\u0423 \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u0430\u043c\u0438 \u043d\u0430\u0445\u043e\u0434\u044f\u0449\u0438\u043c\u0438\u0441\u044f \u0432 \u043d\u0435\u0439\u043c\u0441\u043f\u0435\u0439\u0441\u0435 \u043e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u0430",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "never",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "mC"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 12,
+                        "x": 0,
+                        "y": 29
+                    },
+                    "id": 38,
+                    "options": {
+                        "legend": {
+                            "calcs": [
+                                "min",
+                                "max"
+                            ],
+                            "displayMode": "table",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(consolidateBy(scale(perSecond(seriesByTag('name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=$cluster', 'namespace=$namespace')), 1000), 'max'), 'pod', 'container'), true, false)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u0426\u041f\u0423, \u0432 \u043c\u0438\u043b\u0438\u044f\u0434\u0440\u0430\u0445",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0422\u0440\u043e\u0442\u0442\u043b\u0438\u043d\u0433 \u043f\u043e \u0426\u041f\u0423 \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u043e\u0432 \u043d\u0430\u0445\u043e\u0434\u044f\u0449\u0438\u0445\u0441\u044f \u0432 \u043d\u0435\u0439\u043c\u0441\u043f\u0435\u0439\u0441\u0435 \u043e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u0430",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "never",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "percentunit"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 12,
+                        "x": 12,
+                        "y": 29
+                    },
+                    "id": 40,
+                    "options": {
+                        "legend": {
+                            "calcs": [
+                                "min",
+                                "max"
+                            ],
+                            "displayMode": "table",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(consolidateBy(divideSeriesLists(nonNegativeDerivative(seriesByTag('name=prometheus_remote_write.container_cpu_cfs_throttled_periods_total', 'cluster=$cluster', 'namespace=$namespace')),nonNegativeDerivative(seriesByTag('name=prometheus_remote_write.container_cpu_cfs_periods_total', 'cluster=$cluster','namespace=$namespace'))), 'max'), 'pod', 'container'), true, false)",
+                            "textEditor": true
+                        }
+                    ],
+                    "title": "\u0422\u0440\u043e\u0442\u0442\u043b\u0438\u043d\u0433 \u0426\u041f\u0423",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0430\u043c\u044f\u0442\u0438 \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u0430\u043c\u0438 \u043d\u0430\u0445\u043e\u0434\u044f\u0449\u0438\u043c\u0438\u0441\u044f \u0432 \u043d\u0435\u0439\u043c\u0441\u043f\u0435\u0439\u0441\u0435 \u043e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u0430",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "never",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "bytes"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 12,
+                        "x": 0,
+                        "y": 38
+                    },
+                    "id": 34,
+                    "options": {
+                        "legend": {
+                            "calcs": [
+                                "min",
+                                "max"
+                            ],
+                            "displayMode": "table",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "multi"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(consolidateBy(seriesByTag('name=prometheus_remote_write.container_memory_usage_bytes', 'cluster=$cluster', 'namespace=$namespace'), 'max'), 'pod', 'container'), true, false)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0430\u043c\u044f\u0442\u0438",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0423\u0442\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u043f\u0430\u043c\u044f\u0442\u0438, \u043e\u0442\u043d\u043e\u0441\u0438\u0442\u0435\u043b\u044c\u043d\u043e \u043b\u0438\u043c\u0438\u0442\u0430, \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u0430\u043c\u0438 \u043d\u0430\u0445\u043e\u0434\u044f\u0449\u0438\u043c\u0438\u0441\u044f \u0432 \u043d\u0435\u0439\u043c\u0441\u043f\u0435\u0439\u0441\u0435 \u043e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u0430",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "never",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "percentunit"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 12,
+                        "x": 12,
+                        "y": 38
+                    },
+                    "id": 36,
+                    "options": {
+                        "legend": {
+                            "calcs": [
+                                "min",
+                                "max"
+                            ],
+                            "displayMode": "table",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(consolidateBy(divideSeriesLists(seriesByTag('name=prometheus_remote_write.container_memory_usage_bytes', 'cluster=$cluster', 'namespace=$namespace'), seriesByTag('name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=$cluster', 'namespace=$namespace')), 'max'), 'pod', 'container'), true, false)",
+                            "textEditor": true
+                        }
+                    ],
+                    "title": "\u0423\u0442\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u043f\u0430\u043c\u044f\u0442\u0438",
+                    "type": "timeseries"
+                }
+            ],
+            "title": "\u0420\u0435\u0441\u0443\u0440\u0441\u044b",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 29
+            },
+            "id": 20,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043a\u0435\u0448\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0445 \u043e\u0431\u044a\u0435\u043a\u0442\u043e\u0432 k8s \u043f\u043e \u043f\u0440\u0438\u0432\u044f\u0437\u043a\u0435\n\n\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435: \u0445\u0443\u043a.\u043f\u0440\u0438\u0432\u044f\u0437\u043a\u0430",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "never",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 12,
+                        "x": 0,
+                        "y": 48
+                    },
+                    "id": 12,
+                    "options": {
+                        "legend": {
+                            "calcs": [
+                                "min",
+                                "max",
+                                "lastNotNull"
+                            ],
+                            "displayMode": "table",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "multi"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(consolidateBy(groupByTags(seriesByTag('name=prometheus_remote_write.shell_operator_kube_snapshot_objects', 'cluster=${cluster:regex}', 'app_kubernetes_io_instance=${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'hook', 'binding'), 'max'), 'hook', 'binding'), true, false)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043a\u0435\u0448\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0445 \u043e\u0431\u044a\u0435\u043a\u0442\u043e\u0432 k8s",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u043e\u0431\u044a\u0435\u043c \u043a\u0435\u0448\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0445 \u043e\u0431\u044a\u0435\u043a\u0442\u043e\u0432 k8s  \u043f\u043e \u043f\u0440\u0438\u0432\u044f\u0437\u043a\u0435\n\n\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435: \u0445\u0443\u043a.\u043f\u0440\u0438\u0432\u044f\u0437\u043a\u0430",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "never",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "bytes"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 12,
+                        "x": 12,
+                        "y": 48
+                    },
+                    "id": 22,
+                    "options": {
+                        "legend": {
+                            "calcs": [
+                                "min",
+                                "max",
+                                "lastNotNull"
+                            ],
+                            "displayMode": "table",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "multi"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(consolidateBy(groupByTags(seriesByTag('name=prometheus_remote_write.shell_operator_kube_snapshot_bytes', 'cluster=${cluster:regex}', 'app_kubernetes_io_instance=${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'hook', 'binding'), 'max'), 'hook', 'binding'), true, false)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u041e\u0431\u044a\u0435\u043c \u043a\u044d\u0448\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0445 \u043e\u0431\u044a\u0435\u043a\u0442\u043e\u0432 k8s",
+                    "type": "timeseries"
+                }
+            ],
+            "title": "\u041a\u0435\u0448 \u043e\u0431\u044a\u0435\u043a\u0442\u043e\u0432 Kubernetes",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 30
+            },
+            "id": 18,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u041e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u043e\u0432 \u0441\u043e\u0431\u044b\u0442\u0438\u0439 k8s \u043f\u043e \u0445\u0443\u043a\u0430\u043c",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "fixedColor": "blue",
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "auto",
+                                "displayMode": "auto",
+                                "minWidth": 50
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "red",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "green",
+                                        "value": 1
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Last *"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.displayMode",
+                                        "value": "color-background-solid"
+                                    },
+                                    {
+                                        "id": "custom.width",
+                                        "value": 50
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 4,
+                        "x": 0,
+                        "y": 58
+                    },
+                    "id": 14,
+                    "options": {
+                        "showHeader": false
+                    },
+                    "pluginVersion": "8.2.3",
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(groupByTags(seriesByTag('name=prometheus_remote_write.shell_operator_hook_enable_kubernetes_bindings_success', 'cluster=~${cluster:regex}', 'app_kubernetes_io_instance=~${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'hook'), 'hook'), true, false)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u043e\u0432 \u0441\u043e\u0431\u044b\u0442\u0438\u0439",
+                    "transformations": [
+                        {
+                            "id": "reduce",
+                            "options": {
+                                "reducers": [
+                                    "lastNotNull"
+                                ]
+                            }
+                        }
+                    ],
+                    "type": "table"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u041e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0435 \u0432\u0440\u0435\u043c\u044f \u0437\u0430\u043f\u0443\u0441\u043a\u0430 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u043e\u0432 \u0441\u043e\u0431\u044b\u0442\u0438\u0439 k8s \u043f\u043e \u0445\u0443\u043a\u0430\u043c",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "fixedColor": "blue",
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "auto",
+                                "displayMode": "auto",
+                                "minWidth": 50
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "red",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Last *"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width",
+                                        "value": 100
+                                    },
+                                    {
+                                        "id": "unit",
+                                        "value": "s"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 4,
+                        "x": 4,
+                        "y": 58
+                    },
+                    "id": 21,
+                    "options": {
+                        "showHeader": false
+                    },
+                    "pluginVersion": "8.2.3",
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(groupByTags(seriesByTag('name=prometheus_remote_write.shell_operator_hook_enable_kubernetes_bindings_seconds', 'cluster=~${cluster:regex}', 'app_kubernetes_io_instance=~${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'hook'), 'hook'), true, false)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0412\u0440\u0435\u043c\u044f \u0437\u0430\u043f\u0443\u0441\u043a\u0430 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u043e\u0432 \u0441\u043e\u0431\u044b\u0442\u0438\u0439",
+                    "transformations": [
+                        {
+                            "id": "reduce",
+                            "options": {
+                                "reducers": [
+                                    "lastNotNull"
+                                ]
+                            }
+                        }
+                    ],
+                    "type": "table"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u041e\u0442\u043e\u0431\u0440\u0430\u0436\u0430\u0435\u0442 \u0441\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043d\u0435\u0443\u0434\u0430\u0447\u043d\u044b\u0445 \u043f\u043e\u043f\u044b\u0442\u043e\u043a \u0437\u0430\u043f\u0443\u0441\u043a\u0430 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u043e\u0432 \u0441\u043e\u0431\u044b\u0442\u0438\u0439 k8s, \u043f\u043e \u0445\u0443\u043a\u0430\u043c, \u0432 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b \u0432\u0440\u0435\u043c\u0435\u043d\u0438",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "bars",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "never",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 8,
+                        "x": 8,
+                        "y": 58
+                    },
+                    "id": 10,
+                    "options": {
+                        "legend": {
+                            "calcs": [
+                                "max",
+                                "min"
+                            ],
+                            "displayMode": "table",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "multi"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(consolidateBy(nonNegativeDerivative(groupByTags(seriesByTag('name=prometheus_remote_write.shell_operator_hook_enable_kubernetes_bindings_errors_total', 'cluster=${cluster:regex}', 'app_kubernetes_io_instance=${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'hook')), 'sum'), 'hook'), true, false)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043d\u0435\u0443\u0434\u0430\u0447\u043d\u044b\u0445 \u043f\u043e\u043f\u044b\u0442\u043e\u043a \u0437\u0430\u043f\u0443\u0441\u043a\u0430 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u043e\u0432 \u0441\u043e\u0431\u044b\u0442\u0438\u0439",
+                    "type": "timeseries"
+                }
+            ],
+            "title": "\u041c\u043e\u043d\u0438\u0442\u043e\u0440\u044b \u0441\u043e\u0431\u044b\u0442\u0438\u0439 Kubernetes",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 31
+            },
+            "id": 24,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0422\u0430\u0439\u043c\u0438\u043d\u0433\u0438 \u0440\u0430\u0431\u043e\u0442\u044b \u0444\u0438\u043b\u044c\u0442\u0440\u0430 jq\n\n\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435: \u0445\u0443\u043a.\u043e\u0447\u0435\u0440\u0435\u0434\u044c.\u043f\u0440\u0438\u0432\u044f\u0437\u043a\u0430",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "bars",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "stepBefore",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "never",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "s"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 9,
+                        "x": 0,
+                        "y": 59
+                    },
+                    "id": 26,
+                    "options": {
+                        "legend": {
+                            "calcs": [
+                                "max",
+                                "min"
+                            ],
+                            "displayMode": "table",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "multi"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(consolidateBy(nonNegativeDerivative(groupByTags(seriesByTag('name=prometheus_remote_write.shell_operator_kube_jq_filter_duration_seconds_sum', 'cluster=${cluster:regex}', 'app_kubernetes_io_instance=${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'hook', 'queue', 'binding')), 'max'), 'hook', 'queue', 'binding'), true)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0422\u0430\u0439\u043c\u0438\u043d\u0433\u0438 \u0444\u0438\u043b\u044c\u0442\u0440\u0430 jq",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0422\u0430\u0439\u043c\u0438\u043d\u0433\u0438 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438 \u0441\u043e\u0431\u044b\u0442\u0438\u0439 k8s\n\n\u041d\u0430\u0438\u043c\u0435\u043d\u043e\u0432\u0430\u043d\u0438\u0435: \u0445\u0443\u043a.\u043e\u0447\u0435\u0440\u0435\u0434\u044c.\u043f\u0440\u0438\u0432\u0437\u044f\u043a\u0430",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "bars",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 2,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "never",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            },
+                            "unit": "s"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 9,
+                        "w": 9,
+                        "x": 9,
+                        "y": 59
+                    },
+                    "id": 28,
+                    "options": {
+                        "legend": {
+                            "calcs": [
+                                "min",
+                                "max"
+                            ],
+                            "displayMode": "table",
+                            "placement": "bottom"
+                        },
+                        "tooltip": {
+                            "mode": "multi"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "sortByName(aliasByTags(consolidateBy(nonNegativeDerivative(groupByTags(seriesByTag('name=prometheus_remote_write.shell_operator_kube_event_duration_seconds_sum', 'cluster=~${cluster:regex}', 'app_kubernetes_io_instance=~${operator:regex}'), 'sum', 'app_kubernetes_io_instance', 'hook', 'queue', 'binding')), 'max'), 'hook', 'queue', 'binding'), true)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0422\u0430\u0439\u043c\u0438\u043d\u0433\u0438 \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u043a\u0438 \u0441\u043e\u0431\u044b\u0442\u0438\u0439 k8s",
+                    "type": "timeseries"
+                }
+            ],
+            "title": "\u0422\u0430\u0439\u043c\u0438\u043d\u0433\u0438",
+            "type": "row"
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "prod1-corp",
+                    "value": "prod1-corp"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(cluster,name=prometheus_remote_write.shell_operator_live_ticks)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "cluster",
+                "options": [],
+                "query": "tag_values(cluster,name=prometheus_remote_write.shell_operator_live_ticks)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "redis-operator",
+                    "value": "redis-operator"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(app_kubernetes_io_instance,cluster=$cluster,name=prometheus_remote_write.shell_operator_live_ticks)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "operator",
+                "options": [],
+                "query": "tag_values(app_kubernetes_io_instance,cluster=$cluster,name=prometheus_remote_write.shell_operator_live_ticks)",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "system-redis-operator",
+                    "value": "system-redis-operator"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(namespace,cluster=$cluster,app_kubernetes_io_instance=$operator,name=prometheus_remote_write.shell_operator_live_ticks)",
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "namespace",
+                "options": [],
+                "query": "tag_values(namespace,cluster=$cluster,app_kubernetes_io_instance=$operator,name=prometheus_remote_write.shell_operator_live_ticks)",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-30m",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "k8s - shell-operator",
+    "uid": "1Smhac17k",
+    "version": 5
+}

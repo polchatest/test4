@@ -1,0 +1,2436 @@
+{
+    "__requires": [
+        {
+            "id": "bargauge",
+            "name": "Bar gauge",
+            "type": "panel",
+            "version": ""
+        },
+        {
+            "id": "grafana",
+            "name": "Grafana",
+            "type": "grafana",
+            "version": "8.1.2"
+        },
+        {
+            "id": "graphite",
+            "name": "Graphite",
+            "type": "datasource",
+            "version": "1.0.0"
+        },
+        {
+            "id": "stat",
+            "name": "Stat",
+            "type": "panel",
+            "version": ""
+        },
+        {
+            "id": "timeseries",
+            "name": "Time series",
+            "type": "panel",
+            "version": ""
+        }
+    ],
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0410\u043b\u044c\u0431\u0435\u0449\u0435\u043d\u043a\u043e \u041c.\u041d.  \u0438  \u0411\u043e\u0440\u0431\u0430\u0442 \u042f.\u0414. (\u0410\u0426\u041e\u0414)",
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1994,
+    "iteration": 1648555411928,
+    "links": [],
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 38,
+            "panels": [],
+            "title": "Systemd Units",
+            "type": "row"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0432\u0441\u0435\u0445 systemd \u044e\u043d\u0438\u0442\u043e\u0432 Satellite \u0438 \u0435\u0435 \u043a\u0430\u043f\u0441\u0443\u043b\u0435\u0439",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "from": 0,
+                                "result": {
+                                    "color": "green",
+                                    "index": 0,
+                                    "text": "OK"
+                                },
+                                "to": 0
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 1,
+                                "result": {
+                                    "color": "red",
+                                    "index": 1,
+                                    "text": "NOT OK"
+                                },
+                                "to": 999999
+                            },
+                            "type": "range"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 3,
+                "x": 0,
+                "y": 1
+            },
+            "id": 43,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "maxSeries(aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'name=systemd_units.active_code', 'servertype=satellite'), '_name'))",
+                    "textEditor": false
+                }
+            ],
+            "title": "Services Status",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0432\u0441\u0435\u0445 systemd \u044e\u043d\u0438\u0442\u043e\u0432 Satellite \u0438 \u0435\u0435 \u043a\u0430\u043f\u0441\u0443\u043b\u0435\u0439",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "from": 0,
+                                "result": {
+                                    "color": "green",
+                                    "index": 0,
+                                    "text": "Running"
+                                },
+                                "to": 0
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 1,
+                                "result": {
+                                    "color": "yellow",
+                                    "index": 1,
+                                    "text": "Reloading"
+                                },
+                                "to": 1
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 2,
+                                "result": {
+                                    "color": "red",
+                                    "index": 2,
+                                    "text": "Inactive\u00a0"
+                                },
+                                "to": 2
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 3,
+                                "result": {
+                                    "color": "dark-red",
+                                    "index": 3,
+                                    "text": "Failed"
+                                },
+                                "to": 3
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 4,
+                                "result": {
+                                    "color": "semi-dark-purple",
+                                    "index": 4,
+                                    "text": "Activaiting"
+                                },
+                                "to": 4
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 5,
+                                "result": {
+                                    "color": "light-red",
+                                    "index": 5,
+                                    "text": "Deactivaiting"
+                                },
+                                "to": 5
+                            },
+                            "type": "range"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 3,
+                "y": 1
+            },
+            "id": 40,
+            "options": {
+                "displayMode": "gradient",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true,
+                "text": {}
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'name=systemd_units.active_code', 'servertype=satellite'), 'host', '_name')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Services Status",
+            "type": "bargauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0432\u0441\u0435\u0445 systemd \u044e\u043d\u0438\u0442\u043e\u0432 Satellite \u0438 \u0435\u0435 \u043a\u0430\u043f\u0441\u0443\u043b\u0435\u0439",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 5,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "area"
+                        }
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "from": 0,
+                                "result": {
+                                    "color": "green",
+                                    "index": 0,
+                                    "text": "Running"
+                                },
+                                "to": 0
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 1,
+                                "result": {
+                                    "color": "yellow",
+                                    "index": 1,
+                                    "text": "Reloading"
+                                },
+                                "to": 1
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 2,
+                                "result": {
+                                    "color": "red",
+                                    "index": 2,
+                                    "text": "Inactive"
+                                },
+                                "to": 2
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 3,
+                                "result": {
+                                    "color": "dark-red",
+                                    "index": 3,
+                                    "text": "Failed"
+                                },
+                                "to": 3
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 4,
+                                "result": {
+                                    "color": "semi-dark-purple",
+                                    "index": 4,
+                                    "text": "Activating"
+                                },
+                                "to": 4
+                            },
+                            "type": "range"
+                        },
+                        {
+                            "options": {
+                                "from": 5,
+                                "result": {
+                                    "color": "light-red",
+                                    "index": 5,
+                                    "text": "Deactivating"
+                                },
+                                "to": 5
+                            },
+                            "type": "range"
+                        }
+                    ],
+                    "max": 5,
+                    "min": -1,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 13,
+                "x": 11,
+                "y": 1
+            },
+            "id": 41,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "list",
+                    "placement": "right"
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'name=systemd_units.active_code', 'servertype=satellite'), 'host', '_name')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Services Status TImeLine",
+            "type": "timeseries"
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 9
+            },
+            "id": 22,
+            "panels": [],
+            "title": "Cpu",
+            "type": "row"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f CPU",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 5,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 9,
+                "x": 0,
+                "y": 10
+            },
+            "id": 4,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "table",
+                    "placement": "right"
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "Cpu-Total",
+                    "target": "aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'name=system.cpu.usage_active', 'cpu=cpu-total', 'servertype=satellite'), 'host', 'cpu')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "Metrics",
+                    "target": "aliasByTags(seriesByTag('contur=prod', 'name=~system.cpu.usage_(guest|iowait|irq|nice|softirq|steal|system|user)', 'cpu=cpu-total', 'servertype=satellite', 'host=~${Capsule:regex}'), 'host', 'name')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Cpu-Total",
+            "type": "timeseries"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041f\u0440\u043e\u0446\u0435\u043d\u0442 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043a\u0430\u0436\u0434\u043e\u0433\u043e CPU",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 10,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 9,
+                "x": 9,
+                "y": 10
+            },
+            "id": 2,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "table",
+                    "placement": "right"
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('contur=prod', 'name=system.cpu.usage_active', 'servertype=satellite', 'host=~${Capsule:regex}'), 'host', 'cpu')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Cpu-Usage",
+            "type": "timeseries"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "Load Average",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 5,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "auto",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 6,
+                "x": 18,
+                "y": 10
+            },
+            "id": 5,
+            "options": {
+                "legend": {
+                    "calcs": [],
+                    "displayMode": "table",
+                    "placement": "right"
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('contur=prod', 'name=~system.system.load(1|5|15)', 'servertype=satellite', 'host=~${Capsule:regex}'), 'host', 2)",
+                    "textEditor": false
+                }
+            ],
+            "title": "Load Average",
+            "type": "timeseries"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0412\u0440\u0435\u043c\u044f \u0440\u0430\u0431\u043e\u0442\u044b \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0441 \u043c\u043e\u043c\u0435\u043d\u0442\u0430 \u0437\u0430\u043f\u0443\u0441\u043a\u0430.",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 24,
+                "x": 0,
+                "y": 18
+            },
+            "id": 44,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'name=~system.system.uptime', 'servertype=satellite'), 'host')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Uptime",
+            "type": "stat"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 26
+            },
+            "id": 28,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043e\u043f\u0435\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0439 \u043f\u0430\u043c\u044f\u0442\u0438 \u0432 \u0441\u0438\u0441\u0442\u0435\u043c\u0435",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "max": 100,
+                            "min": 0,
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "percent"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 11
+                    },
+                    "id": 17,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'servertype=satellite', 'name=~system.mem.(available|used)_percent'), 'host', 2)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Memory Usage %",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "dirty -  \u044d\u0442\u043e \u043f\u0430\u043c\u044f\u0442\u044c, \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u044e\u0449\u0430\u044f \u0434\u0430\u043d\u043d\u044b\u0435 \u043d\u0430 \u0434\u0438\u0441\u043a\u0435, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0431\u044b\u043b\u0438 \u0438\u0437\u043c\u0435\u043d\u0435\u043d\u044b, \u043d\u043e \u0435\u0449\u0435 \u043d\u0435 \u0431\u044b\u043b\u0438 \u0437\u0430\u043f\u0438\u0441\u0430\u043d\u044b \u043d\u0430 \u0434\u0438\u0441\u043a.\n\nwriteback - \u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0433\u0440\u044f\u0437\u043d\u044b\u0445 \u0441\u0442\u0440\u0430\u043d\u0438\u0446, \u043f\u043e\u0434\u043b\u0435\u0436\u0430\u0449\u0438\u0445 \u043e\u0431\u0440\u0430\u0442\u043d\u043e\u0439 \u0437\u0430\u043f\u0438\u0441\u0438\n",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "decbytes"
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "dirty"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "color",
+                                        "value": {
+                                            "fixedColor": "blue",
+                                            "mode": "fixed"
+                                        }
+                                    }
+                                ]
+                            },
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "writeback"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "color",
+                                        "value": {
+                                            "fixedColor": "orange",
+                                            "mode": "fixed"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 6,
+                        "x": 12,
+                        "y": 11
+                    },
+                    "id": 16,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "C",
+                            "target": "aliasSub(aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'servertype=satellite', 'name=~system.(mem.dirty|vmstat.nr_writeback)$'), 'host', 2), 'nr_', '')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Memory Dump",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044e swap",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "decbytes"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 6,
+                        "x": 18,
+                        "y": 11
+                    },
+                    "id": 20,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'servertype=satellite', 'name=~system.mem.swap_(cached|free|total)'), 'host', 2)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Swap Usage",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043e\u043f\u0435\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0439 \u043f\u0430\u043c\u044f\u0442\u0438 \u0432 \u0441\u0438\u0441\u0442\u0435\u043c\u0435 \u0432 \u0431\u0430\u0439\u0442\u0430\u0445",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "bytes"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 19
+                    },
+                    "id": 15,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'servertype=satellite', 'name=~system.mem.(buffered|cached|free|shared|slab|used|inactive)$'), 'host', 2)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Memory Usage All bytes",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u0432\u0438\u0440\u0442\u0443\u0430\u043b\u044c\u043d\u043e\u0439 \u043f\u0430\u043c\u044f\u0442\u0438, \u0441\u043e\u0431\u0438\u0440\u0430\u0435\u043c\u0430\u044f \u0438\u0437 /proc/vmstat.\nman vmstat",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "bytes"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 19
+                    },
+                    "id": 14,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'servertype=satellite', 'name=~system.vmstat.nr_(active_anon|active_file|inactive_anon|inactive_file|mapped|slab)'), 'host', 2)",
+                            "textEditor": false
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'servertype=satellite', 'name=~system.vmstat.balloon_(deflate|inflate|migrate)'), 'host', 2)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Memory Activity",
+                    "transformations": [],
+                    "type": "timeseries"
+                }
+            ],
+            "title": "Memory",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 27
+            },
+            "id": 24,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u041f\u0440\u043e\u0446\u0435\u043d\u0442 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u043c\u0435\u0441\u0442\u0430 \u043d\u0430 \u0434\u0438\u0441\u043a\u0435",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "max": 100,
+                            "min": 0,
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "percent"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 28
+                    },
+                    "id": 6,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "aliasSub(aliasByTags(seriesByTag('contur=prod', 'servertype=satellite', 'name=system.disk.used_percent', 'servertype=satellite', 'host=~${Capsule:regex}'), 'host', 'path'), '-', '/')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Disk Usage",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u042d\u0442\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u043f\u043e\u0434\u0441\u0447\u0438\u0442\u044b\u0432\u0430\u044e\u0442 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043c\u0438\u043b\u043b\u0438\u0441\u0435\u043a\u0443\u043d\u0434 \u043e\u0436\u0438\u0434\u0430\u043d\u0438\u044f \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0432\u0432\u043e\u0434\u0430-\u0432\u044b\u0432\u043e\u0434\u0430 \u043d\u0430 \u044d\u0442\u043e\u043c \u0431\u043b\u043e\u0447\u043d\u043e\u043c \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u0435. \u0415\u0441\u043b\u0438 \u0438\u043c\u0435\u0435\u0442\u0441\u044f \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u043e\u0436\u0438\u0434\u0430\u044e\u0449\u0438\u0445 \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0432\u0432\u043e\u0434\u0430-\u0432\u044b\u0432\u043e\u0434\u0430, \u044d\u0442\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u0431\u0443\u0434\u0443\u0442 \u0443\u0432\u0435\u043b\u0438\u0447\u0438\u0432\u0430\u0442\u044c\u0441\u044f \u0441\u043e \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u044c\u044e, \u043f\u0440\u0435\u0432\u044b\u0448\u0430\u044e\u0449\u0435\u0439 1000 \u0432 \u0441\u0435\u043a\u0443\u043d\u0434\u0443; \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0435\u0441\u043b\u0438 60 \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u043d\u0430 \u0447\u0442\u0435\u043d\u0438\u0435 \u0436\u0434\u0443\u0442 \u0432 \u0441\u0440\u0435\u0434\u043d\u0435\u043c 30 \u043c\u0441, \u043f\u043e\u043b\u0435 read_time \u0443\u0432\u0435\u043b\u0438\u0447\u0438\u0442\u0441\u044f \u043d\u0430 60*30 = 1800.\n(These values count the number of milliseconds that I/O requests have waited on this block device. If there are multiple I/O requests waiting, these values will increase at a rate greater than 1000/second; for example, if 60 read requests wait for an average of 30 ms, the read_time field will increase by 60*30 = 1800.)\n\n",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "\u00b5s"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 28
+                    },
+                    "id": 7,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasByTags(perSecond(seriesByTag('contur=prod', 'servertype=satellite', '_name=~(sd|vd)', 'name=~system.diskio.(read_time|write_time)', 'host=~${Capsule:regex}')), 'host', 'name', '_name')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Disk await lag",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u042d\u0442\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u043f\u043e\u0434\u0441\u0447\u0438\u0442\u044b\u0432\u0430\u044e\u0442 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0431\u0430\u0439\u0442\u043e\u0432, \u043f\u0440\u043e\u0447\u0438\u0442\u0430\u043d\u043d\u044b\u0445 \u0438\u043b\u0438 \u0437\u0430\u043f\u0438\u0441\u0430\u043d\u043d\u044b\u0445 \u043d\u0430 \u044d\u0442\u043e \u0431\u043b\u043e\u0447\u043d\u043e\u0435 \u0443\u0441\u0442\u0440\u043e\u0439\u0441\u0442\u0432\u043e.\n(These values count the number of bytes read from or written to this block device.)",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "decbytes"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 36
+                    },
+                    "id": 8,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasByTags(perSecond(seriesByTag('contur=prod', 'servertype=satellite', '_name=~(sd|vd)', 'name=~system.diskio.(read_bytes|write_bytes)', 'host=~${Capsule:regex}')), 'host', 'name', '_name')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Disk Read/Write bytes",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0439 \u0432\u0432\u043e\u0434\u0430-\u0432\u044b\u0432\u043e\u0434\u0430, \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0435\u043c\u044b\u0445 \u0441\u0438\u0441\u0442\u0435\u043c\u043e\u0439 \u0445\u0440\u0430\u043d\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445, \u0437\u0430 \u043e\u0434\u043d\u0443 \u0441\u0435\u043a\u0443\u043d\u0434\u0443.\n\u042d\u0442\u0438 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u044f \u0443\u0432\u0435\u043b\u0438\u0447\u0438\u0432\u0430\u044e\u0442\u0441\u044f \u043f\u043e\u0441\u043b\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u044f \u0437\u0430\u043f\u0440\u043e\u0441\u0430 \u0432\u0432\u043e\u0434\u0430-\u0432\u044b\u0432\u043e\u0434\u0430.\n(These values increment when an I/O request completes.)",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "none"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 36
+                    },
+                    "id": 12,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasByTags(perSecond(seriesByTag('contur=prod', 'servertype=satellite', '_name=~(sd|vd)', 'name=~system.diskio.(reads|writes)', 'host=~${Capsule:regex}')), 'host', 'name', '_name')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Disk Read/Write i/o",
+                    "transformations": [],
+                    "type": "timeseries"
+                }
+            ],
+            "title": "Disk",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 28
+            },
+            "id": 26,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "bytes_sent \u2014 \u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0431\u0430\u0439\u0442\u043e\u0432, \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044b\u0445 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u043e\u043c.\n\nbytes_recv \u2014 \u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0431\u0430\u0439\u0442\u043e\u0432, \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u043d\u044b\u0445 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u043e\u043c",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "Bps"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 6,
+                        "w": 12,
+                        "x": 0,
+                        "y": 13
+                    },
+                    "id": 11,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasByTags(perSecond(seriesByTag('contur=prod', 'servertype=satellite', 'name=~system.net.bytes_(recv|sent)', 'host=~${Capsule:regex}')), 'host', 2)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Network Rx/Tx bps",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "packages_sent \u2014 \u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0430\u043a\u0435\u0442\u043e\u0432, \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044b\u0445 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u043e\u043c.\n\npackages_recv \u2014 \u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0430\u043a\u0435\u0442\u043e\u0432, \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u043d\u044b\u0445 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u043e\u043c.",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "pps"
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "C {contur=\"prod\", host=\"sat.mgmt.tensor.ru\", interface=\"eth0\", interval=\"5s\", name=\"system.net.packets_recv\", servertype=\"satellite\"}"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "displayName",
+                                        "value": "Rx pps"
+                                    }
+                                ]
+                            },
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "C {contur=\"prod\", host=\"sat.mgmt.tensor.ru\", interface=\"eth0\", interval=\"5s\", name=\"system.net.packets_sent\", servertype=\"satellite\"}"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "displayName",
+                                        "value": "Tx pps"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 6,
+                        "w": 12,
+                        "x": 12,
+                        "y": 13
+                    },
+                    "id": 10,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasByTags(perSecond(seriesByTag('contur=prod', 'servertype=satellite', 'name=~system.net.packets_(recv|sent)', 'host=~${Capsule:regex}')), 'host', 2)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Network Rx/Tx pps",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "drop_in \u2014 \u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u043d\u044b\u0445 \u043f\u0430\u043a\u0435\u0442\u043e\u0432, \u043e\u0442\u0431\u0440\u043e\u0448\u0435\u043d\u043d\u044b\u0445 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u043e\u043c. \n\ndrop_out \u2014 \u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0435\u0440\u0435\u0434\u0430\u043d\u043d\u044b\u0445 \u043f\u0430\u043a\u0435\u0442\u043e\u0432, \u043e\u0442\u0431\u0440\u043e\u0448\u0435\u043d\u043d\u044b\u0445 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u043e\u043c",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "Bps"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 6,
+                        "w": 8,
+                        "x": 0,
+                        "y": 19
+                    },
+                    "id": 9,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasByTags(perSecond(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'servertype=satellite', 'name=~system.net.drop_(in|out)')), 'host', 2)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Network Rx/Tx package drops",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "err_in \u2014 \u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0448\u0438\u0431\u043e\u043a \u043f\u0440\u0438\u0435\u043c\u0430, \u043e\u0431\u043d\u0430\u0440\u0443\u0436\u0435\u043d\u043d\u044b\u0445 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u043e\u043c. \n\nerr_out \u2014 \u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0448\u0438\u0431\u043e\u043a \u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0438, \u043e\u0431\u043d\u0430\u0440\u0443\u0436\u0435\u043d\u043d\u044b\u0445 \u0438\u043d\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u043e\u043c.",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "none"
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "C {contur=\"prod\", host=\"sat.mgmt.tensor.ru\", interface=\"eth0\", interval=\"5s\", name=\"system.net.err_in\", servertype=\"satellite\"}"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "displayName",
+                                        "value": "Rx Errors (in)"
+                                    }
+                                ]
+                            },
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "C {contur=\"prod\", host=\"sat.mgmt.tensor.ru\", interface=\"eth0\", interval=\"5s\", name=\"system.net.err_out\", servertype=\"satellite\"}"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "displayName",
+                                        "value": "Tx Errors (out)"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 6,
+                        "w": 8,
+                        "x": 8,
+                        "y": 19
+                    },
+                    "id": 19,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasByTags(perSecond(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'servertype=satellite', 'name=~system.net.err_(in|out)')), 'host', 2)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Network Rx/Tx package errors",
+                    "transformations": [],
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e tcp-\u0441\u043e\u043a\u0435\u0442\u0430\u043c ",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 5,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "none"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 6,
+                        "w": 8,
+                        "x": 16,
+                        "y": 19
+                    },
+                    "id": 18,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "table",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "aliasByTags(seriesByTag('contur=prod', 'host=~${Capsule:regex}', 'servertype=satellite', 'name=~system.netstat.tcp_(close_wait|established|listen|time_wait)'), 'host', 2)",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Network connections (Netstat)",
+                    "transformations": [],
+                    "type": "timeseries"
+                }
+            ],
+            "title": "Network",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 29
+            },
+            "id": 32,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0412\u0440\u0435\u043c\u044f \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0439 \u0441\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u043a\u0430\u043f\u0441\u0443\u043b\u0435\u0439 Satellite",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "dateTimeAsLocal"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 6,
+                        "w": 24,
+                        "x": 0,
+                        "y": 14
+                    },
+                    "id": 30,
+                    "options": {
+                        "colorMode": "background",
+                        "graphMode": "none",
+                        "justifyMode": "auto",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "text": {},
+                        "textMode": "auto"
+                    },
+                    "pluginVersion": "8.1.2",
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "aliasSub(aliasByTags(scale(seriesByTag('contur=prod', 'host=sat.mgmt.tensor.ru', 'servertype=satellite', 'name=~status_sync_spr.last_sync_time.${Capsule:regex}'), 1000, 0), 'name'), 'status_sync_spr.last_sync_time.', '')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Last Sync Time",
+                    "type": "stat"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 \u0442\u0430\u0441\u043a\u0438 \u0441\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u043d\u0430 \u043a\u0430\u043f\u0441\u0443\u043b\u044c \u0432 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438 Failed ",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "from": 0,
+                                        "result": {
+                                            "color": "green",
+                                            "index": 0
+                                        },
+                                        "to": 0
+                                    },
+                                    "type": "range"
+                                },
+                                {
+                                    "options": {
+                                        "from": 1,
+                                        "result": {
+                                            "color": "red",
+                                            "index": 1
+                                        },
+                                        "to": 1e+22
+                                    },
+                                    "type": "range"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "none"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 11,
+                        "w": 5,
+                        "x": 0,
+                        "y": 20
+                    },
+                    "id": 33,
+                    "options": {
+                        "displayMode": "gradient",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "showUnfilled": true,
+                        "text": {}
+                    },
+                    "pluginVersion": "8.1.2",
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasSub(aliasByTags(seriesByTag('contur=prod', 'host=sat.mgmt.tensor.ru', 'servertype=satellite', 'name=~status_sync_spr.last_failed_sync_tasks.${Capsule:regex}'), 'name'), 'status_sync_spr.last_failed_sync_tasks.', '')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Last Failed Sync Tasks",
+                    "type": "bargauge"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0422\u0430\u0441\u043a\u0438 \u0441\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u043d\u0430 \u043a\u0430\u043f\u0441\u0443\u043b\u044c \u0432 \u0434\u0430\u043d\u043d\u043e\u0435 \u0432\u0440\u0435\u043c\u044f ",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "from": 0,
+                                        "result": {
+                                            "color": "green",
+                                            "index": 0
+                                        },
+                                        "to": 0
+                                    },
+                                    "type": "range"
+                                },
+                                {
+                                    "options": {
+                                        "from": 1,
+                                        "result": {
+                                            "color": "red",
+                                            "index": 1
+                                        },
+                                        "to": 1e+22
+                                    },
+                                    "type": "range"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "none"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 11,
+                        "w": 5,
+                        "x": 5,
+                        "y": 20
+                    },
+                    "id": 36,
+                    "options": {
+                        "displayMode": "gradient",
+                        "orientation": "auto",
+                        "reduceOptions": {
+                            "calcs": [
+                                "lastNotNull"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "showUnfilled": true,
+                        "text": {}
+                    },
+                    "pluginVersion": "8.1.2",
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasSub(aliasByTags(seriesByTag('contur=prod', 'host=sat.mgmt.tensor.ru', 'servertype=satellite', 'name=~status_sync_spr.active_sync_tasks.${Capsule:regex}'), 'name'), 'status_sync_spr.active_sync_tasks.', '')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Active Sync Tasks",
+                    "type": "bargauge"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0435 \u0442\u0430\u0441\u043a\u0438 \u0441\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u043d\u0430 \u043a\u0430\u043f\u0441\u0443\u043b\u044c \u0432 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0438 Failed ",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "none"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 6,
+                        "w": 14,
+                        "x": 10,
+                        "y": 20
+                    },
+                    "id": 34,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "pluginVersion": "8.1.2",
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasSub(aliasByTags(seriesByTag('contur=prod', 'host=sat.mgmt.tensor.ru', 'servertype=satellite', 'name=~status_sync_spr.last_failed_sync_tasks.${Capsule:regex}'), 'name'), 'status_sync_spr.last_failed_sync_tasks.', '')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Last Failed Sync Tasks",
+                    "type": "timeseries"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "\u0422\u0430\u0441\u043a\u0438 \u0441\u0438\u043d\u0445\u0440\u043e\u043d\u0438\u0437\u0430\u0446\u0438\u0438 \u043d\u0430 \u043a\u0430\u043f\u0441\u0443\u043b\u044c \u0432 \u0434\u0430\u043d\u043d\u043e\u0435 \u0432\u0440\u0435\u043c\u044f ",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "barAlignment": 0,
+                                "drawStyle": "line",
+                                "fillOpacity": 0,
+                                "gradientMode": "none",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineInterpolation": "linear",
+                                "lineWidth": 1,
+                                "pointSize": 5,
+                                "scaleDistribution": {
+                                    "type": "linear"
+                                },
+                                "showPoints": "auto",
+                                "spanNulls": false,
+                                "stacking": {
+                                    "group": "A",
+                                    "mode": "none"
+                                },
+                                "thresholdsStyle": {
+                                    "mode": "off"
+                                }
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "none"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 5,
+                        "w": 14,
+                        "x": 10,
+                        "y": 26
+                    },
+                    "id": 35,
+                    "options": {
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "right"
+                        },
+                        "tooltip": {
+                            "mode": "single"
+                        }
+                    },
+                    "pluginVersion": "8.1.2",
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "aliasSub(aliasByTags(seriesByTag('contur=prod', 'host=sat.mgmt.tensor.ru', 'servertype=satellite', 'name=~status_sync_spr.active_sync_tasks.${Capsule:regex}'), 'name'), 'status_sync_spr.active_sync_tasks.', '')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "Active Sync Tasks",
+                    "type": "timeseries"
+                }
+            ],
+            "title": "Satellite Statistics",
+            "type": "row"
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 30,
+    "style": "dark",
+    "tags": [
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(host, servertype=satellite)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "Capsule",
+                "options": [],
+                "query": "tag_values(host, servertype=satellite)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-15m",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "Satellite-Capsules",
+    "uid": "NwrlZ6-7z",
+    "version": 1
+}

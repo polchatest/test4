@@ -1,0 +1,1764 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041a\u043e\u043c\u043f\u043b\u0435\u043a\u0441\u043d\u044b\u0439 \u044d\u043a\u0440\u0430\u043d \u0434\u043b\u044f \u043f\u0440\u043e\u0441\u043c\u043e\u0442\u0440\u0430 \u043b\u043e\u0433\u043e\u0432 smtp \u0441\u0435\u0440\u0432\u0435\u0440\u043e\u0432, \u043f\u043e\u0434\u043a\u043b\u044e\u0447\u0435\u043d\u043d\u044b\u0445 \u043a mail-log. \u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041a\u0430\u0437\u0430\u043d\u043a\u0438\u043d \u041b.\u0415./\u041d\u0438\u043a\u0438\u0442\u0438\u043d \u041c.\u0421. (\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1692,
+    "iteration": 1646987089277,
+    "links": [
+        {
+            "icon": "external link",
+            "keepTime": true,
+            "tags": [
+                "email"
+            ],
+            "type": "dashboards"
+        },
+        {
+            "icon": "dashboard",
+            "tags": [],
+            "targetBlank": true,
+            "title": "Socnet-aggregation dashboard",
+            "type": "link",
+            "url": "https://monitor.sbis.ru/d/8dnO4D9Gz/servisy-uvedomlenii-socnet-aggregation?orgId=1&refresh=10s"
+        },
+        {
+            "icon": "cloud",
+            "tags": [],
+            "targetBlank": true,
+            "title": "sbis-notice",
+            "type": "link",
+            "url": "https://cloud.sbis.ru/notice/users/"
+        },
+        {
+            "icon": "cloud",
+            "tags": [],
+            "targetBlank": true,
+            "title": "socnet-aggregation-admin",
+            "type": "link",
+            "url": "https://cloud.sbis.ru/socnet-aggregation-admin/status"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": "Elasticsearch-mail",
+            "description": "\u0412 \u043f\u043e\u043b\u0435 Email \u0432\u0432\u043e\u0434\u0438\u0442\u0441\u044f \u0430\u0434\u0440\u0435\u0441 \u0441 \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0448\u043b\u0438 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438, \u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u0432 \u0441\u043f\u0438\u0441\u043a\u0435 \u043e\u043d \u043c\u043e\u0436\u0435\u0442 \u043d\u0435 \u043f\u043e\u044f\u0432\u0438\u0442\u0441\u044f, \u044d\u0442\u043e \u043d\u043e\u0440\u043c\u0430, \u0436\u043c\u0435\u0442\u0435 Enter \u0438 \u0434\u043e\u043b\u0436\u043d\u043e \u043f\u043e\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u0441\u044f.\n\nComplete - \u0425\u043e\u0440\u043e\u0448\u043e\n\nmessage_type != {to,from} - \u041f\u043b\u043e\u0445\u043e",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "auto",
+                        "displayMode": "auto",
+                        "filterable": true
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "exim_id"
+                        },
+                        "properties": [
+                            {
+                                "id": "links",
+                                "value": [
+                                    {
+                                        "targetBlank": true,
+                                        "title": "",
+                                        "url": "https://mail-log.tensor.ru:9000/search?rangetype=relative&fields=message%2Csource&width=1280&highlightMessage=&relative=0&q=exim_id%3A%22${__value.text}%22"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": "custom.width",
+                                "value": 168
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "message"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.displayMode",
+                                "value": "json-view"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "date"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 195
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "email"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 206
+                            },
+                            {
+                                "id": "links",
+                                "value": [
+                                    {
+                                        "targetBlank": true,
+                                        "title": "",
+                                        "url": "https://mail-log.tensor.ru:9000/search?rangetype=relative&fields=message%2Csource&width=1280&highlightMessage=&relative=0&q=email%3A%22${__value.text}%22"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "message_type"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 147
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 9,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 2,
+            "options": {
+                "footer": {
+                    "fields": "",
+                    "reducer": [
+                        "sum"
+                    ],
+                    "show": false
+                },
+                "showHeader": true,
+                "sortBy": []
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "alias": "",
+                    "bucketAggs": [],
+                    "metrics": [
+                        {
+                            "id": "1",
+                            "settings": {
+                                "size": "500"
+                            },
+                            "type": "raw_data"
+                        }
+                    ],
+                    "query": "exim_id:$Exim_id AND source:$Source",
+                    "refId": "A",
+                    "timeField": "timestamp"
+                }
+            ],
+            "title": "\u041b\u043e\u0433 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u043f\u0438\u0441\u0435\u043c",
+            "transformations": [
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {
+                            "_id": true,
+                            "_index": true,
+                            "_type": true,
+                            "authenticator_name": true,
+                            "authenticator_user": true,
+                            "bounce_reference": true,
+                            "certificate_verified": true,
+                            "confirmation_on_delivery": true,
+                            "deferred_reason": true,
+                            "delivery_time": true,
+                            "gl2_message_id": true,
+                            "gl2_remote_ip": true,
+                            "gl2_remote_port": true,
+                            "gl2_source_input": true,
+                            "gl2_source_node": true,
+                            "highlight": true,
+                            "host_ip": true,
+                            "host_ip_city_name": true,
+                            "host_ip_country_code": true,
+                            "host_ip_geolocation": true,
+                            "host_name": true,
+                            "mail_size": true,
+                            "message_id": true,
+                            "protocol": true,
+                            "queue_time": true,
+                            "reception_time": true,
+                            "router_name": true,
+                            "sort": true,
+                            "source": true,
+                            "streams": true,
+                            "timestamp": true,
+                            "tls_cipher": true,
+                            "transport_name": true
+                        },
+                        "indexByName": {
+                            "_id": 1,
+                            "_index": 2,
+                            "_type": 3,
+                            "date": 4,
+                            "delivery_time": 5,
+                            "email": 7,
+                            "exim_id": 6,
+                            "gl2_message_id": 8,
+                            "gl2_remote_ip": 9,
+                            "gl2_remote_port": 10,
+                            "gl2_source_input": 11,
+                            "gl2_source_node": 12,
+                            "host_ip": 13,
+                            "host_ip_city_name": 14,
+                            "host_ip_country_code": 15,
+                            "host_ip_geolocation": 16,
+                            "host_name": 17,
+                            "mail_size": 18,
+                            "message": 20,
+                            "message_id": 21,
+                            "message_type": 19,
+                            "protocol": 22,
+                            "queue_time": 23,
+                            "reception_time": 24,
+                            "router_name": 25,
+                            "sort": 26,
+                            "source": 27,
+                            "streams": 28,
+                            "timestamp": 0,
+                            "transport_name": 29
+                        },
+                        "renameByName": {}
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 9
+            },
+            "id": 17,
+            "panels": [
+                {
+                    "datasource": "Elasticsearch-mail",
+                    "description": "\u0421\u043e\u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u0435 \u043f\u0440\u0438\u043d\u044f\u0442\u044b\u0445 \u0438 \u043f\u0435\u0440\u0435\u0434\u0430\u043d\u043d\u044b\u0445 \u043f\u0438\u0441\u0435\u043c \u043f\u043e \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0430\u043c. \u0427\u0435\u043c \u0431\u043e\u043b\u044c\u0448\u0435 \u043a 50%, \u0442\u0435\u043c \u043b\u0443\u0447\u0448\u0435. (\u043f\u0438\u0441\u044c\u043c\u0430 \u043d\u0435 \u0437\u0430\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u044e\u0442\u0441\u044f \u0432 \u043e\u0447\u0435\u0440\u0435\u0434\u0438)",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "palette-classic"
+                            },
+                            "custom": {
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                }
+                            },
+                            "mappings": [],
+                            "unit": "short"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 10
+                    },
+                    "id": 21,
+                    "interval": "30",
+                    "links": [],
+                    "options": {
+                        "displayLabels": [
+                            "percent",
+                            "name",
+                            "value"
+                        ],
+                        "legend": {
+                            "displayMode": "hidden",
+                            "placement": "bottom"
+                        },
+                        "pieType": "pie",
+                        "reduceOptions": {
+                            "calcs": [
+                                "sum"
+                            ],
+                            "fields": "",
+                            "values": false
+                        },
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "none"
+                        }
+                    },
+                    "pluginVersion": "8.2.3",
+                    "targets": [
+                        {
+                            "alias": "FROM",
+                            "bucketAggs": [
+                                {
+                                    "field": "timestamp",
+                                    "id": "3",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "min_doc_count": "1",
+                                        "trimEdges": "0"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "source:$Source AND message_type:from AND reception_time:>=0.000s",
+                            "refId": "A",
+                            "timeField": "timestamp"
+                        },
+                        {
+                            "alias": "TO",
+                            "bucketAggs": [
+                                {
+                                    "field": "timestamp",
+                                    "id": "3",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "min_doc_count": "1",
+                                        "trimEdges": "0"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "source:$Source AND message_type:to AND delivery_time:>=0.000s",
+                            "refId": "B",
+                            "timeField": "timestamp"
+                        }
+                    ],
+                    "title": "\u0421\u043e\u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u0435 \u043f\u0440\u0438\u043d\u044f\u0442\u044b\u0445 \u0438 \u043f\u0435\u0440\u0435\u0434\u0430\u043d\u043d\u044b\u0445 \u043f\u0438\u0441\u0435\u043c",
+                    "transformations": [],
+                    "transparent": true,
+                    "type": "piechart"
+                },
+                {
+                    "datasource": "Elasticsearch-mail",
+                    "description": "source:$Source AND message_type:from AND reception_time:>=0.000s",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "axisLabel": "",
+                                "axisPlacement": "auto",
+                                "axisSoftMin": 0,
+                                "fillOpacity": 80,
+                                "gradientMode": "hue",
+                                "hideFrom": {
+                                    "legend": false,
+                                    "tooltip": false,
+                                    "viz": false
+                                },
+                                "lineWidth": 1
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "dark-blue",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "unit": "short"
+                        },
+                        "overrides": []
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 10
+                    },
+                    "id": 24,
+                    "interval": "30",
+                    "links": [],
+                    "options": {
+                        "barRadius": 0,
+                        "barWidth": 0.97,
+                        "groupWidth": 0.7,
+                        "legend": {
+                            "calcs": [],
+                            "displayMode": "list",
+                            "placement": "bottom"
+                        },
+                        "orientation": "horizontal",
+                        "showValue": "auto",
+                        "stacking": "none",
+                        "text": {},
+                        "tooltip": {
+                            "mode": "single",
+                            "sort": "none"
+                        },
+                        "xTickLabelRotation": 0,
+                        "xTickLabelSpacing": 0
+                    },
+                    "pluginVersion": "8.2.3",
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [
+                                {
+                                    "field": "email",
+                                    "id": "2",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "1",
+                                        "size": "0"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "timestamp",
+                                    "id": "3",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "min_doc_count": "0",
+                                        "trimEdges": "0"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "source:$Source AND message_type:from AND reception_time:>=0.000s",
+                            "refId": "A",
+                            "timeField": "timestamp"
+                        }
+                    ],
+                    "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u043d\u044b\u0445 \u043f\u0438\u0441\u0435\u043c \u041e\u0422 \u0434\u043e\u043c\u0435\u043d\u043e\u0432 \u043f\u0435\u0440\u0432\u043e\u0433\u043e \u0443\u0440\u043e\u0432\u043d\u044f",
+                    "transformations": [
+                        {
+                            "id": "renameByRegex",
+                            "options": {
+                                "regex": "^(.)+\\.(.+)$",
+                                "renamePattern": "$2"
+                            }
+                        },
+                        {
+                            "id": "reduce",
+                            "options": {
+                                "labelsToFields": false,
+                                "reducers": [
+                                    "sum"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "Field": {
+                                        "aggregations": [
+                                            "sum"
+                                        ],
+                                        "operation": "groupby"
+                                    },
+                                    "Total": {
+                                        "aggregations": [
+                                            "sum"
+                                        ],
+                                        "operation": "aggregate"
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    "transparent": true,
+                    "type": "barchart"
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Elasticsearch-mail",
+                    "decimals": 0,
+                    "description": "source:$Source AND message_type:from AND reception_time:>=0.000s",
+                    "fieldConfig": {
+                        "defaults": {
+                            "unit": "short"
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byType",
+                                    "options": "number"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "links",
+                                        "value": [
+                                            {
+                                                "title": "\u041f\u043e\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0430\u0434\u0440\u0435\u0441 \u0432 \u0444\u0438\u043b\u044c\u0442\u0440 \u0432 \u043b\u043e\u0433 \u0442\u0430\u0431\u043b\u0438\u0446\u0443",
+                                                "url": "https://monitor.sbis.ru/d/CgKQzfOnz/email-statistika-otpravok?orgId=1&from=${__from}&to=${__to}&var-Source=All&var-Email=${__series.name}&var-Exim_id=All&var-Spam_Exim_id=All"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "\u0412\u0441\u0435\u0433\u043e \u043f\u0438\u0441\u0435\u043c"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "links"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 0,
+                        "y": 18
+                    },
+                    "hiddenSeries": false,
+                    "id": 20,
+                    "interval": "30",
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": true,
+                        "current": true,
+                        "hideEmpty": false,
+                        "hideZero": false,
+                        "max": true,
+                        "min": false,
+                        "rightSide": false,
+                        "show": true,
+                        "sort": "total",
+                        "sortDesc": true,
+                        "total": true,
+                        "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "links": [],
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "8.2.3",
+                    "pointradius": 0.5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [
+                                {
+                                    "field": "email",
+                                    "id": "2",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "1",
+                                        "size": "10"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "timestamp",
+                                    "id": "3",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "min_doc_count": "0",
+                                        "trimEdges": "0"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "source:$Source AND message_type:from AND reception_time:>=0.000s",
+                            "refId": "A",
+                            "timeField": "timestamp"
+                        },
+                        {
+                            "alias": "\u0412\u0441\u0435\u0433\u043e \u043f\u0438\u0441\u0435\u043c",
+                            "bucketAggs": [
+                                {
+                                    "field": "timestamp",
+                                    "id": "3",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "min_doc_count": "1",
+                                        "trimEdges": "0"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "source:$Source AND message_type:from AND reception_time:>=0.000s",
+                            "refId": "B",
+                            "timeField": "timestamp"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0438 \u0422\u043e\u043f 10 \u0430\u0434\u0440\u0435\u0441\u043e\u0432 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u043d\u044b\u0445 \u043f\u0438\u0441\u0435\u043c \u041e\u0422",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "transformations": [],
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "$$hashKey": "object:87",
+                            "format": "short",
+                            "logBase": 1,
+                            "show": true
+                        },
+                        {
+                            "$$hashKey": "object:88",
+                            "format": "short",
+                            "logBase": 1,
+                            "show": false
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false
+                    }
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Elasticsearch-mail",
+                    "decimals": 0,
+                    "description": "source:$Source AND message_type:to AND delivery_time:>=0.000s",
+                    "fieldConfig": {
+                        "defaults": {
+                            "unit": "short"
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byType",
+                                    "options": "number"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "links",
+                                        "value": [
+                                            {
+                                                "title": "\u041f\u043e\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0430\u0434\u0440\u0435\u0441 \u0432 \u0444\u0438\u043b\u044c\u0442\u0440 \u0432 \u043b\u043e\u0433 \u0442\u0430\u0431\u043b\u0438\u0446\u0443",
+                                                "url": "https://monitor.sbis.ru/d/CgKQzfOnz/email-statistika-otpravok?orgId=1&from=${__from}&to=${__to}&var-Source=All&var-Email=${__series.name}&var-Exim_id=All&var-Spam_Exim_id=All"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "\u0412\u0441\u0435\u0433\u043e \u043f\u0438\u0441\u0435\u043c"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "links"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 12,
+                        "x": 12,
+                        "y": 18
+                    },
+                    "hiddenSeries": false,
+                    "id": 18,
+                    "interval": "30",
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": true,
+                        "current": true,
+                        "hideEmpty": false,
+                        "hideZero": false,
+                        "max": true,
+                        "min": false,
+                        "rightSide": false,
+                        "show": true,
+                        "sort": "total",
+                        "sortDesc": true,
+                        "total": true,
+                        "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "8.2.3",
+                    "pointradius": 0.5,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [
+                                {
+                                    "field": "email",
+                                    "id": "2",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "1",
+                                        "size": "10"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "timestamp",
+                                    "id": "3",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "min_doc_count": "0",
+                                        "trimEdges": "0"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "source:$Source AND message_type:to AND delivery_time:>=0.000s",
+                            "refId": "A",
+                            "timeField": "timestamp"
+                        },
+                        {
+                            "alias": "\u0412\u0441\u0435\u0433\u043e \u043f\u0438\u0441\u0435\u043c",
+                            "bucketAggs": [
+                                {
+                                    "field": "timestamp",
+                                    "id": "3",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "min_doc_count": "0",
+                                        "trimEdges": "0"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "source:$Source AND message_type:to AND delivery_time:>=0.000s",
+                            "refId": "B",
+                            "timeField": "timestamp"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0438 \u0422\u043e\u043f 10 \u0430\u0434\u0440\u0435\u0441\u043e\u0432 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044b\u0445 \u043f\u0438\u0441\u0435\u043c \u0414\u041e",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "transformations": [],
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "$$hashKey": "object:87",
+                            "format": "short",
+                            "logBase": 1,
+                            "show": true
+                        },
+                        {
+                            "$$hashKey": "object:88",
+                            "format": "short",
+                            "logBase": 1,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false
+                    }
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": "Elasticsearch-mail",
+                    "description": "\u0412 \u043d\u0430\u0448\u0443 \u0441\u0442\u043e\u0440\u043e\u043d\u0443. \u0421\u0447\u0438\u0442\u0430\u044e\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u0442\u0435, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0443\u0441\u043f\u0435\u0448\u043d\u043e \u0434\u043e\u0441\u0442\u0430\u0432\u0438\u043b\u0438 \u043f\u0438\u0441\u044c\u043c\u043e \u043f\u043e maildir_spam_delivery",
+                    "fieldConfig": {
+                        "defaults": {},
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byType",
+                                    "options": "number"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "links",
+                                        "value": [
+                                            {
+                                                "title": "\u041f\u043e\u0434\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0430\u0434\u0440\u0435\u0441 \u0432 \u0444\u0438\u043b\u044c\u0442\u0440 \u043b\u043e\u0433 \u0442\u0430\u0431\u043b\u0438\u0446\u044b",
+                                                "url": "https://monitor.sbis.ru/d/CgKQzfOnz/email-statistika-otpravok?orgId=1&from=${__from}&to=${__to}&var-Source=All&var-Email=${__value.text}&var-Exim_id=All&var-Spam_Exim_id=All"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "\u0412\u0441\u0435\u0433\u043e \u043f\u0438\u0441\u0435\u043c"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "links"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 8,
+                        "w": 24,
+                        "x": 0,
+                        "y": 26
+                    },
+                    "hiddenSeries": false,
+                    "id": 13,
+                    "interval": "30",
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": true,
+                        "current": true,
+                        "max": true,
+                        "min": false,
+                        "show": true,
+                        "sort": "total",
+                        "sortDesc": true,
+                        "total": true,
+                        "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "8.2.3",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [
+                                {
+                                    "field": "email",
+                                    "id": "2",
+                                    "settings": {
+                                        "min_doc_count": "1",
+                                        "order": "desc",
+                                        "orderBy": "1",
+                                        "size": "10"
+                                    },
+                                    "type": "terms"
+                                },
+                                {
+                                    "field": "timestamp",
+                                    "id": "3",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "min_doc_count": "0",
+                                        "trimEdges": "0"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "exim_id:$Spam_Exim_id AND source:$Source AND message_type:from",
+                            "refId": "A",
+                            "timeField": "timestamp"
+                        },
+                        {
+                            "alias": "\u0412\u0441\u0435\u0433\u043e \u043f\u0438\u0441\u0435\u043c",
+                            "bucketAggs": [
+                                {
+                                    "field": "timestamp",
+                                    "id": "3",
+                                    "settings": {
+                                        "interval": "auto",
+                                        "min_doc_count": "0",
+                                        "trimEdges": "0"
+                                    },
+                                    "type": "date_histogram"
+                                }
+                            ],
+                            "hide": false,
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "type": "count"
+                                }
+                            ],
+                            "query": "exim_id:$Spam_Exim_id AND source:$Source AND message_type:from",
+                            "refId": "B",
+                            "timeField": "timestamp"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0438 \u0422\u043e\u043f 10 \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u0435\u043b\u0435\u0439 \u0441\u043f\u0430\u043c\u0430 \u0432 \u043d\u0430\u0448\u0443 \u0441\u0442\u043e\u0440\u043e\u043d\u0443",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "transformations": [],
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "$$hashKey": "object:1222",
+                            "format": "short",
+                            "logBase": 1,
+                            "show": true
+                        },
+                        {
+                            "$$hashKey": "object:1223",
+                            "format": "short",
+                            "logBase": 1,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false
+                    }
+                },
+                {
+                    "datasource": "Elasticsearch-mail",
+                    "description": "\u041b\u043e\u0433 \u043e\u0448\u0438\u0431\u043e\u043a \u043e\u0442\u043f\u0440\u0430\u0432\u043e\u043a SMTP \u0441\u0435\u0440\u0432\u0435\u0440\u043e\u0432.",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "auto",
+                                "displayMode": "auto",
+                                "filterable": true
+                            },
+                            "mappings": [],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": []
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "message"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.displayMode",
+                                        "value": "json-view"
+                                    }
+                                ]
+                            },
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "exim_id"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "links",
+                                        "value": [
+                                            {
+                                                "title": "",
+                                                "url": "https://monitor.sbis.ru/d/CgKQzfOnz/email-statistika-otpravok?orgId=1&from=${__from}&to=${__to}&var-Source=All&var-Exim_id=${__value.text}&var-Spam_Exim_id=All"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "email"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 8,
+                        "w": 24,
+                        "x": 0,
+                        "y": 34
+                    },
+                    "id": 15,
+                    "options": {
+                        "footer": {
+                            "fields": "",
+                            "reducer": [
+                                "sum"
+                            ],
+                            "show": false
+                        },
+                        "showHeader": true,
+                        "sortBy": []
+                    },
+                    "pluginVersion": "8.2.3",
+                    "targets": [
+                        {
+                            "alias": "",
+                            "bucketAggs": [],
+                            "metrics": [
+                                {
+                                    "id": "1",
+                                    "settings": {
+                                        "size": "500"
+                                    },
+                                    "type": "raw_data"
+                                }
+                            ],
+                            "query": "message_type:failed AND source:$Source",
+                            "refId": "A",
+                            "timeField": "timestamp"
+                        }
+                    ],
+                    "title": "\u041e\u0448\u0438\u0431\u043a\u0438 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 (message_type:failed)",
+                    "transformations": [
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "_id": true,
+                                    "_index": true,
+                                    "_type": true,
+                                    "certificate_verified": true,
+                                    "deferred_reason": false,
+                                    "gl2_message_id": true,
+                                    "gl2_remote_ip": true,
+                                    "gl2_remote_port": true,
+                                    "gl2_source_input": true,
+                                    "gl2_source_node": true,
+                                    "highlight": true,
+                                    "host_ip": true,
+                                    "host_ip_city_name": true,
+                                    "host_ip_country_code": true,
+                                    "host_ip_geolocation": true,
+                                    "host_name": true,
+                                    "message": false,
+                                    "message_type": true,
+                                    "router_name": true,
+                                    "sort": true,
+                                    "source": true,
+                                    "streams": true,
+                                    "timestamp": true,
+                                    "tls_cipher": true,
+                                    "transport_name": true
+                                },
+                                "indexByName": {
+                                    "_id": 1,
+                                    "_index": 2,
+                                    "_type": 3,
+                                    "certificate_verified": 4,
+                                    "date": 5,
+                                    "deferred_reason": 19,
+                                    "email": 7,
+                                    "exim_id": 6,
+                                    "gl2_message_id": 8,
+                                    "gl2_remote_ip": 9,
+                                    "gl2_remote_port": 10,
+                                    "gl2_source_input": 11,
+                                    "gl2_source_node": 12,
+                                    "host_ip": 13,
+                                    "host_ip_city_name": 14,
+                                    "host_ip_country_code": 15,
+                                    "host_ip_geolocation": 16,
+                                    "host_name": 17,
+                                    "message": 20,
+                                    "message_type": 18,
+                                    "router_name": 21,
+                                    "sort": 22,
+                                    "source": 23,
+                                    "streams": 24,
+                                    "timestamp": 0,
+                                    "tls_cipher": 25,
+                                    "transport_name": 26
+                                },
+                                "renameByName": {}
+                            }
+                        }
+                    ],
+                    "type": "table"
+                }
+            ],
+            "title": "\u0421\u043f\u0430\u043c / \u041e\u0448\u0438\u0431\u043a\u0438",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 10
+            },
+            "id": 8,
+            "panels": [
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "decimals": 2,
+                    "description": "\u0421\u0440\u0435\u0434\u043d\u0435\u0435 \u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438 \u0441\u0438\u0441\u0442\u0435\u043c\u044b.\u00a0\u0427\u0435\u043c \u043d\u0438\u0436\u0435 \u044d\u0442\u0430 \u0432\u0435\u043b\u0438\u0447\u0438\u043d\u0430, \u0442\u0435\u043c \u043c\u0435\u043d\u0435\u0435 \u043d\u0430\u0433\u0440\u0443\u0436\u0435\u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0430. ",
+                    "fieldConfig": {
+                        "defaults": {
+                            "unit": "none"
+                        },
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 0,
+                        "y": 43
+                    },
+                    "hiddenSeries": false,
+                    "id": 4,
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": true,
+                        "current": true,
+                        "max": true,
+                        "min": true,
+                        "rightSide": false,
+                        "show": true,
+                        "total": false,
+                        "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "8.2.3",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.system.load1'), 'LA1')"
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.system.load5'), 'LA5')"
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "C",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.system.load15'), 'LA15')"
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "D",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.system.n_cpus'), 'CPU numbers')"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Load average",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "$$hashKey": "object:2644",
+                            "format": "none",
+                            "logBase": 1,
+                            "show": true
+                        },
+                        {
+                            "$$hashKey": "object:2645",
+                            "format": "short",
+                            "logBase": 1,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false
+                    }
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "decimals": 2,
+                    "description": "\u041f\u0440\u043e\u0446\u0435\u043d\u0442 \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043d\u043d\u043e\u0441\u0442\u0438 \u044f\u0434\u0440\u0430.",
+                    "fieldConfig": {
+                        "defaults": {
+                            "unit": "percent"
+                        },
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 8,
+                        "y": 43
+                    },
+                    "hiddenSeries": false,
+                    "id": 10,
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": true,
+                        "current": true,
+                        "max": true,
+                        "min": true,
+                        "rightSide": false,
+                        "show": true,
+                        "total": false,
+                        "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "8.2.3",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.cpu.usage_user', 'cpu=cpu-total'), 'Usage_user')"
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.cpu.usage_system', 'cpu=cpu-total'), 'Usage_system')"
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "C",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.cpu.usage_softirq', 'cpu=cpu-total'), 'Usage_softirq')"
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "D",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.cpu.usage_iowait', 'cpu=cpu-total'), 'Usage_iowait')"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "CPU",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "$$hashKey": "object:2436",
+                            "decimals": 2,
+                            "format": "percent",
+                            "logBase": 1,
+                            "show": true
+                        },
+                        {
+                            "$$hashKey": "object:2437",
+                            "format": "short",
+                            "logBase": 1,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false,
+                        "alignLevel": 2
+                    }
+                },
+                {
+                    "aliasColors": {},
+                    "bars": false,
+                    "dashLength": 10,
+                    "dashes": false,
+                    "datasource": null,
+                    "decimals": 2,
+                    "description": "\u041c\u0435\u0442\u0440\u0438\u043a\u0430 \u043e\u043f\u0435\u0440\u0430\u0442\u0438\u0432\u043d\u043e\u0439 \u043f\u0430\u043c\u044f\u0442\u0438.",
+                    "fieldConfig": {
+                        "defaults": {
+                            "unit": "bytes"
+                        },
+                        "overrides": []
+                    },
+                    "fill": 1,
+                    "fillGradient": 0,
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 16,
+                        "y": 43
+                    },
+                    "hiddenSeries": false,
+                    "id": 12,
+                    "legend": {
+                        "alignAsTable": true,
+                        "avg": true,
+                        "current": true,
+                        "max": true,
+                        "min": true,
+                        "rightSide": false,
+                        "show": true,
+                        "total": false,
+                        "values": true
+                    },
+                    "lines": true,
+                    "linewidth": 1,
+                    "nullPointMode": "null",
+                    "options": {
+                        "alertThreshold": true
+                    },
+                    "percentage": false,
+                    "pluginVersion": "8.2.3",
+                    "pointradius": 2,
+                    "points": false,
+                    "renderer": "flot",
+                    "seriesOverrides": [],
+                    "spaceLength": 10,
+                    "stack": false,
+                    "steppedLine": false,
+                    "targets": [
+                        {
+                            "refCount": 0,
+                            "refId": "A",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.mem.total'), 'Total')"
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.mem.available'), 'Available')"
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "C",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.mem.used'), 'Used')"
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "D",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.swap.total'), 'Swap total')"
+                        },
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "E",
+                            "target": "alias(seriesByTag('host=mail-log.unix.tensor.ru', 'name=system.swap.used'), 'Swap used')"
+                        }
+                    ],
+                    "thresholds": [],
+                    "timeFrom": null,
+                    "timeRegions": [],
+                    "timeShift": null,
+                    "title": "Memory",
+                    "tooltip": {
+                        "shared": true,
+                        "sort": 0,
+                        "value_type": "individual"
+                    },
+                    "type": "graph",
+                    "xaxis": {
+                        "buckets": null,
+                        "mode": "time",
+                        "name": null,
+                        "show": true,
+                        "values": []
+                    },
+                    "yaxes": [
+                        {
+                            "$$hashKey": "object:3198",
+                            "format": "bytes",
+                            "logBase": 1,
+                            "show": true
+                        },
+                        {
+                            "$$hashKey": "object:3199",
+                            "format": "short",
+                            "logBase": 1,
+                            "show": true
+                        }
+                    ],
+                    "yaxis": {
+                        "align": false
+                    }
+                }
+            ],
+            "title": "\u041d\u0430\u0433\u0440\u0443\u0437\u043a\u0430 \u043d\u0430 mail-log",
+            "type": "row"
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "email",
+        "telegraf",
+        "scripts",
+        "service"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": [
+                        "All"
+                    ],
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "Elasticsearch-mail",
+                "definition": "{\"find\":\"terms\", \"field\":\"source\"}",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "Source",
+                "options": [],
+                "query": "{\"find\":\"terms\", \"field\":\"source\"}",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "abbyxyp@fin-techs.ru",
+                    "value": "abbyxyp@fin-techs.ru"
+                },
+                "datasource": "Elasticsearch-mail",
+                "definition": "{\"find\":\"terms\", \"field\":\"email\", \"query\":\"source:$Source\"}",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": true,
+                "name": "Email",
+                "options": [],
+                "query": "{\"find\":\"terms\", \"field\":\"email\", \"query\":\"source:$Source\"}",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": [
+                        "All"
+                    ],
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "Elasticsearch-mail",
+                "definition": "{\"find\":\"terms\", \"field\":\"exim_id\", \"query\":\"email:$Email\"}",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "Exim_id",
+                "options": [],
+                "query": "{\"find\":\"terms\", \"field\":\"exim_id\", \"query\":\"email:$Email\"}",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "Elasticsearch-mail",
+                "definition": "{\"find\":\"terms\", \"field\":\"exim_id\", \"query\":\"transport_name:maildir_spam_delivery AND router_name:maildir_spam AND message_type:to\"}",
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "Spam_Exim_id",
+                "options": [],
+                "query": "{\"find\":\"terms\", \"field\":\"exim_id\", \"query\":\"transport_name:maildir_spam_delivery AND router_name:maildir_spam AND message_type:to\"}",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-30m",
+        "to": "now"
+    },
+    "timepicker": {
+        "nowDelay": ""
+    },
+    "timezone": "",
+    "title": "Email: \u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043e\u0442\u043f\u0440\u0430\u0432\u043e\u043a",
+    "uid": "CgKQzfOnz",
+    "version": 45
+}

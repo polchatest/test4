@@ -1,0 +1,285 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: -",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 828,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": "bosun",
+            "dutyInfo": {
+                "datasource": {
+                    "name": "Tagged",
+                    "properties": {
+                        "id": 129,
+                        "isDefault": false,
+                        "jsonData": {
+                            "graphiteVersion": "1.1"
+                        },
+                        "meta": {
+                            "Root": null,
+                            "alerting": true,
+                            "annotations": true,
+                            "baseUrl": "public/app/plugins/datasource/graphite",
+                            "category": "tsdb",
+                            "dependencies": {
+                                "grafanaVersion": "*",
+                                "plugins": []
+                            },
+                            "explore": false,
+                            "id": "graphite",
+                            "includes": [
+                                {
+                                    "addToNav": false,
+                                    "component": "",
+                                    "defaultNav": false,
+                                    "icon": "",
+                                    "name": "Graphite Carbon Metrics",
+                                    "path": "dashboards/carbon_metrics.json",
+                                    "role": "Viewer",
+                                    "slug": "",
+                                    "type": "dashboard"
+                                },
+                                {
+                                    "addToNav": false,
+                                    "component": "",
+                                    "defaultNav": false,
+                                    "icon": "",
+                                    "name": "Metrictank (Graphite alternative)",
+                                    "path": "dashboards/metrictank.json",
+                                    "role": "Viewer",
+                                    "slug": "",
+                                    "type": "dashboard"
+                                }
+                            ],
+                            "info": {
+                                "author": {
+                                    "name": "Grafana Labs",
+                                    "url": "https://grafana.com"
+                                },
+                                "build": {},
+                                "description": "Open source time series database",
+                                "links": [
+                                    {
+                                        "name": "Learn more",
+                                        "url": "https://graphiteapp.org/"
+                                    },
+                                    {
+                                        "name": "Graphite 1.1 Release",
+                                        "url": "https://grafana.com/blog/2018/01/11/graphite-1.1-teaching-an-old-dog-new-tricks/"
+                                    }
+                                ],
+                                "logos": {
+                                    "large": "public/app/plugins/datasource/graphite/img/graphite_logo.png",
+                                    "small": "public/app/plugins/datasource/graphite/img/graphite_logo.png"
+                                },
+                                "screenshots": null,
+                                "updated": "",
+                                "version": ""
+                            },
+                            "logs": false,
+                            "metrics": true,
+                            "module": "app/plugins/datasource/graphite/module",
+                            "name": "Graphite",
+                            "preload": false,
+                            "queryOptions": {
+                                "cacheTimeout": true,
+                                "maxDataPoints": true
+                            },
+                            "routes": null,
+                            "signature": "internal",
+                            "streaming": false,
+                            "tables": false,
+                            "tracing": false,
+                            "type": "datasource"
+                        },
+                        "name": "Tagged",
+                        "type": "graphite",
+                        "uid": "iSzkMOxMk",
+                        "url": "/api/datasources/proxy/129"
+                    }
+                },
+                "dsList": [
+                    "-- Dashboard --",
+                    "-- Grafana --",
+                    "-- Mixed --",
+                    "Bosun-1",
+                    "InfluxDB",
+                    "Tagged",
+                    "bosun",
+                    "carbon",
+                    "carbon-short",
+                    "short-tagged",
+                    "tagged-tc",
+                    "untagged-tc"
+                ],
+                "enabled": true
+            },
+            "gridPos": {
+                "h": 22,
+                "w": 4,
+                "x": 3,
+                "y": 0
+            },
+            "hideIncidents": true,
+            "id": 4,
+            "links": [
+                {
+                    "title": "\u0418\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b \u0421\u041f\u0414",
+                    "url": "https://monitor.sbis.ru/d/O8wA4s6Wz/intsidenty-spd?orgId=1&refresh=30s"
+                },
+                {
+                    "title": "\u0418\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b \u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u0438 \u0426\u041e\u0414",
+                    "url": "https://monitor.sbis.ru/d/OWRnGU7Mk/intsidenty-ekspluatatsiia-tsod?orgId=1&refresh=30s"
+                },
+                {
+                    "title": "\u0418\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b \u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0426\u041e\u0414",
+                    "url": "https://monitor.sbis.ru/d/pzA7Peiik/intsidenty-administrirovanie-tsod?orgId=1&refresh=30s"
+                }
+            ],
+            "query": "",
+            "showMulti": true,
+            "targets": [
+                {
+                    "expandHelper": 0,
+                    "expr": "",
+                    "finalQuery": "",
+                    "flags": "",
+                    "refId": "A",
+                    "subbedQuery": "",
+                    "target": "Bosun Query",
+                    "varCounter": 0,
+                    "variables": []
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0418\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b \u0432\u0441\u0435\u0445 \u043e\u0442\u0434\u0435\u043b\u043e\u0432",
+            "type": "bosun-incident-list"
+        },
+        {
+            "datasource": "bosun-grafana7-datasource",
+            "gridPos": {
+                "h": 22,
+                "w": 14,
+                "x": 7,
+                "y": 0
+            },
+            "id": 6,
+            "options": {
+                "actionsPanel": {
+                    "counters": true,
+                    "downloadDoc": true,
+                    "enabled": true,
+                    "filters": true,
+                    "multiAction": true,
+                    "pagination": {
+                        "enabled": true,
+                        "rowsPerPage": "50"
+                    },
+                    "silence": true,
+                    "userSettings": true
+                },
+                "groupByTag": {
+                    "enabled": true,
+                    "tag": "vision"
+                },
+                "incidentsTable": {
+                    "actualActionsPopup": true,
+                    "enabled": true,
+                    "pagination": {
+                        "enabled": true,
+                        "rowsPerPage": 50
+                    }
+                },
+                "modal": {
+                    "defaultMessages": {
+                        "enabled": true,
+                        "normalized": "\u041d\u043e\u0440\u043c\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043b\u043e\u0441\u044c",
+                        "notNormalizedAndNotAck": "\u0421\u043c\u043e\u0442\u0440\u0438\u043c"
+                    },
+                    "previousIncidentsLimit": {
+                        "enabled": true,
+                        "limit": 10
+                    },
+                    "quickMessages": {
+                        "enabled": true,
+                        "messages": [
+                            "\u0421\u043c\u043e\u0442\u0440\u0438\u043c",
+                            "\u041d\u043e\u0440\u043c\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043b\u043e\u0441\u044c",
+                            "\u0421\u043a\u0430\u0447\u043e\u043a \u043d\u0430\u0433\u0440\u0443\u0437\u043a\u0438",
+                            "\u0421\u043e\u043e\u0431\u0449\u0438\u043b\u0438 \u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u043c",
+                            "\u0420\u0430\u0431\u043e\u0442\u044b \u043f\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0435",
+                            "\u041e\u0448\u0438\u0431\u043a\u0430 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u0430"
+                        ]
+                    }
+                }
+            },
+            "pluginVersion": "7.4.0",
+            "targets": [
+                {
+                    "refId": "A",
+                    "requestFilter": "filter=!hasTag:vision=corp"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0418\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b",
+            "type": "bosun-grafana7-panel"
+        }
+    ],
+    "refresh": "30s",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "bosun",
+        "\u0438\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b \u0432\u0441\u0435\u0445 \u043e\u0442\u0434\u0435\u043b\u043e\u0432",
+        "service"
+    ],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-5m",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u0418\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b",
+    "uid": "b9DogIvGz",
+    "version": 152
+}

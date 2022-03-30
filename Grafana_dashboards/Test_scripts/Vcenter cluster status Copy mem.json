@@ -1,0 +1,316 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041b\u044b\u043a\u043e\u0432 \u041d.\u041c. (\u0410\u0426\u041e\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 1802,
+    "iteration": 1640699808860,
+    "links": [
+        {
+            "icon": "external link",
+            "keepTime": true,
+            "tags": [
+                "telegraf",
+                "virtualization"
+            ],
+            "type": "dashboards"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "cacheTimeout": null,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 2,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 19,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 3,
+            "links": [],
+            "maxPerRow": 4,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeat": "cluster_tag",
+            "repeatDirection": "h",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(aggregate(seriesByTag('vcenter=$vcenter_tag', 'clustername=$cluster_tag', 'cpu!=~${cpu_tag:regex}', 'interface!=~*', 'name=service.vcenter.usage_average', 'interval=20s'), 'average'), '$cluster_tag')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$cluster_tag cluster MEM Usage %",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1491",
+                    "decimals": 0,
+                    "format": "percent",
+                    "label": "Usage Average %",
+                    "logBase": 1,
+                    "max": "100",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1492",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "1m",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "s076vc50.corp.tensor.ru",
+                    "value": "s076vc50.corp.tensor.ru"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(vcenter)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "vcenter",
+                "multi": false,
+                "name": "vcenter_tag",
+                "options": [],
+                "query": "tag_values(vcenter)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(clustername,vcenter=~${vcenter_tag})",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": "Cluster",
+                "multi": false,
+                "name": "cluster_tag",
+                "options": [],
+                "query": "tag_values(clustername,vcenter=~${vcenter_tag})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "isNone": true,
+                    "selected": false,
+                    "text": "None",
+                    "value": ""
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(esxhostname,clustername=~${cluster_tag})",
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": false,
+                "label": "esxi",
+                "multi": false,
+                "name": "esxi_tag",
+                "options": [],
+                "query": "tag_values(esxhostname,clustername=~${cluster_tag})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(dsname,clustername=~${cluster_tag})",
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": true,
+                "label": "datastore",
+                "multi": true,
+                "name": "datastore_tag",
+                "options": [],
+                "query": "tag_values(dsname,clustername=~${cluster_tag})",
+                "refresh": 1,
+                "regex": "/VSTOR|vstor/",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": [
+                        "All"
+                    ],
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(cpu,esxhostname=~${esxi_tag})",
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": true,
+                "label": "cpu",
+                "multi": true,
+                "name": "cpu_tag",
+                "options": [],
+                "query": "tag_values(cpu,esxhostname=~${esxi_tag})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "Vcenter cluster status Copy mem",
+    "uid": "RWInpZA7k",
+    "version": 2
+}

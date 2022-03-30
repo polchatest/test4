@@ -1,0 +1,1248 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041d\u0430 \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u0435. \u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: -",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 644,
+    "iteration": 1641800211581,
+    "links": [
+        {
+            "icon": "external link",
+            "includeVars": true,
+            "keepTime": true,
+            "tags": [
+                "linux",
+                "system",
+                "stable"
+            ],
+            "type": "dashboards"
+        },
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "includeVars": true,
+            "keepTime": true,
+            "tags": [
+                "linux",
+                "service"
+            ],
+            "title": "Services",
+            "type": "dashboards"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 21,
+            "panels": [],
+            "repeat": "server",
+            "title": "$server (time, time %)",
+            "type": "row"
+        },
+        {
+            "aliasColors": {
+                "contextSwitch": "#CFFAFF",
+                "guest": "rgb(161, 160, 159)",
+                "iowait": "rgb(237, 5, 9)",
+                "irq": "rgb(1, 156, 181)",
+                "nice": "rgb(198, 14, 214)",
+                "softirq": "rgb(4, 11, 227)",
+                "steal": "rgb(105, 105, 105)",
+                "system": "semi-dark-orange",
+                "user": "yellow"
+            },
+            "bars": false,
+            "cacheTimeout": "30",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 8,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 1,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {}
+            ],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "J",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fsteal, '30s'), 'steal')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "L",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fguest, '30s'), 'guest')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "M",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Firq, '30s'), 'irq')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "N",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fsoftirq, '30s'), 'softirq')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "O",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fnice, '30s'), 'nice')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "P",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fiowait, '30s'), 'iowait')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "I",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fsystem, '30s'), 'system')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "K",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fuser, '30s'), 'user')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByNode(sbis3mon.$contur.linux.cpuTime.$server.*.cpu.*.$aggr, -2)"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: time",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "decimals": 2,
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {
+                "contextSwitch": "#CFFAFF",
+                "guest": "rgb(161, 160, 159)",
+                "iowait": "rgb(237, 5, 9)",
+                "irq": "rgb(1, 156, 181)",
+                "nice": "rgb(198, 14, 214)",
+                "softirq": "rgb(4, 11, 227)",
+                "steal": "rgb(105, 105, 105)",
+                "system": "semi-dark-orange",
+                "user": "yellow"
+            },
+            "bars": false,
+            "cacheTimeout": "30",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 8,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 29,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": true,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {}
+            ],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "J",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fsteal, '30s'), 'steal')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "L",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fguest, '30s'), 'guest')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "M",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Firq, '30s'), 'irq')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "N",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fsoftirq, '30s'), 'softirq')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "O",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fnice, '30s'), 'nice')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "P",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fiowait, '30s'), 'iowait')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "I",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fsystem, '30s'), 'system')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "K",
+                    "target": "alias(movingAverage(telegraf.$contur.system.cpu.$server.$domain.cpu-total.*.usage_5Fuser, '30s'), 'user')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByNode(sbis3mon.$contur.linux.cpuTime.$server.*.cpu.*.$aggr, -2)"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: time",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "decimals": 2,
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "101",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 8
+            },
+            "id": 22,
+            "panels": [],
+            "repeat": "server",
+            "title": "$server (busy, la)",
+            "type": "row"
+        },
+        {
+            "aliasColors": {
+                "avg": "rgb(0, 212, 57)",
+                "busy": "rgb(1, 207, 22)",
+                "busy-max": "super-light-purple",
+                "max": "super-light-purple"
+            },
+            "bars": false,
+            "cacheTimeout": "30",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 10,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 9
+            },
+            "hiddenSeries": false,
+            "id": 5,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sideWidth": null,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 1,
+                    "refId": "A",
+                    "target": "aliasByMetric(sbis3mon.$contur.linux.core.$server.*.cpu.busy.max)"
+                },
+                {
+                    "refCount": 2,
+                    "refId": "B",
+                    "target": "aliasByMetric(sbis3mon.$contur.linux.core.$server.*.cpu.busy.avg)"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: busy",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {
+                "m01": "rgb(61, 235, 5)",
+                "m05": "rgb(38, 102, 26)",
+                "m15": "rgb(222, 5, 9)"
+            },
+            "bars": false,
+            "cacheTimeout": "60",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 0,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 9
+            },
+            "hiddenSeries": false,
+            "id": 3,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "hideZero": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByMetric(telegraf.$contur.system.system.$server.$domain.*.load1)"
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByMetric(telegraf.$contur.system.system.$server.$domain.*.load5)"
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "aliasByMetric(telegraf.$contur.system.system.$server.$domain.*.load15)"
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByNode(sbis3mon.$contur.linux.la.$server.*.cpu.la.*.$aggr, -2)"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: la",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 16
+            },
+            "id": 23,
+            "panels": [],
+            "repeat": "server",
+            "title": "$server (context, core avg)",
+            "type": "row"
+        },
+        {
+            "aliasColors": {
+                "contextSwitch": "super-light-purple",
+                "contextSwitch.aggr-avg": "rgb(219, 10, 13)",
+                "contextSwitch.aggr-max": "super-light-purple"
+            },
+            "bars": false,
+            "cacheTimeout": "60",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 10,
+            "fillGradient": 9,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 17
+            },
+            "hiddenSeries": false,
+            "id": 10,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(sbis3mon.$contur.linux.la.$server.*.cpu.contextSwitch.max, 'contextSwitch.aggr-max')"
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(sbis3mon.$contur.linux.la.$server.*.cpu.contextSwitch.avg, 'contextSwitch.aggr-avg')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: context",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {
+                "00": "rgb(224, 4, 7)",
+                "01": "rgb(6, 27, 217)"
+            },
+            "bars": false,
+            "cacheTimeout": "60",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 0,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 17
+            },
+            "hiddenSeries": false,
+            "id": 20,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {}
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByNode(sbis3mon.$contur.linux.coreAvg.$server.*.cpu.core.*.busy.avg.avg, -6, -5, -4, -3, -2)"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: core avg",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "fieldConfig": {
+                "defaults": {},
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 24
+            },
+            "id": 24,
+            "panels": [],
+            "repeat": "server",
+            "title": "$server (core busy, core %)",
+            "type": "row"
+        },
+        {
+            "aliasColors": {
+                "00": "rgb(219, 2, 40)",
+                "01": "rgb(7, 2, 207)"
+            },
+            "bars": false,
+            "cacheTimeout": "60",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 8,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 25
+            },
+            "hiddenSeries": false,
+            "id": 19,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByNode(sbis3mon.$contur.linux.core.$server.*.cpu.core.*.busy.avg, -5, -4, -3, -2)"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: core busy",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {
+                "00": "rgb(219, 2, 40)",
+                "01": "rgb(7, 2, 207)"
+            },
+            "bars": false,
+            "cacheTimeout": "60",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 8,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 25
+            },
+            "hiddenSeries": false,
+            "id": 30,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByNode(sbis3mon.$contur.linux.core.$server.*.cpu.core.*.busy.pct.avg, -5, -4, -3, -2)"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: core busy",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "transparent": true,
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "101",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "15s",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "zabbix",
+        "system",
+        "sbis3mon-kafka"
+    ],
+    "templating": {
+        "list": [
+            {
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "label": "\u041a\u043e\u043d\u0442\u0443\u0440",
+                "name": "contur",
+                "query": "prod",
+                "skipUrlSync": false,
+                "type": "constant"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "tags": [],
+                    "text": "cache-contractors-mobile-api",
+                    "value": [
+                        "cache-contractors-mobile-api"
+                    ]
+                },
+                "datasource": "carbon",
+                "definition": "telegraf.$contur.system.system.*",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "\u0418\u043c\u044f \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+                "multi": true,
+                "name": "server",
+                "options": [],
+                "query": "telegraf.$contur.system.system.*",
+                "refresh": 1,
+                "regex": "/^(?![0-9])/",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "current": {
+                    "text": "*.tensor.ru",
+                    "value": "*.tensor.ru"
+                },
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "label": "\u0414\u043e\u043c\u0435\u043d",
+                "name": "domain",
+                "query": "*.tensor.ru",
+                "skipUrlSync": false,
+                "type": "constant"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "tags": [],
+                    "text": "avg",
+                    "value": "avg"
+                },
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "\u0410\u0433\u0440\u0435\u0433\u0430\u0446\u0438\u044f",
+                "multi": false,
+                "name": "aggr",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "max",
+                        "value": "max"
+                    },
+                    {
+                        "selected": true,
+                        "text": "avg",
+                        "value": "avg"
+                    },
+                    {
+                        "selected": false,
+                        "text": "min",
+                        "value": "min"
+                    }
+                ],
+                "query": "max, avg, min",
+                "skipUrlSync": false,
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "15s"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "browser",
+    "title": "linux (cpu) zabbix sbis3mon",
+    "uid": "5qxQDzbZz",
+    "version": 15
+}

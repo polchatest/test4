@@ -1,0 +1,428 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0413\u043e\u043b\u0443\u0431\u0435\u0432 \u0410.\u0424. (\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 1832,
+    "iteration": 1647420501308,
+    "links": [
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "includeVars": true,
+            "keepTime": true,
+            "tags": [
+                "feature"
+            ],
+            "title": "FEATURE",
+            "type": "dashboards"
+        },
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "includeVars": false,
+            "keepTime": false,
+            "tags": [
+                "hlha"
+            ],
+            "targetBlank": false,
+            "title": "HLHA",
+            "tooltip": "",
+            "type": "dashboards",
+            "url": ""
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {
+                "backend req": "semi-dark-red",
+                "\u0417\u0430\u043f\u0440\u043e\u0441\u044b \u043e\u0442 \u043a\u043b\u0438\u0435\u043d\u0442\u0430": "light-blue",
+                "\u0432\u0445\u043e\u0434\u044f\u0449\u0438\u0435 \u0437\u0430\u043f\u0440\u043e\u0441\u044b": "semi-dark-green"
+            },
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "decimals": 0,
+            "description": "\u0421\u043a\u043e\u043b\u044c\u043a\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u043f\u0440\u0438\u0448\u043b\u043e \u043e\u0442 \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432 \u0438 \u0443\u0448\u043b\u043e \u043d\u0430 \u0431\u0430\u043a\u0435\u043d\u0434\u044b",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 0,
+            "fillGradient": 5,
+            "gridPos": {
+                "h": 6,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 175,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": false,
+                "hideEmpty": true,
+                "hideZero": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sideWidth": 300,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null as zero",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:500",
+                    "alias": "95% front",
+                    "color": "#C4162A",
+                    "linewidth": 2,
+                    "stack": false,
+                    "yaxis": 2
+                },
+                {
+                    "$$hashKey": "object:593",
+                    "alias": "95% backend",
+                    "color": "#37872D",
+                    "linewidth": 2,
+                    "stack": false,
+                    "yaxis": 2
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(nPercentile(groupByTags(perSecond(seriesByTag('name=prometheus.nginx_front_latency_bucket', 'host=~${host:regex}')), 'average', 'name'), 95), '95% front')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(nPercentile(groupByTags(perSecond(seriesByTag('name=prometheus.nginx_back_latency_bucket', 'host=~${host:regex}')), 'average', 'name'), 95), '95% backend')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByNode(aliasByTags(perSecond(seriesByTag('name=nginx.requests', 'host=~${host:regex}')), 'host'), 0)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0417\u0430\u043f\u0440\u043e\u0441\u044b \u043f\u043e \u0434\u0438\u0441\u043f\u0435\u0442\u0447\u0435\u0440\u0430\u043c \u0438 95 \u043f\u0435\u0440\u0441\u0435\u043d\u0442\u0438\u043b\u0438 \u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0438",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:275",
+                    "decimals": 0,
+                    "format": "reqps",
+                    "label": "Request(s)",
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:276",
+                    "decimals": 0,
+                    "format": "ms",
+                    "label": "95% latency",
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "cards": {
+                "cardPadding": null,
+                "cardRound": null
+            },
+            "color": {
+                "cardColor": "#b4ff00",
+                "colorScale": "sqrt",
+                "colorScheme": "interpolateGreens",
+                "exponent": 0.5,
+                "min": null,
+                "mode": "spectrum"
+            },
+            "dataFormat": "timeseries",
+            "datasource": "carbon-short",
+            "description": "",
+            "gridPos": {
+                "h": 11,
+                "w": 12,
+                "x": 0,
+                "y": 6
+            },
+            "heatmap": {},
+            "hideZeroBuckets": false,
+            "highlightCards": true,
+            "id": 170,
+            "legend": {
+                "show": true
+            },
+            "pluginVersion": "8.2.3",
+            "reverseYBuckets": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "groupByTags(perSecond(seriesByTag('name=prometheus.nginx_front_latency_bucket', 'host=~${host:regex}')), 'average', 'name')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "LATENCY FRONT",
+            "tooltip": {
+                "show": true,
+                "showHistogram": true
+            },
+            "type": "heatmap",
+            "xAxis": {
+                "show": true
+            },
+            "xBucketNumber": 50,
+            "xBucketSize": "",
+            "yAxis": {
+                "decimals": 1,
+                "format": "ms",
+                "logBase": 1,
+                "max": null,
+                "min": "0",
+                "show": true,
+                "splitFactor": null,
+                "width": null
+            },
+            "yBucketBound": "auto",
+            "yBucketNumber": 20,
+            "yBucketSize": null
+        },
+        {
+            "cards": {
+                "cardPadding": null,
+                "cardRound": null
+            },
+            "color": {
+                "cardColor": "#b4ff00",
+                "colorScale": "sqrt",
+                "colorScheme": "interpolateGreens",
+                "exponent": 0.5,
+                "min": null,
+                "mode": "spectrum"
+            },
+            "dataFormat": "timeseries",
+            "datasource": "carbon-short",
+            "description": "",
+            "gridPos": {
+                "h": 11,
+                "w": 12,
+                "x": 12,
+                "y": 6
+            },
+            "heatmap": {},
+            "hideZeroBuckets": false,
+            "highlightCards": true,
+            "id": 172,
+            "legend": {
+                "show": true
+            },
+            "pluginVersion": "8.2.3",
+            "reverseYBuckets": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "groupByTags(perSecond(seriesByTag('name=prometheus.nginx_back_latency_bucket', 'host=~${host:regex}')), 'average', 'name')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "LATENCY BACK",
+            "tooltip": {
+                "show": true,
+                "showHistogram": true
+            },
+            "type": "heatmap",
+            "xAxis": {
+                "show": true
+            },
+            "xBucketNumber": 50,
+            "xBucketSize": "",
+            "yAxis": {
+                "decimals": 1,
+                "format": "ms",
+                "logBase": 1,
+                "max": null,
+                "min": "0",
+                "show": true,
+                "splitFactor": null
+            },
+            "yBucketBound": "auto",
+            "yBucketNumber": 20,
+            "yBucketSize": null
+        }
+    ],
+    "refresh": "",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "feature",
+        "hlha"
+    ],
+    "templating": {
+        "list": [
+            {
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "label": "\u0422\u0438\u043f",
+                "name": "nginxcache",
+                "query": "feature",
+                "queryValue": "",
+                "skipUrlSync": false,
+                "type": "constant"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "pre-test",
+                    "value": "pre-test"
+                },
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": false,
+                "label": "\u041a\u043e\u043d\u0442\u0443\u0440",
+                "multi": false,
+                "name": "contur",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "prod",
+                        "value": "prod"
+                    }
+                ],
+                "query": "prod",
+                "queryValue": "",
+                "skipUrlSync": false,
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": [
+                        "cache-feature1.unix.tensor.ru"
+                    ],
+                    "value": [
+                        "cache-feature1.unix.tensor.ru"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(host,contur=prod,nginxcache=$nginxcache)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "\u0421\u0435\u0440\u0432\u0435\u0440",
+                "multi": true,
+                "name": "host",
+                "options": [],
+                "query": "tag_values(host,contur=prod,nginxcache=$nginxcache)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-30m",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m"
+        ]
+    },
+    "timezone": "",
+    "title": "HL/HA \u2014 FEATURE LANENCY",
+    "uid": "g1Xk-Bonz",
+    "version": 7
+}

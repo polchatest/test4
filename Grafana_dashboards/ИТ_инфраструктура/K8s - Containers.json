@@ -1,0 +1,1541 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041d\u043e\u0432\u0438\u043a\u043e\u0432 \u0410.\u0412. (\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1565,
+    "iteration": 1645528002907,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "percentunit"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 6,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 58,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(grep(alias(groupByTags(movingAverage(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'pod=~${pod:regex}', 'namespace=$namespace')), '5min'), 'sum', '$group'), 'Average'), '$function'), '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(grep(alias(groupByTags(movingMax(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'pod=~${pod:regex}', 'namespace=$namespace')), '5min'), 'sum', '$group'), 'Max'), '$function'), '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByTags(grep(alias(groupByTags(movingMin(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'pod=~${pod:regex}', 'namespace=$namespace')), '5min'), 'sum', '$group'), 'Min'), '$function'), '$group')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "CPU",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:25863",
+                    "format": "percentunit",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:25864",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "percentunit"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 6,
+                "x": 6,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 66,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 1,
+                    "refId": "A",
+                    "target": "aliasByTags(grep(alias(groupByTags(divideSeriesLists(movingAverage(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_throttled_periods_total', 'namespace=$namespace', 'container=~.+')), '5min'), #B), 'sum', '$group'), 'Average'), '$function'), '$group')",
+                    "targetFull": "aliasByTags(grep(alias(groupByTags(divideSeriesLists(movingAverage(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_throttled_periods_total', 'namespace=$namespace', 'container=~.+')), '5min'), grep(alias(movingAverage(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_periods_total', 'namespace=$namespace')), '5min'), 'Average'), '$function')), 'sum', '$group'), 'Average'), '$function'), '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 1,
+                    "refId": "B",
+                    "target": "grep(alias(movingAverage(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_periods_total', 'namespace=$namespace')), '5min'), 'Average'), '$function')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 1,
+                    "refId": "C",
+                    "target": "aliasByTags(grep(alias(groupByTags(divideSeriesLists(movingMax(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_throttled_periods_total', 'namespace=$namespace', 'container=~.+')), '5min'), #D), 'sum', '$group'), 'Max'), '$function'), '$group')",
+                    "targetFull": "aliasByTags(grep(alias(groupByTags(divideSeriesLists(movingMax(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_throttled_periods_total', 'namespace=$namespace', 'container=~.+')), '5min'), grep(alias(movingMax(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_periods_total', 'namespace=$namespace')), '5min'), 'Max'), '$function')), 'sum', '$group'), 'Max'), '$function'), '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 2,
+                    "refId": "D",
+                    "target": "grep(alias(movingMax(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_periods_total', 'namespace=$namespace')), '5min'), 'Max'), '$function')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 2,
+                    "refId": "E",
+                    "target": "aliasByTags(grep(alias(groupByTags(divideSeriesLists(movingMin(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_throttled_periods_total', 'namespace=$namespace', 'container=~.+')), '5min'), #F), 'sum', '$group'), 'Min'), '$function'), '$group')",
+                    "targetFull": "aliasByTags(grep(alias(groupByTags(divideSeriesLists(movingMin(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_throttled_periods_total', 'namespace=$namespace', 'container=~.+')), '5min'), grep(alias(movingMin(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_periods_total', 'namespace=$namespace')), '5min'), 'Min'), '$function')), 'sum', '$group'), 'Min'), '$function'), '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 1,
+                    "refId": "F",
+                    "target": "grep(alias(movingMin(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_cpu_cfs_periods_total', 'namespace=$namespace')), '5min'), 'Min'), '$function')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "CPU Throttling",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:486",
+                    "format": "percentunit",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:487",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 6,
+                "x": 12,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 60,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(groupByTags(keepLastValue(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_memory_working_set_bytes'), 1), 'sum', '$group'), '$group')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Memory",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:25626",
+                    "format": "bytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:25627",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 6,
+                "x": 18,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 46,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(groupByTags(keepLastValue(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_file_descriptors'), 1), 'sum', '$group'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(groupByTags(keepLastValue(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_sockets'), 1), 'sum', '$group'), 1, '$group')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Files / Sockets",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:26993",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:26994",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "binBps"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 10,
+                "w": 6,
+                "x": 0,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 57,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(grep(alias(movingAverage(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_receive_bytes_total')), 'sum', '$group'), '5min'), 'Average'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(grep(alias(movingAverage(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_transmit_bytes_total')), 'sum', '$group'), '5min'), 'Average'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByTags(grep(alias(movingMax(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_receive_bytes_total')), 'sum', '$group'), '5min'), 'Max'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "aliasByTags(grep(alias(movingMax(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_transmit_bytes_total')), 'sum', '$group'), '5min'), 'Max'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "aliasByTags(grep(alias(movingMin(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_receive_bytes_total')), 'sum', '$group'), '5min'), 'Min'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(grep(alias(movingMin(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_transmit_bytes_total')), 'sum', '$group'), '5min'), 'Min'), '$function'), 1, '$group')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Network",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:27303",
+                    "format": "binBps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:27304",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "iops"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 10,
+                "w": 6,
+                "x": 6,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 59,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(grep(alias(movingAverage(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_reads_total')), 'sum', '$group'), '5min'), 'Average'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(grep(alias(movingAverage(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_writes_total')), 'sum', '$group'), '5min'), 'Average'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByTags(grep(alias(movingMax(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_reads_total')), 'sum', '$group'), '5min'), 'Max'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "aliasByTags(grep(alias(movingMax(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_writes_total')), 'sum', '$group'), '5min'), 'Max'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "aliasByTags(grep(alias(movingMin(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_reads_total')), 'sum', '$group'), '5min'), 'Min'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(grep(alias(movingMin(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_writes_total')), 'sum', '$group'), '5min'), 'Min'), '$function'), 1, '$group')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Disk IOPS",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:27798",
+                    "format": "iops",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:27799",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "binBps"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 10,
+                "w": 6,
+                "x": 12,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 61,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(grep(alias(movingAverage(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_reads_bytes_total')), 'sum', '$group'), '5min'), 'Average'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(grep(alias(movingAverage(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_writes_bytes_total')), 'sum', '$group'), '5min'), 'Average'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByTags(grep(alias(movingMax(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_reads_bytes_total')), 'sum', '$group'), '5min'), 'Max'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "aliasByTags(grep(alias(movingMax(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_writes_bytes_total')), 'sum', '$group'), '5min'), 'Max'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "aliasByTags(grep(alias(movingMin(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_reads_bytes_total')), 'sum', '$group'), '5min'), 'Min'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(grep(alias(movingMin(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_fs_writes_bytes_total')), 'sum', '$group'), '5min'), 'Min'), '$function'), 1, '$group')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Disk I/O",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:27798",
+                    "format": "binBps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:27799",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 10,
+                "w": 6,
+                "x": 18,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 64,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(groupByTags(keepLastValue(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_processes'), 1), 'sum', '$group'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(groupByTags(keepLastValue(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_threads'), 1), 'sum', '$group'), 1, '$group')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Processes / Threads",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:28527",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:28528",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "pps"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 0,
+                "y": 18
+            },
+            "hiddenSeries": false,
+            "id": 67,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(grep(alias(movingAverage(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_receive_packets_total')), 'sum', '$group'), '5min'), 'Average'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(grep(alias(movingMax(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_receive_packets_total')), 'sum', '$group'), '5min'), 'Max'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByTags(grep(alias(movingMin(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_receive_packets_total')), 'sum', '$group'), '5min'), 'Min'), '$function'), 1, '$group')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Packets  RX",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:27798",
+                    "format": "pps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:27799",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "pps"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 12,
+                "x": 12,
+                "y": 18
+            },
+            "hiddenSeries": false,
+            "id": 68,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(grep(alias(movingAverage(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_transmit_packets_total')), 'sum', '$group'), '5min'), 'Average'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(grep(alias(movingMax(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_transmit_packets_total')), 'sum', '$group'), '5min'), 'Max'), '$function'), 1, '$group')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByTags(grep(alias(movingMin(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_network_transmit_packets_total')), 'sum', '$group'), '5min'), 'Min'), '$function'), 1, '$group')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Packets TX",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:27798",
+                    "format": "pps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:27799",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "dateTimeAsSystem"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 12,
+                "x": 0,
+                "y": 26
+            },
+            "id": 53,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(groupByTags(scale(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_start_time_seconds'), 1000), 'min', '$group'), 'pod')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Start Time",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "dateTimeFromNow"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 12,
+                "x": 12,
+                "y": 26
+            },
+            "id": 56,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(groupByTags(scale(seriesByTag('job=cAdvisor', 'cluster=$cluster', 'namespace=$namespace', 'pod=~${pod:regex}', 'name=prometheus_remote_write.container_start_time_seconds'), 1000), 'min', '$group'), 'pod')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Uptime",
+            "type": "stat"
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "k8s",
+        "telegraf",
+        "system"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "prod1",
+                    "value": "prod1"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(cluster,name=prometheus_remote_write.up)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Cluster",
+                "multi": false,
+                "name": "cluster",
+                "options": [],
+                "query": "tag_values(cluster,name=prometheus_remote_write.up)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "name",
+                    "value": "name"
+                },
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Label Type",
+                "multi": false,
+                "name": "labeltype",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "name",
+                        "value": "name"
+                    },
+                    {
+                        "selected": false,
+                        "text": "instance",
+                        "value": "instance"
+                    },
+                    {
+                        "selected": false,
+                        "text": "component",
+                        "value": "component"
+                    },
+                    {
+                        "selected": false,
+                        "text": "part_of",
+                        "value": "part_of"
+                    }
+                ],
+                "query": "name,instance,component,part_of",
+                "queryValue": "",
+                "skipUrlSync": false,
+                "type": "custom"
+            },
+            {
+                "allValue": "",
+                "current": {
+                    "selected": false,
+                    "text": "app-front-back",
+                    "value": "app-front-back"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(label_app_kubernetes_io_${labeltype:regex},cluster=${cluster:regex})",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Label",
+                "multi": false,
+                "name": "label",
+                "options": [],
+                "query": "tag_values(label_app_kubernetes_io_${labeltype:regex},cluster=${cluster:regex})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": "",
+                "current": {
+                    "selected": false,
+                    "text": "corp-common-nodejs-template",
+                    "value": "corp-common-nodejs-template"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(namespace,cluster=${cluster:regex},label_app_kubernetes_io_${labeltype:regex}=${label:regex})",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Namespace",
+                "multi": false,
+                "name": "namespace",
+                "options": [],
+                "query": "tag_values(namespace,cluster=${cluster:regex},label_app_kubernetes_io_${labeltype:regex}=${label:regex})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": "",
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(pod,cluster=${cluster:regex},label_app_kubernetes_io_${labeltype:regex}=${label:regex},namespace=${namespace:regex})",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": "Pod",
+                "multi": false,
+                "name": "pod",
+                "options": [],
+                "query": "tag_values(pod,cluster=${cluster:regex},label_app_kubernetes_io_${labeltype:regex}=${label:regex},namespace=${namespace:regex})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "pod",
+                    "value": "pod"
+                },
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Group by",
+                "multi": false,
+                "name": "group",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "container",
+                        "value": "container"
+                    },
+                    {
+                        "selected": true,
+                        "text": "pod",
+                        "value": "pod"
+                    }
+                ],
+                "query": "container,pod",
+                "queryValue": "",
+                "skipUrlSync": false,
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "Max",
+                    "value": "Max"
+                },
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Function",
+                "multi": false,
+                "name": "function",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "Average",
+                        "value": "Average"
+                    },
+                    {
+                        "selected": true,
+                        "text": "Max",
+                        "value": "Max"
+                    },
+                    {
+                        "selected": false,
+                        "text": "Min",
+                        "value": "Min"
+                    }
+                ],
+                "query": "Average,Max,Min",
+                "queryValue": "",
+                "skipUrlSync": false,
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-6h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "K8s - Containers",
+    "uid": "5mfddQwGz",
+    "version": 25
+}

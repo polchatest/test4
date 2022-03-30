@@ -1,0 +1,278 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041b\u0435\u0434\u044f\u0435\u0432 \u0418.\u041a. (\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 484,
+    "iteration": 1638955699587,
+    "links": [
+        {
+            "asDropdown": false,
+            "icon": "external link",
+            "includeVars": true,
+            "keepTime": true,
+            "tags": [
+                "queues"
+            ],
+            "type": "dashboards"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "cacheTimeout": "10",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "decimals": null,
+            "description": "\u041e\u0447\u0435\u0440\u0435\u0434\u0438 \u043e\u0431\u043b\u0430\u043a\u0430 \u0441 \u0440\u0430\u0437\u0431\u0438\u0432\u043a\u043e\u0439 \u043f\u043e \u0442\u0438\u043f\u0430\u043c, \u0441\u0435\u0440\u0432\u0438\u0441\u0430\u043c \u0438 \u0441\u0435\u0440\u0432\u0435\u0440\u0430\u043c \u0411\u041b",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 21,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 1,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "sideWidth": 500,
+                "sort": null,
+                "sortDesc": null,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": -1,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('subsystem=cloud.sbis.ru', 'name=queue.size', 'type=~${queue_type:regex}', 'service=~${queue:regex}$', 'host=~${servers:regex}'), 'host', 'type')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(groupByTags(#A, 'sum', 'service'), '\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u043e', false)",
+                    "targetFull": "alias(groupByTags(aliasByTags(seriesByTag('subsystem=cloud.sbis.ru', 'name=queue.size', 'type=~${queue_type:regex}', 'service=~${queue:regex}$', 'host=~${servers:regex}'), 'host', 'type'), 'sum', 'service'), '\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u043e', false)"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0420\u0430\u0431\u043e\u0447\u0438\u0435 \u0438 \u0441\u043b\u0443\u0436\u0435\u0431\u043d\u044b\u0435 \u043e\u0447\u0435\u0440\u0435\u0434\u0438 \u0441 \u0440\u0430\u0437\u0431\u0438\u0432\u043a\u043e\u0439 \u043f\u043e \u0411\u041b",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:61",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:62",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "exploitation",
+        "queues",
+        "service",
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": "*",
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(type,subsystem=cloud.sbis.ru,name=queue.size)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": "\u0422\u0438\u043f \u043e\u0447\u0435\u0440\u0435\u0434\u0438",
+                "multi": false,
+                "name": "queue_type",
+                "options": [],
+                "query": "tag_values(type,subsystem=cloud.sbis.ru,name=queue.size)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": [
+                        "AS2EDI"
+                    ],
+                    "value": [
+                        "AS2EDI"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(service,subsystem=cloud.sbis.ru,name=queue.size)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "\u0413\u0440\u0443\u043f\u043f\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u043e\u0432",
+                "multi": true,
+                "name": "queue",
+                "options": [],
+                "query": "tag_values(service,subsystem=cloud.sbis.ru,name=queue.size)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(host,subsystem=cloud.sbis.ru,name=queue.size,service=~${queue:regex}$)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": "\u0421\u0435\u0440\u0432\u0435\u0440\u0430",
+                "multi": true,
+                "name": "servers",
+                "options": [],
+                "query": "tag_values(host,subsystem=cloud.sbis.ru,name=queue.size,service=~${queue:regex}$)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            ""
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u041e\u0447\u0435\u0440\u0435\u0434\u0438 \u0440\u0430\u0431\u043e\u0447\u0438\u0435 \u0438 \u0441\u043b\u0443\u0436\u0435\u0431\u043d\u044b\u0435 \u0441 \u0440\u0430\u0437\u0431\u0438\u0432\u043a\u043e\u0439 \u043f\u043e \u0411\u041b",
+    "uid": "QD8cyTHZk",
+    "version": 25
+}

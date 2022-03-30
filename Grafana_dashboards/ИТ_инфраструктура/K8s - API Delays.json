@@ -1,0 +1,535 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041d\u0438\u043a\u0443\u043b\u0438\u043d \u0410.\u041d. (\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u044b\u0439 \u043e\u0442\u0434\u0435\u043b)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1709,
+    "iteration": 1648460443987,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "yellow",
+                                "value": 5
+                            }
+                        ]
+                    },
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 8,
+                "x": 0,
+                "y": 0
+            },
+            "id": 22,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "auto",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "max"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {
+                    "titleSize": 20,
+                    "valueSize": 20
+                },
+                "textMode": "value_and_name"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "highestMax(aliasByTags(groupByTags(aliasSub(divideSeriesLists(perSecond(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_sum', 'verb=~${verb:regex}', 'subresource!=~(log|exec|attach)', 'resource=~${resource:regex}$', 'node_name=~${node_name:regex}$')), #B), ',1[)][)][)]', '$1'), 'max', 'verb', 'resource', 'subresource'), 'verb', 'resource', 'subresource'), 5)",
+                    "targetFull": "highestMax(aliasByTags(groupByTags(aliasSub(divideSeriesLists(perSecond(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_sum', 'verb=~${verb:regex}', 'subresource!=~(log|exec|attach)', 'resource=~${resource:regex}$', 'node_name=~${node_name:regex}$')), perSecond(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_count', 'verb=~${verb:regex}', 'subresource!=~(log|exec|attach)', 'resource=~${resource:regex}$', 'node_name=~${node_name:regex}$'))), ',1[)][)][)]', '$1'), 'max', 'verb', 'resource', 'subresource'), 'verb', 'resource', 'subresource'), 5)",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "B",
+                    "target": "perSecond(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_count', 'verb=~${verb:regex}', 'subresource!=~(log|exec|attach)', 'resource=~${resource:regex}$', 'node_name=~${node_name:regex}$'))",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "TOP 5 Requests Delays by Resources",
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 8,
+                "x": 8,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 21,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "maxDataPoints": null,
+            "nullPointMode": "null as zero",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(groupByTags(aliasSub(divideSeriesLists(perSecond(keepLastValue(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_sum', 'verb=~(GET|LIST)', 'subresource!=~(log|exec|attach)', 'node_name=~${node_name:regex}$'), 1)), #B), ',1[)][)][)]', '$1'), 'max', 'verb'), 'verb')",
+                    "targetFull": "aliasByTags(groupByTags(aliasSub(divideSeriesLists(perSecond(keepLastValue(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_sum', 'verb=~(GET|LIST)', 'subresource!=~(log|exec|attach)', 'node_name=~${node_name:regex}$'), 1)), perSecond(keepLastValue(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_count', 'verb=~(GET|LIST)', 'subresource!=~(log|exec|attach)', 'node_name=~${node_name:regex}$'), 1))), ',1[)][)][)]', '$1'), 'max', 'verb'), 'verb')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "B",
+                    "target": "perSecond(keepLastValue(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_count', 'verb=~(GET|LIST)', 'subresource!=~(log|exec|attach)', 'node_name=~${node_name:regex}$'), 1))",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "API Delays",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:135",
+                    "format": "s",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:136",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 8,
+                "x": 16,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 19,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null as zero",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(groupByTags(divideSeriesLists(perSecond(keepLastValue(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_sum', 'verb!=~(WATCH|CONNECT)', 'subresource!=~(log|exec|attach)', 'verb=~(POST|DELETE|PATCH|PUT)', 'node_name=~${node_name:regex}$'), 1)), #B), 'max', 'verb'), 'verb')",
+                    "targetFull": "aliasByTags(groupByTags(divideSeriesLists(perSecond(keepLastValue(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_sum', 'verb!=~(WATCH|CONNECT)', 'subresource!=~(log|exec|attach)', 'verb=~(POST|DELETE|PATCH|PUT)', 'node_name=~${node_name:regex}$'), 1)), perSecond(keepLastValue(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_count', 'verb!=~(WATCH|CONNECT)', 'subresource!=~(log|exec|attach)', 'verb=~(POST|DELETE|PATCH|PUT)', 'node_name=~${node_name:regex}$'), 1))), 'max', 'verb'), 'verb')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "B",
+                    "target": "perSecond(keepLastValue(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_count', 'verb!=~(WATCH|CONNECT)', 'subresource!=~(log|exec|attach)', 'verb=~(POST|DELETE|PATCH|PUT)', 'node_name=~${node_name:regex}$'), 1))",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Other API Delays ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:135",
+                    "format": "s",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:136",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "s"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 13,
+                "w": 24,
+                "x": 0,
+                "y": 6
+            },
+            "hiddenSeries": false,
+            "id": 17,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null as zero",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "sortByMaxima(aliasByTags(groupByTags(aliasSub(divideSeriesLists(perSecond(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_sum', 'verb=~${verb:regex}', 'subresource!=~(log|exec|attach)', 'resource=~${resource:regex}$', 'node_name=~${node_name:regex}$')), #B), ',1[)][)][)]', '$1'), 'max', 'verb', 'resource', 'subresource'), 'verb', 'resource', 'subresource'))",
+                    "targetFull": "sortByMaxima(aliasByTags(groupByTags(aliasSub(divideSeriesLists(perSecond(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_sum', 'verb=~${verb:regex}', 'subresource!=~(log|exec|attach)', 'resource=~${resource:regex}$', 'node_name=~${node_name:regex}$')), perSecond(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_count', 'verb=~${verb:regex}', 'subresource!=~(log|exec|attach)', 'resource=~${resource:regex}$', 'node_name=~${node_name:regex}$'))), ',1[)][)][)]', '$1'), 'max', 'verb', 'resource', 'subresource'), 'verb', 'resource', 'subresource'))",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "B",
+                    "target": "perSecond(seriesByTag('job=kubernetes-apiservers', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.apiserver_request_duration_seconds_count', 'verb=~${verb:regex}', 'subresource!=~(log|exec|attach)', 'resource=~${resource:regex}$', 'node_name=~${node_name:regex}$'))",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "API Requests Delays by Resources",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:135",
+                    "format": "s",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:136",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(cluster,name=prometheus_remote_write.up)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Cluster",
+                "multi": false,
+                "name": "cluster",
+                "options": [],
+                "query": "tag_values(cluster,name=prometheus_remote_write.up)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(node_name,name=prometheus_remote_write.apiserver_request_duration_seconds_sum,cluster=$cluster)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Node",
+                "multi": true,
+                "name": "node_name",
+                "options": [],
+                "query": "tag_values(node_name,name=prometheus_remote_write.apiserver_request_duration_seconds_sum,cluster=$cluster)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(verb,name=prometheus_remote_write.apiserver_request_duration_seconds_sum,cluster=$cluster,node_name=~${node_name:regex})",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Verb",
+                "multi": true,
+                "name": "verb",
+                "options": [],
+                "query": "tag_values(verb,name=prometheus_remote_write.apiserver_request_duration_seconds_sum,cluster=$cluster,node_name=~${node_name:regex})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(resource,name=prometheus_remote_write.apiserver_request_duration_seconds_sum,verb=~${verb:regex},cluster=$cluster,node_name=~${node_name:regex})",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": "Resource",
+                "multi": false,
+                "name": "resource",
+                "options": [],
+                "query": "tag_values(resource,name=prometheus_remote_write.apiserver_request_duration_seconds_sum,verb=~${verb:regex},cluster=$cluster,node_name=~${node_name:regex})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-3h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "K8s - API Delays",
+    "uid": "8BnPmrS7k",
+    "version": 4
+}

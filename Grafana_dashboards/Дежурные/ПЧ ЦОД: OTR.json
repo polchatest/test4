@@ -1,0 +1,1192 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041b\u0435\u0434\u044f\u0435\u0432 \u0418.\u041a. (\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f), \u0423\u0440\u044b\u0432\u0430\u0435\u0432 \u0411.\u0412. (\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 175,
+    "iteration": 1638955741786,
+    "links": [
+        {
+            "asDropdown": true,
+            "icon": "external link",
+            "keepTime": true,
+            "tags": [
+                "otr",
+                "exploitation"
+            ],
+            "title": "OTR dashboards",
+            "type": "dashboards"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0427\u0438\u0441\u043b\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0432 \u043e\u0447\u0435\u0440\u0435\u0434\u0438 \u043d\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u0430\u0445 \u044f\u0434\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 1,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "exclude(aliasByTags(seriesByTag('name=queue.size', 'subsystem=cloud.sbis.ru', 'type=work', 'service=~.+-transport-core.*', 'host!=~.+'), 'service'), 'for2')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=cloud.sbis.ru', 'type=work', 'service=operator-sbismon', 'host!=~.+'), 'service')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0432 \u043e\u0447\u0435\u0440\u0435\u0434\u0438",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:41981",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:41982",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0420\u0430\u0441\u0447\u0435\u0442\u043d\u0430\u044f \u0441\u043a\u043e\u0440\u043e\u0441\u0442\u044c \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0432 \u0447\u0430\u0441",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 8,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 3,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": "current",
+                "sortDesc": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('name=document.count', 'type=speed', 'source=database'), 'doctype')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": "1h",
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u043c\u044b\u0445 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0432 \u0447\u0430\u0441",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:40227",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:40228",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0412\u0440\u0435\u043c\u044f \u043e\u0442\u0432\u0435\u0442\u0430 \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432 \u041e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u0430 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u044b\u0445 \u0441\u043d\u0430\u0440\u0443\u0436\u0438. \u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u0438\u0434\u0435\u0442 \u0438\u0437\u043d\u0443\u0442\u0440\u0438 \u0438 \u0441\u043d\u0430\u0440\u0443\u0436\u0438.",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 16,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 10,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('name=response.time', 'subsystem=otr'), 'route', 'name', 'service')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0412\u043d\u0435\u0448\u043d\u0438\u0439 (\u0432\u043d\u0443\u0442\u0440\u0435\u043d\u043d\u0438\u0439) \u043e\u043f\u0440\u043e\u0441",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:42906",
+                    "format": "s",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:42907",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0432 \u0441\u0435\u043a\u0443\u043d\u0434\u0443 \u043f\u043e \u0441\u0435\u0440\u0432\u0438\u0441\u0430\u043c \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0433\u043e \u044f\u0434\u0440\u0430 \u043e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 9
+            },
+            "hiddenSeries": false,
+            "id": 4,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": "current",
+                "sortDesc": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "alias(sumSeries(sbis3mon.prod.sbis3app.info.otr-edo-core-bl*.sbis3.10081.*.sbis3.service.request.processed._2Fedo-transport-core_2Fservice_2F.$aggr), 'edo-transport-core')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "G",
+                    "target": "alias(sumSeries(sbis3mon.prod.sbis3app.info.otr-edo-core-bl*.sbis3.10081.*.sbis3.service.request.processed._2Fedo-internal-transport-core_2Fservice_2F.$aggr), 'edo-internal-transport-core')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(sumSeries(sbis3mon.prod.sbis3app.info.otr-eo-core-bl*.sbis3.10081.*.sbis3.service.request.processed._2Feo-internal-transport-core_2Fservice_2F.$aggr), 'eo-internal-transport-core')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(sumSeries(sbis3mon.prod.sbis3app.info.otr-eo-core-bl*.sbis3.10081.*.sbis3.service.request.processed._2Foperator-sbismon_2Fservice_2F.$aggr), 'operator-sbismon')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(sumSeries(sbis3mon.prod.sbis3app.info.otr-eo-core-bl*.sbis3.10081.*.sbis3.service.request.processed._2Feo-transport-core_2Fservice_2F.$aggr), 'eo-transport-core')",
+                    "textEditor": true
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0432 \u0441\u0435\u043a\u0443\u043d\u0434\u0443",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:42371",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:42372",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0427\u0438\u0441\u043b\u043e \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u043e\u0432 \u0432 \u044f\u0434\u0440\u0430\u0445 \u0433\u043e\u0442\u043e\u0432\u044b\u0445 \u043a \u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0435 \u0432 \u0422\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442\u043d\u044b\u0435 \u043c\u043e\u0434\u0443\u043b\u0438 \u0438 \u043e\u043d\u043b\u0430\u0439\u043d",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 8,
+                "y": 9
+            },
+            "hiddenSeries": false,
+            "id": 11,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": "current",
+                "sortDesc": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(sumSeries(seriesByTag('name=queue.size', 'subsystem=~core-elo\\d', 'queue=core_to_cloud', 'unit!=~.*')), 'core elo to cloud')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(sumSeries(seriesByTag('name=queue.size', 'subsystem=~core-edo\\d', 'queue=core_to_cloud', 'unit!=~.*')), 'core edo to cloud')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(sumSeries(seriesByTag('name=queue.size', 'subsystem=mail', 'queue=~core_elo\\d_to_mail')), 'core elo to mail')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(sumSeries(seriesByTag('name=queue.size', 'subsystem=fold', 'queue=~core_elo\\d_to_folders')), 'core elo to folders')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "alias(sumSeries(seriesByTag('name=queue.size', 'subsystem=fss', 'queue=~core_elo\\d_to_fss')), 'core elo to fss')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "alias(sumSeries(seriesByTag('name=queue.size', 'subsystem=fsrar', 'queue=~core_elo\\d_to_fsrar')), 'core elo to fsrar')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "G",
+                    "target": "alias(sumSeries(seriesByTag('name=queue.size', 'subsystem=rpn', 'queue=~core_elo\\d_to_rpn')), 'core elo to rpn')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "H",
+                    "target": "alias(sumSeries(seriesByTag('name=queue.size', 'subsystem=cb', 'queue=~core_elo\\d_to_cb')), 'core elo to cb')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "I",
+                    "target": "alias(sumSeries(seriesByTag('name=queue.size', 'subsystem=pf', 'queue=~core_elo\\d_to_pf')), 'core elo to pf')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "J",
+                    "target": "alias(sumSeries(seriesByTag('name=queue.size', 'subsystem=fnsreg', 'queue=~core_elo\\d_to_fnsreg')), 'core elo to fnsreg')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041e\u0447\u0435\u0440\u0435\u0434\u0438 \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u043e\u0432 \u0432 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:40698",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:40699",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0427\u0438\u0441\u043b\u043e \u043f\u0435\u0440\u0432\u0438\u0447\u043d\u044b\u0445 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0432 \u044f\u0434\u0440\u0435, \u043e\u0436\u0438\u0434\u0430\u044e\u0449\u0438\u0445 \u0440\u0435\u043f\u043b\u0438\u043a\u0430\u0446\u0438\u0438 \u0432 \u0445\u0440\u0430\u043d\u0438\u043b\u0438\u0449\u0435",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 16,
+                "y": 9
+            },
+            "hiddenSeries": false,
+            "id": 15,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=wh', 'queue=~Primary\u00a0docs.*'), 'queue')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041e\u0447\u0435\u0440\u0435\u0434\u044c \u0440\u0435\u043f\u043b\u0438\u043a\u0430\u0446\u0438\u0438 \u043f\u0435\u0440\u0432\u0438\u0447\u043d\u044b\u0445 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0432 \u0445\u0440\u0430\u043d\u0438\u043b\u0438\u0449\u0435",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:43091",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:43092",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0432 \u0441\u0435\u043a\u0443\u043d\u0434\u0443 \u043f\u043e \u0441\u0435\u0440\u0432\u0438\u0441\u0430\u043c \u0440\u0435\u0437\u0435\u0440\u0432\u043d\u043e\u0433\u043e \u044f\u0434\u0440\u0430 \u043e\u043f\u0435\u0440\u0430\u0442\u043e\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 18
+            },
+            "hiddenSeries": false,
+            "id": 12,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": null,
+                "sortDesc": null,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(sumSeries(sbis3mon.prod.sbis3app.info.otr-res-edo-bl*.sbis3.10081.*.sbis3.service.request.processed._2Fres-edo-transport-core_2Fservice_2F.$aggr), 'res-edo-transport-core')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "alias(sumSeries(sbis3mon.prod.sbis3app.info.otr-res-elo-bl*.sbis3.10081.*.sbis3.service.request.processed._2Fres-eo-transport-core_2Fservice_2F.$aggr), 'res-eo-transport-core')",
+                    "textEditor": true
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0432 \u0441\u0435\u043a\u0443\u043d\u0434\u0443",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:72",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:73",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0427\u0438\u0441\u043b\u043e \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u043e\u0432 \u0432 \u0422\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442\u043d\u044b\u0445 \u043c\u043e\u0434\u0443\u043b\u044f\u0445 \u0433\u043e\u0442\u043e\u0432\u044b\u0445 \u043a \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0435 \u0434\u043e \u043f\u043e\u043b\u0443\u0447\u0430\u0442\u0435\u043b\u044f \u0438\u043b\u0438 \u0432 \u044f\u0434\u0440\u043e",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 8,
+                "y": 18
+            },
+            "hiddenSeries": false,
+            "id": 13,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "sort": "current",
+                "sortDesc": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=mail', 'queue=~mail\\d_to_[core,mailbox]'), 'queue')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=mail', 'queue=~primary_docs_to_mailbox\\d'), 'queue')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=fold', 'queue=~folders\\d_to_[core,PF]'), 'queue')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=fss', 'queue=fss_to_core'), 'queue')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=fsrar', 'queue=fsrar_to_core'), 'queue')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=pf', 'queue=~pf_to_[core,pfinsp]'), 'queue')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "G",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=cb', 'queue=~cb_to_[core,cbportal]'), 'queue')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "H",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=fnsreg', 'queue=~fnsreg_to_[core,fns]'), 'queue')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "I",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=rpn', 'queue=~rpn_to_[core,portal]'), 'queue')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "J",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=mail', 'queue=~mail-\\d_to_[core,mailbox]'), 'queue')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "K",
+                    "target": "aliasByTags(seriesByTag('name=queue.size', 'subsystem=mail', 'queue=~primary_docs-\\d_to_mailbox'), 'queue')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041e\u0447\u0435\u0440\u0435\u0434\u0438 \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u043e\u0432 \u0438\u0437 \u0441\u0438\u0441\u0442\u0435\u043c \u0434\u043e\u0441\u0442\u0430\u0432\u043a\u0438",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:121",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:122",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0417\u0430\u0434\u0435\u0440\u0436\u043a\u0430 \u0440\u0435\u043f\u043b\u0438\u043a\u0430\u0446\u0438\u0438 \u043f\u0435\u0440\u0432\u0438\u0447\u043d\u044b\u0445 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0438\u0437 \u044f\u0434\u0440\u0430 \u0432 \u0425\u0440\u0430\u043d\u0438\u043b\u0438\u0449\u0435",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 16,
+                "y": 18
+            },
+            "hiddenSeries": false,
+            "id": 14,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByTags(seriesByTag('name=queue.lag', 'subsystem=wh', 'queue=~Primary\u00a0docs.*'), 'queue')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041e\u0447\u0435\u0440\u0435\u0434\u044c \u0440\u0435\u043f\u043b\u0438\u043a\u0430\u0446\u0438\u0438 \u043f\u0435\u0440\u0432\u0438\u0447\u043d\u044b\u0445 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u043e\u0432 \u0432 \u0445\u0440\u0430\u043d\u0438\u043b\u0438\u0449\u0435 (\u0437\u0430\u0434\u0435\u0440\u0436\u043a\u0430)",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:43231",
+                    "format": "s",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:43232",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "30s",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "exploitation",
+        "otr",
+        "TV",
+        "service",
+        "scripts",
+        "tv4"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "avg",
+                    "value": "avg"
+                },
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "\u0410\u0433\u0440\u0435\u0433\u0430\u0446\u0438\u044f",
+                "multi": false,
+                "name": "aggr",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "max",
+                        "value": "max"
+                    },
+                    {
+                        "selected": true,
+                        "text": "avg",
+                        "value": "avg"
+                    },
+                    {
+                        "selected": false,
+                        "text": "min",
+                        "value": "min"
+                    }
+                ],
+                "query": "max, avg, min",
+                "skipUrlSync": false,
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-30m",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "30s"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u041f\u0427 \u0426\u041e\u0414: OTR",
+    "uid": "1gOF-eGmk",
+    "version": 74
+}

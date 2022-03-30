@@ -1,0 +1,954 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: -",
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 168,
+    "iteration": 1628587774611,
+    "links": [],
+    "panels": [
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 52,
+            "panels": [],
+            "repeat": "server",
+            "scopedVars": {
+                "server": {
+                    "selected": true,
+                    "text": "antivirus-bl1",
+                    "value": "antivirus-bl1"
+                }
+            },
+            "title": "$server service (workers,  workers_pct)",
+            "type": "row"
+        },
+        {
+            "aliasColors": {
+                "contextSwitch": "#CFFAFF"
+            },
+            "bars": false,
+            "cacheTimeout": "30",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 46,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "scopedVars": {
+                "server": {
+                    "selected": true,
+                    "text": "antivirus-bl1",
+                    "value": "antivirus-bl1"
+                }
+            },
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:100",
+                    "alias": "free",
+                    "yaxis": 2
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(maxSeries(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.service.$service.workers.{avail,avail-max}), 'avail')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(minSeries(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.service.$service.workers.{free,free-min}), 'free')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(maxSeries(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.service.$service.workers.{used,used-max}), 'used')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "sbis3mon.$contur.sbis3app.info_srv.$server.sbis3.$port.*.sbis3.service.workers.{avail,avail-max}.*.$aggr | aliasByNode(-3, -2) | aliasSub('_2F|_5F', ' ')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "sbis3mon.$contur.sbis3app.info_srv.$server.sbis3.$port.*.sbis3.service.workers.{free,free-min}.*.$aggr | aliasByNode(-3, -2)  | aliasSub('_2F|_5F', ' ')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "sbis3mon.$contur.sbis3app.info_srv.$server.sbis3.$port.*.sbis3.service.workers.{used,used-max}.*.$aggr | aliasByNode(-3, -2)  | aliasSub('_2F|_5F', ' ')",
+                    "textEditor": true
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: service workers",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:107",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:108",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {
+                "contextSwitch": "#CFFAFF"
+            },
+            "bars": false,
+            "cacheTimeout": "30",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 47,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": true,
+            "pluginVersion": "7.4.0",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "scopedVars": {
+                "server": {
+                    "selected": true,
+                    "text": "antivirus-bl1",
+                    "value": "antivirus-bl1"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.service.[[service]]*pct.workers.avail, 'avail')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.service.[[service]]*pct.workers.free, 'free')",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.service.[[service]]*pct.workers.used, 'used')",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "sbis3mon.$contur.sbis3app.info_srv.$server.sbis3.$port.*.sbis3.service.workers.avail.*.pct.$aggr | aliasByNode(-5, -4, -2, -1)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "sbis3mon.$contur.sbis3app.info_srv.$server.sbis3.$port.*.sbis3.service.workers.free.*.pct.$aggr | aliasByNode(-5, -4, -2, -1)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "sbis3mon.$contur.sbis3app.info_srv.$server.sbis3.$port.*.sbis3.service.workers.used.*.pct.$aggr | aliasByNode(-5, -4, -2, -1)",
+                    "textEditor": true
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: service workers",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:328",
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:329",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 8
+            },
+            "id": 53,
+            "panels": [],
+            "repeat": "server",
+            "scopedVars": {
+                "server": {
+                    "selected": true,
+                    "text": "antivirus-bl1",
+                    "value": "antivirus-bl1"
+                }
+            },
+            "title": "$server service (request, ping)",
+            "type": "row"
+        },
+        {
+            "aliasColors": {
+                "contextSwitch": "#CFFAFF"
+            },
+            "bars": false,
+            "cacheTimeout": "30",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 9
+            },
+            "hiddenSeries": false,
+            "id": 48,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "scopedVars": {
+                "server": {
+                    "selected": true,
+                    "text": "antivirus-bl1",
+                    "value": "antivirus-bl1"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByMetric(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.service.$service.request.processed)",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByMetric(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.service.$service.request.error)",
+                    "textEditor": true
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByMetric(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.service.$service.request.queued)",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "sbis3mon.$contur.sbis3app.info_srv.$server.sbis3.$port.*.sbis3.service.request.processed.*.$aggr | aliasByNode(-4, -2) | aliasSub('_2F|_5F', ' ')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "sbis3mon.$contur.sbis3app.info_srv.$server.sbis3.$port.*.sbis3.service.request.error.*.$aggr | aliasByNode(-4, -2) | aliasSub('_2F|_5F', ' ')",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "sbis3mon.$contur.sbis3app.info_srv.$server.sbis3.$port.*.sbis3.service.request.queued.*.$aggr | aliasByNode(-4, -2) | aliasSub('_2F|_5F', ' ')",
+                    "textEditor": true
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: service request",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:519",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:520",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {
+                "contextSwitch": "#CFFAFF"
+            },
+            "bars": false,
+            "cacheTimeout": "30",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 9
+            },
+            "hiddenSeries": false,
+            "id": 50,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "scopedVars": {
+                "server": {
+                    "selected": true,
+                    "text": "antivirus-bl1",
+                    "value": "antivirus-bl1"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByMetric(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.service.$service.ping.load)",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "sbis3mon.$contur.sbis3app.info_srv.$server.sbis3.$port.*.sbis3.service.ping.*.load.raw | alias('ping load')",
+                    "textEditor": true
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: service ping",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:674",
+                    "format": "ms",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:675",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 16
+            },
+            "id": 54,
+            "panels": [],
+            "repeat": "server",
+            "scopedVars": {
+                "server": {
+                    "selected": true,
+                    "text": "antivirus-bl1",
+                    "value": "antivirus-bl1"
+                }
+            },
+            "title": "$server svcdb (echo)",
+            "type": "row"
+        },
+        {
+            "aliasColors": {
+                "contextSwitch": "#CFFAFF"
+            },
+            "bars": false,
+            "cacheTimeout": "30",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 17
+            },
+            "hiddenSeries": false,
+            "id": 51,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "maxDataPoints": "",
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "scopedVars": {
+                "server": {
+                    "selected": true,
+                    "text": "antivirus-bl1",
+                    "value": "antivirus-bl1"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByMetric(sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.svcdb.$service.echo)",
+                    "textEditor": true
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasSub(aliasByNode(sbis3mon.$contur.sbis3app.testecho.$server.sbis3.$port.*.sbis3.svcdb.echo.*.raw, -2), '_2F', '')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "$server: echo",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:2380",
+                    "format": "ms",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:2381",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "15s",
+    "schemaVersion": 27,
+    "style": "dark",
+    "tags": [
+        "service",
+        "sbis3mon-kafka"
+    ],
+    "templating": {
+        "list": [
+            {
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "label": "\u041a\u043e\u043d\u0442\u0443\u0440",
+                "name": "contur",
+                "query": "prod",
+                "skipUrlSync": false,
+                "type": "constant"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "tags": [],
+                    "text": [
+                        "antivirus-bl1"
+                    ],
+                    "value": [
+                        "antivirus-bl1"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "sbis3mon.$contur.sbis3app.status.*",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "\u0418\u043c\u044f \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+                "multi": true,
+                "name": "server",
+                "options": [],
+                "query": "sbis3mon.$contur.sbis3app.status.*",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "label": "\u0414\u043e\u043c\u0435\u043d",
+                "name": "domain",
+                "query": "*.tensor.ru",
+                "skipUrlSync": false,
+                "type": "constant"
+            },
+            {
+                "allValue": "*",
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "carbon-short",
+                "definition": "sbis3mon.$contur.sbis3app.status.$server.sbis3.*",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": "\u041f\u043e\u0440\u0442",
+                "multi": false,
+                "name": "port",
+                "options": [],
+                "query": "sbis3mon.$contur.sbis3app.status.$server.sbis3.*",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 3,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "isNone": true,
+                    "selected": false,
+                    "text": "None",
+                    "value": ""
+                },
+                "datasource": "carbon-short",
+                "definition": "sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.svcdb.*",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "\u0421\u0435\u0440\u0432\u0438\u0441",
+                "multi": false,
+                "name": "service",
+                "options": [],
+                "query": "sbis3mon.$contur.sbis3app.$server.$domain.$port.*.aggr-$aggr.sbis3.svcdb.*",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "max",
+                    "value": "max"
+                },
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "\u0410\u0433\u0440\u0435\u0433\u0430\u0446\u0438\u044f",
+                "multi": false,
+                "name": "aggr",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "max",
+                        "value": "max"
+                    },
+                    {
+                        "selected": false,
+                        "text": "avg",
+                        "value": "avg"
+                    },
+                    {
+                        "selected": false,
+                        "text": "min",
+                        "value": "min"
+                    }
+                ],
+                "query": "max, avg, min",
+                "queryValue": "",
+                "skipUrlSync": false,
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            " 30s"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "browser",
+    "title": "sbis3app",
+    "uid": "5qVKENMik",
+    "version": 23
+}

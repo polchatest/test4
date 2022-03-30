@@ -1,0 +1,1040 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0421\u043e\u0440\u043e\u043a\u0438\u043d \u0418.\u0410. (\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 758,
+    "iteration": 1636979533914,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u0430\u0448\u0431\u043e\u0440\u0434 \u0441 \u0433\u0440\u0430\u0444\u0438\u043a\u0430\u043c\u0438 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0440\u043e\u0431\u043e\u0442\u043e\u0432 \u0415\u0418\u0421",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 2,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr44http', 'kind=ZgrHttp44.Task44FZ', 'sub_metric=all'), 'max'), '\u0412\u0441\u0435\u0433\u043e')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr44http', 'kind=ZgrHttp44.Task44FZ', 'sub_metric=active', 'interval=600s'), 'max'), '\u0410\u043a\u0442\u0438\u0432\u043d\u044b\u0445')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr44http', 'kind=ZgrHttp44.Task44FZ', 'sub_metric=errors'), 'max'), '\u0421 \u043e\u0448\u0438\u0431\u043a\u0430\u043c\u0438')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "zgr44http: Task44FZ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:89",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:90",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u0430\u0448\u0431\u043e\u0440\u0434 \u0441 \u0433\u0440\u0430\u0444\u0438\u043a\u0430\u043c\u0438 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0440\u043e\u0431\u043e\u0442\u043e\u0432 \u0415\u0418\u0421",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 8,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 3,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr223http', 'kind=\u0417\u0430\u0433\u0440\u0443\u0437\u0447\u0438\u043a\u0422\u043e\u0440\u0433\u043e\u0432223.Tender', 'sub_metric=all'), 'max'), '\u0412\u0441\u0435\u0433\u043e')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr223http', 'kind=\u0417\u0430\u0433\u0440\u0443\u0437\u0447\u0438\u043a\u0422\u043e\u0440\u0433\u043e\u0432223.Tender', 'sub_metric=active', 'interval=600s'), 'max'), '\u0410\u043a\u0442\u0438\u0432\u043d\u044b\u0445')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr223http', 'kind=\u0417\u0430\u0433\u0440\u0443\u0437\u0447\u0438\u043a\u0422\u043e\u0440\u0433\u043e\u0432223.Tender', 'sub_metric=errors'), 'max'), '\u0421 \u043e\u0448\u0438\u0431\u043a\u0430\u043c\u0438')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "zgr223http: \u0417\u0430\u0433\u0440\u0443\u0437\u0447\u0438\u043a\u0422\u043e\u0440\u0433\u043e\u0432223.Tender",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:168",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:169",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u0430\u0448\u0431\u043e\u0440\u0434 \u0441 \u0433\u0440\u0430\u0444\u0438\u043a\u0430\u043c\u0438 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0440\u043e\u0431\u043e\u0442\u043e\u0432 \u0415\u0418\u0421",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 16,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 4,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-docs', 'kind=DocumentLoader.Document', 'sub_metric=all'), 'max'), '\u0412\u0441\u0435\u0433\u043e')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-docs', 'kind=DocumentLoader.Document', 'sub_metric=active', 'interval=600s'), 'max'), '\u0410\u043a\u0442\u0438\u0432\u043d\u044b\u0445')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-docs', 'kind=DocumentLoader.Document', 'sub_metric=errors'), 'max'), '\u0421 \u043e\u0448\u0438\u0431\u043a\u0430\u043c\u0438')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "DocumentLoader.Document",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:247",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:248",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u0430\u0448\u0431\u043e\u0440\u0434 \u0441 \u0433\u0440\u0430\u0444\u0438\u043a\u0430\u043c\u0438 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0440\u043e\u0431\u043e\u0442\u043e\u0432 \u0415\u0418\u0421",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 0,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 5,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr44ftp', 'kind=Zgr44FTP.Tender', 'sub_metric=all'), 'max'), 'Tender.Total')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr44ftp', 'kind=Zgr44FTP.Download44Archive', 'sub_metric=all'), 'max'), 'Download44Archive.Total')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr44ftp', 'kind=Zgr44FTP.Download44ContractArchive', 'sub_metric=all'), 'max'), 'Download44ContractArchive.Total')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "zgr44ftp: Tender + Download44Archive + Download44ContractArchive",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:326",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:327",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u0430\u0448\u0431\u043e\u0440\u0434 \u0441 \u0433\u0440\u0430\u0444\u0438\u043a\u0430\u043c\u0438 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0440\u043e\u0431\u043e\u0442\u043e\u0432 \u0415\u0418\u0421",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 8,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 6,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr223ftp', 'kind=ZakupkiGovRuFTP223Loader.Tender', 'sub_metric=all'), 'max'), 'Tender.Total')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr223ftp', 'kind=ZakupkiGovRuFTP223Loader.Archive', 'sub_metric=all'), 'max'), 'Archive.Total')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "zgr223ftp: Tender + Archive",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:405",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:406",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u0430\u0448\u0431\u043e\u0440\u0434 \u0441 \u0433\u0440\u0430\u0444\u0438\u043a\u0430\u043c\u0438 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0440\u043e\u0431\u043e\u0442\u043e\u0432 \u0415\u0418\u0421",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 16,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 7,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr223ftp', 'kind=ZakupkiGovRuFTP223Loader.Tender223Http', 'sub_metric=all'), 'max'), 'Tender223Http.Total')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgr44ftp', 'kind=Zgr44FTP.TenderHttp', 'sub_metric=all'), 'max'), 'TenderHttp.Total')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "zgr223ftp.Tender223Http + zgr44ftp.TenderHttp",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:484",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:485",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u0430\u0448\u0431\u043e\u0440\u0434 \u0441 \u0433\u0440\u0430\u0444\u0438\u043a\u0430\u043c\u0438 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0440\u043e\u0431\u043e\u0442\u043e\u0432 \u0415\u0418\u0421",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 0,
+                "y": 16
+            },
+            "hiddenSeries": false,
+            "id": 8,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgrplan', 'kind=PlanZakupkiFTPLoader.Plan44', 'sub_metric=all'), 'max'), 'Plan44.Total')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgrplan', 'kind=PlanZakupkiFTPLoader.DownloadPlan44', 'sub_metric=all'), 'max'), 'DownloadPlan44.Total')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "zgrplan: Plan44 + DownloadPlan44",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:563",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:564",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u0430\u0448\u0431\u043e\u0440\u0434 \u0441 \u0433\u0440\u0430\u0444\u0438\u043a\u0430\u043c\u0438 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0440\u043e\u0431\u043e\u0442\u043e\u0432 \u0415\u0418\u0421",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 8,
+                "y": 16
+            },
+            "hiddenSeries": false,
+            "id": 9,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgrplan223', 'kind=PlanZakupkiFTPLoader.Plan223', 'sub_metric=all'), 'max'), 'Plan223.Total')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgrplan223', 'kind=PlanZakupkiFTPLoader.DownloadPlan223', 'sub_metric=all'), 'max'), 'DownloadPlan223.Total')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "zgrplan: Plan 223 + DownloadPlan223",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:642",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:643",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0414\u0430\u0448\u0431\u043e\u0440\u0434 \u0441 \u0433\u0440\u0430\u0444\u0438\u043a\u0430\u043c\u0438 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0440\u043e\u0431\u043e\u0442\u043e\u0432 \u0415\u0418\u0421",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 8,
+                "x": 16,
+                "y": 16
+            },
+            "hiddenSeries": false,
+            "id": 10,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgrplan', 'kind=PlanZakupkiFTPLoader.Plan44_2020', 'sub_metric=all'), 'max'), 'Plan44_2020.Total')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(consolidateBy(seriesByTag('name=tender-robots.QTasksCount', 'contur=${stand:regex}', 'robot=tender-robot-zgrplan', 'kind=PlanZakupkiFTPLoader.Download44Plan2020', 'sub_metric=all'), 'max'), 'Download44Plan2020.Total')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "zgrplan: Plan44_2020 + Download44Plan2020",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:721",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:722",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "service",
+        "scripts",
+        "tender"
+    ],
+    "templating": {
+        "list": [
+            {
+                "current": {
+                    "selected": false,
+                    "text": "prod",
+                    "value": "prod"
+                },
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "label": "\u0421\u0442\u0435\u043d\u0434",
+                "name": "stand",
+                "query": "prod",
+                "skipUrlSync": false,
+                "type": "constant"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-24h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u0422\u043e\u0440\u0433\u0438 - \u041e\u0447\u0435\u0440\u0435\u0434\u0438 \u0437\u0430\u0434\u0430\u0447 ZGR",
+    "uid": "66Oxt_lZk",
+    "version": 28
+}

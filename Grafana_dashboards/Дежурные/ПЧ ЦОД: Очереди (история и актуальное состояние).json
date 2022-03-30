@@ -1,0 +1,933 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0410\u0431\u0440\u0430\u043c\u043e\u0432 \u0412.\u0418. (\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430), \u0411\u0430\u0443\u043b\u0438\u043d \u0421.\u0410. (\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 6,
+    "iteration": 1648206024514,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "cacheTimeout": "10",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "decimals": null,
+            "description": "\u0421\u0443\u043c\u043c\u0430 \u043f\u043e \u0432\u0441\u0435\u043c \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u043c \u043e\u0447\u0435\u0440\u0435\u0434\u044f\u043c \u043e\u0431\u043b\u0430\u043a\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 12,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "hideTimeOverride": true,
+            "id": 1,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "sideWidth": 350,
+                "sort": null,
+                "sortDesc": null,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:28742",
+                    "alias": "/^(?!\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439)/i",
+                    "legend": false
+                },
+                {
+                    "$$hashKey": "object:28743",
+                    "alias": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439",
+                    "color": "#7EB26D",
+                    "lines": false
+                }
+            ],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(highestMax(exclude(maximumAbove(seriesByTag('name=queue.size', 'subsystem=cloud.sbis.ru', 'host!=~.+', 'contur=${contur:regex}'), 1), '\u0426\u0435\u043d\u0442\u0440 \u043b\u043e\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f'), 20), 'service')"
+                },
+                {
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(countSeries(currentAbove(seriesByTag('name=queue.size', 'subsystem=cloud.sbis.ru', 'host!=~.+', 'contur=${contur:regex}'), 1)), '\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": "15m",
+            "timeRegions": [],
+            "timeShift": "1m",
+            "title": "\u0420\u0430\u0431\u043e\u0447\u0438\u0435 \u0438 \u0441\u043b\u0443\u0436\u0435\u0431\u043d\u044b\u0435 \u043e\u0447\u0435\u0440\u0435\u0434\u0438 (\u0441\u0443\u043c\u043c\u0430)",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:28758",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:28759",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "cacheTimeout": "10",
+            "columns": [
+                {
+                    "$$hashKey": "object:37704",
+                    "text": "Current",
+                    "value": "current"
+                },
+                {
+                    "$$hashKey": "object:37705",
+                    "text": "Max",
+                    "value": "max"
+                }
+            ],
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 10 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u043e\u0441\u043d\u043e\u0432\u043d\u043e\u0433\u043e \u043f\u0443\u043b\u0430",
+            "fontSize": "100%",
+            "gridPos": {
+                "h": 11,
+                "w": 6,
+                "x": 12,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "id": 3,
+            "links": [],
+            "pageSize": null,
+            "scroll": true,
+            "showHeader": true,
+            "sort": {
+                "col": 1,
+                "desc": true
+            },
+            "styles": [
+                {
+                    "$$hashKey": "object:515",
+                    "alias": "\u0422\u0435\u043a\u0443\u0449\u0435\u0435",
+                    "align": "auto",
+                    "colorMode": "cell",
+                    "colors": [
+                        "rgba(50, 172, 45, 0.97)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(245, 54, 54, 0.9)"
+                    ],
+                    "decimals": null,
+                    "pattern": "Current",
+                    "thresholds": [
+                        "200",
+                        "1000"
+                    ],
+                    "type": "number",
+                    "unit": "short"
+                },
+                {
+                    "$$hashKey": "object:516",
+                    "alias": "\u041e\u0447\u0435\u0440\u0435\u0434\u044c",
+                    "align": "auto",
+                    "colorMode": null,
+                    "colors": [
+                        "rgba(245, 54, 54, 0.9)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(50, 172, 45, 0.97)"
+                    ],
+                    "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                    "decimals": 2,
+                    "pattern": "Metric",
+                    "thresholds": [],
+                    "type": "number",
+                    "unit": "short"
+                },
+                {
+                    "$$hashKey": "object:517",
+                    "alias": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c",
+                    "align": "auto",
+                    "colorMode": "cell",
+                    "colors": [
+                        "rgba(50, 172, 45, 0.97)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(245, 54, 54, 0.9)"
+                    ],
+                    "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                    "decimals": null,
+                    "pattern": "Max",
+                    "thresholds": [
+                        "200",
+                        "1000"
+                    ],
+                    "type": "number",
+                    "unit": "short"
+                }
+            ],
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(highestCurrent(currentAbove(seriesByTag('name=queue.size', 'subsystem=cloud.sbis.ru', 'type=work', 'host!=~.+', 'contur=${contur:regex}'), 1), 10), 'service')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u0420\u0430\u0431\u043e\u0447\u0438\u0435 \u043e\u0447\u0435\u0440\u0435\u0434\u0438 (top 10 \u0430\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0445)",
+            "transform": "timeseries_aggregations",
+            "type": "table-old"
+        },
+        {
+            "cacheTimeout": "10",
+            "columns": [
+                {
+                    "$$hashKey": "object:37850",
+                    "text": "Current",
+                    "value": "current"
+                },
+                {
+                    "$$hashKey": "object:37851",
+                    "text": "Max",
+                    "value": "max"
+                }
+            ],
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 10 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0441\u043b\u0443\u0436\u0435\u0431\u043d\u043e\u0433\u043e \u043f\u0443\u043b\u0430",
+            "fontSize": "100%",
+            "gridPos": {
+                "h": 11,
+                "w": 6,
+                "x": 18,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "id": 4,
+            "links": [],
+            "pageSize": null,
+            "scroll": true,
+            "showHeader": true,
+            "sort": {
+                "col": 1,
+                "desc": true
+            },
+            "styles": [
+                {
+                    "$$hashKey": "object:662",
+                    "alias": "\u0422\u0435\u043a\u0443\u0449\u0435\u0435",
+                    "align": "auto",
+                    "colorMode": "cell",
+                    "colors": [
+                        "rgba(50, 172, 45, 0.97)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(245, 54, 54, 0.9)"
+                    ],
+                    "decimals": null,
+                    "pattern": "Current",
+                    "thresholds": [
+                        "200",
+                        "1000"
+                    ],
+                    "type": "number",
+                    "unit": "short"
+                },
+                {
+                    "$$hashKey": "object:663",
+                    "alias": "\u041e\u0447\u0435\u0440\u0435\u0434\u044c",
+                    "align": "auto",
+                    "colorMode": null,
+                    "colors": [
+                        "rgba(245, 54, 54, 0.9)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(50, 172, 45, 0.97)"
+                    ],
+                    "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                    "decimals": 2,
+                    "pattern": "Metric",
+                    "thresholds": [],
+                    "type": "number",
+                    "unit": "short"
+                },
+                {
+                    "$$hashKey": "object:664",
+                    "alias": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c",
+                    "align": "auto",
+                    "colorMode": "cell",
+                    "colors": [
+                        "rgba(50, 172, 45, 0.97)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(245, 54, 54, 0.9)"
+                    ],
+                    "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                    "decimals": null,
+                    "pattern": "Max",
+                    "thresholds": [
+                        "200",
+                        "1000"
+                    ],
+                    "type": "number",
+                    "unit": "short"
+                }
+            ],
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(highestCurrent(currentAbove(seriesByTag('name=queue.size', 'subsystem=cloud.sbis.ru', 'type=special', 'host!=~.+', 'contur=${contur:regex}'), 1), 10), 'service')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u0421\u043b\u0443\u0436\u0435\u0431\u043d\u044b\u0435 \u043e\u0447\u0435\u0440\u0435\u0434\u0438 (top 10 \u0430\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0445)",
+            "transform": "timeseries_aggregations",
+            "type": "table-old"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "cacheTimeout": "5",
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0443\u043c\u043c\u0430 \u043f\u043e \u0432\u0441\u0435\u043c \u0430\u0441\u0438\u043d\u0445\u0440\u043e\u043d\u043d\u044b\u043c \u043e\u0447\u0435\u0440\u0435\u0434\u044f\u043c \u043e\u0431\u043b\u0430\u043a\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 12,
+                "w": 12,
+                "x": 0,
+                "y": 11
+            },
+            "hiddenSeries": false,
+            "hideTimeOverride": true,
+            "id": 2,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "sideWidth": 350,
+                "sort": "current",
+                "sortDesc": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 5,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:28587",
+                    "alias": "/^(?!\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439)/i",
+                    "legend": false
+                },
+                {
+                    "$$hashKey": "object:28588",
+                    "alias": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439",
+                    "lines": false
+                }
+            ],
+            "spaceLength": 10,
+            "stack": true,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(highestMax(countSeries(currentAbove(seriesByTag('name=async.queue.size', 'subsystem=cloud.sbis.ru', 'contur=${contur:regex}'), 1)), 20), '\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439')"
+                },
+                {
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "aliasByTags(maximumAbove(seriesByTag('name=async.queue.size', 'subsystem=cloud.sbis.ru', 'contur=${contur:regex}'), 1), 'service')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": "15m",
+            "timeRegions": [],
+            "timeShift": "1m",
+            "title": "\u0410\u0441\u0438\u043d\u0445\u0440\u043e\u043d\u043d\u044b\u0435 \u043e\u0447\u0435\u0440\u0435\u0434\u0438 (\u0441\u0443\u043c\u043c\u0430)",
+            "tooltip": {
+                "shared": true,
+                "sort": 2,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:28601",
+                    "decimals": null,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:28602",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "cacheTimeout": null,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0448\u0438\u0431\u043e\u043a \u043e\u0431\u043b\u0430\u043a\u0430 \u0437\u0430 \u043f\u0440\u0435\u0434\u044b\u0434\u0443\u0449\u0443\u044e \u043c\u0438\u043d\u0443\u0442\u0443",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "match": "null",
+                                "result": {
+                                    "text": "N/A"
+                                }
+                            },
+                            "type": "special"
+                        }
+                    ],
+                    "max": 10000,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "rgba(50, 172, 45, 0.97)",
+                                "value": null
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "value": 1000
+                            },
+                            {
+                                "color": "#d44a3a",
+                                "value": 5000
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 12,
+                "y": 11
+            },
+            "hideTimeOverride": true,
+            "id": 22,
+            "interval": null,
+            "links": [],
+            "maxDataPoints": 100,
+            "options": {
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "sum(exclude(keepLastValue(maximumAbove(seriesByTag('name=errors', 'subsystem=cloud.sbis.ru', 'source=cloud', 'contur=${contur:regex}'), 1), 10), 'FNS.transport.OFD'))"
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u041e\u0448\u0438\u0431\u043a\u0438 \u043e\u0431\u043b\u0430\u043a\u0430 (\u0441\u0443\u043c\u043c\u0430)",
+            "type": "gauge"
+        },
+        {
+            "cacheTimeout": null,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043a\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u043e\u0448\u0438\u0431\u043e\u043a \u0432 \u0440\u0435\u0434\u0438\u0441\u0435",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "match": "null",
+                                "result": {
+                                    "text": "N/A"
+                                }
+                            },
+                            "type": "special"
+                        }
+                    ],
+                    "max": 10,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "#299c46",
+                                "value": null
+                            },
+                            {
+                                "color": "rgba(237, 129, 40, 0.89)",
+                                "value": 1
+                            },
+                            {
+                                "color": "#d44a3a",
+                                "value": 5
+                            }
+                        ]
+                    },
+                    "unit": "none"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 15,
+                "y": 11
+            },
+            "hideTimeOverride": true,
+            "id": 24,
+            "interval": null,
+            "links": [],
+            "maxDataPoints": 100,
+            "options": {
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('name=errors.critical', 'source=redis', 'contur=${contur:regex}')"
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u041a\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043e\u0448\u0438\u0431\u043a\u0438 redis",
+            "type": "gauge"
+        },
+        {
+            "cacheTimeout": "10",
+            "columns": [
+                {
+                    "$$hashKey": "object:38826",
+                    "text": "Current",
+                    "value": "current"
+                },
+                {
+                    "$$hashKey": "object:38827",
+                    "text": "Max",
+                    "value": "max"
+                }
+            ],
+            "datasource": "carbon-short",
+            "description": "\u0422\u043e\u043f 10 \u0430\u0441\u0438\u043d\u0445\u0440\u043e\u043d\u043d\u044b\u0445 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439",
+            "fontSize": "100%",
+            "gridPos": {
+                "h": 12,
+                "w": 6,
+                "x": 18,
+                "y": 11
+            },
+            "hideTimeOverride": true,
+            "id": 5,
+            "links": [],
+            "pageSize": null,
+            "scroll": true,
+            "showHeader": true,
+            "sort": {
+                "col": 1,
+                "desc": true
+            },
+            "styles": [
+                {
+                    "$$hashKey": "object:159",
+                    "alias": "\u0422\u0435\u043a\u0443\u0449\u0435\u0435",
+                    "align": "auto",
+                    "colorMode": "cell",
+                    "colors": [
+                        "rgba(50, 172, 45, 0.97)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(245, 54, 54, 0.9)"
+                    ],
+                    "decimals": null,
+                    "pattern": "Current",
+                    "thresholds": [
+                        "2000",
+                        "10000"
+                    ],
+                    "type": "number",
+                    "unit": "short"
+                },
+                {
+                    "$$hashKey": "object:160",
+                    "alias": "\u041e\u0447\u0435\u0440\u0435\u0434\u044c",
+                    "align": "auto",
+                    "colorMode": null,
+                    "colors": [
+                        "rgba(245, 54, 54, 0.9)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(50, 172, 45, 0.97)"
+                    ],
+                    "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                    "decimals": 2,
+                    "pattern": "Metric",
+                    "thresholds": [],
+                    "type": "number",
+                    "unit": "short"
+                },
+                {
+                    "$$hashKey": "object:161",
+                    "alias": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c",
+                    "align": "auto",
+                    "colorMode": "cell",
+                    "colors": [
+                        "rgba(50, 172, 45, 0.97)",
+                        "rgba(237, 129, 40, 0.89)",
+                        "rgba(245, 54, 54, 0.9)"
+                    ],
+                    "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                    "decimals": null,
+                    "pattern": "Max",
+                    "thresholds": [
+                        "2000",
+                        "10000"
+                    ],
+                    "type": "number",
+                    "unit": "short"
+                }
+            ],
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(currentAbove(seriesByTag('name=async.queue.size', 'subsystem=cloud.sbis.ru', 'contur=${contur:regex}'), 1), 'service')"
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u0410\u0441\u0438\u043d\u0445\u0440\u043e\u043d\u043d\u044b\u0435 \u043e\u0447\u0435\u0440\u0435\u0434\u0438 (top 10 \u0430\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u044b\u0445)",
+            "transform": "timeseries_aggregations",
+            "type": "table-old"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "cacheTimeout": null,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u043e\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043a\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0445 \u043e\u0448\u0438\u0431\u043e\u043a \u0432 \u043b\u043e\u0433\u0430\u0445",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 1,
+            "gridPos": {
+                "h": 6,
+                "w": 6,
+                "x": 12,
+                "y": 17
+            },
+            "hiddenSeries": false,
+            "hideTimeOverride": true,
+            "id": 25,
+            "legend": {
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "show": false,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [],
+            "nullPointMode": "null as zero",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "seriesByTag('name=errors.critical', 'subsystem=cloud.sbis.ru', 'source=cloud', 'contur=${contur:regex}')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": "5m",
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041a\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043e\u0448\u0438\u0431\u043a\u0438 \u043b\u043e\u0433\u0438",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": false,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:38717",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:38718",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "30s",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "exploitation",
+        "TV",
+        "scripts",
+        "service",
+        "tv5"
+    ],
+    "templating": {
+        "list": [
+            {
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "label": null,
+                "name": "contur",
+                "query": "prod",
+                "skipUrlSync": false,
+                "type": "constant"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(host,service=file-transfer,contur=$contur)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": false,
+                "name": "bl",
+                "options": [],
+                "query": "tag_values(host,service=file-transfer,contur=$contur)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-5m",
+        "to": "now"
+    },
+    "timepicker": {
+        "hidden": false,
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u041f\u0427 \u0426\u041e\u0414: \u041e\u0447\u0435\u0440\u0435\u0434\u0438 (\u0438\u0441\u0442\u043e\u0440\u0438\u044f \u0438 \u0430\u043a\u0442\u0443\u0430\u043b\u044c\u043d\u043e\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435)",
+    "uid": "mnglXYzmz",
+    "version": 77
+}

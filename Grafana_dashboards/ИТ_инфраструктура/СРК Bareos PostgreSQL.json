@@ -1,0 +1,1868 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439:  \u0413\u0443\u0441\u0435\u0432 \u041c.\u041a. (\u0410\u0426\u041e\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1478,
+    "iteration": 1647603960750,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": "carbon-short",
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "": {
+                                    "text": ""
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byRegexp",
+                            "options": ".+\u043e\u0448\u0438\u0431\u043a\u043e\u0439"
+                        },
+                        "properties": [
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "dark-green",
+                                            "value": null
+                                        },
+                                        {
+                                            "color": "dark-red",
+                                            "value": 1
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byRegexp",
+                            "options": ".+\u0443\u0441\u043f\u0435\u0448\u043d\u043e"
+                        },
+                        "properties": [
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "dark-green",
+                                            "value": null
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byRegexp",
+                            "options": ".+\u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435"
+                        },
+                        "properties": [
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "dark-green",
+                                            "value": null
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u0412\u0441\u0435\u0433\u043e"
+                        },
+                        "properties": [
+                            {
+                                "id": "thresholds",
+                                "value": {
+                                    "mode": "absolute",
+                                    "steps": [
+                                        {
+                                            "color": "dark-blue",
+                                            "value": null
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byType",
+                            "options": "number"
+                        },
+                        "properties": [
+                            {
+                                "id": "noValue",
+                                "value": "0"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 33,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "value_and_name"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "J",
+                    "target": "alias(aggregate(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 'count'), '\u0412\u0441\u0435\u0433\u043e')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "I",
+                    "target": "alias(aggregate(removeAboveValue(removeBelowValue(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 11), 11), 'count'), '\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "G",
+                    "target": "alias(aggregate(removeAboveValue(removeBelowValue(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 13), 13), 'count'), '\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0430 \u0443\u0441\u043f\u0435\u0448\u043d\u043e')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "H",
+                    "target": "alias(aggregate(removeAboveValue(removeBelowValue(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 12), 12), 'count'), '\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0430 \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "alias(aggregate(removeAboveValue(removeBelowValue(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 21), 21), 'count'), '\u0411\u0435\u043a\u0430\u043f \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(aggregate(removeAboveValue(removeBelowValue(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 23), 23), 'count'), '\u0411\u0435\u043a\u0430\u043f \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d \u0443\u0441\u043f\u0435\u0448\u043d\u043e')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "alias(aggregate(removeAboveValue(removeBelowValue(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 22), 22), 'count'), '\u0411\u0435\u043a\u0430\u043f \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(aggregate(removeAboveValue(removeBelowValue(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 31), 31), 'count'), '\u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(aggregate(removeBelowValue(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 33), 'count'), '\u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0430 \u0443\u0441\u043f\u0435\u0448\u043d\u043e')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(aggregate(removeAboveValue(removeBelowValue(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 32), 32), 'count'), '\u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0430 \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439')",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "mode": "reduceFields",
+                        "reducers": [
+                            "last"
+                        ]
+                    }
+                }
+            ],
+            "type": "stat"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 4
+            },
+            "id": 23,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "11",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "center",
+                                "filterable": false
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "": {
+                                            "text": ""
+                                        }
+                                    },
+                                    "type": "value"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Databases"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width",
+                                        "value": 580
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 0,
+                        "y": 5
+                    },
+                    "id": 14,
+                    "options": {
+                        "showHeader": true,
+                        "sortBy": []
+                    },
+                    "pluginVersion": "7.4.0",
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0412 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435",
+                    "transformations": [
+                        {
+                            "id": "labelsToFields",
+                            "options": {}
+                        },
+                        {
+                            "id": "merge",
+                            "options": {}
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "Time": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": null
+                                    },
+                                    "Value": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "database": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "equal",
+                                            "options": {
+                                                "value": "11"
+                                            }
+                                        },
+                                        "fieldName": "Value (lastNotNull)"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Time (lastNotNull)": true,
+                                    "Value": false,
+                                    "Value (lastNotNull)": true
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Value": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                                    "database": "Databases"
+                                }
+                            }
+                        }
+                    ],
+                    "type": "table"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "13",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "center",
+                                "filterable": false
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "": {
+                                            "text": ""
+                                        }
+                                    },
+                                    "type": "value"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Databases"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width",
+                                        "value": 579
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 8,
+                        "y": 5
+                    },
+                    "id": 16,
+                    "options": {
+                        "showHeader": true,
+                        "sortBy": []
+                    },
+                    "pluginVersion": "7.4.0",
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043e \u0443\u0441\u043f\u0435\u0448\u043d\u043e",
+                    "transformations": [
+                        {
+                            "id": "labelsToFields",
+                            "options": {}
+                        },
+                        {
+                            "id": "merge",
+                            "options": {}
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "Time": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": null
+                                    },
+                                    "Value": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "database": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "equal",
+                                            "options": {
+                                                "value": "13"
+                                            }
+                                        },
+                                        "fieldName": "Value (lastNotNull)"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Time (lastNotNull)": true,
+                                    "Value": false,
+                                    "Value (lastNotNull)": true
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Value": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                                    "database": "Databases"
+                                }
+                            }
+                        }
+                    ],
+                    "type": "table"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "12",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "center",
+                                "filterable": false
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "": {
+                                            "text": ""
+                                        }
+                                    },
+                                    "type": "value"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Databases"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width",
+                                        "value": 580
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 16,
+                        "y": 5
+                    },
+                    "id": 15,
+                    "options": {
+                        "showHeader": true,
+                        "sortBy": []
+                    },
+                    "pluginVersion": "7.4.0",
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refId": "A",
+                            "target": "seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043e \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439",
+                    "transformations": [
+                        {
+                            "id": "labelsToFields",
+                            "options": {}
+                        },
+                        {
+                            "id": "merge",
+                            "options": {}
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "Time": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": null
+                                    },
+                                    "Value": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "database": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Time (lastNotNull)": true,
+                                    "Value": true,
+                                    "Value (lastNotNull)": false
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Value": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                                    "database": "Databases"
+                                }
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "equal",
+                                            "options": {
+                                                "value": "12"
+                                            }
+                                        },
+                                        "fieldName": "Value (lastNotNull)"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Value (lastNotNull)": true
+                                },
+                                "indexByName": {},
+                                "renameByName": {}
+                            }
+                        }
+                    ],
+                    "type": "table"
+                }
+            ],
+            "title": "\u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 5
+            },
+            "id": 25,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "21",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "center",
+                                "filterable": false
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "": {
+                                            "text": ""
+                                        }
+                                    },
+                                    "type": "value"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Databases"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width",
+                                        "value": 579
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 0,
+                        "y": 6
+                    },
+                    "id": 13,
+                    "options": {
+                        "showHeader": true,
+                        "sortBy": []
+                    },
+                    "pluginVersion": "7.4.0",
+                    "targets": [
+                        {
+                            "hide": false,
+                            "refCount": 0,
+                            "refId": "B",
+                            "target": "seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0412 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435",
+                    "transformations": [
+                        {
+                            "id": "labelsToFields",
+                            "options": {}
+                        },
+                        {
+                            "id": "merge",
+                            "options": {}
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "Time": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": null
+                                    },
+                                    "Value": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "database": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "equal",
+                                            "options": {
+                                                "value": 21
+                                            }
+                                        },
+                                        "fieldName": "Value (lastNotNull)"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Time (lastNotNull)": true,
+                                    "Value": false,
+                                    "Value (lastNotNull)": true
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Value": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                                    "database": "Databases"
+                                }
+                            }
+                        }
+                    ],
+                    "type": "table"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "23",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "center",
+                                "filterable": false
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "": {
+                                            "text": ""
+                                        }
+                                    },
+                                    "type": "value"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Databases"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width",
+                                        "value": 580
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 8,
+                        "y": 6
+                    },
+                    "id": 11,
+                    "options": {
+                        "showHeader": true,
+                        "sortBy": []
+                    },
+                    "pluginVersion": "7.4.0",
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043e \u0443\u0441\u043f\u0435\u0448\u043d\u043e",
+                    "transformations": [
+                        {
+                            "id": "labelsToFields",
+                            "options": {}
+                        },
+                        {
+                            "id": "merge",
+                            "options": {}
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "Time": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": null
+                                    },
+                                    "Value": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "database": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Time (lastNotNull)": true,
+                                    "Value": false
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Value": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                                    "database": "Databases"
+                                }
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "equal",
+                                            "options": {
+                                                "value": 23
+                                            }
+                                        },
+                                        "fieldName": "Value (lastNotNull)"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Value (lastNotNull)": true,
+                                    "\u0421\u0442\u0430\u0442\u0443\u0441": true
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Databases": "Databases",
+                                    "\u0421\u0442\u0430\u0442\u0443\u0441": ""
+                                }
+                            }
+                        }
+                    ],
+                    "type": "table"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "22",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "center",
+                                "filterable": false
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "": {
+                                            "text": ""
+                                        }
+                                    },
+                                    "type": "value"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Databases"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width",
+                                        "value": 578
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 16,
+                        "y": 6
+                    },
+                    "id": 12,
+                    "options": {
+                        "showHeader": true,
+                        "sortBy": []
+                    },
+                    "pluginVersion": "7.4.0",
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043e \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439",
+                    "transformations": [
+                        {
+                            "id": "labelsToFields",
+                            "options": {}
+                        },
+                        {
+                            "id": "merge",
+                            "options": {}
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "Time": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": null
+                                    },
+                                    "Value": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "database": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Time (lastNotNull)": true,
+                                    "Value": false,
+                                    "Value (lastNotNull)": false
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Value": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                                    "database": "Databases"
+                                }
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "equal",
+                                            "options": {
+                                                "value": 22
+                                            }
+                                        },
+                                        "fieldName": "Value (lastNotNull)"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Value (lastNotNull)": true,
+                                    "\u0421\u0442\u0430\u0442\u0443\u0441": true
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Databases": "Databases",
+                                    "\u0421\u0442\u0430\u0442\u0443\u0441": ""
+                                }
+                            }
+                        }
+                    ],
+                    "type": "table"
+                }
+            ],
+            "title": "\u0411\u0435\u043a\u0430\u043f",
+            "type": "row"
+        },
+        {
+            "collapsed": true,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 6
+            },
+            "id": 27,
+            "panels": [
+                {
+                    "datasource": "carbon-short",
+                    "description": "31",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "center",
+                                "filterable": false
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "": {
+                                            "text": ""
+                                        }
+                                    },
+                                    "type": "value"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Databases"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width",
+                                        "value": 578
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 0,
+                        "y": 7
+                    },
+                    "id": 17,
+                    "options": {
+                        "showHeader": true,
+                        "sortBy": []
+                    },
+                    "pluginVersion": "7.4.0",
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0412 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435",
+                    "transformations": [
+                        {
+                            "id": "labelsToFields",
+                            "options": {}
+                        },
+                        {
+                            "id": "merge",
+                            "options": {}
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "Time": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": null
+                                    },
+                                    "Value": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "database": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Time (lastNotNull)": true,
+                                    "Value": false
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Value": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                                    "database": "Databases"
+                                }
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "equal",
+                                            "options": {
+                                                "value": 31
+                                            }
+                                        },
+                                        "fieldName": "Value (lastNotNull)"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Value (lastNotNull)": true,
+                                    "\u0421\u0442\u0430\u0442\u0443\u0441": true
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Databases": "Databases",
+                                    "\u0421\u0442\u0430\u0442\u0443\u0441": ""
+                                }
+                            }
+                        }
+                    ],
+                    "type": "table"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "33",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "center",
+                                "filterable": false
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "": {
+                                            "text": ""
+                                        }
+                                    },
+                                    "type": "value"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Databases"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width",
+                                        "value": 580
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 8,
+                        "y": 7
+                    },
+                    "id": 19,
+                    "options": {
+                        "showHeader": true,
+                        "sortBy": []
+                    },
+                    "pluginVersion": "7.4.0",
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043e \u0443\u0441\u043f\u0435\u0448\u043d\u043e",
+                    "transformations": [
+                        {
+                            "id": "labelsToFields",
+                            "options": {}
+                        },
+                        {
+                            "id": "merge",
+                            "options": {}
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "Time": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": null
+                                    },
+                                    "Value": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "database": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Time (lastNotNull)": true,
+                                    "Value": false
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Value": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                                    "database": "Databases"
+                                }
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "equal",
+                                            "options": {
+                                                "value": 33
+                                            }
+                                        },
+                                        "fieldName": "Value (lastNotNull)"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Value (lastNotNull)": true,
+                                    "\u0421\u0442\u0430\u0442\u0443\u0441": true
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Databases": "Databases",
+                                    "\u0421\u0442\u0430\u0442\u0443\u0441": ""
+                                }
+                            }
+                        }
+                    ],
+                    "type": "table"
+                },
+                {
+                    "datasource": "carbon-short",
+                    "description": "32",
+                    "fieldConfig": {
+                        "defaults": {
+                            "color": {
+                                "mode": "thresholds"
+                            },
+                            "custom": {
+                                "align": "center",
+                                "filterable": false
+                            },
+                            "mappings": [
+                                {
+                                    "options": {
+                                        "": {
+                                            "text": ""
+                                        }
+                                    },
+                                    "type": "value"
+                                }
+                            ],
+                            "thresholds": {
+                                "mode": "absolute",
+                                "steps": [
+                                    {
+                                        "color": "green",
+                                        "value": null
+                                    },
+                                    {
+                                        "color": "red",
+                                        "value": 80
+                                    }
+                                ]
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byName",
+                                    "options": "Databases"
+                                },
+                                "properties": [
+                                    {
+                                        "id": "custom.width",
+                                        "value": 578
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "gridPos": {
+                        "h": 7,
+                        "w": 8,
+                        "x": 16,
+                        "y": 7
+                    },
+                    "id": 18,
+                    "options": {
+                        "showHeader": true,
+                        "sortBy": []
+                    },
+                    "pluginVersion": "7.4.0",
+                    "targets": [
+                        {
+                            "refId": "A",
+                            "target": "seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py')",
+                            "textEditor": false
+                        }
+                    ],
+                    "title": "\u0417\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u043e \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439",
+                    "transformations": [
+                        {
+                            "id": "labelsToFields",
+                            "options": {}
+                        },
+                        {
+                            "id": "merge",
+                            "options": {}
+                        },
+                        {
+                            "id": "groupBy",
+                            "options": {
+                                "fields": {
+                                    "Time": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": null
+                                    },
+                                    "Value": {
+                                        "aggregations": [
+                                            "lastNotNull"
+                                        ],
+                                        "operation": "aggregate"
+                                    },
+                                    "database": {
+                                        "aggregations": [],
+                                        "operation": "groupby"
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Time (lastNotNull)": true,
+                                    "Value": false
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Value": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                                    "database": "Databases"
+                                }
+                            }
+                        },
+                        {
+                            "id": "filterByValue",
+                            "options": {
+                                "filters": [
+                                    {
+                                        "config": {
+                                            "id": "equal",
+                                            "options": {
+                                                "value": 32
+                                            }
+                                        },
+                                        "fieldName": "Value (lastNotNull)"
+                                    }
+                                ],
+                                "match": "any",
+                                "type": "include"
+                            }
+                        },
+                        {
+                            "id": "organize",
+                            "options": {
+                                "excludeByName": {
+                                    "Value (lastNotNull)": true,
+                                    "\u0421\u0442\u0430\u0442\u0443\u0441": true
+                                },
+                                "indexByName": {},
+                                "renameByName": {
+                                    "Databases": "Databases",
+                                    "\u0421\u0442\u0430\u0442\u0443\u0441": ""
+                                }
+                            }
+                        }
+                    ],
+                    "type": "table"
+                }
+            ],
+            "title": "\u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f",
+            "type": "row"
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 7
+            },
+            "id": 6,
+            "panels": [],
+            "title": "\u0413\u0440\u0430\u0444\u0438\u043a",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "11 - \u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0431\u0435\u043a\u0430\u043f\u0430 \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435\n\n12 - \u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0431\u0435\u043a\u0430\u043f\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0430\u0441\u044c \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439\n\n13 - \u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0431\u0435\u043a\u0430\u043f\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0430\u0441\u044c \u0443\u0441\u043f\u0435\u0448\u043d\u043e\n\n21 - \u0417\u0430\u0434\u0430\u043d\u0438\u0435 \u043d\u0430 \u0431\u0435\u043a\u0430\u043f \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435\n\n22 - \u0417\u0430\u0434\u0430\u043d\u0438\u0435 \u043d\u0430 \u0431\u0435\u043a\u0430\u043f \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u043e\u0441\u044c \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439\n\n23 - \u0417\u0430\u0434\u0430\u043d\u0438\u0435 \u043d\u0430 \u0431\u0435\u043a\u0430\u043f \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u043e\u0441\u044c \u0443\u0441\u043f\u0435\u0448\u043d\u043e\n\n31 - \u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u0431\u0435\u043a\u0430\u043f\u0430 \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435\n\n32 - \u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u0431\u0435\u043a\u0430\u043f\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0430\u0441\u044c \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439\n\n33 - \u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u0431\u0435\u043a\u0430\u043f\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0430\u0441\u044c \u0443\u0441\u043f\u0435\u0448\u043d\u043e",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 0,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 20,
+                "x": 0,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 4,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 3,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 3,
+            "points": true,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "sortByMinima(aliasByTags(seriesByTag('name=status_code.backup', 'servertype=bareos', 'database=~${Database:regex}', 'script=backup_worker_py'), 'database'))",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Database: $Database",
+            "tooltip": {
+                "shared": true,
+                "sort": 1,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:2210",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": "\u0421\u0442\u0430\u0442\u0443\u0441",
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:2211",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "",
+            "gridPos": {
+                "h": 12,
+                "w": 4,
+                "x": 20,
+                "y": 8
+            },
+            "id": 21,
+            "options": {
+                "content": "11 - \u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0431\u0435\u043a\u0430\u043f\u0430 \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435  \n12 - \u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0431\u0435\u043a\u0430\u043f\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0430\u0441\u044c \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439  \n13 - \u041f\u043e\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0430 \u0431\u0435\u043a\u0430\u043f\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0430\u0441\u044c \u0443\u0441\u043f\u0435\u0448\u043d\u043e  \n\n21 - \u0417\u0430\u0434\u0430\u043d\u0438\u0435 \u043d\u0430 \u0431\u0435\u043a\u0430\u043f \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435  \n22 - \u0417\u0430\u0434\u0430\u043d\u0438\u0435 \u043d\u0430 \u0431\u0435\u043a\u0430\u043f \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u043e\u0441\u044c \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439  \n23 - \u0417\u0430\u0434\u0430\u043d\u0438\u0435 \u043d\u0430 \u0431\u0435\u043a\u0430\u043f \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u043e\u0441\u044c \u0443\u0441\u043f\u0435\u0448\u043d\u043e  \n\n31 - \u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u0431\u0435\u043a\u0430\u043f\u0430 \u0432 \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u0435  \n32 - \u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u0431\u0435\u043a\u0430\u043f\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0430\u0441\u044c \u0441 \u043e\u0448\u0438\u0431\u043a\u043e\u0439  \n33 - \u0412\u0430\u043b\u0438\u0434\u0430\u0446\u0438\u044f \u0431\u0435\u043a\u0430\u043f\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0438\u043b\u0430\u0441\u044c \u0443\u0441\u043f\u0435\u0448\u043d\u043e  ",
+                "mode": "markdown"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": ""
+                }
+            ],
+            "title": "\u0420\u0430\u0441\u0448\u0438\u0444\u0440\u043e\u0432\u043a\u0430 \u0441\u0442\u0430\u0442\u0443\u0441\u043e\u0432",
+            "transparent": true,
+            "type": "text"
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "Bareos ",
+        "telegraf",
+        "PostgreSQL",
+        "service"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "prod",
+                    "value": "prod"
+                },
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "contur",
+                "options": [
+                    {
+                        "selected": true,
+                        "text": "prod",
+                        "value": "prod"
+                    }
+                ],
+                "query": "prod",
+                "skipUrlSync": false,
+                "type": "custom"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "tags": [],
+                    "text": [
+                        "All"
+                    ],
+                    "value": [
+                        "$__all"
+                    ]
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(database, name=status_code.backup, contur=$contur)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": true,
+                "name": "Database",
+                "options": [],
+                "query": "tag_values(database, name=status_code.backup, contur=$contur)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-3h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "\u0421\u0420\u041a Bareos PostgreSQL",
+    "uid": "jom8Yl6Mk",
+    "version": 20
+}

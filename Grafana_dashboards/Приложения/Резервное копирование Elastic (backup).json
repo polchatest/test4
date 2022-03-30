@@ -1,0 +1,3549 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: -",
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 2,
+    "id": 1235,
+    "iteration": 1628591418549,
+    "links": [],
+    "panels": [
+        {
+            "datasource": "carbon-short",
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [
+                        {
+                            "from": "",
+                            "id": 0,
+                            "operator": "",
+                            "text": "OK",
+                            "to": "",
+                            "type": 1,
+                            "value": "1"
+                        },
+                        {
+                            "from": "",
+                            "id": 1,
+                            "operator": "",
+                            "text": "IN_PROGRESS",
+                            "to": "",
+                            "type": 1,
+                            "value": "2"
+                        },
+                        {
+                            "from": "",
+                            "id": 2,
+                            "operator": "",
+                            "text": "PARTIAL",
+                            "to": "",
+                            "type": 1,
+                            "value": "3"
+                        },
+                        {
+                            "from": "",
+                            "id": 3,
+                            "operator": "",
+                            "text": "FAIL",
+                            "to": "",
+                            "type": 1,
+                            "value": "0"
+                        }
+                    ],
+                    "noValue": "\u043d\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0445",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "dark-red",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 0
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 1
+                            },
+                            {
+                                "color": "semi-dark-blue",
+                                "value": 2
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 3
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "scale(elastic-backup.end_epoch;cluster_name=mail-log;contur=prod;elastic_host=mail-log;interval=1800s;script=DPC_elastic_backup.py;servertype=elasticsearch,1000)"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "dateTimeAsIso"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "id": 9,
+            "maxDataPoints": 100,
+            "maxPerRow": 12,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.4.0",
+            "repeat": null,
+            "repeatDirection": "h",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('name=elastic-backup.status', 'servertype=elasticsearch', 'contur=~${contur:regex}', 'script=DPC_elastic_backup.py'), 'cluster_name')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0431\u0435\u043a\u0430\u043f\u0430 \u043a\u043b\u0430\u0441\u0442\u0435\u0440\u0430",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "noValue": "\u043d\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0445",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "light-green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "dateTimeFromNow"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 24,
+                "x": 0,
+                "y": 6
+            },
+            "id": 35,
+            "maxDataPoints": 100,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "vertical",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true,
+                "text": {}
+            },
+            "pluginVersion": "7.4.0",
+            "repeatDirection": "h",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(scale(seriesByTag('name=elastic-backup.end_epoch', 'servertype=elasticsearch', 'contur=~${contur:regex}', 'script=DPC_elastic_backup.py'), 1000), 'cluster_name')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0412\u0440\u0435\u043c\u044f \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u044f \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0433\u043e \u0431\u0435\u043a\u0430\u043f\u0430",
+            "type": "bargauge"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0443\u043c\u043c\u0430\u0440\u043d\u044b\u0439 \u0433\u0440\u0430\u0444\u0438\u0433 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439 \u0431\u0435\u043a\u0430\u043f\u0430 \u0448\u0430\u0440\u0434\u043e\u0432. \u041f\u043e \u043f\u0435\u0440\u0435\u0441\u0435\u0447\u0435\u043d\u0438\u044e \u043c\u043e\u0436\u043d\u043e \u043e\u0446\u0435\u043d\u0438\u0442\u044c \u0435\u0441\u0442\u044c \u043b\u0438 \u043e\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u044b\u0439 \u0431\u0435\u043a\u0430\u043f \u0438\u043b\u0438 \u043d\u0435\u0442.",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 4,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 24,
+                "x": 0,
+                "y": 12
+            },
+            "hiddenSeries": false,
+            "id": 61,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": false,
+                "hideEmpty": false,
+                "hideZero": false,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 2,
+            "maxDataPoints": 100,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatDirection": "h",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "consolidateBy(groupByNodes(aliasByTags(seriesByTag('name=service.elastic.snapshot_queue', 'servertype=elasticsearch', 'contur=~${contur:regex}', 'cluster_name=~${cluster:regex}'), 'cluster_name'), 'sum', 0), 'maximum')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041e\u0447\u0435\u0440\u0435\u0434\u044c \u0431\u0435\u043a\u0430\u043f\u0430 \u0448\u0430\u0440\u0434\u043e\u0432 ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:277",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:278",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "noValue": "\u043d\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0445",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 1
+                            },
+                            {
+                                "color": "light-yellow",
+                                "value": 7200
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 14400
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "end last backup"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "dateTimeAsIso"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 8,
+                "x": 0,
+                "y": 18
+            },
+            "id": 6,
+            "maxDataPoints": 100,
+            "maxPerRow": 3,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": false,
+                "text": {}
+            },
+            "pluginVersion": "7.4.0",
+            "repeat": "cluster",
+            "repeatDirection": "h",
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "dpc-log",
+                    "value": "dpc-log"
+                }
+            },
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.backuptime', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'Duration backup (sec)')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByNode(aliasByTags(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.failed_shards', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'name'), 1)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "$cluster",
+            "type": "bargauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "noValue": "\u043d\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0445",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 1
+                            },
+                            {
+                                "color": "light-yellow",
+                                "value": 7200
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 14400
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "end last backup"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "dateTimeAsIso"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 8,
+                "x": 8,
+                "y": 18
+            },
+            "id": 62,
+            "maxDataPoints": 100,
+            "maxPerRow": 3,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": false,
+                "text": {}
+            },
+            "pluginVersion": "7.4.0",
+            "repeatDirection": "h",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 6,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "elastic-tender",
+                    "value": "elastic-tender"
+                }
+            },
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.backuptime', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'Duration backup (sec)')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByNode(aliasByTags(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.failed_shards', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'name'), 1)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "$cluster",
+            "type": "bargauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "noValue": "\u043d\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0445",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 1
+                            },
+                            {
+                                "color": "light-yellow",
+                                "value": 7200
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 14400
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "end last backup"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "dateTimeAsIso"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 8,
+                "x": 16,
+                "y": 18
+            },
+            "id": 63,
+            "maxDataPoints": 100,
+            "maxPerRow": 3,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": false,
+                "text": {}
+            },
+            "pluginVersion": "7.4.0",
+            "repeatDirection": "h",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 6,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "forums-search",
+                    "value": "forums-search"
+                }
+            },
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.backuptime', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'Duration backup (sec)')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByNode(aliasByTags(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.failed_shards', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'name'), 1)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "$cluster",
+            "type": "bargauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "noValue": "\u043d\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0445",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 1
+                            },
+                            {
+                                "color": "light-yellow",
+                                "value": 7200
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 14400
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "end last backup"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "dateTimeAsIso"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 8,
+                "x": 0,
+                "y": 21
+            },
+            "id": 64,
+            "maxDataPoints": 100,
+            "maxPerRow": 3,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": false,
+                "text": {}
+            },
+            "pluginVersion": "7.4.0",
+            "repeatDirection": "h",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 6,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "hr-elastic",
+                    "value": "hr-elastic"
+                }
+            },
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.backuptime', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'Duration backup (sec)')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByNode(aliasByTags(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.failed_shards', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'name'), 1)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "$cluster",
+            "type": "bargauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "noValue": "\u043d\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0445",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 1
+                            },
+                            {
+                                "color": "light-yellow",
+                                "value": 7200
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 14400
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "end last backup"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "dateTimeAsIso"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 8,
+                "x": 8,
+                "y": 21
+            },
+            "id": 65,
+            "maxDataPoints": 100,
+            "maxPerRow": 3,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": false,
+                "text": {}
+            },
+            "pluginVersion": "7.4.0",
+            "repeatDirection": "h",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 6,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "mail-log",
+                    "value": "mail-log"
+                }
+            },
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.backuptime', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'Duration backup (sec)')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByNode(aliasByTags(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.failed_shards', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'name'), 1)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "$cluster",
+            "type": "bargauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "noValue": "\u043d\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0445",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 1
+                            },
+                            {
+                                "color": "light-yellow",
+                                "value": 7200
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 14400
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "end last backup"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "dateTimeAsIso"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 8,
+                "x": 16,
+                "y": 21
+            },
+            "id": 66,
+            "maxDataPoints": 100,
+            "maxPerRow": 3,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": false,
+                "text": {}
+            },
+            "pluginVersion": "7.4.0",
+            "repeatDirection": "h",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 6,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "ssp-elastic-cluster",
+                    "value": "ssp-elastic-cluster"
+                }
+            },
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.backuptime', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'Duration backup (sec)')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByNode(aliasByTags(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.failed_shards', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'name'), 1)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "$cluster",
+            "type": "bargauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [],
+                    "noValue": "\u043d\u0435\u0442 \u0434\u0430\u043d\u043d\u044b\u0445",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 1
+                            },
+                            {
+                                "color": "light-yellow",
+                                "value": 7200
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 14400
+                            }
+                        ]
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "end last backup"
+                        },
+                        "properties": [
+                            {
+                                "id": "unit",
+                                "value": "dateTimeAsIso"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 8,
+                "x": 0,
+                "y": 24
+            },
+            "id": 67,
+            "maxDataPoints": 100,
+            "maxPerRow": 3,
+            "options": {
+                "displayMode": "basic",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": false,
+                "text": {}
+            },
+            "pluginVersion": "7.4.0",
+            "repeatDirection": "h",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 6,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "wiki-search",
+                    "value": "wiki-search"
+                }
+            },
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.backuptime', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'Duration backup (sec)')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByNode(aliasByTags(seriesByTag('cluster_name=$cluster', 'name=elastic-backup.failed_shards', 'script=DPC_elastic_backup.py', 'servertype=elasticsearch'), 'name'), 1)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "$cluster",
+            "type": "bargauge"
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 27
+            },
+            "id": 8,
+            "panels": [],
+            "repeat": "cluster",
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "dpc-log",
+                    "value": "dpc-log"
+                }
+            },
+            "title": "$cluster \u0433\u0440\u0430\u0444\u0438\u043a\u0438",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 28
+            },
+            "hiddenSeries": false,
+            "id": 3,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "dpc-log",
+                    "value": "dpc-log"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "consolidateBy(aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.(snapshot_active|snapshot_largest|snapshot_rejected|snapshot_threads)', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1), 'maximum')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0441\u043d\u0430\u043f\u0448\u043e\u0442\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:586",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:587",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 9,
+                "x": 8,
+                "y": 28
+            },
+            "hiddenSeries": false,
+            "id": 5,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "dpc-log",
+                    "value": "dpc-log"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.snapshot_queue', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0447\u0435\u0440\u0435\u0434\u044c \u0431\u0435\u043a\u0430\u043f\u0430 \u0448\u0430\u0440\u0434\u043e\u0432 ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:735",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:736",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 7,
+                "x": 17,
+                "y": 28
+            },
+            "hiddenSeries": false,
+            "id": 4,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "dpc-log",
+                    "value": "dpc-log"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'cluster_name=~${cluster:regex}', 'name=~service.elastic.snapshot_completed'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0437\u0430\u0431\u0435\u043a\u0430\u043f\u043b\u0435\u043d\u044b\u0445 \u0448\u0430\u0440\u0434\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:882",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:883",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 37
+            },
+            "id": 68,
+            "panels": [],
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 8,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "elastic-tender",
+                    "value": "elastic-tender"
+                }
+            },
+            "title": "$cluster \u0433\u0440\u0430\u0444\u0438\u043a\u0438",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 38
+            },
+            "hiddenSeries": false,
+            "id": 69,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 3,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "elastic-tender",
+                    "value": "elastic-tender"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "consolidateBy(aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.(snapshot_active|snapshot_largest|snapshot_rejected|snapshot_threads)', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1), 'maximum')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0441\u043d\u0430\u043f\u0448\u043e\u0442\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:586",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:587",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 9,
+                "x": 8,
+                "y": 38
+            },
+            "hiddenSeries": false,
+            "id": 70,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 5,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "elastic-tender",
+                    "value": "elastic-tender"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.snapshot_queue', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0447\u0435\u0440\u0435\u0434\u044c \u0431\u0435\u043a\u0430\u043f\u0430 \u0448\u0430\u0440\u0434\u043e\u0432 ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:735",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:736",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 7,
+                "x": 17,
+                "y": 38
+            },
+            "hiddenSeries": false,
+            "id": 71,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 4,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "elastic-tender",
+                    "value": "elastic-tender"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'cluster_name=~${cluster:regex}', 'name=~service.elastic.snapshot_completed'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0437\u0430\u0431\u0435\u043a\u0430\u043f\u043b\u0435\u043d\u044b\u0445 \u0448\u0430\u0440\u0434\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:882",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:883",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 47
+            },
+            "id": 72,
+            "panels": [],
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 8,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "forums-search",
+                    "value": "forums-search"
+                }
+            },
+            "title": "$cluster \u0433\u0440\u0430\u0444\u0438\u043a\u0438",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 48
+            },
+            "hiddenSeries": false,
+            "id": 73,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 3,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "forums-search",
+                    "value": "forums-search"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "consolidateBy(aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.(snapshot_active|snapshot_largest|snapshot_rejected|snapshot_threads)', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1), 'maximum')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0441\u043d\u0430\u043f\u0448\u043e\u0442\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:586",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:587",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 9,
+                "x": 8,
+                "y": 48
+            },
+            "hiddenSeries": false,
+            "id": 74,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 5,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "forums-search",
+                    "value": "forums-search"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.snapshot_queue', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0447\u0435\u0440\u0435\u0434\u044c \u0431\u0435\u043a\u0430\u043f\u0430 \u0448\u0430\u0440\u0434\u043e\u0432 ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:735",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:736",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 7,
+                "x": 17,
+                "y": 48
+            },
+            "hiddenSeries": false,
+            "id": 75,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 4,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "forums-search",
+                    "value": "forums-search"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'cluster_name=~${cluster:regex}', 'name=~service.elastic.snapshot_completed'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0437\u0430\u0431\u0435\u043a\u0430\u043f\u043b\u0435\u043d\u044b\u0445 \u0448\u0430\u0440\u0434\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:882",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:883",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 57
+            },
+            "id": 76,
+            "panels": [],
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 8,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "hr-elastic",
+                    "value": "hr-elastic"
+                }
+            },
+            "title": "$cluster \u0433\u0440\u0430\u0444\u0438\u043a\u0438",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 58
+            },
+            "hiddenSeries": false,
+            "id": 77,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 3,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "hr-elastic",
+                    "value": "hr-elastic"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "consolidateBy(aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.(snapshot_active|snapshot_largest|snapshot_rejected|snapshot_threads)', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1), 'maximum')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0441\u043d\u0430\u043f\u0448\u043e\u0442\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:586",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:587",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 9,
+                "x": 8,
+                "y": 58
+            },
+            "hiddenSeries": false,
+            "id": 78,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 5,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "hr-elastic",
+                    "value": "hr-elastic"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.snapshot_queue', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0447\u0435\u0440\u0435\u0434\u044c \u0431\u0435\u043a\u0430\u043f\u0430 \u0448\u0430\u0440\u0434\u043e\u0432 ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:735",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:736",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 7,
+                "x": 17,
+                "y": 58
+            },
+            "hiddenSeries": false,
+            "id": 79,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 4,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "hr-elastic",
+                    "value": "hr-elastic"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'cluster_name=~${cluster:regex}', 'name=~service.elastic.snapshot_completed'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0437\u0430\u0431\u0435\u043a\u0430\u043f\u043b\u0435\u043d\u044b\u0445 \u0448\u0430\u0440\u0434\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:882",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:883",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 67
+            },
+            "id": 80,
+            "panels": [],
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 8,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "mail-log",
+                    "value": "mail-log"
+                }
+            },
+            "title": "$cluster \u0433\u0440\u0430\u0444\u0438\u043a\u0438",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 68
+            },
+            "hiddenSeries": false,
+            "id": 81,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 3,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "mail-log",
+                    "value": "mail-log"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "consolidateBy(aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.(snapshot_active|snapshot_largest|snapshot_rejected|snapshot_threads)', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1), 'maximum')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0441\u043d\u0430\u043f\u0448\u043e\u0442\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:586",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:587",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 9,
+                "x": 8,
+                "y": 68
+            },
+            "hiddenSeries": false,
+            "id": 82,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 5,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "mail-log",
+                    "value": "mail-log"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.snapshot_queue', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0447\u0435\u0440\u0435\u0434\u044c \u0431\u0435\u043a\u0430\u043f\u0430 \u0448\u0430\u0440\u0434\u043e\u0432 ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:735",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:736",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 7,
+                "x": 17,
+                "y": 68
+            },
+            "hiddenSeries": false,
+            "id": 83,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 4,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "mail-log",
+                    "value": "mail-log"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'cluster_name=~${cluster:regex}', 'name=~service.elastic.snapshot_completed'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0437\u0430\u0431\u0435\u043a\u0430\u043f\u043b\u0435\u043d\u044b\u0445 \u0448\u0430\u0440\u0434\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:882",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:883",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 77
+            },
+            "id": 84,
+            "panels": [],
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 8,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "ssp-elastic-cluster",
+                    "value": "ssp-elastic-cluster"
+                }
+            },
+            "title": "$cluster \u0433\u0440\u0430\u0444\u0438\u043a\u0438",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 78
+            },
+            "hiddenSeries": false,
+            "id": 85,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 3,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "ssp-elastic-cluster",
+                    "value": "ssp-elastic-cluster"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "consolidateBy(aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.(snapshot_active|snapshot_largest|snapshot_rejected|snapshot_threads)', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1), 'maximum')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0441\u043d\u0430\u043f\u0448\u043e\u0442\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:586",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:587",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 9,
+                "x": 8,
+                "y": 78
+            },
+            "hiddenSeries": false,
+            "id": 86,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 5,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "ssp-elastic-cluster",
+                    "value": "ssp-elastic-cluster"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.snapshot_queue', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0447\u0435\u0440\u0435\u0434\u044c \u0431\u0435\u043a\u0430\u043f\u0430 \u0448\u0430\u0440\u0434\u043e\u0432 ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:735",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:736",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 7,
+                "x": 17,
+                "y": 78
+            },
+            "hiddenSeries": false,
+            "id": 87,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 4,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "ssp-elastic-cluster",
+                    "value": "ssp-elastic-cluster"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'cluster_name=~${cluster:regex}', 'name=~service.elastic.snapshot_completed'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0437\u0430\u0431\u0435\u043a\u0430\u043f\u043b\u0435\u043d\u044b\u0445 \u0448\u0430\u0440\u0434\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:882",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:883",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "collapsed": false,
+            "datasource": null,
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 87
+            },
+            "id": 88,
+            "panels": [],
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 8,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "wiki-search",
+                    "value": "wiki-search"
+                }
+            },
+            "title": "$cluster \u0433\u0440\u0430\u0444\u0438\u043a\u0438",
+            "type": "row"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 8,
+                "x": 0,
+                "y": 88
+            },
+            "hiddenSeries": false,
+            "id": 89,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 3,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "wiki-search",
+                    "value": "wiki-search"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "consolidateBy(aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.(snapshot_active|snapshot_largest|snapshot_rejected|snapshot_threads)', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1), 'maximum')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0430\u043a\u0442\u0438\u0432\u043d\u043e\u0441\u0442\u044c \u0441\u043d\u0430\u043f\u0448\u043e\u0442\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:586",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:587",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 9,
+                "x": 8,
+                "y": 88
+            },
+            "hiddenSeries": false,
+            "id": 90,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 5,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "wiki-search",
+                    "value": "wiki-search"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'name=~service.elastic.snapshot_queue', 'cluster_name=~${cluster:regex}'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0447\u0435\u0440\u0435\u0434\u044c \u0431\u0435\u043a\u0430\u043f\u0430 \u0448\u0430\u0440\u0434\u043e\u0432 ",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:735",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:736",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {},
+                    "links": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": []
+                    }
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 9,
+                "w": 7,
+                "x": 17,
+                "y": 88
+            },
+            "hiddenSeries": false,
+            "id": 91,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "7.4.0",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeatIteration": 1628591418549,
+            "repeatPanelId": 4,
+            "repeatedByRow": true,
+            "scopedVars": {
+                "cluster": {
+                    "selected": false,
+                    "text": "wiki-search",
+                    "value": "wiki-search"
+                }
+            },
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "aliasByTags(aliasByTags(seriesByTag('contur=~${contur:regex}', 'cluster_name=~${cluster:regex}', 'name=~service.elastic.snapshot_completed'), 'host', 'name'), 0, -1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u043e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b-\u0432\u043e \u0437\u0430\u0431\u0435\u043a\u0430\u043f\u043b\u0435\u043d\u044b\u0445 \u0448\u0430\u0440\u0434\u043e\u0432",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:882",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:883",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "5s",
+    "schemaVersion": 27,
+    "style": "dark",
+    "tags": [
+        "backup",
+        "telegraf",
+        "elasticsearch",
+        "service"
+    ],
+    "templating": {
+        "list": [
+            {
+                "description": null,
+                "error": null,
+                "hide": 2,
+                "label": null,
+                "name": "contur",
+                "query": "prod",
+                "skipUrlSync": false,
+                "type": "constant"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "All",
+                    "value": "$__all"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(cluster_name,contur=$contur,servertype=elasticsearch,script=DPC_elastic_backup.py)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": null,
+                "multi": false,
+                "name": "cluster",
+                "options": [],
+                "query": "tag_values(cluster_name,contur=$contur,servertype=elasticsearch,script=DPC_elastic_backup.py)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tags": [],
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-6h",
+        "to": "now"
+    },
+    "timepicker": {
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m",
+            "30m",
+            "1h",
+            "2h",
+            "1d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u0420\u0435\u0437\u0435\u0440\u0432\u043d\u043e\u0435 \u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 Elastic (backup)",
+    "uid": "nxyIj2vGz",
+    "version": 9
+}

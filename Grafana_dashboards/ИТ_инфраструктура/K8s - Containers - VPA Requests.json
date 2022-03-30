@@ -1,0 +1,1224 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "limit": 100,
+                "name": "Annotations & Alerts",
+                "showIn": 0,
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041d\u0438\u043a\u0443\u043b\u0438\u043d \u0410.\u041d. (\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u044b\u0439 \u043e\u0442\u0434\u0435\u043b)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1671,
+    "iteration": 1648022834632,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "activePatternIndex": 1,
+            "datasource": "carbon-short",
+            "defaultPattern": {
+                "bgColors": "green|orange|red",
+                "bgColors_overrides": "0->green|2->red|1->yellow",
+                "clickable_cells_link": "",
+                "col_name": "Value",
+                "decimals": 2,
+                "defaultBGColor": "transparent",
+                "defaultTextColor": "",
+                "delimiter": ".",
+                "displayTemplate": "_value_",
+                "enable_bgColor": false,
+                "enable_bgColor_overrides": false,
+                "enable_clickable_cells": false,
+                "enable_textColor": false,
+                "enable_textColor_overrides": false,
+                "enable_time_based_thresholds": false,
+                "enable_transform": false,
+                "enable_transform_overrides": false,
+                "filter": {
+                    "value_above": "",
+                    "value_below": ""
+                },
+                "format": "none",
+                "name": "Default Pattern",
+                "null_color": "darkred",
+                "null_textcolor": "black",
+                "null_value": "No data",
+                "pattern": "*",
+                "row_col_wrapper": "_",
+                "row_name": "_0_._1_._2_._3_._4_.default",
+                "textColors": "red|orange|green",
+                "textColors_overrides": "0->red|2->green|1->yellow",
+                "thresholds": "70,90",
+                "time_based_thresholds": [],
+                "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                "transform_values": "_value_|_value_|_value_",
+                "transform_values_overrides": "0->down|1->up",
+                "valueName": "current"
+            },
+            "default_title_for_rows": "Metric",
+            "description": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 namespace",
+            "font_size": "12px",
+            "gridPos": {
+                "h": 1,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "hide_first_column": true,
+            "hide_headers": true,
+            "id": 22,
+            "patterns": [
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "1-Namespace",
+                    "decimals": 2,
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "Namespace: _0_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Namespace",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "No data",
+                    "pattern": "default$",
+                    "row_col_wrapper": "_",
+                    "row_name": "_0_._1_._2_._3_._4_.default",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "current"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|3->black",
+                    "clickable_cells_link": "",
+                    "col_name": "2-Type",
+                    "decimals": 2,
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "Type: _1_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": true,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Type",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "No data",
+                    "pattern": "type$",
+                    "row_col_wrapper": "_",
+                    "row_name": "_0_._1_._2_._3_._4_.default",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "1->white|2->yellow|3->red",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "current"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "4-Tenant",
+                    "decimals": 2,
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "Tenant: _2_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Tenant",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "No data",
+                    "pattern": "tenant$",
+                    "row_col_wrapper": "_",
+                    "row_name": "_0_._1_._2_._3_._4_.default",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "avg"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "3-Owned By",
+                    "decimals": 2,
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "Owned By: _3_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Owned By",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "No data",
+                    "pattern": "owned_by$",
+                    "row_col_wrapper": "_",
+                    "row_name": "_0_._1_._2_._3_._4_.default",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "avg"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "5-Stage",
+                    "decimals": 2,
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "Stage: _4_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Stage",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "No data",
+                    "pattern": "stage$",
+                    "row_col_wrapper": "_",
+                    "row_name": "_0_._1_._2_._3_._4_.default",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "avg"
+                },
+                {
+                    "bgColors": "green|orange|red",
+                    "bgColors_overrides": "0->green|2->red|1->yellow",
+                    "clickable_cells_link": "",
+                    "col_name": "6-Managed By",
+                    "decimals": 2,
+                    "defaultBGColor": "",
+                    "defaultTextColor": "",
+                    "delimiter": ".",
+                    "displayTemplate": "Managed By: _5_",
+                    "enable_bgColor": false,
+                    "enable_bgColor_overrides": false,
+                    "enable_clickable_cells": false,
+                    "enable_textColor": false,
+                    "enable_textColor_overrides": false,
+                    "enable_time_based_thresholds": false,
+                    "enable_transform": false,
+                    "enable_transform_overrides": false,
+                    "filter": {
+                        "value_above": "",
+                        "value_below": ""
+                    },
+                    "format": "none",
+                    "name": "Managed By",
+                    "null_color": "darkred",
+                    "null_textcolor": "black",
+                    "null_value": "No data",
+                    "pattern": "managed_by$",
+                    "row_col_wrapper": "_",
+                    "row_name": "_0_._1_._2_._3_._4_.default",
+                    "textColors": "red|orange|green",
+                    "textColors_overrides": "0->red|2->green|1->yellow",
+                    "thresholds": "70,90",
+                    "time_based_thresholds": [],
+                    "tooltipTemplate": "Series : _series_ <br/>Row Name : _row_name_ <br/>Col Name : _col_name_ <br/>Value : _value_",
+                    "transform_values": "_value_|_value_|_value_",
+                    "transform_values_overrides": "0->down|1->up",
+                    "valueName": "avg"
+                }
+            ],
+            "row_col_wrapper": "_",
+            "sorting_props": {
+                "col_index": -1,
+                "direction": "desc"
+            },
+            "targets": [
+                {
+                    "refCount": 3,
+                    "refId": "A",
+                    "target": "aliasSub(aliasByTags(seriesByTag('job=kube-state-metrics', 'name=prometheus_remote_write.kube_namespace_labels', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'namespace!=~personal.+'), 'namespace', 'label_k8s_tensor_ru_ns_type', 'label_app_tensor_ru_tenant', 'label_k8s_tensor_ru_owned_by', 'label_app_tensor_ru_stage', 'label_app_kubernetes_io_managed_by', 0), 'prometheus_remote_write', 'default')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 2,
+                    "refId": "B",
+                    "target": "aliasSub(#A, 'default', 'type')",
+                    "targetFull": "aliasSub(aliasSub(aliasByTags(seriesByTag('job=kube-state-metrics', 'name=prometheus_remote_write.kube_namespace_labels', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'namespace!=~personal.+'), 'namespace', 'label_k8s_tensor_ru_ns_type', 'label_app_tensor_ru_tenant', 'label_k8s_tensor_ru_owned_by', 'label_app_tensor_ru_stage', 'label_app_kubernetes_io_managed_by', 0), 'prometheus_remote_write', 'default'), 'default', 'type')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 2,
+                    "refId": "C",
+                    "target": "aliasSub(#A, '$namespace$', 'tenant')",
+                    "targetFull": "aliasSub(aliasSub(aliasByTags(seriesByTag('job=kube-state-metrics', 'name=prometheus_remote_write.kube_namespace_labels', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'namespace!=~personal.+'), 'namespace', 'label_k8s_tensor_ru_ns_type', 'label_app_tensor_ru_tenant', 'label_k8s_tensor_ru_owned_by', 'label_app_tensor_ru_stage', 'label_app_kubernetes_io_managed_by', 0), 'prometheus_remote_write', 'default'), '$namespace$', 'tenant')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 2,
+                    "refId": "D",
+                    "target": "aliasSub(#A, '$namespace$', 'stage')",
+                    "targetFull": "aliasSub(aliasSub(aliasByTags(seriesByTag('job=kube-state-metrics', 'name=prometheus_remote_write.kube_namespace_labels', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'namespace!=~personal.+'), 'namespace', 'label_k8s_tensor_ru_ns_type', 'label_app_tensor_ru_tenant', 'label_k8s_tensor_ru_owned_by', 'label_app_tensor_ru_stage', 'label_app_kubernetes_io_managed_by', 0), 'prometheus_remote_write', 'default'), '$namespace$', 'stage')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 2,
+                    "refId": "E",
+                    "target": "aliasSub(#A, '$namespace$', 'owned_by')",
+                    "targetFull": "aliasSub(aliasSub(aliasByTags(seriesByTag('job=kube-state-metrics', 'name=prometheus_remote_write.kube_namespace_labels', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'namespace!=~personal.+'), 'namespace', 'label_k8s_tensor_ru_ns_type', 'label_app_tensor_ru_tenant', 'label_k8s_tensor_ru_owned_by', 'label_app_tensor_ru_stage', 'label_app_kubernetes_io_managed_by', 0), 'prometheus_remote_write', 'default'), '$namespace$', 'owned_by')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 2,
+                    "refId": "F",
+                    "target": "aliasSub(#A, '$namespace$', 'managed_by')",
+                    "targetFull": "aliasSub(aliasSub(aliasByTags(seriesByTag('job=kube-state-metrics', 'name=prometheus_remote_write.kube_namespace_labels', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'namespace!=~personal.+'), 'namespace', 'label_k8s_tensor_ru_ns_type', 'label_app_tensor_ru_tenant', 'label_k8s_tensor_ru_owned_by', 'label_app_tensor_ru_stage', 'label_app_kubernetes_io_managed_by', 0), 'prometheus_remote_write', 'default'), '$namespace$', 'managed_by')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 3,
+                    "refId": "G",
+                    "target": "aliasSub(aliasByTags(scale(seriesByTag('job=kube-state-metrics', 'name=prometheus_remote_write.kube_namespace_labels', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'namespace!=~personal.+', 'label_k8s_tensor_ru_ns_type=application'), 2), 'namespace', 'label_k8s_tensor_ru_ns_type', 'label_app_tensor_ru_tenant', 'label_k8s_tensor_ru_owned_by', 'label_app_tensor_ru_stage', 'label_app_kubernetes_io_managed_by', 0), 'prometheus_remote_write', 'type')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 3,
+                    "refId": "H",
+                    "target": "aliasSub(aliasByTags(scale(seriesByTag('job=kube-state-metrics', 'name=prometheus_remote_write.kube_namespace_labels', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'namespace!=~personal.+', 'label_k8s_tensor_ru_ns_type=system'), 3), 'namespace', 'label_k8s_tensor_ru_ns_type', 'label_app_tensor_ru_tenant', 'label_k8s_tensor_ru_owned_by', 'label_app_tensor_ru_stage', 'label_app_kubernetes_io_managed_by', 0), 'prometheus_remote_write', 'type')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 3,
+                    "refId": "I",
+                    "target": "aliasSub(aliasByTags(seriesByTag('job=kube-state-metrics', 'name=prometheus_remote_write.kube_namespace_labels', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'namespace!=~personal.+', 'label_k8s_tensor_ru_ns_type!=~(system|application)'), 'namespace', 'label_k8s_tensor_ru_ns_type', 'label_app_tensor_ru_tenant', 'label_k8s_tensor_ru_owned_by', 'label_app_tensor_ru_stage', 'label_app_kubernetes_io_managed_by', 0), 'prometheus_remote_write', 'type')",
+                    "textEditor": false
+                }
+            ],
+            "text_alignment_header": "",
+            "timeFrom": "5m",
+            "transparent": true,
+            "type": "yesoreyeram-boomtable-panel"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f CPU \u043f\u043e \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u044e \u043a \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u043c \u043b\u0438\u043c\u0438\u0442\u0430\u043c \u0438 \u0440\u0435\u043a\u0432\u0435\u0441\u0442\u0430\u043c",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 17,
+                "x": 0,
+                "y": 1
+            },
+            "hiddenSeries": false,
+            "id": 17,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": false,
+                "hideZero": false,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "maxDataPoints": null,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:6739",
+                    "alias": "Recommended Requests",
+                    "color": "#FFB357",
+                    "dashes": true,
+                    "fillGradient": 1
+                },
+                {
+                    "$$hashKey": "object:6755",
+                    "alias": "Usage",
+                    "color": "#37872D",
+                    "fillGradient": 1
+                },
+                {
+                    "$$hashKey": "object:6868",
+                    "alias": "Recommended Limits",
+                    "color": "#FF7383",
+                    "dashes": true,
+                    "fillGradient": 1
+                },
+                {
+                    "$$hashKey": "object:1576",
+                    "alias": "Requests",
+                    "color": "#FA6400",
+                    "fillGradient": 1
+                },
+                {
+                    "$$hashKey": "object:1581",
+                    "alias": "Limits",
+                    "color": "#C4162A",
+                    "fillGradient": 1
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.kube_verticalpodautoscaler_status_recommendation_containerrecommendations_target', 'namespace=${namespace:regex}', 'target_kind=${target_kind:regex}', 'target_name=${target_name:regex}', 'container=${container:regex}', 'resource=cpu'), 'last', ''), 'Recommended Requests')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.kube_verticalpodautoscaler_status_recommendation_containerrecommendations_upperbound', 'namespace=${namespace:regex}', 'target_kind=${target_kind:regex}', 'target_name=${target_name:regex}', 'container=${container:regex}', 'resource=cpu'), 'last', ''), 'Recommended Limits')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(grep(alias(movingAverage(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'container=${container:regex}', 'pod=~${pod:regex}', 'namespace=${namespace:regex}')), 'average', 'container'), '5min'), 'average'), '$function'), 'Usage')"
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(maxSeries(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'pod=~${pod:regex}', 'container=${container:regex}', 'resource=cpu')), 'Requests')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "alias(maxSeries(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'pod=~${pod:regex}', 'container=${container:regex}', 'resource=cpu')), 'Limits')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "alias(grep(alias(movingMax(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'container=${container:regex}', 'pod=~${pod:regex}', 'namespace=${namespace:regex}')), 'max', 'container'), '5min'), 'max'), '$function'), 'Usage')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "G",
+                    "target": "alias(grep(alias(movingMin(groupByTags(perSecond(seriesByTag('job=cAdvisor', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'container=${container:regex}', 'pod=~${pod:regex}', 'namespace=${namespace:regex}')), 'min', 'container'), '5min'), 'min'), '$function'), 'Usage')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "CPU",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1494",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1495",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": null,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f CPU \u043f\u043e \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u044e \u043a \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u043c \u043b\u0438\u043c\u0438\u0442\u0430\u043c \u0438 \u0440\u0435\u043a\u0432\u0435\u0441\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        }
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "index": 0,
+                                    "text": "Busy"
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "unit": "percentunit"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 11,
+                "w": 7,
+                "x": 17,
+                "y": 1
+            },
+            "id": 24,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "values": [
+                        "value"
+                    ]
+                },
+                "pieType": "donut",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 4,
+                    "refId": "A",
+                    "target": "alias(aliasByTags(grep(alias(movingAverage(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), #B), 'average', 'container'), '5min'), 'average'), '$function'), 'container'), 'Usage')",
+                    "targetFull": "alias(aliasByTags(grep(alias(movingAverage(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'average', 'container'), '5min'), 'average'), '$function'), 'container'), 'Usage')"
+                },
+                {
+                    "hide": true,
+                    "refCount": 2,
+                    "refId": "B",
+                    "target": "groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "C",
+                    "target": "alias(aggregateLine(aliasByTags(grep(alias(movingMax(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), #B), 'max', 'container'), '5min'), 'max'), '$function'), 'container'), 'max', true), 'Usage', false)",
+                    "targetFull": "alias(aggregateLine(aliasByTags(grep(alias(movingMax(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'max', 'container'), '5min'), 'max'), '$function'), 'container'), 'max', true), 'Usage', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 3,
+                    "refId": "D",
+                    "target": "alias(aliasByTags(grep(alias(movingMin(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), #B), 'min', 'container'), '5min'), 'min'), '$function'), 'container'), 'Usage')",
+                    "targetFull": "alias(aliasByTags(grep(alias(movingMin(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'min', 'container'), '5min'), 'min'), '$function'), 'container'), 'Usage')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "F",
+                    "target": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), #B), #C), 'min', true), 0), 0), 'max', false), '$function'), 'Requests', false)",
+                    "targetFull": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), alias(aggregateLine(aliasByTags(grep(alias(movingMax(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'max', 'container'), '5min'), 'max'), '$function'), 'container'), 'max', true), 'Usage', false)), 'min', true), 0), 0), 'max', false), '$function'), 'Requests', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "E",
+                    "target": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), #B), #C), #F), 'min', true), 'max', false), '$function'), 'Limits', false)",
+                    "targetFull": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), alias(aggregateLine(aliasByTags(grep(alias(movingMax(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'max', 'container'), '5min'), 'max'), '$function'), 'container'), 'max', true), 'Usage', false)), alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), alias(aggregateLine(aliasByTags(grep(alias(movingMax(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'max', 'container'), '5min'), 'max'), '$function'), 'container'), 'max', true), 'Usage', false)), 'min', true), 0), 0), 'max', false), '$function'), 'Requests', false)), 'min', true), 'max', false), '$function'), 'Limits', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "G",
+                    "target": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), #B), #A), 'min', true), 0), 0), 'average', false), '$function'), 'Requests', false)",
+                    "targetFull": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), alias(aliasByTags(grep(alias(movingAverage(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'average', 'container'), '5min'), 'average'), '$function'), 'container'), 'Usage')), 'min', true), 0), 0), 'average', false), '$function'), 'Requests', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 3,
+                    "refId": "H",
+                    "target": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), #B), #A), #G), 'min', true), 'average', false), '$function'), 'Limits', false)",
+                    "targetFull": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), alias(aliasByTags(grep(alias(movingAverage(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'average', 'container'), '5min'), 'average'), '$function'), 'container'), 'Usage')), alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), alias(aliasByTags(grep(alias(movingAverage(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'average', 'container'), '5min'), 'average'), '$function'), 'container'), 'Usage')), 'min', true), 0), 0), 'average', false), '$function'), 'Requests', false)), 'min', true), 'average', false), '$function'), 'Limits', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "I",
+                    "target": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), #B), #D), 'min', true), 0), 0), 'min', false), '$function'), 'Requests', false)",
+                    "targetFull": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), alias(aliasByTags(grep(alias(movingMin(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'min', 'container'), '5min'), 'min'), '$function'), 'container'), 'Usage')), 'min', true), 0), 0), 'min', false), '$function'), 'Requests', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "J",
+                    "target": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), #B), #D), #I), 'min', true), 'min', false), '$function'), 'Limits', false)",
+                    "targetFull": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), alias(aliasByTags(grep(alias(movingMin(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'min', 'container'), '5min'), 'min'), '$function'), 'container'), 'Usage')), alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=cpu', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), alias(aliasByTags(grep(alias(movingMin(groupByTags(divideSeriesLists(keepLastValue(perSecond(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_cpu_usage_seconds_total', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}')), 1), groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=cpu', 'pod=~${pod:regex}'), 'last', '')), 'min', 'container'), '5min'), 'min'), '$function'), 'container'), 'Usage')), 'min', true), 0), 0), 'min', false), '$function'), 'Requests', false)), 'min', true), 'min', false), '$function'), 'Limits', false)",
+                    "textEditor": true
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "CPU Stat",
+            "type": "piechart"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043f\u0430\u043c\u044f\u0442\u0438 \u043f\u043e \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u044e \u043a \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u043c \u043b\u0438\u043c\u0438\u0442\u0430\u043c \u0438 \u0440\u0435\u043a\u0432\u0435\u0441\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "bytes"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 11,
+                "w": 17,
+                "x": 0,
+                "y": 12
+            },
+            "hiddenSeries": false,
+            "id": 13,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": false,
+                "hideZero": false,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:6739",
+                    "alias": "Recommended Requests",
+                    "color": "#FFB357",
+                    "dashes": true,
+                    "fillGradient": 1
+                },
+                {
+                    "$$hashKey": "object:6755",
+                    "alias": "Usage",
+                    "color": "#37872D",
+                    "fillGradient": 1
+                },
+                {
+                    "$$hashKey": "object:6868",
+                    "alias": "Recommended Limits",
+                    "color": "#FF7383",
+                    "dashes": true,
+                    "fillGradient": 1
+                },
+                {
+                    "$$hashKey": "object:3600",
+                    "alias": "Requests",
+                    "color": "#FA6400",
+                    "fillGradient": 1
+                },
+                {
+                    "$$hashKey": "object:3612",
+                    "alias": "Limits",
+                    "color": "#C4162A",
+                    "fillGradient": 1
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.kube_verticalpodautoscaler_status_recommendation_containerrecommendations_target', 'namespace=${namespace:regex}', 'target_kind=${target_kind:regex}', 'target_name=${target_name:regex}', 'container=${container:regex}', 'resource=memory'), 'last', ''), 'Recommended Requests')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "D",
+                    "target": "alias(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.kube_verticalpodautoscaler_status_recommendation_containerrecommendations_upperbound', 'namespace=${namespace:regex}', 'target_kind=${target_kind:regex}', 'target_name=${target_name:regex}', 'container=${container:regex}', 'resource=memory'), 'last', ''), 'Recommended Limits')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(grep(alias(movingAverage(groupByTags(seriesByTag('job=cAdvisor', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'pod=~${pod:regex}', 'container=${container:regex}', 'namespace=${namespace:regex}'), 'average', 'container'), '5min'), 'average'), '$function'), 'Usage')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(maxSeries(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'pod=~${pod:regex}', 'container=${container:regex}', 'resource=memory')), 'Requests')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "E",
+                    "target": "alias(maxSeries(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'pod=~${pod:regex}', 'container=${container:regex}', 'resource=memory')), 'Limits')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "F",
+                    "target": "alias(grep(alias(movingMax(groupByTags(seriesByTag('job=cAdvisor', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'pod=~${pod:regex}', 'container=${container:regex}', 'namespace=${namespace:regex}'), 'max', 'container'), '5min'), 'max'), '$function'), 'Usage')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "G",
+                    "target": "alias(grep(alias(movingMin(groupByTags(seriesByTag('job=cAdvisor', 'cluster=${cluster:regex}', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'pod=~${pod:regex}', 'container=${container:regex}', 'namespace=${namespace:regex}'), 'min', 'container'), '5min'), 'min'), '$function'), 'Usage')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Memory",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1494",
+                    "format": "bytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1495",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": null,
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043f\u0430\u043c\u044f\u0442\u0438 \u043f\u043e \u043e\u0442\u043d\u043e\u0448\u0435\u043d\u0438\u044e \u043a \u0432\u044b\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u043c \u043b\u0438\u043c\u0438\u0442\u0430\u043c \u0438 \u0440\u0435\u043a\u0432\u0435\u0441\u0442\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        }
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "index": 0,
+                                    "text": "Busy"
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "unit": "percentunit"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 11,
+                "w": 7,
+                "x": 17,
+                "y": 12
+            },
+            "id": 26,
+            "options": {
+                "legend": {
+                    "displayMode": "table",
+                    "placement": "bottom",
+                    "values": [
+                        "value"
+                    ]
+                },
+                "pieType": "donut",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "tooltip": {
+                    "mode": "single"
+                }
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": 3,
+                    "refId": "A",
+                    "target": "groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "B",
+                    "target": "alias(aggregateLine(grep(alias(movingMax(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), #A), 'max', 'container'), '5min'), 'max'), '$function'), 'max', true), 'Usage')",
+                    "targetFull": "alias(aggregateLine(grep(alias(movingMax(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'max', 'container'), '5min'), 'max'), '$function'), 'max', true), 'Usage')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 5,
+                    "refId": "C",
+                    "target": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), #A), #B), 'min', true), 0), 0), 'max', false), '$function'), 'Requests', false)",
+                    "targetFull": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), alias(aggregateLine(grep(alias(movingMax(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'max', 'container'), '5min'), 'max'), '$function'), 'max', true), 'Usage')), 'min', true), 0), 0), 'max', false), '$function'), 'Requests', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 5,
+                    "refId": "D",
+                    "target": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), #A), #B), #C), 'min', true), 'max', false), '$function'),  'Limits', false)",
+                    "targetFull": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), alias(aggregateLine(grep(alias(movingMax(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'max', 'container'), '5min'), 'max'), '$function'), 'max', true), 'Usage')), alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), alias(aggregateLine(grep(alias(movingMax(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'max', 'container'), '5min'), 'max'), '$function'), 'max', true), 'Usage')), 'min', true), 0), 0), 'max', false), '$function'), 'Requests', false)), 'min', true), 'max', false), '$function'),  'Limits', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 5,
+                    "refId": "E",
+                    "target": "alias(grep(alias(movingAverage(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), #A), 'average', 'container'), '5min'), 'average'), '$function'), 'Usage')",
+                    "targetFull": "alias(grep(alias(movingAverage(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'average', 'container'), '5min'), 'average'), '$function'), 'Usage')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "F",
+                    "target": "alias(grep(alias(movingMin(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), #A), 'min', 'container'), '5min'), 'min'), '$function'), 'Usage')",
+                    "targetFull": "alias(grep(alias(movingMin(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'min', 'container'), '5min'), 'min'), '$function'), 'Usage')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 5,
+                    "refId": "G",
+                    "target": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), #A), #E), 'min', true), 0), 0), 'average', false), '$function'), 'Requests', false)",
+                    "targetFull": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), alias(grep(alias(movingAverage(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'average', 'container'), '5min'), 'average'), '$function'), 'Usage')), 'min', true), 0), 0), 'average', false), '$function'), 'Requests', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "H",
+                    "target": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), #A), #E), #G), 'min', true), 'average', false), '$function'),  'Limits', false)",
+                    "targetFull": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), alias(grep(alias(movingAverage(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'average', 'container'), '5min'), 'average'), '$function'), 'Usage')), alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), alias(grep(alias(movingAverage(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'average', 'container'), '5min'), 'average'), '$function'), 'Usage')), 'min', true), 0), 0), 'average', false), '$function'), 'Requests', false)), 'min', true), 'average', false), '$function'),  'Limits', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "I",
+                    "target": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), #A), #F), 'min', true), 0), 0), 'min', false), '$function'), 'Requests', false)",
+                    "targetFull": "alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), alias(grep(alias(movingMin(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'min', 'container'), '5min'), 'min'), '$function'), 'Usage')), 'min', true), 0), 0), 'min', false), '$function'), 'Requests', false)",
+                    "textEditor": true
+                },
+                {
+                    "hide": false,
+                    "refCount": 4,
+                    "refId": "J",
+                    "target": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), #A), #F), #I), 'min', true), 'min', false), '$function'),  'Limits', false)",
+                    "targetFull": "alias(grep(alias(aggregateLine(diffSeriesLists(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_limits', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), alias(grep(alias(movingMin(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'min', 'container'), '5min'), 'min'), '$function'), 'Usage')), alias(grep(alias(transformNull(removeBelowValue(aggregateLine(diffSeriesLists(divideSeriesLists(groupByTags(seriesByTag('job=kube-state-metrics', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'name=prometheus_remote_write.kube_pod_container_resource_requests', 'resource=memory', 'pod=~${pod:regex}'), 'last', ''), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), alias(grep(alias(movingMin(groupByTags(divideSeriesLists(keepLastValue(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_memory_working_set_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 1), groupByTags(seriesByTag('job=cAdvisor', 'name=prometheus_remote_write.container_spec_memory_limit_bytes', 'cluster=${cluster:regex}', 'namespace=${namespace:regex}', 'container=${container:regex}', 'pod=~${pod:regex}'), 'last', '')), 'min', 'container'), '5min'), 'min'), '$function'), 'Usage')), 'min', true), 0), 0), 'min', false), '$function'), 'Requests', false)), 'min', true), 'min', false), '$function'),  'Limits', false)",
+                    "textEditor": true
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Memory Stat",
+            "type": "piechart"
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(cluster,name=prometheus_remote_write.container_cpu_usage_seconds_total)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Cluster",
+                "multi": false,
+                "name": "cluster",
+                "options": [],
+                "query": "tag_values(cluster,name=prometheus_remote_write.container_cpu_usage_seconds_total)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(namespace,cluster=$cluster,name=prometheus_remote_write.container_cpu_usage_seconds_total)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Namespace",
+                "multi": false,
+                "name": "namespace",
+                "options": [],
+                "query": "tag_values(namespace,cluster=$cluster,name=prometheus_remote_write.container_cpu_usage_seconds_total)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(owner_kind,namespace=$namespace,cluster=$cluster)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Kind",
+                "multi": false,
+                "name": "target_kind",
+                "options": [],
+                "query": "tag_values(owner_kind,namespace=$namespace,cluster=$cluster)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(owner_name,namespace=${namespace:regex},owner_kind=${target_kind:regex},cluster=${cluster:regex})",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Name",
+                "multi": false,
+                "name": "target_name",
+                "options": [],
+                "query": "tag_values(owner_name,namespace=${namespace:regex},owner_kind=${target_kind:regex},cluster=${cluster:regex})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(pod,owner_kind=${target_kind:regex}, owner_name=${target_name:regex},namespace=${namespace:regex},cluster=${cluster:regex})",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": true,
+                "label": " Pod",
+                "multi": false,
+                "name": "pod",
+                "options": [],
+                "query": "tag_values(pod,owner_kind=${target_kind:regex}, owner_name=${target_name:regex},namespace=${namespace:regex},cluster=${cluster:regex})",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(container,pod=~${pod:regex},namespace=${namespace:regex},cluster=${cluster:regex})",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Container",
+                "multi": false,
+                "name": "container",
+                "options": [],
+                "query": "tag_values(container,pod=~${pod:regex},namespace=${namespace:regex},cluster=${cluster:regex})",
+                "refresh": 1,
+                "regex": "^(?:(?!POD|kube-state-metrics).)+$",
+                "skipUrlSync": false,
+                "sort": 4,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "max",
+                    "value": "max"
+                },
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": "Function",
+                "multi": false,
+                "name": "function",
+                "options": [
+                    {
+                        "selected": false,
+                        "text": "average",
+                        "value": "average"
+                    },
+                    {
+                        "selected": true,
+                        "text": "max",
+                        "value": "max"
+                    },
+                    {
+                        "selected": false,
+                        "text": "min",
+                        "value": "min"
+                    }
+                ],
+                "query": "average,max,min",
+                "queryValue": "",
+                "skipUrlSync": false,
+                "type": "custom"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-12h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "K8s - Containers - VPA Requests",
+    "uid": "XIrIbdSnk",
+    "version": 23
+}

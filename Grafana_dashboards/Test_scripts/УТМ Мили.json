@@ -1,0 +1,434 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u0423\u0422\u041c - \u0443\u043d\u0438\u0432\u0435\u0440\u0441\u0430\u043b\u044c\u043d\u044b\u0439 \u0442\u0440\u0430\u043d\u0441\u043f\u043e\u0440\u0442\u043d\u044b\u0439 \u043c\u043e\u0434\u0443\u043b\u044c, \u043f\u043e\u0441\u0440\u0435\u0434\u0441\u0442\u0432\u043e\u043c \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u043e\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u0432\u0437\u0430\u0438\u043c\u043e\u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0435 \u0441 \u0441\u0435\u0440\u0432\u0435\u0440\u043e\u043c \u0415\u0413\u0410\u0418\u0421. \u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0421\u043c\u0438\u0440\u043d\u043e\u0432 \u041a.\u0412. (\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f), \u041a\u0438\u0440\u0435\u0435\u0432 \u0421.\u0412.(\u0422\u0435\u0445\u043d\u043e\u043b\u043e\u0433)",
+    "editable": true,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1466,
+    "links": [],
+    "panels": [
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [
+                        {
+                            "from": "",
+                            "id": 1,
+                            "text": "\u041b\u0438\u0446\u0435\u043d\u0437\u0438\u044f \u043d\u0430 \u0432\u0438\u0434 \u0434\u0435\u044f\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u0438 \u0434\u0435\u0439\u0441\u0442\u0432\u0443\u0435\u0442",
+                            "to": "",
+                            "type": 1,
+                            "value": "1"
+                        },
+                        {
+                            "from": "",
+                            "id": 2,
+                            "text": "\u041f\u0440\u043e\u0431\u043b\u0435\u043c\u044b \u0441 \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u0435\u0439",
+                            "to": "",
+                            "type": 1,
+                            "value": "0"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "dark-red",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 9,
+                "x": 0,
+                "y": 0
+            },
+            "id": 4,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {
+                    "valueSize": 25
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.4.0",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('service=utm-mili', 'contur=prod', 'script=utm_mili.py', 'name=license')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0421\u0442\u0430\u0442\u0443\u0441 \u043b\u0438\u0446\u0435\u043d\u0437\u0438\u0438",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [
+                        {
+                            "from": "",
+                            "id": 1,
+                            "text": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u044e\u0442 \u043d\u0435\u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044b\u0435 \u0447\u0435\u043a\u0438",
+                            "to": "",
+                            "type": 1,
+                            "value": "1"
+                        },
+                        {
+                            "from": "",
+                            "id": 2,
+                            "text": "\u0415\u0441\u0442\u044c \u043d\u0435\u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044b\u0435 \u0447\u0435\u043a\u0438",
+                            "to": "",
+                            "type": 1,
+                            "value": "0"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "dark-red",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 9,
+                "x": 9,
+                "y": 0
+            },
+            "id": 2,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {
+                    "valueSize": 25
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.4.0",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('service=utm-mili', 'contur=prod', 'script=utm_mili.py', 'name=checkInfo')",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u041d\u0435\u043e\u0442\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u043d\u044b\u0435 \u0447\u0435\u043a\u0438",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [
+                        {
+                            "from": "",
+                            "id": 1,
+                            "text": "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u0435\u043d",
+                            "to": "",
+                            "type": 1,
+                            "value": "1"
+                        },
+                        {
+                            "from": "",
+                            "id": 2,
+                            "text": "\u041d\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u0435\u043d",
+                            "to": "",
+                            "type": 1,
+                            "value": "0"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "dark-red",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 6,
+                "x": 0,
+                "y": 7
+            },
+            "id": 8,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {
+                    "valueSize": 25
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.4.0",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('service=utm-mili', 'contur=prod', 'script=utm_mili.py', 'name=gost')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0421\u0435\u0440\u0442\u0438\u0444\u0438\u043a\u0430\u0442 \u0413\u041e\u0421\u0422",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [
+                        {
+                            "from": "",
+                            "id": 1,
+                            "text": "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u0435\u043d",
+                            "to": "",
+                            "type": 1,
+                            "value": "1"
+                        },
+                        {
+                            "from": "",
+                            "id": 2,
+                            "text": "\u041d\u0435 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043b\u0435\u043d",
+                            "to": "",
+                            "type": 1,
+                            "value": "0"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "dark-red",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 6,
+                "x": 6,
+                "y": 7
+            },
+            "id": 6,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {
+                    "valueSize": 25
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.4.0",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('service=utm-mili', 'contur=prod', 'script=utm_mili.py', 'name=rsa')",
+                    "textEditor": true
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0421\u0435\u0440\u0442\u0438\u0444\u0438\u043a\u0430\u0442 RSA",
+            "type": "stat"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {},
+                    "mappings": [
+                        {
+                            "from": "",
+                            "id": 1,
+                            "text": "\u041d\u0435\u0442 \u043e\u0448\u0438\u0431\u043e\u043a",
+                            "to": "",
+                            "type": 1,
+                            "value": "1"
+                        },
+                        {
+                            "from": "",
+                            "id": 2,
+                            "text": "\u0415\u0441\u0442\u044c \u043e\u0448\u0438\u0431\u043a\u0438",
+                            "to": "",
+                            "type": 1,
+                            "value": "0"
+                        }
+                    ],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "dark-red",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 7,
+                "w": 6,
+                "x": 12,
+                "y": 7
+            },
+            "id": 10,
+            "options": {
+                "colorMode": "value",
+                "graphMode": "area",
+                "justifyMode": "auto",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {
+                    "valueSize": 25
+                },
+                "textMode": "auto"
+            },
+            "pluginVersion": "7.4.0",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('service=utm-mili', 'contur=prod', 'script=utm_mili.py', 'name=rsaError')",
+                    "textEditor": false
+                }
+            ],
+            "title": "\u041e\u0448\u0438\u0431\u043a\u0438 RSA",
+            "type": "stat"
+        }
+    ],
+    "schemaVersion": 27,
+    "style": "dark",
+    "tags": [
+        "test_scripts",
+        "service",
+        "scripts"
+    ],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-15m",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "\u0423\u0422\u041c \u041c\u0438\u043b\u0438",
+    "uid": "Bs9D5f3Gz",
+    "version": 9
+}

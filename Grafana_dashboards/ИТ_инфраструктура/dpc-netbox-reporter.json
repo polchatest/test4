@@ -1,0 +1,1512 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0414\u043e\u0431\u0440\u043e\u0432\u043e\u043b\u044c\u0441\u043a\u0438\u0439 \u0410.\u0418. (\u0418\u043d\u0442\u0435\u0433\u0440\u0430\u0446\u0438\u044f \u0438 \u0430\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0437\u0430\u0446\u0438\u044f)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 1,
+    "id": 1841,
+    "iteration": 1648023098456,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0445 \u043e\u0448\u0438\u0431\u043e\u043a \u043d\u0430 \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u043c \u043a\u043e\u043c\u043f\u043e\u043d\u0435\u043d\u0442\u0430\u0445 \u0441\u0435\u0440\u0432\u0438\u0441\u0430. No data \u043e\u0437\u043d\u0430\u0447\u0430\u0435\u0442 \u0447\u0442\u043e \u043d\u0435\u0442 \u043e\u0448\u0438\u0431\u043e\u043a.",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 20,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 2,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": false,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasSub(aliasByTags(transformNull(seriesByTag('service=dpc-netbox-reporter'), 0), 'name'), 'log_level_', '')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "dpc-netbox-reporter - errors",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:328",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:329",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "\u0432 \u043e\u0447\u0435\u0440\u0435\u0434\u044f\u0445 \u043f\u043e\u044f\u0432\u043b\u044f\u044e\u0442\u0441\u044f \u0437\u0430\u0434\u0430\u043d\u0438\u044f \u0434\u043b\u044f \u0440\u043e\u0431\u043e\u0442\u0430 \u0438 \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442 \u0435\u0433\u043e \u0440\u0430\u0431\u043e\u0442\u044b",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 7,
+                "x": 0,
+                "y": 6
+            },
+            "hiddenSeries": false,
+            "id": 13,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": false,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(aliasByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=redis.len_queue'), 'name'), '\u041e\u0447\u0435\u0440\u0435\u0434\u044c \u0437\u0430\u0434\u0430\u043d\u0438\u0439')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(aliasByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=redis.len_result'), 'name'), '\u041e\u0447\u0435\u0440\u0435\u0434\u044c \u043e\u0442\u0447\u0435\u0442\u043e\u0432')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "REDIS - \u0433\u043b\u0443\u0431\u0438\u043d\u0430 \u043e\u0447\u0435\u0440\u0435\u0434\u0435\u0439",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:249",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:250",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "\u041a\u043b\u044e\u0447\u0435\u0439 \u0432 \u0411\u0414",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 7,
+                "x": 7,
+                "y": 6
+            },
+            "hiddenSeries": false,
+            "id": 8,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": false,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(aliasByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=redis.keys', 'database=db1'), 'name', 'database'), 'db1 - \u0421\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0438\u043a\u0438')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(aliasByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=redis.keys', 'database=db0'), 'name', 'database'), 'db0 - \u041e\u0447\u0435\u0440\u0435\u0434\u0438')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "REDIS - keys",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:470",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:471",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": null,
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043a\u043e\u043c\u0430\u043d\u0434, \u043e\u0431\u0440\u0430\u0431\u0430\u0442\u044b\u0432\u0430\u0435\u043c\u044b\u0445 \u0432 \u0441\u0435\u043a\u0443\u043d\u0434\u0443",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 500,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 100
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 300
+                            }
+                        ]
+                    },
+                    "unit": "reqps"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 14,
+                "y": 6
+            },
+            "id": 11,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "mean"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('contur=~${contur:regex}', 'service=redis', 'name=redis.instantaneous_ops_per_sec', 'host=~${host:regex}'), 'name')"
+                }
+            ],
+            "title": "REDIS - command's",
+            "type": "gauge"
+        },
+        {
+            "datasource": null,
+            "description": "\u041e\u0431\u0449\u0435\u0435 \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043a\u043e\u043c\u0430\u043d\u0434, \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043d\u044b\u0445 \u0441\u0435\u0440\u0432\u0435\u0440\u043e\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 500,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 100
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 300
+                            }
+                        ]
+                    },
+                    "unit": "reqps"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 17,
+                "y": 6
+            },
+            "id": 4,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "mean"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "perSecond(aliasByTags(seriesByTag('contur=~${contur:regex}', 'service=redis', 'name=redis.total_commands_processed', 'host=~${host:regex}'), 'name'))"
+                }
+            ],
+            "title": "REDIS - total command's",
+            "type": "gauge"
+        },
+        {
+            "datasource": null,
+            "description": "\u0432\u0440\u0435\u043c\u044f \u043e\u0431\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "auto",
+                        "displayMode": "auto"
+                    },
+                    "mappings": [],
+                    "noValue": "0",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 0
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 1
+                            }
+                        ]
+                    },
+                    "unit": "ns"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u041a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 245
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u0412\u0440\u0435\u043c\u044f"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 146
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 5,
+                "x": 0,
+                "y": 12
+            },
+            "id": 17,
+            "options": {
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "\u0412\u0440\u0435\u043c\u044f"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "sortByName(aliasSub(aliasByTags(groupByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=docker_container_status.uptime_ns'), 'last', 'com.docker.swarm.service.name'), 'com.docker.swarm.service.name'), 'netbox-reporter_', ''), true, false)",
+                    "textEditor": true
+                }
+            ],
+            "title": "Docker - container uptime",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "includeTimeField": false,
+                        "labelsToFields": false,
+                        "mode": "seriesToRows",
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {},
+                        "renameByName": {
+                            "Field": "\u0438\u043c\u044f \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u0430",
+                            "Last *": "\u0432\u0440\u0435\u043c\u044f"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": null,
+            "description": "\u043f\u0430\u043c\u044f\u0442\u044c \u043f\u043e \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "decbytes"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 7,
+                "x": 5,
+                "y": 12
+            },
+            "id": 21,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "vertical",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(groupByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=docker.memory_total'), 'last', 'com.docker.swarm.service.name'), 'name')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasSub(aliasByTags(groupByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=docker_container_mem.limit'), 'last', 'com.docker.swarm.service.name'), 'com.docker.swarm.service.name', 1), 'netbox-reporter_', '')",
+                    "textEditor": false
+                },
+                {
+                    "hide": true,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasSub(aliasByTags(groupByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=docker_container_mem.usage'), 'last', 'com.docker.swarm.service.name'), 'com.docker.swarm.service.name', 1), 'netbox-reporter_', '')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Docker - \u043f\u0430\u043c\u044f\u0442\u044c \u043f\u043e \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u0430\u043c",
+            "transformations": [
+                {
+                    "id": "rowsToFields",
+                    "options": {
+                        "mappings": [
+                            {
+                                "fieldName": "docker.memory_total",
+                                "handlerKey": "field.name"
+                            },
+                            {
+                                "fieldName": "Time",
+                                "handlerKey": "max"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "decimals": null,
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0445 \u0432\u044b\u0437\u043e\u0432\u043e\u0432",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 12,
+                "w": 8,
+                "x": 12,
+                "y": 12
+            },
+            "hiddenSeries": false,
+            "id": 6,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": true,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(perSecond(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=redis.calls')), 'command')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "REDIS - cmd calls",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:86",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:87",
+                    "decimals": null,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": null,
+            "description": "\u043f\u0430\u043c\u044f\u0442\u044c \u043f\u043e \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u0430\u043c",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 7,
+                "x": 5,
+                "y": 15
+            },
+            "id": 30,
+            "options": {
+                "orientation": "vertical",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": true,
+                    "refCount": -1,
+                    "refId": "B",
+                    "target": "aliasSub(aliasByTags(groupByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=docker_container_mem.limit'), 'last', 'com.docker.swarm.service.name'), 'com.docker.swarm.service.name', 1), 'netbox-reporter_', '')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasSub(aliasByTags(asPercent(groupByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=docker_container_mem.usage'), 'last', 'com.docker.swarm.service.name'), #B), 'com.docker.swarm.service.name', 1), 'netbox-reporter_', '')",
+                    "targetFull": "aliasSub(aliasByTags(asPercent(groupByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=docker_container_mem.usage'), 'last', 'com.docker.swarm.service.name'), aliasSub(aliasByTags(groupByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=docker_container_mem.limit'), 'last', 'com.docker.swarm.service.name'), 'com.docker.swarm.service.name', 1), 'netbox-reporter_', '')), 'com.docker.swarm.service.name', 1), 'netbox-reporter_', '')",
+                    "textEditor": false
+                }
+            ],
+            "transformations": [
+                {
+                    "id": "rowsToFields",
+                    "options": {
+                        "mappings": [
+                            {
+                                "fieldName": "docker.memory_total",
+                                "handlerKey": "field.name"
+                            },
+                            {
+                                "fieldName": "Time",
+                                "handlerKey": "max"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "type": "gauge"
+        },
+        {
+            "datasource": null,
+            "description": "\u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u043e\u0432 \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "auto",
+                        "displayMode": "auto"
+                    },
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 5,
+                "x": 0,
+                "y": 18
+            },
+            "id": 19,
+            "options": {
+                "frameIndex": 2,
+                "showHeader": true
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByMetric(aliasSub(aliasSub(seriesByTag('name=~docker.n_containers.*', 'contur=~${contur:regex}', 'host=~${host:regex}'), 'docker.n_containers_', ''), 'docker.n_containers', 'total'))",
+                    "textEditor": false
+                }
+            ],
+            "title": "Docker - \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u043e\u0432",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "labelsToFields": false,
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {},
+                        "renameByName": {
+                            "Field": "\u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435",
+                            "Last *": "\u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": null,
+            "description": "% \u0437\u0430\u043d\u044f\u0442\u043e\u0433\u043e \u043c\u0435\u0441\u0442\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "semi-dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 60
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 95
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 7,
+                "x": 5,
+                "y": 18
+            },
+            "id": 25,
+            "options": {
+                "displayMode": "lcd",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showUnfilled": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "repeat": null,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasSub(aliasByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=system.disk.used_percent'), 'path'), '-', '/')",
+                    "textEditor": false
+                }
+            ],
+            "title": "Linux - \u043c\u0435\u0441\u0442\u043e \u043d\u0430 \u0434\u0438\u0441\u043a\u0430\u0445",
+            "transformations": [],
+            "type": "bargauge"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "% \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u0426\u041f\u0423",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 10,
+                "x": 0,
+                "y": 24
+            },
+            "hiddenSeries": false,
+            "id": 27,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": false,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "exclude(exclude(aliasByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=~system.cpu.*', 'cpu=cpu-total'), 'name'), 'idle'), 'active')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Linux - \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 CPU",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:65",
+                    "decimals": 0,
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "100",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:66",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0430\u043c\u044f\u0442\u0438",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 10,
+                "x": 10,
+                "y": 24
+            },
+            "hiddenSeries": false,
+            "id": 15,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasSub(aliasByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=~redis.used_memory.*'), 'name'), '.used_memory', '')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "REDIS - \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0430\u043c\u044f\u0442\u0438",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:990",
+                    "decimals": 0,
+                    "format": "bytes",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:991",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "% \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u044f \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0440\u0430",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 10,
+                "x": 0,
+                "y": 30
+            },
+            "hiddenSeries": false,
+            "id": 23,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "substr(aliasSub(aliasByTags(groupByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=docker_container_cpu.usage_percent'), 'last', 'com.docker.swarm.service.name'), 'com.docker.swarm.service.name', 1), 'netbox-reporter_', ''), 0, 1)"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Docker - \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 cpu",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:61",
+                    "format": "percent",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "100",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:62",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u0440\u0430\u0437\u043b\u0438\u0447\u043d\u044b\u0445 \u043a\u043b\u0438\u0435\u043d\u0442\u043e\u0432\nblocked_clients: Number of clients pending on a blocking call (BLPOP, BRPOP, BRPOPLPUSH, BLMOVE, BZPOPMIN, BZPOPMAX)\n",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 10,
+                "x": 10,
+                "y": 30
+            },
+            "hiddenSeries": false,
+            "id": 10,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": false,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=redis.blocked_clients'), 1)",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=redis.clients'), 1)",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByTags(perSecond(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=redis.rejected_connections')), 1)",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "REDIS - client's",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:624",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:625",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": null,
+            "description": "tcp_close - \u041d\u0430\u0447\u0430\u043b\u044c\u043d\u043e\u0435 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0443\u0437\u043b\u0430. \u0424\u0430\u043a\u0442\u0438\u0447\u0435\u0441\u043a\u0438 \u0444\u0438\u043a\u0442\u0438\u0432\u043d\u043e\u0435\n\ntcp_lisnet - \u0421\u0435\u0440\u0432\u0435\u0440 \u043e\u0436\u0438\u0434\u0430\u0435\u0442 \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u044f \u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u044f \u043e\u0442 \u043a\u043b\u0438\u0435\u043d\u0442\u0430\n\ntcp_syn-sent - \u041a\u043b\u0438\u0435\u043d\u0442 \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u043b \u0437\u0430\u043f\u0440\u043e\u0441 \u0441\u0435\u0440\u0432\u0435\u0440\u0443 \u043d\u0430 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u0438\u0435 \u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u044f \u0438 \u043e\u0436\u0438\u0434\u0430\u0435\u0442 \u043e\u0442\u0432\u0435\u0442\u0430\n\ntcp_syn-received - \u0421\u0435\u0440\u0432\u0435\u0440 \u043f\u043e\u043b\u0443\u0447\u0438\u043b \u0437\u0430\u043f\u0440\u043e\u0441 \u043d\u0430 \u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0435, \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u043b \u043e\u0442\u0432\u0435\u0442\u043d\u044b\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u0438 \u043e\u0436\u0438\u0434\u0430\u0435\u0442 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u044f\n\ntcp_established - \u0421\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0435 \u0443\u0441\u0442\u0430\u043d\u043e\u0432\u043b\u0435\u043d\u043e, \u0438\u0434\u0451\u0442 \u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0430 \u0434\u0430\u043d\u043d\u044b\u0445\n\ntcp_fin_wait1 - \u041e\u0434\u043d\u0430 \u0438\u0437 \u0441\u0442\u043e\u0440\u043e\u043d (\u043d\u0430\u0437\u043e\u0432\u0451\u043c \u0435\u0451 \u0443\u0437\u0435\u043b-1) \u0437\u0430\u0432\u0435\u0440\u0448\u0430\u0435\u0442 \u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0435, \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0432 \u0441\u0435\u0433\u043c\u0435\u043d\u0442 \u0441 \u0444\u043b\u0430\u0433\u043e\u043c FIN\n\ntcp_close_wait - \u0414\u0440\u0443\u0433\u0430\u044f \u0441\u0442\u043e\u0440\u043e\u043d\u0430 (\u0443\u0437\u0435\u043b-2) \u043f\u0435\u0440\u0435\u0445\u043e\u0434\u0438\u0442 \u0432 \u044d\u0442\u043e \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435, \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0432, \u0432 \u0441\u0432\u043e\u044e \u043e\u0447\u0435\u0440\u0435\u0434\u044c \u0441\u0435\u0433\u043c\u0435\u043d\u0442 ACK \u0438 \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u0435\u0442 \u043e\u0434\u043d\u043e\u0441\u0442\u043e\u0440\u043e\u043d\u043d\u044e\u044e \u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0443\n\ntcp_fin_wait2 - \u0423\u0437\u0435\u043b-1 \u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0442 ACK, \u043f\u0440\u043e\u0434\u043e\u043b\u0436\u0430\u0435\u0442 \u0447\u0442\u0435\u043d\u0438\u0435 \u0438 \u0436\u0434\u0451\u0442 \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u0435\u0433\u043c\u0435\u043d\u0442\u0430 \u0441 \u0444\u043b\u0430\u0433\u043e\u043c FIN\n\ntcp_last_ack - \u0423\u0437\u0435\u043b-2 \u0437\u0430\u043a\u0430\u043d\u0447\u0438\u0432\u0430\u0435\u0442 \u043f\u0435\u0440\u0435\u0434\u0430\u0447\u0443 \u0438 \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u0442 \u0441\u0435\u0433\u043c\u0435\u043d\u0442 \u0441 \u0444\u043b\u0430\u0433\u043e\u043c FIN\n\ntcp_time_wait - \u0423\u0437\u0435\u043b-1 \u043f\u043e\u043b\u0443\u0447\u0438\u043b \u0441\u0435\u0433\u043c\u0435\u043d\u0442 \u0441 \u0444\u043b\u0430\u0433\u043e\u043c FIN, \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u043b \u0441\u0435\u0433\u043c\u0435\u043d\u0442 \u0441 \u0444\u043b\u0430\u0433\u043e\u043c ACK \u0438 \u0436\u0434\u0451\u0442 2*MSL \u0441\u0435\u043a\u0443\u043d\u0434, \u043f\u0435\u0440\u0435\u0434 \u043e\u043a\u043e\u043d\u0447\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u043c \u0437\u0430\u043a\u0440\u044b\u0442\u0438\u0435\u043c \u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u044f\n\ntcp_closing - \u041e\u0431\u0435 \u0441\u0442\u043e\u0440\u043e\u043d\u044b \u0438\u043d\u0438\u0446\u0438\u0438\u0440\u043e\u0432\u0430\u043b\u0438 \u0437\u0430\u043a\u0440\u044b\u0442\u0438\u0435 \u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u044f \u043e\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e: \u043f\u043e\u0441\u043b\u0435 \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u0441\u0435\u0433\u043c\u0435\u043d\u0442\u0430 \u0441 \u0444\u043b\u0430\u0433\u043e\u043c FIN \u0443\u0437\u0435\u043b-1 \u0442\u0430\u043a\u0436\u0435 \u043f\u043e\u043b\u0443\u0447\u0430\u0435\u0442 \u0441\u0435\u0433\u043c\u0435\u043d\u0442 FIN, \u043e\u0442\u043f\u0440\u0430\u0432\u043b\u044f\u0435\u0442 ACK \u0438 \u043d\u0430\u0445\u043e\u0434\u0438\u0442\u0441\u044f \u0432 \u043e\u0436\u0438\u0434\u0430\u043d\u0438\u0438 \u0441\u0435\u0433\u043c\u0435\u043d\u0442\u0430 ACK (\u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u0438\u044f \u043d\u0430 \u0441\u0432\u043e\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u043e \u0440\u0430\u0437\u044a\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0438)",
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 10,
+                "x": 0,
+                "y": 36
+            },
+            "hiddenSeries": false,
+            "id": 29,
+            "legend": {
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "show": false,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByMetric(aliasByTags(seriesByTag('contur=~${contur:regex}', 'host=~${host:regex}', 'name=~system.netstat.tcp_*'), 'name'))"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Linux - \u0441\u0435\u0442\u044c",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:59",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:60",
+                    "decimals": 0,
+                    "format": "none",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": false,
+                    "text": "prod",
+                    "value": "prod"
+                },
+                "datasource": null,
+                "definition": "tag_values(contur,servertype=dpc-netbox-reporter)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "contur",
+                "options": [],
+                "query": "tag_values(contur,servertype=dpc-netbox-reporter)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            },
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "dpc-netbox-reporter01.unix.tensor.ru",
+                    "value": "dpc-netbox-reporter01.unix.tensor.ru"
+                },
+                "datasource": null,
+                "definition": "tag_values(host,contur=$contur,servertype=dpc-netbox-reporter)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "host",
+                "options": [],
+                "query": "tag_values(host,contur=$contur,servertype=dpc-netbox-reporter)",
+                "refresh": 1,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "type": "query"
+            }
+        ]
+    },
+    "time": {
+        "from": "now-15m",
+        "to": "now"
+    },
+    "timepicker": {
+        "hidden": false,
+        "nowDelay": ""
+    },
+    "timezone": "",
+    "title": "dpc-netbox-reporter",
+    "uid": "92Xj0qJ7k",
+    "version": 9
+}

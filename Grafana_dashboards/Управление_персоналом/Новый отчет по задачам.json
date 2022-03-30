@@ -1,0 +1,1198 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u0421\u043c\u0438\u0440\u043d\u043e\u0432\u0430 \u0421.\u0421. (\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1647,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 8,
+                "w": 24,
+                "x": 0,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 3,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_department",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "department",
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            department\n            remain\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0420\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u0438\u0435 \u0437\u0430\u0434\u0430\u0447 \u043f\u043e \u043e\u0442\u0434\u0435\u043b\u0430\u043c",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:62",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:63",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "fieldConfig": {
+                "defaults": {
+                    "links": [],
+                    "unit": "short"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u044b\u0439 \u043e\u0442\u0434\u0435\u043b"
+                        },
+                        "properties": [
+                            {
+                                "id": "displayName",
+                                "value": "\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u044b\u0439 \u043e\u0442\u0434\u0435\u043b, \u043a\u043e\u0440\u0435\u043d\u044c"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 4,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [
+                {
+                    "targetBlank": true,
+                    "title": "\u0414\u0435\u0442\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f",
+                    "url": "https://monitor.sbis.ru/d/E_ZGQB-7z/proektnyi-otdel-po-gruppam?orgId=1&from=now-30d&to=now"
+                }
+            ],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_group",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "group",
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u044b\u0439 \u043e\u0442\u0434\u0435\u043b\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            department\n            group\n            remain\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u044b\u0439 \u043e\u0442\u0434\u0435\u043b\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            received\n            }\n        }",
+                    "refId": "B",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u044b\u0439 \u043e\u0442\u0434\u0435\u043b",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [
+                {
+                    "id": "filterFieldsByName",
+                    "options": {
+                        "include": {
+                            "names": [
+                                "\u0420\u0430\u0437\u0440\u0430\u0431\u043e\u0442\u043a\u0430",
+                                "\u0423\u043f\u0440\u0430\u0432\u043b\u0435\u043d\u0438\u0435 \u043f\u0440\u043e\u0435\u043a\u0442\u0430\u043c\u0438",
+                                "\u041a\u043e\u043d\u0442\u0435\u0439\u043d\u0435\u0440\u043d\u0430\u044f \u0438\u043d\u0444\u0440\u0430\u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u0430",
+                                "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                                "\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u044b\u0439 \u043e\u0442\u0434\u0435\u043b"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:62",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:63",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 8
+            },
+            "hiddenSeries": false,
+            "id": 8,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [
+                {
+                    "targetBlank": true,
+                    "title": "\u0412\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043d\u044b\u0435 \u0437\u0430\u0434\u0430\u0447\u0438",
+                    "url": "https://monitor.sbis.ru/d/3BdyrIPGz/vypolnennye-zadachi?orgId=1&from=now-30d&to=now"
+                }
+            ],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_group",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "group",
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f \u0422\u0435\u043d\u0437\u043e\u0440\u0430\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            department\n            group\n            remain\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f \u0422\u0435\u043d\u0437\u043e\u0440\u0430\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            received\n            }\n        }",
+                    "refId": "B",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u0412\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043e",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f \u0422\u0435\u043d\u0437\u043e\u0440\u0430\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            done\n            }\n        }",
+                    "refId": "C",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f \u0422\u0435\u043d\u0437\u043e\u0440\u0430",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [
+                {
+                    "id": "filterFieldsByName",
+                    "options": {
+                        "include": {
+                            "names": [
+                                "\u0421\u041f\u0414",
+                                "\u0422\u0435\u043b\u0435\u0444\u043e\u043d\u0438\u044f",
+                                "\u0411\u044d\u043a\u044d\u043d\u0434",
+                                "\u0414\u0435\u0436\u0443\u0440\u043d\u044b\u0435",
+                                "\u041c\u0435\u043d\u0435\u0434\u0436\u0435\u0440\u044b",
+                                "\u041d\u0435\u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u0435",
+                                "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                                "\u0412\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u043e"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:62",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:63",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 15
+            },
+            "hiddenSeries": false,
+            "id": 5,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "\u0417\u0430\u0434\u0430\u0447\u0438",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0421\u041f\u0414\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            not_scenarios\n            }\n        }",
+                    "refId": "D",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u0421\u0446\u0435\u043d\u0430\u0440\u0438\u0438 \u0440\u0430\u0431\u043e\u0442\u044b",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0421\u041f\u0414\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            scenarios\n            }\n        }",
+                    "refId": "C",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "$field_group",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "group",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0421\u041f\u0414\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            department\n            group\n            remain\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0421\u041f\u0414\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            received\n            }\n        }",
+                    "refId": "B",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u0440\u043e\u0441\u0440\u043e\u0447\u0435\u043d\u043e",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0421\u041f\u0414\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            expired\n            }\n        }",
+                    "refId": "E",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0421\u041f\u0414",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [
+                {
+                    "id": "filterFieldsByName",
+                    "options": {
+                        "include": {
+                            "names": [
+                                "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                                "\u0421\u0446\u0435\u043d\u0430\u0440\u0438\u0438 \u0440\u0430\u0431\u043e\u0442\u044b",
+                                "\u0417\u0430\u0434\u0430\u0447\u0438",
+                                "\u041f\u0440\u043e\u0441\u0440\u043e\u0447\u0435\u043d\u043e"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:62",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:63",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "decimals": 0,
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 15
+            },
+            "hiddenSeries": false,
+            "id": 7,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "hideEmpty": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": true,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [
+                {
+                    "targetBlank": true,
+                    "title": "\u0427\u0430\u0442\u044b",
+                    "url": "https://monitor.sbis.ru/d/tEzvRy5nz/chaty-tekhpodderzhki-tenzora?orgId=1"
+                }
+            ],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_group",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "group",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u0422\u0435\u043d\u0437\u043e\u0440\u0430\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            department\n            group\n            remain\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u0422\u0435\u043d\u0437\u043e\u0440\u0430\",\n            group: \"\u0412\u0441\u0435\",\n            tsFrom: \"${__from:date:iso}\",\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            received\n            }\n        }",
+                    "refId": "B",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u0417\u0430\u0434\u0430\u0447\u0438 \u0441\u0442\u0430\u0440\u0448\u0435 \u043d\u0435\u0434\u0435\u043b\u0438 \u043d\u0430 \u0441\u0438\u0441\u0430\u0434\u043c\u0438\u043d\u0430\u0445",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u0422\u0435\u043d\u0437\u043e\u0440\u0430\",\n            group: \"\u0412\u0441\u0435\",\n            tsFrom: \"${__from:date:iso}\",\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            old\n            }\n        }",
+                    "refId": "C",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u0427\u0430\u0442\u044b",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"support_chats.py\",\n            group: \"\u0427\u0430\u0442\u044b\",\n            person: \"\u0412\u0441\u0435\u0433\u043e\",\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            done\n            }\n        }",
+                    "refId": "D",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0422\u0435\u0445\u043f\u043e\u0434\u0434\u0435\u0440\u0436\u043a\u0430 \u0422\u0435\u043d\u0437\u043e\u0440\u0430",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [
+                {
+                    "id": "filterFieldsByName",
+                    "options": {
+                        "include": {
+                            "names": [
+                                "\u0421\u0438\u0441\u0442\u0435\u043c\u043d\u044b\u0435 \u0430\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0430\u0442\u043e\u0440\u044b",
+                                "\u041f\u0440\u043e\u0435\u043a\u0442\u043d\u0430\u044f \u0433\u0440\u0443\u043f\u043f\u0430",
+                                "\u041c\u0435\u043d\u0435\u0434\u0436\u0435\u0440\u044b",
+                                "\u041d\u0435\u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0435\u043d\u043d\u044b\u0435",
+                                "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                                "\u0417\u0430\u0434\u0430\u0447\u0438 \u0441\u0442\u0430\u0440\u0448\u0435 \u043d\u0435\u0434\u0435\u043b\u0438 \u043d\u0430 \u0441\u0438\u0441\u0430\u0434\u043c\u0438\u043d\u0430\u0445",
+                                "done",
+                                "time_stamp"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:62",
+                    "format": "none",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:63",
+                    "format": "string",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 0,
+                "y": 22
+            },
+            "hiddenSeries": false,
+            "id": 6,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [
+                {
+                    "targetBlank": true,
+                    "title": "\u041f\u043e\u0434\u0440\u043e\u0431\u043d\u043e",
+                    "url": "https://monitor.sbis.ru/d/hrV6Y2N7k/administrirovanie-tsod?orgId=1&from=now-30d&to=now"
+                }
+            ],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_group",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "group",
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0426\u041e\u0414\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            department\n            group\n            remain\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0426\u041e\u0414\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            received\n            }\n        }",
+                    "refId": "C",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u0443\u043b \u0437\u0430\u0434\u0430\u0447, \u0431\u043e\u043b\u044c\u0448\u0435 \u043c\u0435\u0441\u044f\u0446\u0430",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0426\u041e\u0414\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            old\n            }\n        }",
+                    "refId": "B",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u0443\u043b \u0437\u0430\u0434\u0430\u0447, \u043c\u0435\u043d\u044c\u0448\u0435 \u043d\u0435\u0434\u0435\u043b\u0438",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0426\u041e\u0414\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            new\n            }\n        }",
+                    "refId": "D",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u0440\u043e\u0441\u0440\u043e\u0447\u0435\u043d\u043e",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0426\u041e\u0414\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            expired\n            }\n        }",
+                    "refId": "E",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0410\u0434\u043c\u0438\u043d\u0438\u0441\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435 \u0426\u041e\u0414",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [
+                {
+                    "id": "filterFieldsByName",
+                    "options": {
+                        "include": {
+                            "names": [
+                                "\u0412\u0441\u0435",
+                                "\u041f\u0443\u043b \u0437\u0430\u0434\u0430\u0447, \u0431\u043e\u043b\u044c\u0448\u0435 \u043c\u0435\u0441\u044f\u0446\u0430",
+                                "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                                "\u041f\u0440\u043e\u0441\u0440\u043e\u0447\u0435\u043d\u043e",
+                                "\u041f\u0443\u043b \u0437\u0430\u0434\u0430\u0447, \u043c\u0435\u043d\u044c\u0448\u0435 \u043d\u0435\u0434\u0435\u043b\u0438"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:62",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:63",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "GraphQL Adm-duty",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 7,
+                "w": 12,
+                "x": 12,
+                "y": 22
+            },
+            "hiddenSeries": false,
+            "id": 9,
+            "legend": {
+                "alignAsTable": true,
+                "avg": false,
+                "current": true,
+                "hideEmpty": false,
+                "max": false,
+                "min": false,
+                "rightSide": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "links": [
+                {
+                    "targetBlank": true,
+                    "title": "\u041f\u043e\u0434\u0440\u043e\u0431\u043d\u043e",
+                    "url": "https://monitor.sbis.ru/d/lLY_YhHnk/ekspluatatsiia-tsod?orgId=1&from=now-30d&to=now"
+                }
+            ],
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": false
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "aliasBy": "$field_group",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "group",
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f \u0426\u041e\u0414\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            department\n            group\n            remain\n            }\n        }",
+                    "refId": "A",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f \u0426\u041e\u0414\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            received\n            }\n        }",
+                    "refId": "C",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                },
+                {
+                    "aliasBy": "\u041f\u0440\u043e\u0441\u0440\u043e\u0447\u0435\u043d\u043e",
+                    "annotationTags": "",
+                    "annotationText": "",
+                    "annotationTitle": "",
+                    "constant": 6.5,
+                    "dataPath": "records",
+                    "endTimePath": "endTime",
+                    "groupBy": "",
+                    "hide": false,
+                    "queryText": "query{\n            records(\n            script: \"task_report.py\",\n            department: \"\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f \u0426\u041e\u0414\"\n            group: \"\u0412\u0441\u0435\"\n            tsFrom: \"${__from:date:iso}\"\n            tsTo: \"${__to:date:iso}\"\n            ){\n            time_stamp\n            expired\n            }\n        }",
+                    "refId": "B",
+                    "timeFormat": null,
+                    "timePath": "time_stamp"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u044f \u0426\u041e\u0414",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [
+                {
+                    "id": "filterFieldsByName",
+                    "options": {
+                        "include": {
+                            "names": [
+                                "\u0412\u0441\u0435",
+                                "\u041f\u043e\u0441\u0442\u0443\u043f\u0438\u043b\u043e \u043d\u0430 \u043e\u0442\u0434\u0435\u043b",
+                                "\u041f\u0440\u043e\u0441\u0440\u043e\u0447\u0435\u043d\u043e"
+                            ]
+                        }
+                    }
+                }
+            ],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:62",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:63",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "refresh": "",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "staff",
+        "scripts"
+    ],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-30d",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "\u041d\u043e\u0432\u044b\u0439 \u043e\u0442\u0447\u0435\u0442 \u043f\u043e \u0437\u0430\u0434\u0430\u0447\u0430\u043c",
+    "uid": "Plrj1wSnz",
+    "version": 74
+}

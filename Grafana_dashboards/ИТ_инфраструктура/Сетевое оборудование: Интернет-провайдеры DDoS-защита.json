@@ -1,0 +1,535 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041a\u0440\u0430\u043b\u0438\u043d \u0410. \u0415. (\u0421\u041f\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1971,
+    "iteration": 1648442464764,
+    "links": [
+        {
+            "icon": "doc",
+            "tags": [],
+            "targetBlank": true,
+            "title": "\u0418\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f",
+            "tooltip": "",
+            "type": "link",
+            "url": "https://dpc-docs.tensor.ru/pages/viewpage.action?pageId=63907132"
+        },
+        {
+            "icon": "external link",
+            "tags": [],
+            "targetBlank": true,
+            "title": "\u041b\u041a \u042d\u0440-\u0422\u0435\u043b\u0435\u043a\u043e\u043c",
+            "tooltip": "",
+            "type": "link",
+            "url": "https://antiddos.domru.ru/"
+        },
+        {
+            "icon": "external link",
+            "tags": [],
+            "targetBlank": true,
+            "title": "\u041b\u041a \u0420\u043e\u0441\u0422\u0435\u043b\u0435\u043a\u043e\u043c",
+            "tooltip": "",
+            "type": "link",
+            "url": "https://perimeter.soc.rt.ru/"
+        }
+    ],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": "carbon-short",
+            "description": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0437\u0430\u0449\u0438\u0442\u044b \u043d\u0430 \u0441\u0442\u043e\u0440\u043e\u043d\u0435 \u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440\u0430. No data \u043e\u0437\u043d\u0430\u0447\u0430\u0435\u0442, \u0447\u0442\u043e \u0443 \u044d\u0442\u043e\u0433\u043e \u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440\u0430 \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442 \u0443\u0441\u043b\u0443\u0433\u0430 \u0437\u0430\u0449\u0438\u0442\u044b \u043e\u0442 DDoS",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [
+                        {
+                            "options": {
+                                "0": {
+                                    "text": "\u041d\u0435\u0442 \u0430\u0442\u0430\u043a\u0438"
+                                },
+                                "1": {
+                                    "text": "\u0410\u0442\u0430\u043a\u0430"
+                                }
+                            },
+                            "type": "value"
+                        }
+                    ],
+                    "noValue": "\u041d\u0435\u0442 \u0437\u0430\u0449\u0438\u0442\u044b",
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "grey",
+                                "value": null
+                            },
+                            {
+                                "color": "semi-dark-green",
+                                "value": 0
+                            },
+                            {
+                                "color": "semi-dark-red",
+                                "value": 1
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 0,
+                "y": 0
+            },
+            "id": 4,
+            "options": {
+                "colorMode": "background",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "seriesByTag('name=isp.ddos.status', 'isp=$isp')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "DDoS-\u0437\u0430\u0449\u0438\u0442\u0430",
+            "type": "stat"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0437\u0430\u0449\u0438\u0442\u044b \u043d\u0430 \u0441\u0442\u043e\u0440\u043e\u043d\u0435 \u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440\u0430. No data \u043e\u0437\u043d\u0430\u0447\u0430\u0435\u0442, \u0447\u0442\u043e \u0443 \u044d\u0442\u043e\u0433\u043e \u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440\u0430 \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442 \u0443\u0441\u043b\u0443\u0433\u0430 \u0437\u0430\u0449\u0438\u0442\u044b \u043e\u0442 DDoS",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 6,
+                "w": 6,
+                "x": 3,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 2,
+            "legend": {
+                "alignAsTable": false,
+                "avg": false,
+                "current": false,
+                "max": false,
+                "min": false,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": false
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": true,
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "alias(seriesByTag('name=isp.ddos.status', 'isp=$isp'), '0 - \u041d\u0435\u0442 \u0430\u0442\u0430\u043a\u0438, 1 - \u0410\u0442\u0430\u043a\u0430')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "DDoS-\u0437\u0430\u0449\u0438\u0442\u0430",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:61",
+                    "decimals": 0,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": "1",
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:62",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": false
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0422\u0440\u0430\u0444\u0438\u043a \u0447\u0435\u0440\u0435\u0437 \u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440\u0430 (\u0432 \u0431\u0430\u0439\u0442\u0430\u0445). \u0418\u0437\u043c\u0435\u0440\u0435\u043d \u043d\u0430 \u043f\u043e\u0440\u0442\u0443 \u043f\u043e\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u043e\u0433\u043e \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u0438\u0437\u0430\u0442\u043e\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "links": []
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 10,
+                "w": 15,
+                "x": 9,
+                "y": 0
+            },
+            "hiddenSeries": false,
+            "id": 3,
+            "interval": "1m",
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "rightSide": false,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 2,
+            "maxPerRow": 2,
+            "nullPointMode": "connected",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "repeat": null,
+            "repeatDirection": "h",
+            "seriesOverrides": [
+                {
+                    "$$hashKey": "object:512",
+                    "alias": "Bandwidth",
+                    "color": "#B877D9",
+                    "dashes": true,
+                    "fill": 0,
+                    "legend": false
+                },
+                {
+                    "$$hashKey": "object:525",
+                    "alias": "In",
+                    "color": "#F2495C"
+                },
+                {
+                    "$$hashKey": "object:601",
+                    "alias": "Out",
+                    "color": "#73BF69"
+                }
+            ],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "alias(scale(sum(seriesByTag('device=~dts-r\\d-border', 'name=interface.traffic.in_octets_rate', 'description=$isp')), 8), 'In')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "alias(scale(sum(seriesByTag('device=~dts-r\\d-border', 'name=interface.traffic.out_octets_rate', 'description=$isp')), 8), 'Out')",
+                    "textEditor": false
+                },
+                {
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "alias(scale(maxSeries(seriesByTag('device=~dts-r\\d-border', 'name=interface.traffic.speed', 'description=$isp')), 1000000), 'Bandwidth')",
+                    "textEditor": false
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "Traffic",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:1821",
+                    "format": "bps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:1822",
+                    "format": "bps",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        },
+        {
+            "datasource": null,
+            "description": "\u0421\u043f\u0440\u0430\u0432\u043e\u0447\u043d\u0430\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044f \u0438 \u043f\u043e\u043b\u0435\u0437\u043d\u044b\u0435 \u0441\u0441\u044b\u043b\u043a\u0438 \u043f\u043e \u0441\u0438\u0441\u0442\u0435\u043c\u0435 \u0437\u0430\u0449\u0438\u0442\u044b \u043e\u0442 DdoS",
+            "gridPos": {
+                "h": 15,
+                "w": 9,
+                "x": 0,
+                "y": 6
+            },
+            "id": 9,
+            "options": {
+                "content": "# \u0421\u0441\u044b\u043b\u043a\u0438\n\n- [\u0418\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u044f \u0434\u043b\u044f \u0434\u0435\u0436\u0443\u0440\u043d\u043e\u0433\u043e](https://dpc-docs.tensor.ru/pages/viewpage.action?pageId=63907132)\n- [\u0414\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0438\u044f \u043d\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u0443](https://dpc-docs.tensor.ru/pages/viewpage.action?pageId=51980212)\n- [\u041a\u0430\u043a \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433](https://dpc-docs.tensor.ru/pages/viewpage.action?pageId=74882761)\n\n----\n",
+                "mode": "markdown"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": ""
+                }
+            ],
+            "title": "\u0418\u043d\u0444\u043e",
+            "type": "text"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0422\u0440\u0430\u0444\u0438\u043a \u0447\u0435\u0440\u0435\u0437 \u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440\u0430 (\u0432 \u043f\u0430\u043a\u0435\u0442\u0430\u0445). \u0418\u0437\u043c\u0435\u0440\u0435\u043d \u043d\u0430 \u043f\u043e\u0440\u0442\u0443 \u043f\u043e\u0433\u0440\u0430\u043d\u0438\u0447\u043d\u043e\u0433\u043e \u043c\u0430\u0440\u0448\u0440\u0443\u0442\u0438\u0437\u0430\u0442\u043e\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "palette-classic"
+                    },
+                    "custom": {
+                        "axisLabel": "",
+                        "axisPlacement": "auto",
+                        "barAlignment": 0,
+                        "drawStyle": "line",
+                        "fillOpacity": 10,
+                        "gradientMode": "none",
+                        "hideFrom": {
+                            "legend": false,
+                            "tooltip": false,
+                            "viz": false
+                        },
+                        "lineInterpolation": "linear",
+                        "lineWidth": 1,
+                        "pointSize": 5,
+                        "scaleDistribution": {
+                            "type": "linear"
+                        },
+                        "showPoints": "never",
+                        "spanNulls": false,
+                        "stacking": {
+                            "group": "A",
+                            "mode": "none"
+                        },
+                        "thresholdsStyle": {
+                            "mode": "off"
+                        }
+                    },
+                    "links": [],
+                    "mappings": [],
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "red",
+                                "value": 80
+                            }
+                        ]
+                    },
+                    "unit": "pps"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 11,
+                "w": 15,
+                "x": 9,
+                "y": 10
+            },
+            "id": 7,
+            "options": {
+                "legend": {
+                    "calcs": [
+                        "mean",
+                        "lastNotNull",
+                        "max",
+                        "min"
+                    ],
+                    "displayMode": "table",
+                    "placement": "bottom"
+                },
+                "tooltip": {
+                    "mode": "multi"
+                }
+            },
+            "pluginVersion": "8.1.2",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "sortByMaxima(aliasSub(aliasSub(aliasByTags(seriesByTag('device=dts-r1-border', 'description=$isp', 'name=~interface\\.traffic\\.(in|out)_unicast_pkts_rate'), 2), '_', ' '), 'pkts', ''))",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Packet rate",
+            "type": "timeseries"
+        }
+    ],
+    "refresh": false,
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "dts",
+        "internet",
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {
+                    "selected": true,
+                    "text": "RosTelecom",
+                    "value": "RosTelecom"
+                },
+                "datasource": "carbon-short",
+                "definition": "tag_values(description, type=isp)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "isp",
+                "options": [],
+                "query": "tag_values(description, type=isp)",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 0,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "\u0421\u0435\u0442\u0435\u0432\u043e\u0435 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435: \u0418\u043d\u0442\u0435\u0440\u043d\u0435\u0442-\u043f\u0440\u043e\u0432\u0430\u0439\u0434\u0435\u0440\u044b DDoS-\u0437\u0430\u0449\u0438\u0442\u0430",
+    "uid": "3PnPCa57z",
+    "version": 3
+}

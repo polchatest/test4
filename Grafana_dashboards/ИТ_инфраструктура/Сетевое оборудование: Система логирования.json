@@ -1,0 +1,1046 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "name": "Annotations & Alerts",
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: \u041a\u0440\u0430\u043b\u0438\u043d \u0410.\u0415. (\u0421\u041f\u0414)",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1464,
+    "iteration": 1637330881977,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "datasource": "carbon-short",
+            "description": "LA \u0437\u0430 5 \u043c\u0438\u043d\u0443\u0442",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 1,
+                    "mappings": [],
+                    "max": 4,
+                    "thresholds": {
+                        "mode": "percentage",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 60
+                            },
+                            {
+                                "color": "red",
+                                "value": 90
+                            }
+                        ]
+                    }
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 0,
+                "y": 0
+            },
+            "id": 6,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "seriesByTag('host=$server', 'name=system.system.load5')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Load Average 5",
+            "type": "gauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0423\u0442\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u044f CPU \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0433\u043e \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 60
+                            },
+                            {
+                                "color": "red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 3,
+                "y": 0
+            },
+            "id": 9,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "seriesByTag('host=$server', 'name=system.cpu.usage_active', 'cpu=cpu-total')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "CPU Used",
+            "type": "gauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0423\u0442\u0438\u043b\u0438\u0437\u0430\u0446\u0438\u044f RAM \u0432\u044b\u0431\u0440\u0430\u043d\u043d\u043e\u0433\u043e \u0441\u0435\u0440\u0432\u0435\u0440\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 60
+                            },
+                            {
+                                "color": "red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 3,
+                "x": 6,
+                "y": 0
+            },
+            "id": 7,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "seriesByTag('host=$server', 'name=system.mem.used_percent')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "RAM",
+            "type": "gauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u041e\u0431\u0449\u0430\u044f \u0441\u0445\u0435\u043c\u0430 \u0441\u0438\u0441\u0442\u0435\u043c\u044b \u0438 \u0441\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0435\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432",
+            "flowchartsData": {
+                "flowcharts": [
+                    {
+                        "allowDrawio": false,
+                        "bgColor": null,
+                        "center": true,
+                        "csv": "## See more information for the syntax at https://drawio-app.com/import-from-csv-to-drawio/\n##\n## Example CSV. Use ## for comments and # for configuration.\n## The following names are reserved and should not be used (or ignored):\n## id, tooltip, placeholder(s), link and label (see below)\n##\n#\n## Node label with placeholders and HTML.\n## Default is '%name_of_first_column%'.\n#\n# label: %name%<br><i style=\"color:gray;\">%position%</i><br><a href=\"mailto:%email%\">Email</a>\n#\n## Node style (placeholders are replaced once).\n## Default is the current style for nodes.\n#\n# style: label;image=%image%;whiteSpace=wrap;html=1;rounded=1;fillColor=%fill%;strokeColor=%stroke%;\n#\n## Parent style for nodes with child nodes (placeholders are replaced once).\n#\n# parentstyle: swimlane;whiteSpace=wrap;html=1;childLayout=stackLayout;horizontal=1;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;\n#\n## Optional column name that contains a reference to a named style in styles.\n## Default is the current style for nodes.\n#\n# stylename: -\n#\n## JSON for named styles of the form {\"name\": \"style\", \"name\": \"style\"} where style is a cell style with\n## placeholders that are replaced once.\n#\n# styles: -\n#\n## Optional column name that contains a reference to a named label in labels.\n## Default is the current label.\n#\n# labelname: -\n#\n## JSON for named labels of the form {\"name\": \"label\", \"name\": \"label\"} where label is a cell label with\n## placeholders.\n#\n# labels: -\n#\n## Uses the given column name as the identity for cells (updates existing cells).\n## Default is no identity (empty value or -).\n#\n# identity: -\n#\n## Uses the given column name as the parent reference for cells. Default is no parent (empty or -).\n## The identity above is used for resolving the reference so it must be specified.\n#\n# parent: -\n#\n## Adds a prefix to the identity of cells to make sure they do not collide with existing cells (whose\n## IDs are numbers from 0..n, sometimes with a GUID prefix in the context of realtime collaboration).\n## Default is csvimport-.\n#\n# namespace: csvimport-\n#\n## Connections between rows (\"from\": source colum, \"to\": target column).\n## Label, style and invert are optional. Defaults are '', current style and false.\n## If placeholders are used in the style, they are replaced with data from the source.\n## An optional placeholders can be set to target to use data from the target instead.\n## In addition to label, an optional fromlabel and tolabel can be used to name the column\n## that contains the text for the label in the edges source or target (invert ignored).\n## The label is concatenated in the form fromlabel + label + tolabel if all are defined.\n## The target column may contain a comma-separated list of values.\n## Multiple connect entries are allowed.\n#\n# connect: {\"from\": \"manager\", \"to\": \"name\", \"invert\": true, \"label\": \"manages\", \\\n#          \"style\": \"curved=1;endArrow=blockThin;endFill=1;fontSize=11;\"}\n# connect: {\"from\": \"refs\", \"to\": \"id\", \"style\": \"curved=1;fontSize=11;\"}\n#\n## Node x-coordinate. Possible value is a column name. Default is empty. Layouts will\n## override this value.\n#\n# left: \n#\n## Node y-coordinate. Possible value is a column name. Default is empty. Layouts will\n## override this value.\n#\n# top: \n#\n## Node width. Possible value is a number (in px), auto or an @ sign followed by a column\n## name that contains the value for the width. Default is auto.\n#\n# width: auto\n#\n## Node height. Possible value is a number (in px), auto or an @ sign followed by a column\n## name that contains the value for the height. Default is auto.\n#\n# height: auto\n#\n## Padding for autosize. Default is 0.\n#\n# padding: -12\n#\n## Comma-separated list of ignored columns for metadata. (These can be\n## used for connections and styles but will not be added as metadata.)\n#\n# ignore: id,image,fill,stroke,refs,manager\n#\n## Column to be renamed to link attribute (used as link).\n#\n# link: url\n#\n## Spacing between nodes. Default is 40.\n#\n# nodespacing: 40\n#\n## Spacing between levels of hierarchical layouts. Default is 100.\n#\n# levelspacing: 100\n#\n## Spacing between parallel edges. Default is 40. Use 0 to disable.\n#\n# edgespacing: 40\n#\n## Name or JSON of layout. Possible values are auto, none, verticaltree, horizontaltree,\n## verticalflow, horizontalflow, organic, circle or a JSON string as used in Layout, Apply.\n## Default is auto.\n#\n# layout: auto\n#\n## ---- CSV below this line. First line are column names. ----\nname,position,id,location,manager,email,fill,stroke,refs,url,image\nEvan Miller,CFO,emi,Office 1,,me@example.com,#dae8fc,#6c8ebf,,https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-9-2-128.png\nEdward Morrison,Brand Manager,emo,Office 2,Evan Miller,me@example.com,#d5e8d4,#82b366,,https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-10-3-128.png\nRon Donovan,System Admin,rdo,Office 3,Evan Miller,me@example.com,#d5e8d4,#82b366,\"emo,tva\",https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-2-128.png\nTessa Valet,HR Director,tva,Office 4,Evan Miller,me@example.com,#d5e8d4,#82b366,,https://www.draw.io,https://cdn3.iconfinder.com/data/icons/user-avatars-1/512/users-3-128.png\n",
+                        "download": false,
+                        "editorTheme": "kennedy",
+                        "editorUrl": "https://www.draw.io",
+                        "enableAnim": true,
+                        "grid": false,
+                        "lock": true,
+                        "name": "Main",
+                        "scale": true,
+                        "tooltip": true,
+                        "type": "xml",
+                        "url": "http://<YourUrl>/<Your XML/drawio file/api>",
+                        "xml": "<mxfile host=\"app.diagrams.net\" modified=\"2021-05-26T12:25:28.207Z\" agent=\"5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36\" etag=\"DGFB_zUzSzMDDfQfZ1sW\" version=\"14.7.0\" type=\"embed\"><diagram id=\"xyu5VSfaSwM5RypdBaKM\" name=\"Page-1\">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</diagram></mxfile>",
+                        "zoom": "100%"
+                    }
+                ]
+            },
+            "format": "short",
+            "graphId": "flowchart_23763571993",
+            "gridPos": {
+                "h": 12,
+                "w": 15,
+                "x": 9,
+                "y": 0
+            },
+            "id": 2,
+            "newFlag": false,
+            "pluginVersion": "7.5.6",
+            "rulesData": {
+                "rulesData": [
+                    {
+                        "aggregation": "current",
+                        "alias": "filebeat-status",
+                        "colors": [
+                            "rgba(245, 54, 54, 0.9)",
+                            "#F2CC0C",
+                            "#56A64B"
+                        ],
+                        "column": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "decimals": 2,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": false,
+                        "hidden": false,
+                        "invert": false,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "order": 1,
+                        "overlayIcon": false,
+                        "pattern": "/filebeat\\./",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "filebeat",
+                                "style": "fillColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": true,
+                        "stringThresholds": [
+                            "/.*/",
+                            "/.*/"
+                        ],
+                        "textData": [],
+                        "textProp": "id",
+                        "textRegEx": true,
+                        "thresholds": [
+                            0,
+                            1
+                        ],
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "h",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "short",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "logstash-status",
+                        "colors": [
+                            "rgba(245, 54, 54, 0.9)",
+                            "#F2CC0C",
+                            "#56A64B"
+                        ],
+                        "column": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "decimals": 2,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": false,
+                        "hidden": false,
+                        "invert": false,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "order": 2,
+                        "overlayIcon": false,
+                        "pattern": "/logstash\\./",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "7",
+                                "style": "fillColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": true,
+                        "stringThresholds": [
+                            "/.*/",
+                            "/.*/"
+                        ],
+                        "textData": [],
+                        "textProp": "id",
+                        "textRegEx": true,
+                        "thresholds": [
+                            0,
+                            1
+                        ],
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "short",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "elastic-status",
+                        "colors": [
+                            "rgba(245, 54, 54, 0.9)",
+                            "#F2CC0C",
+                            "#56A64B"
+                        ],
+                        "column": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "decimals": 2,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": false,
+                        "hidden": false,
+                        "invert": false,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "order": 3,
+                        "overlayIcon": false,
+                        "pattern": "/elasticsearch\\./",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "11",
+                                "style": "fillColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": true,
+                        "stringThresholds": [
+                            "/.*/",
+                            "/.*/"
+                        ],
+                        "textData": [],
+                        "textProp": "id",
+                        "textRegEx": true,
+                        "thresholds": [
+                            0,
+                            1
+                        ],
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "short",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "grafana-status",
+                        "colors": [
+                            "rgba(245, 54, 54, 0.9)",
+                            "#F2CC0C",
+                            "#56A64B"
+                        ],
+                        "column": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "decimals": 2,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": false,
+                        "hidden": false,
+                        "invert": false,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "order": 4,
+                        "overlayIcon": false,
+                        "pattern": "/grafana-server\\./",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "12",
+                                "style": "fillColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": true,
+                        "stringThresholds": [
+                            "/.*/",
+                            "/.*/"
+                        ],
+                        "textData": [],
+                        "textProp": "id",
+                        "textRegEx": true,
+                        "thresholds": [
+                            0,
+                            1
+                        ],
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "short",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "test-syslog-status",
+                        "colors": [
+                            "rgba(245, 54, 54, 0.9)",
+                            "#F2CC0C",
+                            "#56A64B"
+                        ],
+                        "column": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "decimals": 2,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": false,
+                        "hidden": false,
+                        "invert": false,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "order": 5,
+                        "overlayIcon": false,
+                        "pattern": "syslog_test",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "14",
+                                "style": "strokeColor"
+                            },
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "14",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": true,
+                        "stringThresholds": [
+                            "/.*/",
+                            "/.*/"
+                        ],
+                        "textData": [],
+                        "textProp": "id",
+                        "textRegEx": true,
+                        "thresholds": [
+                            0,
+                            1
+                        ],
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "short",
+                        "valueData": []
+                    },
+                    {
+                        "aggregation": "current",
+                        "alias": "test-grafana",
+                        "colors": [
+                            "rgba(245, 54, 54, 0.9)",
+                            "#F2CC0C",
+                            "#56A64B"
+                        ],
+                        "column": "Time",
+                        "dateFormat": "YYYY-MM-DD HH:mm:ss",
+                        "decimals": 2,
+                        "eventData": [],
+                        "eventProp": "id",
+                        "eventRegEx": false,
+                        "gradient": false,
+                        "hidden": false,
+                        "invert": false,
+                        "linkData": [],
+                        "linkProp": "id",
+                        "linkRegEx": true,
+                        "mappingType": 1,
+                        "metricType": "serie",
+                        "order": 6,
+                        "overlayIcon": false,
+                        "pattern": "grafana_http_probe.status",
+                        "rangeData": [],
+                        "reduce": true,
+                        "refId": "A",
+                        "sanitize": false,
+                        "shapeData": [
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "17",
+                                "style": "strokeColor"
+                            },
+                            {
+                                "colorOn": "a",
+                                "hidden": false,
+                                "pattern": "17",
+                                "style": "strokeColor"
+                            }
+                        ],
+                        "shapeProp": "id",
+                        "shapeRegEx": true,
+                        "stringThresholds": [
+                            "/.*/",
+                            "/.*/"
+                        ],
+                        "textData": [],
+                        "textProp": "id",
+                        "textRegEx": true,
+                        "thresholds": [
+                            0,
+                            1
+                        ],
+                        "tooltip": false,
+                        "tooltipColors": false,
+                        "tooltipLabel": "",
+                        "tooltipOn": "a",
+                        "tpDirection": "v",
+                        "tpGraph": false,
+                        "tpGraphHigh": null,
+                        "tpGraphLow": null,
+                        "tpGraphScale": "linear",
+                        "tpGraphSize": "100%",
+                        "tpGraphType": "line",
+                        "type": "number",
+                        "unit": "short",
+                        "valueData": []
+                    }
+                ]
+            },
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(seriesByTag('host=$server', 'name=systemd.service.state'), '_name', 'host')"
+                },
+                {
+                    "hide": false,
+                    "queryType": "randomWalk",
+                    "refCount": 0,
+                    "refId": "B",
+                    "target": "aliasByTags(seriesByTag('host=$server', 'name=syslog_test'), 'name')",
+                    "textEditor": false
+                },
+                {
+                    "hide": false,
+                    "refCount": 0,
+                    "refId": "C",
+                    "target": "aliasByTags(seriesByTag('host=$server', 'name=grafana_http_probe.status'), 'name')"
+                }
+            ],
+            "title": "\u0421\u043e\u0441\u0442\u043e\u044f\u043d\u0438\u0435 \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432",
+            "type": "agenty-flowcharting-panel",
+            "valueName": "current",
+            "version": "0.9.0"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0417\u0430\u043d\u044f\u0442\u043e\u0441\u0442\u044c \u043a\u043e\u0440\u043d\u0435\u0432\u043e\u0433\u043e \u0440\u0430\u0437\u0434\u0435\u043b\u0430",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 60
+                            },
+                            {
+                                "color": "red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 4,
+                "x": 0,
+                "y": 6
+            },
+            "id": 8,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "seriesByTag('host=$server', 'name=system.disk.used_percent', 'path=-')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Disk / used",
+            "type": "gauge"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "\u0417\u0430\u043d\u044f\u0442\u043e\u0441\u0442\u044c \u0440\u0430\u0437\u0434\u0435\u043b\u0430 \u0441 \u043b\u043e\u0433\u0430\u043c\u0438",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "green",
+                                "value": null
+                            },
+                            {
+                                "color": "#EAB839",
+                                "value": 60
+                            },
+                            {
+                                "color": "red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 6,
+                "w": 5,
+                "x": 4,
+                "y": 6
+            },
+            "id": 14,
+            "options": {
+                "orientation": "auto",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "showThresholdLabels": false,
+                "showThresholdMarkers": true,
+                "text": {}
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "seriesByTag('host=$server', 'name=system.disk.used_percent', 'path=-var-lib-elasticsearch')"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "Disk /var/lib/elasticsearch used",
+            "type": "gauge"
+        },
+        {
+            "datasource": "bosun-grafana7-datasource",
+            "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u0430\u043a\u0442\u0438\u0432\u043d\u044b\u0445 \u0438\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u043e\u0432 \u043f\u043e \u0441\u0435\u0440\u0432\u0435\u0440\u0443 \u043b\u043e\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f",
+            "gridPos": {
+                "h": 10,
+                "w": 9,
+                "x": 0,
+                "y": 12
+            },
+            "id": 11,
+            "options": {
+                "actionsPanel": {
+                    "counters": true,
+                    "downloadDoc": true,
+                    "enabled": true,
+                    "filters": true,
+                    "multiAction": true,
+                    "silence": true,
+                    "userSettings": true
+                },
+                "groupByTag": {
+                    "enabled": false,
+                    "tag": "vision"
+                },
+                "incidentsTable": {
+                    "actualActionsPopup": true,
+                    "enabled": true,
+                    "pagination": {
+                        "enabled": true,
+                        "rowsPerPage": 50
+                    }
+                },
+                "modal": {
+                    "defaultMessages": {
+                        "enabled": false
+                    },
+                    "previousIncidentsLimit": {
+                        "enabled": true,
+                        "limit": 10
+                    },
+                    "quickMessages": {
+                        "enabled": true,
+                        "messages": []
+                    }
+                }
+            },
+            "pluginVersion": "7.4.0",
+            "targets": [
+                {
+                    "refId": "A",
+                    "requestFilter": "filter=hasTag:tag1=dts-log* OR hasTag:name=spd.log.*"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0418\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b",
+            "type": "bosun-grafana7-panel"
+        },
+        {
+            "aliasColors": {},
+            "bars": false,
+            "dashLength": 10,
+            "dashes": false,
+            "datasource": "carbon-short",
+            "description": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u043f\u043e\u0441\u0442\u0443\u043f\u043b\u0435\u043d\u0438\u044f \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 Syslog",
+            "fieldConfig": {
+                "defaults": {
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "fill": 1,
+            "fillGradient": 0,
+            "gridPos": {
+                "h": 10,
+                "w": 15,
+                "x": 9,
+                "y": 12
+            },
+            "hiddenSeries": false,
+            "id": 13,
+            "legend": {
+                "alignAsTable": true,
+                "avg": true,
+                "current": true,
+                "max": true,
+                "min": true,
+                "show": true,
+                "total": false,
+                "values": true
+            },
+            "lines": true,
+            "linewidth": 1,
+            "nullPointMode": "null",
+            "options": {
+                "alertThreshold": true
+            },
+            "percentage": false,
+            "pluginVersion": "8.2.3",
+            "pointradius": 2,
+            "points": false,
+            "renderer": "flot",
+            "seriesOverrides": [],
+            "spaceLength": 10,
+            "stack": false,
+            "steppedLine": false,
+            "targets": [
+                {
+                    "queryType": "randomWalk",
+                    "refId": "A",
+                    "target": "alias(seriesByTag('host=$server', 'name=syslog_msgs_delta'), 'Syslog messages per 10 min')"
+                }
+            ],
+            "thresholds": [],
+            "timeFrom": null,
+            "timeRegions": [],
+            "timeShift": null,
+            "title": "\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043a\u0430 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439",
+            "tooltip": {
+                "shared": true,
+                "sort": 0,
+                "value_type": "individual"
+            },
+            "transformations": [
+                {
+                    "id": "calculateField",
+                    "options": {
+                        "alias": "\u0421\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u0439 \u0432 \u0441\u0435\u043a\u0443\u043d\u0434\u0443",
+                        "binary": {
+                            "left": "Syslog messages per 10 min",
+                            "operator": "/",
+                            "reducer": "sum",
+                            "right": "600"
+                        },
+                        "mode": "binary",
+                        "reduce": {
+                            "reducer": "lastNotNull"
+                        },
+                        "replaceFields": true
+                    }
+                }
+            ],
+            "type": "graph",
+            "xaxis": {
+                "buckets": null,
+                "mode": "time",
+                "name": null,
+                "show": true,
+                "values": []
+            },
+            "yaxes": [
+                {
+                    "$$hashKey": "object:74",
+                    "decimals": null,
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": "0",
+                    "show": true
+                },
+                {
+                    "$$hashKey": "object:75",
+                    "format": "short",
+                    "label": null,
+                    "logBase": 1,
+                    "max": null,
+                    "min": null,
+                    "show": true
+                }
+            ],
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            }
+        }
+    ],
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "dts",
+        "log",
+        "system",
+        "telegraf"
+    ],
+    "templating": {
+        "list": [
+            {
+                "allValue": null,
+                "current": {},
+                "datasource": "carbon-short",
+                "definition": "tag_values(host, servertype=dts-log)",
+                "description": null,
+                "error": null,
+                "hide": 0,
+                "includeAll": false,
+                "label": null,
+                "multi": false,
+                "name": "server",
+                "options": [],
+                "query": "tag_values(host, servertype=dts-log)",
+                "refresh": 2,
+                "regex": "",
+                "skipUrlSync": false,
+                "sort": 1,
+                "tagValuesQuery": "",
+                "tagsQuery": "",
+                "type": "query",
+                "useTags": false
+            }
+        ]
+    },
+    "time": {
+        "from": "now-1h",
+        "to": "now"
+    },
+    "timepicker": {},
+    "timezone": "",
+    "title": "\u0421\u0435\u0442\u0435\u0432\u043e\u0435 \u043e\u0431\u043e\u0440\u0443\u0434\u043e\u0432\u0430\u043d\u0438\u0435: \u0421\u0438\u0441\u0442\u0435\u043c\u0430 \u043b\u043e\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f",
+    "uid": "SM72KiqMk",
+    "version": 10
+}

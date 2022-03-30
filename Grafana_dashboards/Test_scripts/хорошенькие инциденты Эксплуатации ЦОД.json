@@ -1,0 +1,1304 @@
+{
+    "annotations": {
+        "list": [
+            {
+                "builtIn": 1,
+                "datasource": "-- Grafana --",
+                "enable": true,
+                "hide": true,
+                "iconColor": "rgba(0, 211, 255, 1)",
+                "limit": 100,
+                "name": "Annotations & Alerts",
+                "showIn": 0,
+                "target": {
+                    "limit": 100,
+                    "matchAny": false,
+                    "tags": [],
+                    "type": "dashboard"
+                },
+                "type": "dashboard"
+            }
+        ]
+    },
+    "description": "\u041e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u0439: -",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": null,
+    "graphTooltip": 0,
+    "id": 1365,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+        {
+            "cacheTimeout": null,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [
+                        {
+                            "options": {
+                                "match": "null",
+                                "result": {
+                                    "text": "N/A"
+                                }
+                            },
+                            "type": "special"
+                        }
+                    ],
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 5000
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 10000
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 0,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "id": 22,
+            "interval": null,
+            "links": [
+                {
+                    "title": "\u041f\u0430\u043d\u0435\u043b\u044c \u043e\u0442\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u044f \u043e\u0448\u0438\u0431\u043e\u043a \u043e\u0431\u043b\u0430\u043a\u0430",
+                    "url": "https://monitor.sbis.ru/d/000000125/?orgid=1"
+                }
+            ],
+            "maxDataPoints": 100,
+            "options": {
+                "colorMode": "value",
+                "fieldOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ]
+                },
+                "graphMode": "area",
+                "justifyMode": "center",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "sum(exclude(keepLastValue(maximumAbove(seriesByTag('name=errors', 'subsystem=cloud.sbis.ru', 'source=cloud', 'contur=prod'), 1), 10), 'FNS.transport.OFD'))"
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u041e\u0448\u0438\u0431\u043a\u0438 \u043e\u0431\u043b\u0430\u043a\u0430",
+            "type": "stat"
+        },
+        {
+            "cacheTimeout": null,
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "decimals": 0,
+                    "mappings": [
+                        {
+                            "options": {
+                                "match": "null",
+                                "result": {
+                                    "text": "N/A"
+                                }
+                            },
+                            "type": "special"
+                        }
+                    ],
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "dark-green",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 1
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 10
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": []
+            },
+            "gridPos": {
+                "h": 3,
+                "w": 3,
+                "x": 3,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "id": 24,
+            "interval": null,
+            "links": [],
+            "maxDataPoints": 100,
+            "options": {
+                "colorMode": "value",
+                "fieldOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ]
+                },
+                "graphMode": "area",
+                "justifyMode": "center",
+                "orientation": "horizontal",
+                "reduceOptions": {
+                    "calcs": [
+                        "lastNotNull"
+                    ],
+                    "fields": "",
+                    "values": false
+                },
+                "text": {},
+                "textMode": "auto"
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "seriesByTag('name=errors.critical', 'source=redis', 'contur=prod')"
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u041a\u0440\u0438\u0442\u0438\u0447\u0435\u0441\u043a\u0438\u0435 \u043e\u0448\u0438\u0431\u043a\u0438",
+            "type": "stat"
+        },
+        {
+            "cacheTimeout": "10",
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": null,
+                        "displayMode": "color-background-solid",
+                        "filterable": false
+                    },
+                    "decimals": 0,
+                    "links": [
+                        {
+                            "targetBlank": true,
+                            "title": "\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u043e\u0447\u0435\u0440\u0435\u0434\u0438",
+                            "url": "https://monitor.sbis.ru/d/AYfgjYzik/ocheredi-rabochie-i-sluzhebnye?orgId=1&from=now-1h&to=now&var-queue_type=work&var-queue=${__data.fields[Field]}"
+                        }
+                    ],
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "transparent",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 0
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 200
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 1000
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Last *"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 6,
+                "x": 6,
+                "y": 0
+            },
+            "hideTimeOverride": true,
+            "id": 3,
+            "links": [
+                {
+                    "title": "\u041e\u0447\u0435\u0440\u0435\u0434\u0438 (\u0438\u0441\u0442\u043e\u0440\u0438\u044f) \u0422\u043e\u043f 20",
+                    "url": "https://monitor.sbis.ru/d/TJUss3Wmk/?orgId=1"
+                }
+            ],
+            "options": {
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Last *"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(highestCurrent(currentAbove(seriesByTag('name=queue.size', 'subsystem=cloud.sbis.ru', 'type=work', 'host!=~.+', 'contur=prod'), 1), 10), 'service')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u0420\u0430\u0431\u043e\u0447\u0438\u0435 \u043e\u0447\u0435\u0440\u0435\u0434\u0438",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "reducers": [
+                            "lastNotNull",
+                            "max"
+                        ]
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {},
+                        "renameByName": {
+                            "Field": "\u041e\u0447\u0435\u0440\u0435\u0434\u044c",
+                            "Last (not null)": "\u0422\u0435\u043a\u0443\u0449\u0435\u0435",
+                            "Max": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "bosun-grafana7-datasource",
+            "gridPos": {
+                "h": 24,
+                "w": 12,
+                "x": 12,
+                "y": 0
+            },
+            "id": 34,
+            "links": [
+                {
+                    "title": "\u0418\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b \u0432\u0441\u0435\u0445 \u043e\u0442\u0434\u0435\u043b\u043e\u0432",
+                    "url": "https://monitor.sbis.ru/d/b9DogIvGz/intsidenty?orgId=1&refresh=30s"
+                }
+            ],
+            "options": {
+                "actionsPanel": {
+                    "counters": true,
+                    "downloadDoc": true,
+                    "enabled": true,
+                    "filters": true,
+                    "multiAction": true,
+                    "pagination": {
+                        "enabled": true,
+                        "rowsPerPage": "50"
+                    },
+                    "silence": true,
+                    "userSettings": true
+                },
+                "groupByTag": {
+                    "enabled": true,
+                    "tag": "vision"
+                },
+                "incidentsTable": {
+                    "actualActionsPopup": true,
+                    "enabled": true,
+                    "pagination": {
+                        "enabled": true,
+                        "rowsPerPage": 50
+                    }
+                },
+                "modal": {
+                    "defaultMessages": {
+                        "enabled": true,
+                        "normalized": "\u041d\u043e\u0440\u043c\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043b\u043e\u0441\u044c",
+                        "notNormalizedAndNotAck": "\u0421\u043c\u043e\u0442\u0440\u0438\u043c"
+                    },
+                    "previousIncidentsLimit": {
+                        "enabled": true,
+                        "limit": 10
+                    },
+                    "quickMessages": {
+                        "enabled": true,
+                        "messages": [
+                            "\u0421\u043c\u043e\u0442\u0440\u0438\u043c",
+                            "\u041d\u043e\u0440\u043c\u0430\u043b\u0438\u0437\u043e\u0432\u0430\u043b\u043e\u0441\u044c",
+                            "\u0421\u043a\u0430\u0447\u043e\u043a \u043d\u0430\u0433\u0440\u0443\u0437\u043a\u0438",
+                            "\u0421\u043e\u043e\u0431\u0449\u0438\u043b\u0438 \u043e\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043d\u043d\u044b\u043c",
+                            "\u0420\u0430\u0431\u043e\u0442\u044b \u043f\u043e \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0435",
+                            "\u041e\u0448\u0438\u0431\u043a\u0430 \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u0430"
+                        ]
+                    }
+                }
+            },
+            "targets": [
+                {
+                    "refId": "A",
+                    "requestFilter": "filter=!hasTag:vision=corp"
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0418\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b",
+            "type": "bosun-grafana7-panel"
+        },
+        {
+            "cacheTimeout": "10",
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": null,
+                        "displayMode": "color-background-solid",
+                        "filterable": false
+                    },
+                    "decimals": 0,
+                    "links": [],
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "transparent",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 0
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 200
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 1000
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Last *"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 5,
+                "w": 6,
+                "x": 0,
+                "y": 3
+            },
+            "hideTimeOverride": true,
+            "id": 40,
+            "links": [
+                {
+                    "title": "\u041f\u0427 \u0426\u041e\u0414: \u041e\u0448\u0438\u0431\u043a\u0438 \u043e\u0431\u043b\u0430\u043a\u0430",
+                    "url": "https://monitor.sbis.ru/d/000000125/pch-tsod-oshibki-oblaka?orgId=1&refresh=10s"
+                }
+            ],
+            "options": {
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Last *"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(keepLastValue(highestMax(maximumAbove(seriesByTag('name=errors', 'subsystem=cloud.sbis.ru', 'source=cloud', 'contur=prod'), 1), 5), 10), 'service')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u041e\u0448\u0438\u0431\u043a\u0438 \u043e\u0431\u043b\u0430\u043a\u0430",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "reducers": [
+                            "lastNotNull",
+                            "max"
+                        ]
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {},
+                        "renameByName": {
+                            "Field": "\u0421\u0435\u0440\u0432\u0438\u0441",
+                            "Last (not null)": "\u0422\u0435\u043a\u0443\u0449\u0435\u0435",
+                            "Max": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "left",
+                        "displayMode": "color-background-solid",
+                        "filterable": false
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 85,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "transparent",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 0
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 80
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Last *"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 6,
+                "x": 0,
+                "y": 8
+            },
+            "id": 27,
+            "links": [
+                {
+                    "targetBlank": true,
+                    "title": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 cpu",
+                    "url": "https://monitor.sbis.ru/d/D-gr7KAMk/vcenter-cpu-ram?orgId=1&refresh=30s"
+                }
+            ],
+            "options": {
+                "showHeader": false,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Last (not null)"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByNode(aliasByTags(highestMax(seriesByTag('cpu=instance-total', 'contur=prod', 'name=service.vcenter.usage_average', 'interval=20s', 'vcenter=~(s076vc50|vc-cloud).corp.tensor.ru'), 3), 'esxhostname'), 0)",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 cpu vcenter",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "labelsToFields": false,
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                },
+                {
+                    "id": "sortBy",
+                    "options": {
+                        "fields": {},
+                        "sort": [
+                            {
+                                "desc": true,
+                                "field": "Last *"
+                            }
+                        ]
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "cacheTimeout": "10",
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": null,
+                        "displayMode": "color-background-solid",
+                        "filterable": false
+                    },
+                    "decimals": 0,
+                    "links": [
+                        {
+                            "targetBlank": true,
+                            "title": "\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u043e\u0447\u0435\u0440\u0435\u0434\u0438",
+                            "url": "https://monitor.sbis.ru/d/AYfgjYzik/ocheredi-rabochie-i-sluzhebnye?orgId=1&from=now-1h&to=now&var-queue_type=special&var-queue=${__data.fields[\"Field\"]}"
+                        }
+                    ],
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "transparent",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 0
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 200
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 1000
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Last *"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 6,
+                "x": 6,
+                "y": 8
+            },
+            "hideTimeOverride": true,
+            "id": 38,
+            "links": [
+                {
+                    "title": "\u041e\u0447\u0435\u0440\u0435\u0434\u0438 (\u0438\u0441\u0442\u043e\u0440\u0438\u044f) \u0422\u043e\u043f 20",
+                    "url": "https://monitor.sbis.ru/d/TJUss3Wmk/?orgId=1"
+                }
+            ],
+            "options": {
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Last *"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(highestCurrent(currentAbove(seriesByTag('name=queue.size', 'subsystem=cloud.sbis.ru', 'type=special', 'host!=~.+', 'contur=prod'), 1), 10), 'service')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u0421\u043b\u0443\u0436\u0435\u0431\u043d\u044b\u0435 \u043e\u0447\u0435\u0440\u0435\u0434\u0438",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "reducers": [
+                            "lastNotNull",
+                            "max"
+                        ]
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {},
+                        "renameByName": {
+                            "Field": "\u041e\u0447\u0435\u0440\u0435\u0434\u044c",
+                            "Last (not null)": "\u0422\u0435\u043a\u0443\u0449\u0435\u0435",
+                            "Max": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "short-tagged",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "left",
+                        "displayMode": "color-background-solid",
+                        "filterable": false
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "transparent",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 0
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 80
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "percent"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Last *"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 6,
+                "x": 0,
+                "y": 12
+            },
+            "id": 35,
+            "links": [
+                {
+                    "title": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 ram",
+                    "url": "https://monitor.sbis.ru/d/D-gr7KAMk/vcenter-cpu-ram?orgId=1&refresh=30s"
+                }
+            ],
+            "options": {
+                "showHeader": false,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Last (not null)"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(highestCurrent(seriesByTag('vmname!=~*', 'cpu!=~*', 'name=service.vcenter.usage_average', 'vcenter=~(s076vc50|vc-cloud).corp.tensor.ru', 'interface!=~*'), 3), 'esxhostname')",
+                    "textEditor": true
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u043d\u0438\u0435 \u043f\u0430\u043c\u044f\u0442\u0438 vcenter",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "description": "",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "left",
+                        "displayMode": "color-background-solid",
+                        "filterable": false
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "transparent",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 0
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 80
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 90
+                            }
+                        ]
+                    },
+                    "unit": "ms"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Last *"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 6,
+                "x": 0,
+                "y": 16
+            },
+            "id": 37,
+            "links": [
+                {
+                    "targetBlank": false,
+                    "title": "\u0417\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u0421\u0425\u0414",
+                    "url": "https://monitor.sbis.ru/d/I5WCpUTMz/zaderzhki-skhd"
+                }
+            ],
+            "options": {
+                "showHeader": false,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Last (not null)"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(highestCurrent(seriesByTag('dsname=~.*vstor|VSTOR', 'name=service.vcenter.totalReadLatency_average', 'vcenter=~(s076vc50|vc-cloud).corp.tensor.ru'), 3), 'dsname')",
+                    "textEditor": false
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0417\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u0447\u0442\u0435\u043d\u0438\u044f \u0421\u0425\u0414",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "cacheTimeout": "10",
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": null,
+                        "displayMode": "color-background-solid",
+                        "filterable": false
+                    },
+                    "decimals": 0,
+                    "links": [
+                        {
+                            "targetBlank": true,
+                            "title": "\u0418\u0441\u0442\u043e\u0440\u0438\u044f \u043e\u0447\u0435\u0440\u0435\u0434\u0438",
+                            "url": "https://monitor.sbis.ru/d/be-g83Zmk/ocheredi-asinkhronnye?orgId=1&from=now-1h&to=now&var-queue_type=All&var-queue=${__data.fields[Field]}"
+                        }
+                    ],
+                    "mappings": [],
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "transparent",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 0
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 2000
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 10000
+                            }
+                        ]
+                    },
+                    "unit": "short"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Last *"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    },
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 8,
+                "w": 6,
+                "x": 6,
+                "y": 16
+            },
+            "hideTimeOverride": true,
+            "id": 39,
+            "links": [
+                {
+                    "title": "\u041e\u0447\u0435\u0440\u0435\u0434\u0438 (\u0438\u0441\u0442\u043e\u0440\u0438\u044f) \u0422\u043e\u043f 20",
+                    "url": "https://monitor.sbis.ru/d/TJUss3Wmk/?orgId=1"
+                }
+            ],
+            "options": {
+                "showHeader": true,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Last *"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refCount": 0,
+                    "refId": "A",
+                    "target": "aliasByTags(currentAbove(seriesByTag('name=async.queue.size', 'subsystem=cloud.sbis.ru', 'contur=prod'), 1), 'service')",
+                    "textEditor": true
+                }
+            ],
+            "timeFrom": "5m",
+            "title": "\u0410\u0441\u0438\u043d\u0445\u0440\u043e\u043d\u043d\u044b\u0435 \u043e\u0447\u0435\u0440\u0435\u0434\u0438",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "reducers": [
+                            "lastNotNull",
+                            "max"
+                        ]
+                    }
+                },
+                {
+                    "id": "organize",
+                    "options": {
+                        "excludeByName": {},
+                        "indexByName": {},
+                        "renameByName": {
+                            "Field": "\u041e\u0447\u0435\u0440\u0435\u0434\u044c",
+                            "Last (not null)": "\u0422\u0435\u043a\u0443\u0449\u0435\u0435",
+                            "Max": "\u041c\u0430\u043a\u0441\u0438\u043c\u0443\u043c"
+                        }
+                    }
+                }
+            ],
+            "type": "table"
+        },
+        {
+            "datasource": "carbon-short",
+            "fieldConfig": {
+                "defaults": {
+                    "color": {
+                        "mode": "thresholds"
+                    },
+                    "custom": {
+                        "align": "left",
+                        "displayMode": "color-background-solid",
+                        "filterable": false
+                    },
+                    "decimals": 0,
+                    "mappings": [],
+                    "max": 100,
+                    "min": 0,
+                    "thresholds": {
+                        "mode": "absolute",
+                        "steps": [
+                            {
+                                "color": "transparent",
+                                "value": null
+                            },
+                            {
+                                "color": "dark-green",
+                                "value": 0
+                            },
+                            {
+                                "color": "dark-orange",
+                                "value": 100
+                            },
+                            {
+                                "color": "dark-red",
+                                "value": 200
+                            }
+                        ]
+                    },
+                    "unit": "ms"
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byName",
+                            "options": "Last *"
+                        },
+                        "properties": [
+                            {
+                                "id": "custom.width",
+                                "value": 85
+                            },
+                            {
+                                "id": "custom.align",
+                                "value": "right"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "gridPos": {
+                "h": 4,
+                "w": 6,
+                "x": 0,
+                "y": 20
+            },
+            "id": 36,
+            "links": [
+                {
+                    "targetBlank": true,
+                    "title": "\u0417\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u0421\u0425\u0414",
+                    "url": "https://monitor.sbis.ru/d/I5WCpUTMz/zaderzhki-skhd"
+                }
+            ],
+            "options": {
+                "showHeader": false,
+                "sortBy": [
+                    {
+                        "desc": true,
+                        "displayName": "Last (not null)"
+                    }
+                ]
+            },
+            "pluginVersion": "8.2.3",
+            "targets": [
+                {
+                    "refId": "A",
+                    "target": "aliasByTags(highestCurrent(seriesByTag('dsname=~.*vstor|VSTOR', 'name=service.vcenter.totalWriteLatency_average', 'vcenter=~(s076vc50|vc-cloud).corp.tensor.ru'), 3), 'dsname')",
+                    "textEditor": true
+                }
+            ],
+            "timeFrom": null,
+            "timeShift": null,
+            "title": "\u0417\u0430\u0434\u0435\u0440\u0436\u043a\u0438 \u0437\u0430\u043f\u0438\u0441\u0438 \u0421\u0425\u0414",
+            "transformations": [
+                {
+                    "id": "reduce",
+                    "options": {
+                        "reducers": [
+                            "lastNotNull"
+                        ]
+                    }
+                }
+            ],
+            "type": "table"
+        }
+    ],
+    "refresh": "30s",
+    "schemaVersion": 31,
+    "style": "dark",
+    "tags": [
+        "bosun",
+        "\u0438\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b",
+        "test_scripts",
+        "telegraf",
+        "service"
+    ],
+    "templating": {
+        "list": []
+    },
+    "time": {
+        "from": "now-5m",
+        "to": "now"
+    },
+    "timepicker": {
+        "hidden": false,
+        "refresh_intervals": [
+            "10s",
+            "30s",
+            "1m",
+            "5m",
+            "15m"
+        ],
+        "time_options": [
+            "5m",
+            "15m",
+            "1h",
+            "6h",
+            "12h",
+            "24h",
+            "2d",
+            "7d",
+            "30d"
+        ]
+    },
+    "timezone": "",
+    "title": "\u0445\u043e\u0440\u043e\u0448\u0435\u043d\u044c\u043a\u0438\u0435 \u0438\u043d\u0446\u0438\u0434\u0435\u043d\u0442\u044b \u042d\u043a\u0441\u043f\u043b\u0443\u0430\u0442\u0430\u0446\u0438\u0438 \u0426\u041e\u0414",
+    "uid": "OWRnGU7MkNEW",
+    "version": 30
+}
