@@ -395,38 +395,3 @@
 | haproxy |  - | 2021-08-09 | linux, sbis3mon-kafka, service | [Ссылка](https://monitor.sbis.ru/d/NH4FhzGik) |
 | GPU |  Карпов С.В. (Эксплуатация) | 2021-09-05 | telegraf, GPU, nvidia, system | [Ссылка](https://monitor.sbis.ru/d/jgz9SFvWk) |
 | GitLab pipeline |  Окунев А.С. (АЦОД) | 2022-03-25 | GitLab, service, telegraf | [Ссылка](https://monitor.sbis.ru/d/V9BxqNXGk) |
-| Gitlab - dobrotest |  Добровольский А.И. (АЦОД) | 2022-03-29 | telegraf | [Ссылка](https://monitor.sbis.ru/d/c_2EbZsnk) |
-| for test |  - | 2022-01-25 | test_scripts, telegraf, service | [Ссылка](https://monitor.sbis.ru/d/gM_MpQZGz) |
-| Flussonic mediaserver |   Конюхов М.В. (Эксплуатация) | 2021-12-02 | mv.konuhov, видеонаблюдение, videostreaming, flussonic, telegraf, exploitation, service | [Ссылка](https://monitor.sbis.ru/d/WXehVwyGk) |
-| eventmq web |   Конюхов М.В. (Эксплуатация) | 2021-09-05 | sbis3mon-kafka, service, mv.konuhov | [Ссылка](https://monitor.sbis.ru/d/QPsa5kMmk) |
-| ETL - Очереди задач загрузчиков |  Антипин Д. И. (Saby Trade) | 2022-03-22 | scripts, service, tender | [Ссылка](https://monitor.sbis.ru/d/71hnRXE7z) |
-| ETL - Очереди задач |  Антипин Д. И. (Saby Trade) | 2022-03-22 | scripts, service, tender | [Ссылка](https://monitor.sbis.ru/d/mR4zRXE7k) |
-| Email: статистика отправок |  Казанкин Л.Е./Никитин М.С. (Эксплуатация) | 2022-03-11 | email, telegraf, scripts, service | [Ссылка](https://monitor.sbis.ru/d/CgKQzfOnz) |
-| Email: основной дашборд |  Казанкин Л.Е./Никитин М.С. (Эксплуатация) | 2022-03-26 | telegraf, service, email | [Ссылка](https://monitor.sbis.ru/d/oJV4rl6Gz) |
-| elasticsearch5 (JVM) |  - | 2021-08-09 | service, elasticsearch, sbis3mon | [Ссылка](https://monitor.sbis.ru/d/vY-2nwzmk) |
-| elasticsearch5 |  Сорокин И.А. (Эксплуатация), Барган А.В. (Разработка) | 2021-08-12 | service, sbis3mon-kafka, elasticsearch | [Ссылка](https://monitor.sbis.ru/d/nAEdNzMik) |
-| elasticsearch2 (jvm) |  - | 2021-08-09 | service, elasticsearch, sbis3mon | [Ссылка](https://monitor.sbis.ru/d/wjK27wkik) |
-| elasticsearch2 |  - | 2021-08-09 | service, sbis3mon-kafka, elasticsearch | [Ссылка](https://monitor.sbis.ru/d/njFsygMmk) |
-| Elasticsearch (telegraf) |  Нет ответственного. | 2021-11-15 | telegraf, elasticsearch, service | [Ссылка](https://monitor.sbis.ru/d/S0ELsslZk) |
-| dpc-netbox-reporter |  Добровольский А.И. (Интеграция и автоматизация) | 2022-03-23 | telegraf | [Ссылка](https://monitor.sbis.ru/d/92Xj0qJ7k) |
-| DPC-Logs |  Пантелеев А.С. (АЦОД) | 2022-03-01 | telegraf | [Ссылка](https://monitor.sbis.ru/d/XiVjhv1nz) |
-| Domains serial |  Гломаздов А.Ю. (АЦОД) | 2022-03-25 | telegraf | [Ссылка](https://monitor.sbis.ru/d/lRQw_CEnz) |
-| Domains |  Гломаздов А.Ю. (АЦОД) | 2022-01-19 | telegraf, service | [Ссылка](https://monitor.sbis.ru/d/1duQiPJnz) |
-| docker |  Конюхов М.В. (Эксплуатация) | 2021-12-02 | docker, telegraf, system | [Ссылка](https://monitor.sbis.ru/d/KnHfecpMz) |
-| DNS-LOG |  - | 2022-03-28 | dns, telegraf, dns-log, system | [Ссылка](https://monitor.sbis.ru/d/7iaKtzOGk) |
-| DHCP Widows |  Гончаров З.А. (АЦОД) | 2022-01-17 | telegraf | [Ссылка](https://monitor.sbis.ru/d/8rg52MJ7z) |
-| DHCP |  Альбещенко М.Н. (АЦОД) | 2022-01-31 | telegraf | [Ссылка](https://monitor.sbis.ru/d/wrMovg2nz) |
-| DC |  Добровольский А.И. (АЦОД) | 2022-03-01 | test_scripts, system, telegraf | [Ссылка](https://monitor.sbis.ru/d/JGm4MTJ7z) |
-| Database servers disk latency |  - | 2021-12-02 | telegraf, system | [Ссылка](https://monitor.sbis.ru/d/G-kPd39Mk) |
-| Cервисы уведомлений-notice |  Сорокин И.А. (Эксплуатация) | 2021-11-15 | service, scripts | [Ссылка](https://monitor.sbis.ru/d/Wb4upBQMk) |
-| cloud: статистика диагностической страницы |  - | 2021-08-09 | cicd, cloud, telegraf, service | [Ссылка](https://monitor.sbis.ru/d/qyfhGoCWked) |
-| Clickhouse by telegraf |  Воробьев П.А. (Эксплуатация) | 2021-11-18 | ClickHouse, telegraf, service, db | [Ссылка](https://monitor.sbis.ru/d/thEkJB_Mz) |
-| Clickhouse |  Воробьев П.А. (Эксплуатация) | 2021-12-06 | db, carbon, ClickHouse, service | [Ссылка](https://monitor.sbis.ru/d/FAxHFt5Zz) |
-| Click |  - | 2021-08-09 | test_scripts, telegraf, system | [Ссылка](https://monitor.sbis.ru/d/EkKpfPZnz) |
-| AWX |  Забродин А.Н. (Эксплуатация) | 2021-11-15 | telegraf, service | [Ссылка](https://monitor.sbis.ru/d/xtAJ1WHGz) |
-| Automation Hub |  Добровольский А.И. (АЦОД) | 2022-03-29 | telegraf | [Ссылка](https://monitor.sbis.ru/d/aNuVdJPnk) |
-| Asterisk |  Конюхов М.В. (Эксплуатация) | 2022-03-11 | telegraf, service, mv.konuhov, asterisk, telephony, телефония | [Ссылка](https://monitor.sbis.ru/d/8jYw0G0Mk) |
-| admin.sbis.ru |  - | 2022-03-14 |  | [Ссылка](https://monitor.sbis.ru/d/yxmi-yD7z) |
-| Adm Gitlab |  Смирнов К.В. (Эксплуатация) | 2021-12-13 | telegraf, GitLab, service | [Ссылка](https://monitor.sbis.ru/d/A7toO3_Mz) |
-| ACI суммарный траффик на аплинках шасси |  Веткин Е.Д. (СПД) | 2022-03-29 | aci, dts, system, telegraf | [Ссылка](https://monitor.sbis.ru/d/rmjqomY7k) |
-| _на удаление_Инциденты ПЧ ЦОД |  - | 2022-03-14 |  | [Ссылка](https://monitor.sbis.ru/d/Yh1FTcZik) |
